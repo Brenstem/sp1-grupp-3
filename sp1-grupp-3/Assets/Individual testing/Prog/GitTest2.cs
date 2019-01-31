@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GitTest : MonoBehaviour {
+public class GitTest2 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
