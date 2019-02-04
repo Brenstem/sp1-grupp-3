@@ -13,19 +13,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114162856428978080}
-  - {fileID: 114775591625557554}
-  - {fileID: 114856866805694306}
-  - {fileID: 114089139079541206}
-  - {fileID: 114323236735882752}
+  - {fileID: 114915924489322860}
+  - {fileID: 114562302699648936}
+  - {fileID: 114764818132261284}
+  - {fileID: 114239026714603050}
   EditorEvents:
   - {fileID: 114999501054668234}
   MasterBanks:
   - {fileID: 114566390083756052}
   - {fileID: 114767205696045450}
   - {fileID: 114775591625557554}
+  - {fileID: 114915924489322860}
   StringsBanks:
   - {fileID: 114162856428978080}
-  stringsBankWriteTime: 636846138289118037
+  stringsBankWriteTime: 636846238940834521
   cacheVersion: 3
 --- !u!114 &114089139079541206
 MonoBehaviour:
@@ -76,11 +77,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODAssets\Desktop\Master Bank.strings.bank
-  lastModified: 636846138289118037
+  lastModified: 636846238940834521
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 860
+  Exists: 1
+--- !u!114 &114239026714603050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\WolfC\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.assets.bank
+  lastModified: 636846238940844497
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 70464
   Exists: 1
 --- !u!114 &114287963459013812
 MonoBehaviour:
@@ -191,6 +210,24 @@ MonoBehaviour:
   - Name: 
     Value: 70464
   Exists: 1
+--- !u!114 &114562302699648936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\WolfC\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.bank
+  lastModified: 636846238940864441
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1340
+  Exists: 1
 --- !u!114 &114566390083756052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +284,25 @@ MonoBehaviour:
   - Name: 
     Value: 450
   Exists: 1
+--- !u!114 &114764818132261284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\WolfC\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master
+    Bank.assets.bank
+  lastModified: 636846238940804662
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 450
+  Exists: 1
 --- !u!114 &114767205696045450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +339,7 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 12474
-  Exists: 1
+  Exists: 0
 --- !u!114 &114854812202198218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,6 +395,25 @@ MonoBehaviour:
   - Name: 
     Value: 450
   Exists: 0
+--- !u!114 &114915924489322860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\WolfC\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master
+    Bank.bank
+  lastModified: 636846238940814577
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 12474
+  Exists: 1
 --- !u!114 &114948235214562312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +468,7 @@ MonoBehaviour:
   Path: event:/test
   guid: 9170b3734a5d494490658731038b6cfd
   Banks:
-  - {fileID: 114856866805694306}
+  - {fileID: 114562302699648936}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
