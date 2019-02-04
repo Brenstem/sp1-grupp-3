@@ -13,18 +13,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114162856428978080}
-  - {fileID: 114767205696045450}
-  - {fileID: 114595853614709908}
-  - {fileID: 114450128599992318}
-  - {fileID: 114324587727561218}
+  - {fileID: 114864268077895370}
+  - {fileID: 114732787117041254}
+  - {fileID: 114577651678786746}
+  - {fileID: 114679553692340056}
   EditorEvents:
   - {fileID: 114999501054668234}
   MasterBanks:
   - {fileID: 114566390083756052}
   - {fileID: 114767205696045450}
+  - {fileID: 114864268077895370}
   StringsBanks:
   - {fileID: 114162856428978080}
-  stringsBankWriteTime: 636845440849134000
+  stringsBankWriteTime: 636846173438459472
   cacheVersion: 3
 --- !u!114 &114112675081945358
 MonoBehaviour:
@@ -56,7 +57,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODAssets\Desktop\Master Bank.strings.bank
-  lastModified: 636845440849134000
+  lastModified: 636846173438459472
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -97,7 +98,7 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 70464
-  Exists: 1
+  Exists: 0
 --- !u!114 &114399546552024620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +135,7 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 450
-  Exists: 1
+  Exists: 0
 --- !u!114 &114552388971864126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +173,24 @@ MonoBehaviour:
   - Name: 
     Value: 12474
   Exists: 0
+--- !u!114 &114577651678786746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\dev\Unity\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master Bank.assets.bank
+  lastModified: 636846173438429512
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 450
+  Exists: 1
 --- !u!114 &114595853614709908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +208,24 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 1340
+  Exists: 0
+--- !u!114 &114679553692340056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\dev\Unity\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.assets.bank
+  lastModified: 636846173438479375
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 70464
   Exists: 1
 --- !u!114 &114729861571831890
 MonoBehaviour:
@@ -209,6 +246,24 @@ MonoBehaviour:
   - Name: 
     Value: 450
   Exists: 1
+--- !u!114 &114732787117041254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\dev\Unity\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.bank
+  lastModified: 636846173438489447
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1340
+  Exists: 1
 --- !u!114 &114767205696045450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +281,7 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 12474
-  Exists: 1
+  Exists: 0
 --- !u!114 &114854812202198218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +300,24 @@ MonoBehaviour:
   - Name: 
     Value: 1340
   Exists: 0
+--- !u!114 &114864268077895370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\dev\Unity\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master Bank.bank
+  lastModified: 636846173438459472
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 12474
+  Exists: 1
 --- !u!114 &114911295893531502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,7 +391,7 @@ MonoBehaviour:
   Path: event:/test
   guid: 9170b3734a5d494490658731038b6cfd
   Banks:
-  - {fileID: 114595853614709908}
+  - {fileID: 114732787117041254}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
