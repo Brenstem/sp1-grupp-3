@@ -15,7 +15,8 @@ MonoBehaviour:
   acceleration: 2
   speed: 2
   maxSpeed: 2
-  jumpStrength: 0
-  maxJumpHeight: 0
-  jumpGravity: 0
-  fallGravity: 0
+  grabMoveAcceleration: 0
+  jumpStrength: 10
+  maxJumpHeight: 20
+  jumpGravity: 2
+  fallGravity: 2

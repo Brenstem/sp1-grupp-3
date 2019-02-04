@@ -11,10 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b618bfacef114c74fbef0fed8f48815d, type: 3}
   m_Name: Default Movement
   m_EditorClassIdentifier: 
-  deAcceleration: 3
-  acceleration: 3
+  deAcceleration: 1
+  acceleration: 4
   speed: 5
   maxSpeed: 10
+  grabMoveAcceleration: 0
   jumpStrength: 3
   maxJumpHeight: 6
   jumpGravity: 3

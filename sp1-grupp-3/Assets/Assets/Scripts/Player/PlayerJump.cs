@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
+    public MovementState movementState;
+    public MovementState defaultMovementState;
+
     [SerializeField]
-    float jumpForce;
+    float jumpStrength;
     [SerializeField]
-    float jumpHeight;
+    float maxJumpHeight;
     [SerializeField]
-    float lowJumpMultiplier; //lowJumpMultiplier
+    float jumpGravity;
     [SerializeField]
-    float fallMultiplier;
+    float fallGravity;
 
     bool jumpRequest;
 
@@ -26,8 +29,25 @@ public class PlayerJump : MonoBehaviour
         gCheck = GetComponent<GroundCheck>();
     }
 
+    void UpdateMovementState(MovementState move)
+    {
+        jumpStrength = move.jumpStrength;
+        maxJumpHeight = move.maxJumpHeight;
+        jumpGravity = move.jumpGravity;
+        fallGravity = move.fallGravity;
+    }
+
     void Update()
     {
+        if (movementState != null)
+        {
+            UpdateMovementState(movementState);
+        }
+        else
+        {
+            UpdateMovementState(defaultMovementState);
+        }
+
         if (hasBeenGrounded == false)
         { hasBeenGrounded = gCheck.isGrounded; }
 
@@ -44,7 +64,7 @@ public class PlayerJump : MonoBehaviour
         if (jumpRequest == true)
         {
             // var yVel = Mathf.Sqrt(jumpForce * -Physics2D.gravity.y);
-            var yVel = jumpForce;
+            var yVel = jumpStrength;
 
             if (rb.velocity.y < 0)
             {
@@ -54,7 +74,7 @@ public class PlayerJump : MonoBehaviour
             }
             else
             {
-                yVel = Mathf.Clamp(yVel, 0f, jumpHeight);
+                yVel = Mathf.Clamp(yVel, 0f, maxJumpHeight);
                 rb.velocity += new Vector2(0, yVel);
 
                 jumpRequest = false;
@@ -69,11 +89,11 @@ public class PlayerJump : MonoBehaviour
 
         if (rb.velocity.y < 0)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallGravity - 1) * Time.deltaTime;
         }
         else if (rb.velocity.y > 0 && jumpBtn == false)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (jumpGravity - 1) * Time.deltaTime;
         }
     }
 }

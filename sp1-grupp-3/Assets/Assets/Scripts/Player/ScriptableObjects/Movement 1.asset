@@ -11,11 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b618bfacef114c74fbef0fed8f48815d, type: 3}
   m_Name: Movement 1
   m_EditorClassIdentifier: 
-  deAcceleration: 32
-  acceleration: 42
-  speed: 42
-  maxSpeed: 2
-  jumpStrength: 0
-  maxJumpHeight: 0
-  jumpGravity: 0
-  fallGravity: 0
+  deAcceleration: 10
+  acceleration: 10
+  speed: 10
+  maxSpeed: 20
+  grabMoveAcceleration: 0
+  jumpStrength: 3
+  maxJumpHeight: 6
+  jumpGravity: 3
+  fallGravity: 3

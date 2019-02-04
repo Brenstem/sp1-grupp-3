@@ -10,24 +10,24 @@ using UnityEditorInternal;
 public class PlayerMovementEditor : Editor
 {
     public static InputAxis inputSettings;
-    public static MovementSettings MovementSettings;   
+    public static MovementSettings MovementSettings;
     public static string axisString;
     public static int inputIndex;
-    
+
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
-        
+
         DrawDefaultInspector();
 
         PlayerMovement playerM = (PlayerMovement)target;
         MovementSettings = playerM.GetComponent<PlayerMovement>().movementSettings;
-       
+
         if (AxisDefined(MovementSettings.name) == true)
         {
             GetAxis(MovementSettings);
         }
-        
+
         serializedObject.ApplyModifiedProperties();
     }
 
@@ -45,6 +45,21 @@ public class PlayerMovementEditor : Editor
             if (axis.stringValue == axisName) return true;
         }
         return false;
+    }
+    private static int AxisFound(string axisName)
+    {
+        SerializedObject serializedObject = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/InputManager.asset")[0]);
+        SerializedProperty axesProperty = serializedObject.FindProperty("m_Axes");
+
+        axesProperty.Next(true);
+        axesProperty.Next(true);
+        while (axesProperty.Next(false))
+        {
+            SerializedProperty axis = axesProperty.Copy();
+            axis.Next(true);
+            if (axis.stringValue == axisName) return axis.CountInProperty();
+        }
+        return 0;
     }
     private static SerializedProperty GetChildProperty(SerializedProperty parent, string name)
     {
@@ -87,9 +102,9 @@ public class PlayerMovementEditor : Editor
 
         serializedObject.ApplyModifiedProperties();
     }
-    private static void GetAxis(MovementSettings axis)
+    private static void GetAxis(MovementSettings move)
     {
-        if (AxisDefined(axis.name) == false) return;
+        if (AxisDefined(move.name) == false) return;
 
         SerializedObject serializedObject = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/InputManager.asset")[0]);
         SerializedProperty axesProperty = serializedObject.FindProperty("m_Axes");
@@ -97,12 +112,15 @@ public class PlayerMovementEditor : Editor
         //axesProperty.arraySize++;
         serializedObject.ApplyModifiedProperties();
 
-
         SerializedProperty axisProperty = axesProperty.GetArrayElementAtIndex(0);
 
-        GetChildProperty(axisProperty, "m_Name").stringValue = axis.name;
-        GetChildProperty(axisProperty, "gravity").floatValue = axis.deAcceleration;
-        GetChildProperty(axisProperty, "sensitivity").floatValue = axis.acceleration;
+        GetChildProperty(axisProperty, "m_Name").stringValue = move.name;
+        GetChildProperty(axisProperty, "gravity").floatValue = move.deAcceleration;
+        GetChildProperty(axisProperty, "sensitivity").floatValue = move.acceleration;
+
+        //GetChildProperty(axisProperty, "m_Name").stringValue = move.name;
+        //GetChildProperty(axisProperty, "gravity").floatValue = move.deAcceleration;
+        //GetChildProperty(axisProperty, "sensitivity").floatValue = move.acceleration;
 
         serializedObject.ApplyModifiedProperties();
     }

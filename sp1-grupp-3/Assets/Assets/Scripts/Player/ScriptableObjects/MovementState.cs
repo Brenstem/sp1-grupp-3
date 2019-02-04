@@ -10,6 +10,8 @@ public class MovementState : ScriptableObject
     public float acceleration;
     public float speed;
     public float maxSpeed;
+    [Space]
+    public float grabMoveAcceleration;
 
     [Space]
     [Header("Jump")]

@@ -10,6 +10,8 @@ public class MovementSettings
     public float deAcceleration;
     public float acceleration;
 
-    public float startSpeed;
+    public float speed;
     public float maxSpeed;
+
+    public float grabMoveAcceleration;
 }
