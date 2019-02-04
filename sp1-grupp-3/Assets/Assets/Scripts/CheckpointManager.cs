@@ -8,8 +8,8 @@ public class CheckpointManager : MonoBehaviour
         get { return checkPoints; }
     }
 
-    public Checkpoint currentCheckPoint { get { return checkPoints ? checkPoints[currentIndex] : null; } }
-    public static CheckpointManager Instance { get { return Instance; } }
+    public Checkpoint currentCheckPoint => checkPoints == null ? checkPoints[currentIndex] : null;
+    public static CheckpointManager Instance => instance;
 
     List<Checkpoint> checkPoints = new List<Checkpoint>();
     int currentIndex = 0;
@@ -22,7 +22,8 @@ public class CheckpointManager : MonoBehaviour
         //Hitta alla Checkpoint-Childs i gameobject (CheckpointManager)
         for (int i = 0; i < transform.childCount; i++) {
             Checkpoint checkpoint = transform.GetChild(i).GetComponent<Checkpoint>();
-            checkpoint.onTrigger += CheckpointTrigger;
+            checkpoint.OnTrigger += CheckpointTrigger;
+            checkPoints.Add(checkpoint);
         }
     }
 

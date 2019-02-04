@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RespawnController : MonoBehaviour
-{
+public class RespawnController : MonoBehaviour {
 
     public Checkpoint respawnCheckPoint = null;
 
@@ -12,14 +11,12 @@ public class RespawnController : MonoBehaviour
 
     Vector2 initialPos;
 
-    void Awake()
-    {
+	void Awake () {
         initialPos = transform.position;
-        if (onRespawn != null)
-            respawnCheckPoint.onRespawn += OnRespawn;
-    }
-
-    public void OnRespawn()
+        respawnCheckPoint.onRespawn += OnRespawn;
+	}
+	
+	public void OnRespawn()
     {
         transform.position = initialPos;
         onRespawn();

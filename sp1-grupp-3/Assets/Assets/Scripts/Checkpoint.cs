@@ -2,18 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Checkpoint : MonoBehaviour {
-
     public bool trigger;
-    //internal Action onRespawn;
+    public event Action<Checkpoint> OnTrigger;
+    public event Action<Checkpoint> OnRespawn;
+
 
     void Awake () {
         trigger = false;
 	}
 	
-	void Update () {
-		
+	void  Update() {
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +22,8 @@ public class Checkpoint : MonoBehaviour {
         //trigga en gång (ta bort för quicksave?)
         if (!trigger) {
             //Kolla så att vi endast kolliderar med spelaren. Layer = Checkpoint och Physics
-            if (GetComponent<Collider>().gameObject.layer == LayerMask.NameToLayer("Player")) ;
+            if (GetComponent<Collider>().gameObject.layer == LayerMask.NameToLayer("Player"))
+                ;
         }
     }
 
@@ -37,7 +39,7 @@ public class Checkpoint : MonoBehaviour {
 
     void OnCharactedDeath()
     {
-        //if (CheckpointManager.Instance.CurrentCheckpoint == this)
-        //    onRespawn.Invoke();
+        if (CheckpointManager.Instance.currentCheckPoint == this)
+            OnRespawn.Invoke(this);
     }
 }
