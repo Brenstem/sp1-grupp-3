@@ -8,14 +8,12 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     public float jumpSpeed;
-
-    // Use this for initialization
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
+    
     private void Update()
     {
         var vel = rb.velocity;
@@ -27,6 +25,5 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = vel;
         
-
     }
 }

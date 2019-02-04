@@ -16,8 +16,7 @@ public class MoveToCheckpoint : MonoBehaviour {
     MoveToTrigger MoveTrigger;
 
     public Transform checkpoint;
-
-	// Use this for initialization
+    
 	void Start () {
         MoveTrigger.OnMove += Move;
 	}
@@ -26,5 +25,4 @@ public class MoveToCheckpoint : MonoBehaviour {
     {
         transform.position = checkpoint.position;
     }
-
 }

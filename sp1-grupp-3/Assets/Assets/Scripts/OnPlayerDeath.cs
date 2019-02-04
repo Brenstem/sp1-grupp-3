@@ -7,8 +7,7 @@ public class OnPlayerDeath : MoveToTrigger {
 
     [SerializeField]
     Death playerDeath;
-
-    // Use this for initialization
+    
     void Start () {
         playerDeath.OnMove += PlayerDied;
 	}
@@ -17,6 +16,4 @@ public class OnPlayerDeath : MoveToTrigger {
     {
         TriggerMove(obj);
     }
-
-
 }

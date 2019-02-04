@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class Death : MoveToTrigger
 {
-
     [SerializeField]
-    float MinYHeight;
+    string objTag;
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.transform.CompareTag(objTag))
+            return;
 
-    // Update is called once per frame
-    void LateUpdate () {
-        if (transform.position.y < MinYHeight)
-            TriggerMove(gameObject);
-	}
+        TriggerMove(gameObject);
+    }
 }

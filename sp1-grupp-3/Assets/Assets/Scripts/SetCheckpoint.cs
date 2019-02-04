@@ -24,9 +24,4 @@ public class SetCheckpoint : MonoBehaviour {
         respawn.checkpoint = transform;
 
     }
-
-
-
-
-
 }
