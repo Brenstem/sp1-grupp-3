@@ -7,18 +7,34 @@ using UnityEngine.SceneManagement;
 public class MenuActions : MonoBehaviour {
 
     [SerializeField] bool selectOnInput;
-    [SerializeField] EventSystem canvasEventSystem;
     [SerializeField] GameObject selectOnStart;
 
+    private EventSystem canvasEventSystem;
     private bool buttonSelected = false;
+    private GetEnum myEnum;
+
+    [FMODUnity.EventRef]
+    public string onSelectSound;
+    FMOD.Studio.EventInstance onSelect;
+
+    [FMODUnity.EventRef]
+    public string onStartSound;
+    FMOD.Studio.EventInstance onStart;
+
+    private void Start()
+    {
+        canvasEventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+    }
 
     // checks for player movement and selects menu buttons according to movement
     private void Update()
     {
+        Debug.Log(buttonSelected);
         if (selectOnInput)
         {
             if (Input.GetAxis("Vertical") != 0 && !buttonSelected)
             {
+                Debug.Log("meme");
                 canvasEventSystem.SetSelectedGameObject(selectOnStart);
                 buttonSelected = true;
             }
@@ -51,5 +67,25 @@ public class MenuActions : MonoBehaviour {
     public void LoadSceneByIndex(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void PlaySound(GetEnum sound)
+    {
+        switch (sound.state)
+        {
+            case sounds.Play:
+                onSelect = FMODUnity.RuntimeManager.CreateInstance(onStartSound);
+                break;
+            case sounds.Exit:
+                break;
+            case sounds.Select:
+                onSelect = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
+                break;
+            default:
+                break;
+        }
+
+        onSelect.start();
+        onSelect.release();
     }
 }
