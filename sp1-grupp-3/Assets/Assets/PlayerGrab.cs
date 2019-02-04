@@ -6,15 +6,14 @@ public class PlayerGrab : MonoBehaviour
 {
     [SerializeField]
     Transform pointPosition;
-    //public Vector2 PointPosition { get { return pointPosition; } }
-    public Vector2 boxcastSize;
+
     [SerializeField]
     float offset;
+
     [SerializeField]
     float distance;
-    public Vector2 boxcastOffset;
-    //public LayerMask collideWithLayer;
 
+    public Vector2 boxcastOffset;
     public bool grabbed;
 
     GameObject objCurrGrabbed;
@@ -28,14 +27,7 @@ public class PlayerGrab : MonoBehaviour
 
     void Update()
     {
-        //pointPosition = new Vector2(transform.position.x, transform.position.y + offset);
         GrabCheck();
-    }
-
-    private void OnDrawGizmos()
-    {
-        //Gizmos.DrawWireSphere(pointPosition, 0.5f);
-        //Gizmos.DrawWireCube((Vector2)transform.position + boxcastOffset, boxcastSize);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -46,23 +38,12 @@ public class PlayerGrab : MonoBehaviour
 
     void GrabCheck()
     {
-        //float inputX = Input.GetAxisRaw("Horizontal");
-
-        //RaycastHit2D detectGrab = Physics2D.BoxCast((Vector2)transform.position + boxcastOffset, boxcastSize, 0, Vector2.zero, 0, collideWithLayer);
-
-        //if (!detectGrab && grabbed == true) {
-        //    grabbed = false;
-        //    return;
-        //}
-
-        if (!grabbed /*&& detectGrab*/ && Input.GetButtonDown("Grab")) {
+        if (!grabbed && Input.GetButtonDown("Grab")) {
 
             grabbed = true;
             Grab();
-            //Grab(detectGrab.transform.gameObject);
         }
         else if (grabbed && Input.GetButtonDown("Grab")) {
-
             grabbed = false;
             Drop();
         }
@@ -77,14 +58,12 @@ public class PlayerGrab : MonoBehaviour
         }
     }
 
-    void Grab(/*GameObject obj*/)
+    void Grab()
     {
         if (collidingObj != null) {
             objCurrGrabbed = collidingObj;
-            //objCurrGrabbed.GetComponent<Rigidbody2D>().isKinematic = true;
-            //objCurrGrabbed.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            objCurrGrabbed.GetComponent<Rigidbody2D>().freezeRotation = true;
             Vector2 position = Vector2.MoveTowards(objCurrGrabbed.transform.position, pointPosition.position, distance);
-            //objCurrGrabbed.transform.position = Vector2.MoveTowards(objCurrGrabbed.transform.position, pointPosition.position, distance * distanceSpeed);
             objCurrGrabbed.GetComponent<Rigidbody2D>().MovePosition(position);
         }
     }
@@ -92,9 +71,8 @@ public class PlayerGrab : MonoBehaviour
     void Drop()
     {
         if (collidingObj != null) {
-            //objCurrGrabbed.GetComponent<Rigidbody2D>().isKinematic = false;
-            //objCurrGrabbed.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             objCurrGrabbed.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 2f);
+            objCurrGrabbed.GetComponent<Rigidbody2D>().freezeRotation = false;
             objCurrGrabbed = null;
         }
     }
