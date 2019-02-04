@@ -12,8 +12,6 @@ public class PlayerGrab : MonoBehaviour
     float offset;
     [SerializeField]
     float distance;
-    [SerializeField]
-    float distanceSpeed;
     public Vector2 boxcastOffset;
     //public LayerMask collideWithLayer;
 
@@ -85,10 +83,9 @@ public class PlayerGrab : MonoBehaviour
             objCurrGrabbed = collidingObj;
             //objCurrGrabbed.GetComponent<Rigidbody2D>().isKinematic = true;
             //objCurrGrabbed.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            Vector2 position = Vector2.MoveTowards(objCurrGrabbed.transform.position, pointPosition.position, distance * distanceSpeed);
+            Vector2 position = Vector2.MoveTowards(objCurrGrabbed.transform.position, pointPosition.position, distance);
             //objCurrGrabbed.transform.position = Vector2.MoveTowards(objCurrGrabbed.transform.position, pointPosition.position, distance * distanceSpeed);
             objCurrGrabbed.GetComponent<Rigidbody2D>().MovePosition(position);
-            objCurrGrabbed.GetComponent<Rigidbody2D>().MoveRotation(0f);
         }
     }
 
@@ -97,7 +94,7 @@ public class PlayerGrab : MonoBehaviour
         if (collidingObj != null) {
             //objCurrGrabbed.GetComponent<Rigidbody2D>().isKinematic = false;
             //objCurrGrabbed.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            objCurrGrabbed.transform.SetParent(null);
+            objCurrGrabbed.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 2f);
             objCurrGrabbed = null;
         }
     }
