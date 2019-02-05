@@ -11,24 +11,23 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   EditorBanks:
   - {fileID: 114162856428978080}
-  - {fileID: 114748188131599584}
-  - {fileID: 114092324323701432}
-  - {fileID: 114876148076791362}
-  - {fileID: 114212920711468188}
+  - {fileID: 114948976456357562}
+  - {fileID: 114546094740831936}
+  - {fileID: 114257381626313000}
+  - {fileID: 114369217583940128}
   EditorEvents:
   - {fileID: 114411142231186510}
   - {fileID: 114617646708115756}
   MasterBanks:
   - {fileID: 114566390083756052}
   - {fileID: 114767205696045450}
-  - {fileID: 114775591625557554}
-  - {fileID: 114748188131599584}
+  - {fileID: 114948976456357562}
   StringsBanks:
   - {fileID: 114162856428978080}
-  stringsBankWriteTime: 636849658739588841
+  stringsBankWriteTime: 636846138749961796
   cacheVersion: 3
 --- !u!114 &114089139079541206
 MonoBehaviour:
@@ -40,14 +39,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\Brenstem\Documents\SpaceInvaders\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master
     Bank.assets.bank
   lastModified: 636846138289098086
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 450
   Exists: 1
 --- !u!114 &114092324323701432
@@ -60,13 +59,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\WolfC\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\UI.assets.bank
   lastModified: 636849658739608770
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 12576
   Exists: 1
 --- !u!114 &114112675081945358
@@ -79,13 +78,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\asus_02\Downloads\3 dsu\_spelprojekt I\github\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.assets.bank
   lastModified: 636845364717230377
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 70464
   Exists: 0
 --- !u!114 &114162856428978080
@@ -98,13 +97,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: FMODAssets\Desktop\Master Bank.strings.bank
-  lastModified: 636849658739588841
+  lastModified: 636846138749961796
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 914
   Exists: 1
 --- !u!114 &114212920711468188
@@ -117,14 +116,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\WolfC\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\UI.bank
   lastModified: 636849658739628733
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 2156
+  Exists: 1
+--- !u!114 &114257381626313000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  Path: C:\Users\Christoffer\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master
+    Bank.assets.bank
+  lastModified: 636846138749941807
+  LoadResult: 0
+  FileSizes:
+  - Name:
+    Value: 450
   Exists: 1
 --- !u!114 &114287963459013812
 MonoBehaviour:
@@ -136,13 +154,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: FMODAssets\Desktop\Master Bank.strings.bank
   lastModified: 636845364716919583
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 860
   Exists: 1
 --- !u!114 &114323236735882752
@@ -155,13 +173,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\Brenstem\Documents\SpaceInvaders\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.assets.bank
   lastModified: 636846138289137979
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 70464
   Exists: 1
 --- !u!114 &114324587727561218
@@ -174,13 +192,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: P:\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.assets.bank
   lastModified: 636845440849268080
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
+    Value: 70464
+  Exists: 0
+--- !u!114 &114369217583940128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  Path: C:\Users\Christoffer\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.assets.bank
+  lastModified: 636846138749981790
+  LoadResult: 0
+  FileSizes:
+  - Name:
     Value: 70464
   Exists: 1
 --- !u!114 &114399546552024620
@@ -193,14 +229,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\asus_02\Downloads\3 dsu\_spelprojekt I\github\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master
     Bank.bank
   lastModified: 636845364716829832
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 12474
   Exists: 1
 --- !u!114 &114411142231186510
@@ -213,8 +249,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: event:/MenuUI/Select
   guid: 05c86f69c1dc784fade44b87b069de1b
   Banks:
@@ -236,14 +272,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: P:\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master Bank.assets.bank
   lastModified: 636845440848899950
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 450
+  Exists: 0
+--- !u!114 &114546094740831936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  Path: C:\Users\Christoffer\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.bank
+  lastModified: 636846138749981790
+  LoadResult: 0
+  FileSizes:
+  - Name:
+    Value: 1340
   Exists: 1
 --- !u!114 &114456019607955914
 MonoBehaviour:
@@ -255,13 +309,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\Brenstem\Documents\SpaceInvaders\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\UI.bank
   lastModified: 636848872559517200
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 2156
   Exists: 1
 --- !u!114 &114552388971864126
@@ -274,13 +328,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\asus_02\Downloads\3 dsu\_spelprojekt I\github\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.assets.bank
   lastModified: 636845364717230377
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 70464
   Exists: 1
 --- !u!114 &114566390083756052
@@ -293,14 +347,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\asus_02\Downloads\3 dsu\_spelprojekt I\github\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master
     Bank.bank
   lastModified: 636845364716829832
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 12474
   Exists: 0
 --- !u!114 &114595853614709908
@@ -313,38 +367,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: P:\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.bank
   lastModified: 636845440849407780
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 1340
-  Exists: 1
---- !u!114 &114617646708115756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/MenuUI/Scroll
-  guid: 1299cae00cc54049b0e7e624f89579c7
-  Banks:
-  - {fileID: 114212920711468188}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 300
+  Exists: 0
 --- !u!114 &114729861571831890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,14 +386,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\asus_02\Downloads\3 dsu\_spelprojekt I\github\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master
     Bank.assets.bank
   lastModified: 636845364716879688
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 450
   Exists: 1
 --- !u!114 &114748188131599584
@@ -375,14 +406,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\WolfC\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master
     Bank.bank
   lastModified: 636846238940814577
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 12474
   Exists: 1
 --- !u!114 &114767205696045450
@@ -395,33 +426,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: P:\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master Bank.bank
   lastModified: 636845440849017770
   LoadResult: 0
   FileSizes:
-  - Name: 
-    Value: 12474
-  Exists: 0
---- !u!114 &114775591625557554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\Brenstem\Documents\SpaceInvaders\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master
-    Bank.bank
-  lastModified: 636846138289108059
-  LoadResult: 0
-  FileSizes:
-  - Name: 
+  - Name:
     Value: 12474
   Exists: 0
 --- !u!114 &114854812202198218
@@ -434,13 +445,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\asus_02\Downloads\3 dsu\_spelprojekt I\github\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.bank
   lastModified: 636845364716979430
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 1340
   Exists: 0
 --- !u!114 &114856866805694306
@@ -453,13 +464,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\Brenstem\Documents\SpaceInvaders\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.bank
   lastModified: 636846138289147965
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 1340
   Exists: 1
 --- !u!114 &114876148076791362
@@ -472,14 +483,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\WolfC\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master
     Bank.assets.bank
   lastModified: 636846238940804662
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 450
   Exists: 1
 --- !u!114 &114895356094659328
@@ -492,13 +503,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\Brenstem\Documents\SpaceInvaders\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\UI.assets.bank
   lastModified: 636848872559507222
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 12576
   Exists: 1
 --- !u!114 &114911295893531502
@@ -511,14 +522,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\asus_02\Downloads\3 dsu\_spelprojekt I\github\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master
     Bank.assets.bank
   lastModified: 636845364716879688
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 450
   Exists: 0
 --- !u!114 &114948235214562312
@@ -531,8 +542,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: event:/test
   guid: 9170b3734a5d494490658731038b6cfd
   Banks:
@@ -544,6 +555,25 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 4768
+--- !u!114 &114948976456357562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  Path: C:\Users\Christoffer\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master
+    Bank.bank
+  lastModified: 636846138749951803
+  LoadResult: 0
+  FileSizes:
+  - Name:
+    Value: 12474
+  Exists: 1
 --- !u!114 &114982716911596296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,13 +584,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: C:\Users\asus_02\Downloads\3 dsu\_spelprojekt I\github\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.bank
   lastModified: 636845364716979430
   LoadResult: 0
   FileSizes:
-  - Name: 
+  - Name:
     Value: 1340
   Exists: 1
 --- !u!114 &114999501054668234
@@ -573,12 +603,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   Path: event:/test
   guid: 9170b3734a5d494490658731038b6cfd
   Banks:
-  - {fileID: 114856866805694306}
+  - {fileID: 114546094740831936}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
