@@ -29,7 +29,7 @@ public class PlayerJump : MonoBehaviour
         gCheck = GetComponent<GroundCheck>();
     }
 
-    void UpdateMovementState(MovementState move)
+    public void UpdateMovementState(MovementState move)
     {
         jumpStrength = move.jumpStrength;
         maxJumpHeight = move.maxJumpHeight;

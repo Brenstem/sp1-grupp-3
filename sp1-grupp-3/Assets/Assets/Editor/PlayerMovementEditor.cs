@@ -21,12 +21,30 @@ public class PlayerMovementEditor : Editor
         DrawDefaultInspector();
 
         PlayerMovement playerM = (PlayerMovement)target;
+        PlayerJump playerJ = playerM.GetComponent<PlayerJump>();
         MovementSettings = playerM.GetComponent<PlayerMovement>().movementSettings;
 
-        if (AxisDefined(MovementSettings.name) == true)
+        if(playerM.movementState == null)
         {
-            //GetAxis(MovementSettings);
+            playerM.UpdateMovementState(playerM.defaultMovementState);
         }
+        else if (playerM.movementState != null)
+        {
+            playerM.UpdateMovementState(playerM.movementState);
+        }
+
+        if (playerJ.movementState == null)
+        {
+            playerJ.UpdateMovementState(playerJ.defaultMovementState);
+        }
+        else if (playerJ.movementState != null)
+        {
+            playerJ.UpdateMovementState(playerJ.movementState);
+        }
+        //if (AxisDefined(MovementSettings.name) == true)
+        //{
+        //    //GetAxis(MovementSettings);
+        //}
 
         serializedObject.ApplyModifiedProperties();
     }
@@ -104,7 +122,7 @@ public class PlayerMovementEditor : Editor
     }
     private static void GetAxis(MovementSettings move)
     {
-        if (AxisDefined(move.name) == false) return;
+        //if (AxisDefined(move.name) == false) return;
 
         SerializedObject serializedObject = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/InputManager.asset")[0]);
         SerializedProperty axesProperty = serializedObject.FindProperty("m_Axes");
@@ -114,7 +132,7 @@ public class PlayerMovementEditor : Editor
 
         SerializedProperty axisProperty = axesProperty.GetArrayElementAtIndex(0);
 
-        GetChildProperty(axisProperty, "m_Name").stringValue = move.name;
+        //GetChildProperty(axisProperty, "m_Name").stringValue = move.name;
         GetChildProperty(axisProperty, "gravity").floatValue = move.deAcceleration;
         GetChildProperty(axisProperty, "sensitivity").floatValue = move.acceleration;
 
