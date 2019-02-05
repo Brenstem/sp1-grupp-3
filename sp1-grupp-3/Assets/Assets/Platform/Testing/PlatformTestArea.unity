@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 1786336678}
   speed: 5
+  reversePath: 0
 --- !u!23 &581930148
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -299,6 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 1786336678}
   speed: 5
+  reversePath: 0
 --- !u!61 &807668559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -436,29 +438,25 @@ MonoBehaviour:
     _bezierPath:
       points:
       - {x: -2.29, y: -0.0030782633, z: 0}
-      - {x: -1.1340679, y: 0.5543691, z: 0}
-      - {x: 0.23000002, y: -0.52214444, z: 0}
-      - {x: 1.76, y: -0.0030782633, z: 0}
-      - {x: 3.0458124, y: 0.43314508, z: 0}
-      - {x: 3.29, y: -0.7052139, z: 0}
-      - {x: 4.03, y: -1.8718575, z: 0}
-      - {x: 4.8389993, y: -3.1472807, z: 0}
-      - {x: 3.1645746, y: -3.018932, z: 0}
-      - {x: 1.44, y: -2.7722888, z: 0}
+      - {x: -0.02996284, y: 1.830573, z: 0}
+      - {x: -2.29, y: -0.003078263, z: 0}
+      - {x: -0.029962838, y: 1.8305728, z: 0}
+      - {x: 3.737497, y: 1.95158, z: 0}
+      - {x: -0.02996284, y: 1.830573, z: 0}
+      - {x: 3.7374973, y: 1.9515804, z: 0}
       isClosed: 0
       localPosition: {x: 0, y: 0, z: 0}
       space: 1
-      controlMode: 0
+      controlMode: 2
       autoControlLength: 0.3
       boundsUpToDate: 1
-      pivot: {x: 0.974838, y: -1.3853668, z: 0}
+      pivot: {x: 0.7237487, y: 0.9742511, z: 0}
       bounds:
-        m_Center: {x: 0.974838, y: -1.3853668, z: 0}
-        m_Extent: {x: 3.264838, y: 1.5473627, z: 0}
+        m_Center: {x: 0.7237487, y: 0.9742511, z: 0}
+        m_Extent: {x: 3.0137486, y: 0.9773293, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       perAnchorNormalsAngle:
-      - 0
       - 0
       - 0
       - 0
@@ -531,6 +529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 1786336678}
   speed: 5
+  reversePath: 0
 --- !u!61 &2069195212
 BoxCollider2D:
   m_ObjectHideFlags: 0
