@@ -6,13 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuActions : MonoBehaviour {
 
-    [SerializeField] bool selectOnInput;
     [SerializeField] GameObject selectOnStart;
 
     private EventSystem canvasEventSystem;
     private bool buttonSelected = false;
-    private GetEnum myEnum;
-
+    
     [FMODUnity.EventRef]
     public string onSelectSound;
     FMOD.Studio.EventInstance onSelect;
@@ -26,19 +24,28 @@ public class MenuActions : MonoBehaviour {
         canvasEventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
     }
 
-    // checks for player movement and selects menu buttons according to movement
+    // checks for keyboard/gamepad input and selects menu buttons according to movement
     private void Update()
     {
-        Debug.Log(buttonSelected);
-        if (selectOnInput)
+
+        if (Input.GetAxis("Vertical") != 0 && !buttonSelected)
         {
-            if (Input.GetAxis("Vertical") != 0 && !buttonSelected)
-            {
-                Debug.Log("meme");
-                canvasEventSystem.SetSelectedGameObject(selectOnStart);
-                buttonSelected = true;
-            }
+            canvasEventSystem.SetSelectedGameObject(selectOnStart);
+            buttonSelected = true;
         }
+
+        if (canvasEventSystem.IsPointerOverGameObject())
+        {
+            buttonSelected = false;
+            canvasEventSystem.SetSelectedGameObject(null);
+        }
+
+        if (this.gameObject == canvasEventSystem.currentSelectedGameObject)
+        {
+            PlaySound(sounds.Select);
+        }
+        Debug.Log(canvasEventSystem.currentSelectedGameObject);
+
     }
 
     private void OnDisable()
@@ -72,6 +79,26 @@ public class MenuActions : MonoBehaviour {
     public void PlaySound(GetEnum sound)
     {
         switch (sound.state)
+        {
+            case sounds.Play:
+                onSelect = FMODUnity.RuntimeManager.CreateInstance(onStartSound);
+                break;
+            case sounds.Exit:
+                break;
+            case sounds.Select:
+                onSelect = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
+                break;
+            default:
+                break;
+        }
+
+        onSelect.start();
+        onSelect.release();
+    }
+
+    public void PlaySound(sounds sound)
+    {
+        switch (sound)
         {
             case sounds.Play:
                 onSelect = FMODUnity.RuntimeManager.CreateInstance(onStartSound);
