@@ -435,26 +435,26 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -2.04, y: 1.8722384, z: 0}
-      - {x: -0.43, y: 2.0517411, z: 0}
-      - {x: 1.73, y: 1.2189832, z: 0}
-      - {x: 2.93, y: 1.341741, z: 0}
-      - {x: 3.9970324, y: 1.4508964, z: 0}
-      - {x: 4.467302, y: 1.0167753, z: 0}
-      - {x: 4.937326, y: 0.5850817, z: 0}
-      - {x: 5.4572735, y: 0.10753608, z: 0}
-      - {x: 4.9612026, y: -0.039493248, z: 0}
-      - {x: 4.11, y: -0.1865226, z: 0}
+      - {x: -2.29, y: -0.0030782633, z: 0}
+      - {x: -1.1340679, y: 0.5543691, z: 0}
+      - {x: 0.23000002, y: -0.52214444, z: 0}
+      - {x: 1.76, y: -0.0030782633, z: 0}
+      - {x: 3.0458124, y: 0.43314508, z: 0}
+      - {x: 3.29, y: -0.7052139, z: 0}
+      - {x: 4.03, y: -1.8718575, z: 0}
+      - {x: 4.8389993, y: -3.1472807, z: 0}
+      - {x: 3.1645746, y: -3.018932, z: 0}
+      - {x: 1.44, y: -2.7722888, z: 0}
       isClosed: 0
-      localPosition: {x: 0, y: -0.17174101, z: 0}
+      localPosition: {x: 0, y: 0, z: 0}
       space: 1
       controlMode: 0
       autoControlLength: 0.3
       boundsUpToDate: 1
-      pivot: {x: 1.5548146, y: 0.6875937, z: 0}
+      pivot: {x: 0.65678024, y: -1.3853669, z: 0}
       bounds:
-        m_Center: {x: 1.5548146, y: 0.68384725, z: 0}
-        m_Extent: {x: 3.5948145, y: 1.0421109, z: 0}
+        m_Center: {x: 0.974838, y: -1.3853668, z: 0}
+        m_Extent: {x: 3.264838, y: 1.5473627, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       perAnchorNormalsAngle:
@@ -463,7 +463,7 @@ MonoBehaviour:
       - 0
       - 0
       globalNormalsAngle: 0
-      flipNormals: 1
+      flipNormals: 0
     vertexPathUpToDate: 0
     vertexPathMaxAngleError: 0
     vertexPathMinVertexSpacing: 0
@@ -482,7 +482,7 @@ MonoBehaviour:
     showVertexPathDisplayOptions: 1
     showVertexPathOptions: 1
     showAnchorPointData: 1
-    showNormals: 1
+    showNormals: 0
     showNormalsHelpInfo: 0
     tabIndex: 0
   initialized: 1

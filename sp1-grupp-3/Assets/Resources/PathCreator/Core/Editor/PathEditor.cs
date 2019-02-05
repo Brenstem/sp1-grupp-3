@@ -155,56 +155,82 @@ namespace PathCreationEditor
                     GUILayout.Space(inspectorSectionSpacing);
                 }
 
+                #region Edited
+                // Code edited and diffirentiates from documentation
 
                 data.showAnchorPointData = EditorGUILayout.Foldout(data.showAnchorPointData, new GUIContent("Anchor Data"), true, boldFoldoutStyle);
                 if (data.showAnchorPointData) {
 
-                    EditorGUILayout.LabelField(new GUIContent("Anchor Data 0"), boldLabelStyle);
-                    Vector3 pos = EditorGUILayout.Vector3Field(new GUIContent("Anchor Position "), bezierPath[0]);
-                    bezierPath.MovePoint(0, pos, true);
-                    pos = EditorGUILayout.Vector3Field(new GUIContent("Control Point 1"), bezierPath[1]);
-                    bezierPath.MovePoint(1, pos, true);
+                    for (int i = 0; i < bezierPath.NumPoints; i++) {
+                        int anchorDataVariableAmount = 3;
+                        int anchorMod = i % anchorDataVariableAmount;
+                        int currentAnchor = i / anchorDataVariableAmount;
 
+                        //Vector3 pos = EditorGUILayout.Vector3Field(new GUIContent("Position " + i), bezierPath[i]);
+                        //bezierPath.MovePoint(i, pos, true);
 
-                    for (int i = 3; i < bezierPath.NumPoints; i++) {
-                        int anchorDataVariables = 3;
-                        int anchorMod = i % anchorDataVariables;
-                        int currentAnchor = i / anchorDataVariables;
-                        int lastAnchor = bezierPath.NumAnchorPoints;
+                        if (bezierPath.IsClosed) {
+                            if (i == bezierPath.NumPoints - 1) break;
 
-                        if (anchorMod == 0) {
-                            EditorGUILayout.LabelField(new GUIContent("Anchor Data " + currentAnchor), boldLabelStyle);
+                            if (i == 0) {
+                                EditorGUILayout.LabelField(new GUIContent("Anchor Data " + currentAnchor), boldLabelStyle);
 
-                            pos = EditorGUILayout.Vector3Field(new GUIContent("Anchor Position "), bezierPath[i]);
-                            bezierPath.MovePoint(i, pos, true);
-                        }
-                        else if (i == bezierPath.NumPoints - 1) {
-                            EditorGUILayout.LabelField(new GUIContent("Anchor Data " + currentAnchor), boldLabelStyle);
-
-                            pos = EditorGUILayout.Vector3Field(new GUIContent("Anchor Position "), bezierPath[i]);
-                            bezierPath.MovePoint(i, pos, true);
-
-                            pos = EditorGUILayout.Vector3Field(new GUIContent("Control Point 1"), bezierPath[2]);
-                            bezierPath.MovePoint(2, pos, true);
-                        }
-                        else {
-                            
-                            
-                                pos = EditorGUILayout.Vector3Field(new GUIContent("Control Point " + anchorMod), bezierPath[i]);
+                                Vector2 pos = EditorGUILayout.Vector2Field(new GUIContent("Anchor Position "), bezierPath[i]);
                                 bezierPath.MovePoint(i, pos, true);
+
+                                pos = EditorGUILayout.Vector2Field(new GUIContent("Control Point"), bezierPath[bezierPath.NumPoints - 1]);
+                                bezierPath.MovePoint(bezierPath.NumPoints - 1, pos, true);
+                            }
                             
-                       
+                            else if (anchorMod == 2) {
+                                i++;
+                                currentAnchor++;
+                                EditorGUILayout.LabelField(new GUIContent("Anchor Data " + currentAnchor), boldLabelStyle);
+
+                                Vector2 pos = EditorGUILayout.Vector2Field(new GUIContent("Anchor Position"), bezierPath[i]);
+                                bezierPath.MovePoint(i, pos, true);
+
+                                pos = EditorGUILayout.Vector2Field(new GUIContent("Control Point"), bezierPath[i - 1]);
+                                bezierPath.MovePoint(i - 1, pos, true);
+                            }
+                            else {
+                                Vector2 pos = EditorGUILayout.Vector2Field(new GUIContent("Control Point"), bezierPath[i]);
+                                bezierPath.MovePoint(i, pos, true);
+                            }
                         }
 
+
+                        if (!bezierPath.IsClosed) {
+                            if (i == 0) {
+                                EditorGUILayout.LabelField(new GUIContent("Anchor Data " + currentAnchor), boldLabelStyle);
+
+                                Vector2 pos = EditorGUILayout.Vector2Field(new GUIContent("Anchor Position "), bezierPath[i]);
+                                bezierPath.MovePoint(i, pos, true);
+                            }
+                            else if (anchorMod == 2) {
+                                i++;
+                                currentAnchor++;
+                                EditorGUILayout.LabelField(new GUIContent("Anchor Data " + currentAnchor), boldLabelStyle);
+
+                                Vector2 pos = EditorGUILayout.Vector2Field(new GUIContent("Anchor Position"), bezierPath[i]);
+                                bezierPath.MovePoint(i, pos, true);
+
+                                pos = EditorGUILayout.Vector2Field(new GUIContent("Control Point"), bezierPath[i - 1]);
+                                bezierPath.MovePoint(i - 1, pos, true);
+                            }
+                            else {
+                                Vector2 pos = EditorGUILayout.Vector2Field(new GUIContent("Control Point"), bezierPath[i]);
+                                bezierPath.MovePoint(i, pos, true);
+                            }
+                        }
                     }
 
-                    pos = EditorGUILayout.Vector3Field(new GUIContent("Control Point 1"), bezierPath[1]);
-                    bezierPath.MovePoint(1, pos, true);
 
                     bezierPath.ResetNormalAngles();
                     GUILayout.Space(inspectorSectionSpacing);
                 }
 
+                #endregion
 
                 // Editor display options
                 data.showDisplayOptions = EditorGUILayout.Foldout(data.showDisplayOptions, new GUIContent("Display Options"), true, boldFoldoutStyle);
