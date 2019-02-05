@@ -58,7 +58,10 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master Bank
+  - Master Bank
+  - Master Bank
   Banks:
   - test
   - Master Bank.assets
   - test.assets
+  - Master Bank
