@@ -25,7 +25,7 @@ public class PlayerMovementEditor : Editor
 
         if (AxisDefined(MovementSettings.name) == true)
         {
-            GetAxis(MovementSettings);
+            //GetAxis(MovementSettings);
         }
 
         serializedObject.ApplyModifiedProperties();

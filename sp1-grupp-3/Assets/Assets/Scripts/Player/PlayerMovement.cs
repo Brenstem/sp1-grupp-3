@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     float inputAxis = 0;
     float velX = 0;
 
+
     void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -71,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
     void InputHorizontal()
     {
-        float horizontal = Input.GetAxis("Horizontal");
+        float horizontal = Input.GetAxisRaw("Horizontal");
         float ctrlHorizontal = Input.GetAxisRaw("CtrlHorizontal");
 
         //if (ctrlHorizontal == 0)
@@ -81,9 +82,29 @@ public class PlayerMovement : MonoBehaviour
         //}
         //else if (horizontal == 0)
         //{
-            
+
         //}
-        if (Mathf.Abs(ctrlHorizontal) > 0)
+        if(Mathf.Abs(horizontal) > 0)
+        {
+            //velX *= movementSettings.speed;
+            int direction = 0;
+            if (horizontal > 0)
+            {
+                direction = 1;
+            }
+            else if (horizontal < 0)
+            {
+                direction = -1;
+            }
+
+            velX = Mathf.MoveTowards(velX, movementSettings.speed * direction, movementSettings.acceleration * Time.deltaTime);
+        }
+        else
+        {
+            velX = Mathf.MoveTowards(velX, 0f, movementSettings.deAcceleration * Time.deltaTime);
+        }
+
+        if (Mathf.Abs(ctrlHorizontal) > 0 && Mathf.Abs(horizontal) <= 0)
         {
             int direction = 0;
             if (ctrlHorizontal > 0)
