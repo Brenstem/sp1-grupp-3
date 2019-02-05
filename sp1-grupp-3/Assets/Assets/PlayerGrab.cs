@@ -18,9 +18,13 @@ public class PlayerGrab : MonoBehaviour
 
     GameObject objCurrGrabbed;
     GameObject collidingObj;
+    DistanceJoint2D joint;
+    private Rigidbody2D connectedBody;
 
     void Start()
     {
+        joint = GetComponent<DistanceJoint2D>();
+        joint.enabled = false;
         grabbed = false;
         objCurrGrabbed = null;
     }
@@ -32,18 +36,18 @@ public class PlayerGrab : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Rigidbody2D>())
+        if (collision.gameObject.GetComponent<Rigidbody2D>()) {
             collidingObj = collision.gameObject;
+        }
     }
 
     void GrabCheck()
     {
         if (!grabbed && Input.GetButtonDown("Grab")) {
-
             grabbed = true;
-            Grab();
         }
         else if (grabbed && Input.GetButtonDown("Grab")) {
+
             grabbed = false;
             Drop();
         }
@@ -61,6 +65,9 @@ public class PlayerGrab : MonoBehaviour
     void Grab()
     {
         if (collidingObj != null) {
+            joint.enabled = true;
+            if (joint)
+                joint.connectedBody = connectedBody;
             objCurrGrabbed = collidingObj;
             objCurrGrabbed.GetComponent<Rigidbody2D>().freezeRotation = true;
             Vector2 position = Vector2.MoveTowards(objCurrGrabbed.transform.position, pointPosition.position, distance);
@@ -71,6 +78,8 @@ public class PlayerGrab : MonoBehaviour
     void Drop()
     {
         if (collidingObj != null) {
+            joint.enabled = false;
+            joint.connectedBody = null;
             objCurrGrabbed.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 2f);
             objCurrGrabbed.GetComponent<Rigidbody2D>().freezeRotation = false;
             objCurrGrabbed = null;
