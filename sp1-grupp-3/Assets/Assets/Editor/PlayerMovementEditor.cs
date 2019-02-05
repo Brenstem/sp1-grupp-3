@@ -24,23 +24,27 @@ public class PlayerMovementEditor : Editor
         PlayerJump playerJ = playerM.GetComponent<PlayerJump>();
         MovementSettings = playerM.GetComponent<PlayerMovement>().movementSettings;
 
-        if(playerM.movementState == null)
+        if(EditorApplication.isPlaying == false)
         {
-            playerM.UpdateMovementState(playerM.defaultMovementState);
-        }
-        else if (playerM.movementState != null)
-        {
-            playerM.UpdateMovementState(playerM.movementState);
-        }
+            if (playerM.newMovementState == null)
+            {
+                playerM.UpdateMovementState(playerM.defaultMovementState);
+            }
+            else if (playerM.newMovementState != null)
+            {
+                playerM.UpdateMovementState(playerM.newMovementState);
+            }
 
-        if (playerJ.movementState == null)
-        {
-            playerJ.UpdateMovementState(playerJ.defaultMovementState);
+            if (playerJ.newMovementState == null)
+            {
+                playerJ.UpdateMovementState(playerJ.defaultMovementState);
+            }
+            else if (playerJ.newMovementState != null)
+            {
+                playerJ.UpdateMovementState(playerJ.newMovementState);
+            }
         }
-        else if (playerJ.movementState != null)
-        {
-            playerJ.UpdateMovementState(playerJ.movementState);
-        }
+        
         //if (AxisDefined(MovementSettings.name) == true)
         //{
         //    //GetAxis(MovementSettings);

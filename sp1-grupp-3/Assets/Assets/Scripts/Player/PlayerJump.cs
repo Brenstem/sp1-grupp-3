@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
-    public MovementState movementState;
+    public MovementState newMovementState;
     public MovementState defaultMovementState;
 
+    [Space]
     [SerializeField]
     float jumpStrength;
     [SerializeField]
@@ -22,6 +23,7 @@ public class PlayerJump : MonoBehaviour
     Rigidbody2D rb;
 
     bool hasBeenGrounded = false;
+    public bool enableNewMovement = false;
 
     void Start()
     {
@@ -39,11 +41,11 @@ public class PlayerJump : MonoBehaviour
 
     void Update()
     {
-        if (movementState != null)
+        if (newMovementState != null && enableNewMovement == true)
         {
-            UpdateMovementState(movementState);
+            UpdateMovementState(newMovementState);
         }
-        else
+        else if(newMovementState == null || newMovementState != null && enableNewMovement == false)
         {
             UpdateMovementState(defaultMovementState);
         }

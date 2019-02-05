@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public MovementState movementState;
+    public MovementState newMovementState;
     public MovementState defaultMovementState;
+    [Space]
     [Header("MovementSettings Only For Show")]
     public MovementSettings movementSettings;
     Rigidbody2D rb;
     float velX = 0;
+    public bool enableNewMovement = false;
 
     void Start ()
     {
@@ -18,23 +20,24 @@ public class PlayerMovement : MonoBehaviour
     
 	void Update ()
     {
-        if(movementState != null)
+        if(newMovementState != null && enableNewMovement == true)
         {
-            UpdateMovementState(movementState);
+            UpdateMovementState(newMovementState);
         }
-        else
+        else if(newMovementState == null || newMovementState != null && enableNewMovement == false)
         {
             UpdateMovementState(defaultMovementState);
         }
+        
 
         InputHorizontal();
     }
 
     public void UpdateMovementState(MovementState move)
     {
-        movementSettings.deAcceleration = move.deAcceleration;
-        movementSettings.acceleration = move.acceleration;
         movementSettings.speed = move.speed;
+        movementSettings.acceleration = move.acceleration;
+        movementSettings.deAcceleration = move.deAcceleration;
         //movementSettings.maxSpeed = move.maxSpeed;
         //movementSettings.grabMoveAcceleration = move.grabMoveAcceleration;
     }
