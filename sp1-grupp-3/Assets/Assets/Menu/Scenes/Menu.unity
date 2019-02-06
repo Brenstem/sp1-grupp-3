@@ -123,7 +123,6 @@ GameObject:
   - component: {fileID: 186849718}
   - component: {fileID: 186849720}
   - component: {fileID: 186849719}
-  - component: {fileID: 186849721}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -196,25 +195,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186849717}
   m_CullTransparentMesh: 0
---- !u!95 &186849721
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 186849717}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &288552939
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,7 +802,7 @@ PrefabInstance:
     - target: {fileID: 114318783317883562, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114318783317883562, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
@@ -833,22 +813,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1496030529}
     - target: {fileID: 114318783317883562, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySound
+      value: PlayCredits
       objectReference: {fileID: 0}
     - target: {fileID: 114318783317883562, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: GetEnum, Assembly-CSharp
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 114318783317883562, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 1464988376}
+      objectReference: {fileID: 0}
     - target: {fileID: 114318783317883562, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -890,21 +870,6 @@ PrefabInstance:
       propertyPath: selectOnStart
       value: 
       objectReference: {fileID: 1357926661}
-    - target: {fileID: 7138765780158793924, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
-        type: 3}
-      propertyPath: startButtonTag
-      value: StartButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138765780158793924, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
-        type: 3}
-      propertyPath: eventSystemTag
-      value: CanvasEventSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 7138765780158793924, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
-        type: 3}
-      propertyPath: creditsTag
-      value: Credits
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a3445cb0a9f30408f2752bdcc1b0e0, type: 3}
 --- !u!224 &1464988375 stripped
@@ -913,18 +878,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1464988374}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1464988376 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114904065088523288, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1464988374}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7621f6c5ff37ef641af6846e09aeac98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1494154247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +979,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1496030529 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7138765780158793924, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1464988374}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02894919e7198e6419aefcbb7fc906dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1709715829
 GameObject:
   m_ObjectHideFlags: 0
