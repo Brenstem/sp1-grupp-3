@@ -123,8 +123,9 @@ GameObject:
   - component: {fileID: 186849718}
   - component: {fileID: 186849720}
   - component: {fileID: 186849719}
+  - component: {fileID: 186849721}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,16 +138,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186849717}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2953937}
+  m_LocalScale: {x: 0.3125, y: 0.3125, z: 0.3125}
   m_Children: []
-  m_Father: {fileID: 1494154251}
-  m_RootOrder: 3
+  m_Father: {fileID: 1904437636}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 162, y: -220.83}
+  m_AnchoredPosition: {x: 235.90134, y: -110.54462}
   m_SizeDelta: {x: 307.8, y: 702.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &186849719
@@ -182,10 +183,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Dante Lundell\nDane Nilsson\n\nDante Lundell\nMattias Alderblad\n\nRebecca
+  m_Text: "Dante Lundell\n\n\nDane Nilsson\n\nDante Lundell\nMattias Alderblad\n\nRebecca
     Forsberg\nSaga Sporrong\n\nAngelica L\xF6fgren\nIngrid Nymark\nCecilia Larsson
     Lyblad\nSteinar Johann Eyvind Koch\n\nMarcus Svedberg\r\nDane Nilsson\r\nChristos
-    Kalanidis\r\nChristoffer Thalin\n\n\r\nJesper Johansson\r\nChristopher Nyl\xE9n\r\nAlbin
+    Kalanidis\r\nChristoffer Thalin\n\r\nJesper Johansson\r\nChristopher Nyl\xE9n\r\nAlbin
     Ulemark Gromer\n\nDane Nilsson"
 --- !u!222 &186849720
 CanvasRenderer:
@@ -195,6 +196,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186849717}
   m_CullTransparentMesh: 0
+--- !u!95 &186849721
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186849717}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &288552939
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,7 +408,7 @@ GameObject:
   - component: {fileID: 662401428}
   - component: {fileID: 662401427}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Roles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,16 +421,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662401425}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2953937}
+  m_LocalScale: {x: 0.3125, y: 0.3125, z: 0.3125}
   m_Children: []
-  m_Father: {fileID: 1494154251}
-  m_RootOrder: 2
+  m_Father: {fileID: 1904437636}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -160.9, y: -220.8}
+  m_AnchoredPosition: {x: 134.99509, y: -109.60718}
   m_SizeDelta: {x: 310.1, y: 702.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &662401427
@@ -446,8 +466,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Project leads
+  m_Text: 'Project lead
 
+
+
+    Vice project lead
 
 
     Designers
@@ -471,7 +494,6 @@ MonoBehaviour:
 
 
     Sound Design
-
 
 
 
@@ -980,8 +1002,7 @@ RectTransform:
   m_Children:
   - {fileID: 1763957973}
   - {fileID: 605515352}
-  - {fileID: 662401426}
-  - {fileID: 186849718}
+  - {fileID: 1904437636}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1366,3 +1387,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763957972}
   m_CullTransparentMesh: 0
+--- !u!1 &1904437635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1904437636}
+  - component: {fileID: 1904437637}
+  m_Layer: 0
+  m_Name: Credits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1904437636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904437635}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -592.8843, y: -249.25719, z: -0.9452599}
+  m_LocalScale: {x: 3.2, y: 3.2, z: 3.2}
+  m_Children:
+  - {fileID: 662401426}
+  - {fileID: 186849718}
+  m_Father: {fileID: 1494154251}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1904437637
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904437635}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59b5cebb2639ddc4a8788b1af3274831, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
