@@ -8,6 +8,7 @@ TagManager:
   - Environment
   - StartButton
   - CanvasEventSystem
+  - Credits
   layers:
   - Default
   - TransparentFX

@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02894919e7198e6419aefcbb7fc906dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartButtonTag: StartButton
-  EventSystemTag: CanvasEventSystem
-  selectOnStart: {fileID: 1283430220271678}
+  startButtonTag: StartButton
+  eventSystemTag: CanvasEventSystem
+  creditsTag: Credits
   onSelectSound: 
   onStartSound: 
   onExitSound: 

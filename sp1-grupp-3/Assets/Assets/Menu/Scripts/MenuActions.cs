@@ -7,14 +7,18 @@ using UnityEngine.SceneManagement;
 public class MenuActions : MonoBehaviour, IPointerEnterHandler, ISelectHandler
 {
     // Serialized variables
-    [SerializeField] string StartButtonTag;
-    [SerializeField] string EventSystemTag;
+    [SerializeField] string startButtonTag;
+    [SerializeField] string eventSystemTag;
+    [SerializeField] string creditsTag;
 
     // Private variables
     private EventSystem canvasEventSystem;
     private bool buttonSelected = false;
     private bool keyDown = false;
-    public GameObject selectOnStart;
+    private GameObject selectOnStart;
+    private GameObject creditsHolder;
+    private Animation creditsAnim;
+    private float timer;
 
     // Sound references
     [FMODUnity.EventRef]
@@ -32,8 +36,10 @@ public class MenuActions : MonoBehaviour, IPointerEnterHandler, ISelectHandler
     // Reference fetching
     private void Start()
     {
-        canvasEventSystem = GameObject.FindGameObjectWithTag(EventSystemTag).GetComponent<EventSystem>();
-        selectOnStart = GameObject.FindGameObjectWithTag(StartButtonTag);
+        canvasEventSystem = GameObject.FindGameObjectWithTag(eventSystemTag).GetComponent<EventSystem>();
+        selectOnStart = GameObject.FindGameObjectWithTag(startButtonTag);
+        creditsHolder = GameObject.FindGameObjectWithTag("Credits");
+        creditsAnim = creditsHolder.GetComponentInChildren<Animation>();
     }
 
     // Checks for keyboard/gamepad input and switches to keyboard/gamepad control
@@ -130,5 +136,19 @@ public class MenuActions : MonoBehaviour, IPointerEnterHandler, ISelectHandler
 
         onSelect.start();
         onSelect.release();
+    }
+
+    // Credits playing
+    public void PlayCredits()
+    {
+        Debug.Log(creditsHolder);
+
+        timer += Time.deltaTime;
+        creditsHolder.SetActive(true);
+        if (timer >= creditsAnim.GetComponent<AnimationClip>().length)
+        {
+            Debug.Log("Animation ended");
+            //creditsHolder.SetActive(false);
+        }
     }
 }
