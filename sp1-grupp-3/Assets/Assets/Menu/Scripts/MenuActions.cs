@@ -7,13 +7,15 @@ using UnityEngine.SceneManagement;
 public class MenuActions : MonoBehaviour, IPointerEnterHandler, ISelectHandler
 {
     // Serialized variables
-    [SerializeField] GameObject selectOnStart;
+    [SerializeField] string StartButtonTag;
+    [SerializeField] string EventSystemTag;
 
     // Private variables
     private EventSystem canvasEventSystem;
     private bool buttonSelected = false;
     private bool keyDown = false;
-    
+    public GameObject selectOnStart;
+
     // Sound references
     [FMODUnity.EventRef]
     public string onSelectSound;
@@ -30,7 +32,8 @@ public class MenuActions : MonoBehaviour, IPointerEnterHandler, ISelectHandler
     // Reference fetching
     private void Start()
     {
-        canvasEventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        canvasEventSystem = GameObject.FindGameObjectWithTag(EventSystemTag).GetComponent<EventSystem>();
+        selectOnStart = GameObject.FindGameObjectWithTag(StartButtonTag);
     }
 
     // Checks for keyboard/gamepad input and switches to keyboard/gamepad control
