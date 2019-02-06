@@ -304,6 +304,11 @@ namespace PathCreation
             }
         }
 
+        //IEnumerator Wait()
+        //{
+        //    yield return new WaitForSeconds(1);
+        //}
+
         #endregion
 
     }

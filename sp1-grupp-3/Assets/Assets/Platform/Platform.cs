@@ -8,16 +8,29 @@ public class Platform : MonoBehaviour {
     public float speed = 5;
     public bool reversePath = false;
     public bool turnAlongPath = false;
+    public Vector2 velocity;
+
+    [SerializeField] private bool move = true;
+    private float distanceTravelled;
+    private Vector2 lastPosition;
+            
+    
+    // Debug
     public float totalDistance;
     public float distancePercentTotal;
     public float distancePercent;
 
-    private float distanceTravelled;
-    private bool move = true;
+    public GameObject testBlock;
 
     private void Start()
     {
-        
+        transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
+        Instantiate(testBlock, transform.position + (Vector3.up * 3), Quaternion.identity);
+    }
+
+    private void Update()
+    {
+        velocity = GetKinematicVelocity();
     }
 
     void FixedUpdate ()
@@ -29,16 +42,16 @@ public class Platform : MonoBehaviour {
     {
         if (move) {
             distanceTravelled += speed * Time.deltaTime;
-
-            //Wait();
-
-            transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Reverse);
-
-            //Quaternion rotationOffsetY = Quaternion.Euler(Vector3.up * 90); //Makes 2D sprites face camera
-            //transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled) * rotationOffsetY;
         }
+
+        //Wait();
+
+        transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Reverse);
+
+        //Quaternion rotationOffsetY = Quaternion.Euler(Vector3.up * 90); //Makes 2D sprites face camera
+        //transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled) * rotationOffsetY;
     }
-    
+
     private void Wait()
     {
         totalDistance = pathCreator.path.length;
@@ -49,4 +62,14 @@ public class Platform : MonoBehaviour {
             move = false;
         }
     }
+
+    private Vector2 GetKinematicVelocity()
+    {
+        Vector2 currentPosition = transform.position;
+        Vector2 velocityReturn = currentPosition - lastPosition;
+        lastPosition = currentPosition;
+
+        return velocityReturn;
+    }
+
 }
