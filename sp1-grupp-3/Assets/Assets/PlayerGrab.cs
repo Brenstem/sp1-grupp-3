@@ -36,11 +36,9 @@ public class PlayerGrab : MonoBehaviour
 
     void Update()
     {
-        if(grabbed == false){
-            float x = Input.GetAxisRaw("Horizontal");
-            if (x != 0) {
-                xValue = x;
-            }
+        float x = Input.GetAxisRaw("Horizontal");
+        if (x != 0) {
+            xValue = x;
         }
         GrabCheck();
     }
@@ -76,7 +74,6 @@ public class PlayerGrab : MonoBehaviour
                 grabbed = true;
                 colliding = false;
             }
-
         }
         else {
             if (grabbed && Input.GetButtonDown("Grab") && isRotating == false) {
@@ -99,10 +96,9 @@ public class PlayerGrab : MonoBehaviour
         // objCurrGrabbed = collidingObj;
         //Debug.Log(parent.transform.rotation.z);
 
-        if (Mathf.Abs(parent.transform.rotation.z) < (0.7f)) {
+        if (Mathf.Abs(parent.transform.rotation.z) < 0.7f) {
             isRotating = true;
-
-
+            
             angleZ = Mathf.MoveTowards(angleZ, 90f * xValue, 2f);
             parent.transform.rotation = Quaternion.Euler(0f, 0f, angleZ);
 
