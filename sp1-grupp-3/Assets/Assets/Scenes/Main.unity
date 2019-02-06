@@ -606,11 +606,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointPosition: {fileID: 747598293}
-  offset: 1.2
   distance: 0.2
   boxcastOffset: {x: 1.2, y: 0}
   grabbed: 0
   parent: {fileID: 264322913}
+  xValue: 0
+  yForce: 20
+  xForce: 20
 --- !u!232 &821976241
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -822,7 +824,7 @@ Transform:
   m_GameObject: {fileID: 1929501111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.69, z: 0}
-  m_LocalScale: {x: 10, y: 0.5, z: 1}
+  m_LocalScale: {x: 28, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
