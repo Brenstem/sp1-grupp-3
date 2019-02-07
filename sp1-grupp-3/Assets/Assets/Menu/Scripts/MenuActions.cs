@@ -4,20 +4,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class MenuActions : MonoBehaviour, IPointerEnterHandler, ISelectHandler
+public class MenuActions : MonoBehaviour
 {
     // Serialized variables
-    [SerializeField] string startButtonTag;
-    [SerializeField] string eventSystemTag;
-    [SerializeField] string creditsTag;
+    [SerializeField] GameObject creditsHolder;
 
     // Private variables
-    private EventSystem canvasEventSystem;
-    private bool buttonSelected = false;
-    private bool keyDown = false;
-    private GameObject selectOnStart;
-    private GameObject creditsHolder;
-    private Animation creditsAnim;
+    private Animator creditsAnim;
     private float timer;
 
     // Sound references
@@ -36,42 +29,8 @@ public class MenuActions : MonoBehaviour, IPointerEnterHandler, ISelectHandler
     // Reference fetching
     private void Start()
     {
-        canvasEventSystem = GameObject.FindGameObjectWithTag(eventSystemTag).GetComponent<EventSystem>();
-        selectOnStart = GameObject.FindGameObjectWithTag(startButtonTag);
-        creditsHolder = GameObject.FindGameObjectWithTag("Credits");
-        creditsAnim = creditsHolder.GetComponentInChildren<Animation>();
+        creditsAnim = creditsHolder.GetComponent<Animator>();
     }
-
-    // Checks for keyboard/gamepad input and switches to keyboard/gamepad control
-    private void Update()
-    {
-        if (Input.GetAxis("Vertical") != 0 && !buttonSelected)
-        {
-            canvasEventSystem.SetSelectedGameObject(selectOnStart);
-            buttonSelected = true;
-        }
-
-        // Switches back to mouse control if the player clicks
-        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            buttonSelected = false;
-        }
-    }
-
-    // Checks for mouse hovering over buttons
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        PlaySound(sounds.Select);
-        buttonSelected = false;
-        canvasEventSystem.SetSelectedGameObject(null);
-    }
-
-    // Checks for when new objects are selected with keyboard/gamepad input to play sound
-    public void OnSelect(BaseEventData eventData)
-    {
-        PlaySound(sounds.Select);
-    }
-
 
     // Quits game/stops playmode depending on build
     public void Quit()
@@ -141,11 +100,12 @@ public class MenuActions : MonoBehaviour, IPointerEnterHandler, ISelectHandler
     // Credits playing
     public void PlayCredits()
     {
-        Debug.Log(creditsHolder);
 
         timer += Time.deltaTime;
         creditsHolder.SetActive(true);
-        if (timer >= creditsAnim.GetComponent<AnimationClip>().length)
+        Debug.Log(timer);
+
+        if (timer >= creditsAnim.GetCurrentAnimatorStateInfo(0).length)
         {
             Debug.Log("Animation ended");
             //creditsHolder.SetActive(false);

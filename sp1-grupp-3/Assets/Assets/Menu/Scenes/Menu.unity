@@ -669,6 +669,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7138765780158793924, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
+        type: 3}
+      propertyPath: creditsHolder
+      value: 
+      objectReference: {fileID: 1904437635}
+    - target: {fileID: 6480898794120817010, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
+        type: 3}
+      propertyPath: canvasEventSystem
+      value: 
+      objectReference: {fileID: 937446920}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a3445cb0a9f30408f2752bdcc1b0e0, type: 3}
 --- !u!224 &1142445747 stripped
@@ -866,6 +876,21 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 10b192e47fd861242854fd6e0c545230,
         type: 3}
     - target: {fileID: 7138765780158793924, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
+        type: 3}
+      propertyPath: selectOnStart
+      value: 
+      objectReference: {fileID: 1357926661}
+    - target: {fileID: 7138765780158793924, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
+        type: 3}
+      propertyPath: creditsHolder
+      value: 
+      objectReference: {fileID: 1904437635}
+    - target: {fileID: 6480898794120817010, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
+        type: 3}
+      propertyPath: canvasEventSystem
+      value: 
+      objectReference: {fileID: 937446920}
+    - target: {fileID: 6480898794120817010, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
       propertyPath: selectOnStart
       value: 
@@ -1263,6 +1288,11 @@ PrefabInstance:
       propertyPath: selectOnStart
       value: 
       objectReference: {fileID: 1142674898}
+    - target: {fileID: 7138765780158793924, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
+        type: 3}
+      propertyPath: creditsHolder
+      value: 
+      objectReference: {fileID: 1904437635}
     - target: {fileID: 114904065088523288, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
       propertyPath: state
@@ -1273,6 +1303,16 @@ PrefabInstance:
       propertyPath: selectOnInput
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6480898794120817010, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
+        type: 3}
+      propertyPath: canvasEventSystem
+      value: 
+      objectReference: {fileID: 937446920}
+    - target: {fileID: 6480898794120817010, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
+        type: 3}
+      propertyPath: selectOnStart
+      value: 
+      objectReference: {fileID: 1357926661}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0a3445cb0a9f30408f2752bdcc1b0e0, type: 3}
 --- !u!224 &1751160355 stripped

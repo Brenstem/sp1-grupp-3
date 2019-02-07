@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 114050997134372084}
   - component: {fileID: 114318783317883562}
   - component: {fileID: 7138765780158793924}
+  - component: {fileID: 6480898794120817010}
   - component: {fileID: 114904065088523288}
   m_Layer: 5
   m_Name: BTN
@@ -153,12 +154,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02894919e7198e6419aefcbb7fc906dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButtonTag: StartButton
-  eventSystemTag: CanvasEventSystem
-  creditsTag: Credits
+  creditsHolder: {fileID: 0}
   onSelectSound: 
   onStartSound: 
   onExitSound: 
+--- !u!114 &6480898794120817010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283430220271678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf8b09f35728e942ac0ed1e6b10154c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasEventSystem: {fileID: 0}
+  selectOnStart: {fileID: 1283430220271678}
 --- !u!114 &114904065088523288
 MonoBehaviour:
   m_ObjectHideFlags: 0
