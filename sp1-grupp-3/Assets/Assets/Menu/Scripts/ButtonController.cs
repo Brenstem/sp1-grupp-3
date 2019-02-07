@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler
+public class ButtonController : MonoBehaviour, IPointerEnterHandler, ISelectHandler
 {
     [SerializeField] EventSystem canvasEventSystem;
     [SerializeField] GameObject selectOnStart;
+    [SerializeField] GameObject menuActionController;
 
     private bool buttonSelected = false;
     private MenuActions menuActions;
@@ -14,7 +15,7 @@ public class ButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExi
     // Reference fetching
     private void Start()
     {
-        menuActions = GetComponent<MenuActions>();
+        menuActions = menuActionController.GetComponent<MenuActions>();
     }
 
     // Checks for keyboard/gamepad input and switches to keyboard/gamepad control
@@ -37,8 +38,6 @@ public class ButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExi
     // Checks for mouse hovering over buttons
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log(canvasEventSystem);
-
         menuActions.PlaySound(sounds.Select);
         buttonSelected = false;
         canvasEventSystem.SetSelectedGameObject(null);
@@ -48,9 +47,5 @@ public class ButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void OnSelect(BaseEventData eventData)
     {
         menuActions.PlaySound(sounds.Select);
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
     }
 }

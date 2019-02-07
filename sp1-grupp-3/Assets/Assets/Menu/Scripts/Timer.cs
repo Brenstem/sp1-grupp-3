@@ -2,17 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Timer : MonoBehaviour
+public class Timer
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool mTimerFinished;
+    public bool TimerFinished { get { return mTimerFinished; } }
+
+    private bool timerRunning = false;
+    private float timeLeft;
+
+    public void UpdateTimer()
     {
-        
+        if (timerRunning)
+        {
+            timeLeft -= Time.deltaTime;
+
+            if (timeLeft <= 0)
+            {
+                mTimerFinished = true;
+                timerRunning = false;
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartTimer(float time)
     {
-        
+        Debug.Log("timer started");
+        mTimerFinished = false;
+        timeLeft = time;
+        timerRunning = true;
     }
 }

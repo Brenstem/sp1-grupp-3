@@ -8,10 +8,12 @@ public class MenuActions : MonoBehaviour
 {
     // Serialized variables
     [SerializeField] GameObject creditsHolder;
+    [SerializeField] GameObject Title;
+    [SerializeField] GameObject buttonHolder;
 
     // Private variables
     private Animator creditsAnim;
-    private float timer;
+    private Timer creditsTimer;
 
     // Sound references
     [FMODUnity.EventRef]
@@ -23,6 +25,7 @@ public class MenuActions : MonoBehaviour
     FMOD.Studio.EventInstance onStart;
 
     [FMODUnity.EventRef]
+
     public string onExitSound;
     FMOD.Studio.EventInstance onExit;
 
@@ -30,6 +33,20 @@ public class MenuActions : MonoBehaviour
     private void Start()
     {
         creditsAnim = creditsHolder.GetComponent<Animator>();
+        creditsTimer = new Timer();
+    }
+
+
+    private void Update()
+    {
+        creditsTimer.UpdateTimer();
+
+        if (creditsTimer.TimerFinished || Input.anyKeyDown)
+        {
+            creditsHolder.SetActive(false);
+            buttonHolder.SetActive(true);
+            Title.SetActive(true);
+        }
     }
 
     // Quits game/stops playmode depending on build
@@ -53,6 +70,7 @@ public class MenuActions : MonoBehaviour
     {
         SceneManager.LoadScene(sceneIndex);
     }
+
 
     // Sound playing
     public void PlaySound(GetEnum sound)
@@ -97,18 +115,13 @@ public class MenuActions : MonoBehaviour
         onSelect.release();
     }
 
+
     // Credits playing
     public void PlayCredits()
     {
-
-        timer += Time.deltaTime;
         creditsHolder.SetActive(true);
-        Debug.Log(timer);
-
-        if (timer >= creditsAnim.GetCurrentAnimatorStateInfo(0).length)
-        {
-            Debug.Log("Animation ended");
-            //creditsHolder.SetActive(false);
-        }
+        buttonHolder.SetActive(false);
+        Title.SetActive(false);
+        creditsTimer.StartTimer(creditsAnim.GetCurrentAnimatorStateInfo(0).length);
     }
 }

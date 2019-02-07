@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114252025792170184}
-  - {fileID: 114315418407968196}
+  - {fileID: 114466862774828818}
   EditorEvents:
   - {fileID: 114667696781566372}
   MasterBanks:
   - {fileID: 114315418407968196}
+  - {fileID: 114466862774828818}
   StringsBanks:
   - {fileID: 114252025792170184}
-  stringsBankWriteTime: 636850613826456421
+  stringsBankWriteTime: 636850457407489668
   cacheVersion: 3
 --- !u!114 &114089139079541206
 MonoBehaviour:
@@ -132,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Sense\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636850613826456421
+  lastModified: 636850457407489668
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -214,7 +215,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 419328
-  Exists: 1
+  Exists: 0
 --- !u!114 &114323236735882752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,6 +354,26 @@ MonoBehaviour:
   - Name: 
     Value: 2156
   Exists: 1
+--- !u!114 &114466862774828818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Brenstem\Documents\sp1-grupp-3\sp1-grupp-3\Sense\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636850457407303925
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 419328
+  Exists: 1
 --- !u!114 &114546094740831936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,7 +489,7 @@ MonoBehaviour:
   Path: event:/Test
   guid: e2926d9546f8e44fa18bcce4bad7064a
   Banks:
-  - {fileID: 114315418407968196}
+  - {fileID: 114466862774828818}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
