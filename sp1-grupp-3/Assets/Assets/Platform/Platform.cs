@@ -1,42 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using PathCreation;
 
-public class Platform : MonoBehaviour {
+public class Platform : MonoBehaviour
+{
     public PathCreator pathCreator;
     public float speed = 5;
-    public bool reversePath = false;
-    public bool turnAlongPath = false;
-    public Vector2 velocity;
+    public EndOfPathInstruction platformBehaviour;
+    public float waitTime;
+    [HideInInspector] public Vector2 velocity;
 
-    [SerializeField] private bool move = true;
+    private bool move = true;
     private float distanceTravelled;
     private Vector2 lastPosition;
-            
-    
-    // Debug Fields
-    public float totalDistance;
-    public float distancePercentTotal;
-    public float distancePercent;
 
-    public GameObject testBlock;
-    // End Debug
 
     private void Start()
     {
         transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
-        //Instantiate(testBlock, transform.position + (Vector3.up * 3), Quaternion.identity); // Debug
     }
-
-    private void Update()
+    
+    void FixedUpdate()
     {
         velocity = GetKinematicVelocity();
-    }
-
-    void FixedUpdate ()
-    {        
-        MoveAlongPath();
+        MoveAlongPath();        
     }
 
     private void MoveAlongPath()
@@ -44,33 +33,64 @@ public class Platform : MonoBehaviour {
         if (move) {
             distanceTravelled += speed * Time.deltaTime;
         }
+        transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, platformBehaviour);
 
-        //Wait();
+        if (platformBehaviour == EndOfPathInstruction.Reverse && waitTime > 0.00f) {
+            WaitReverse();
+        }
+        ClampPercentage0To2();
 
-        transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, EndOfPathInstruction.Reverse);
-
-        //Quaternion rotationOffsetY = Quaternion.Euler(Vector3.up * 90); //Makes 2D sprites face camera
+        //Makes 2D sprites face camera
+        //Quaternion rotationOffsetY = Quaternion.Euler(Vector3.up * 90);
         //transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled) * rotationOffsetY;
     }
 
-    private void Wait()
+    private void ClampPercentage0To2()
     {
-        totalDistance = pathCreator.path.length;
-        distancePercentTotal = (distanceTravelled / totalDistance);
-        distancePercent = distancePercentTotal % 1;
-
-        if (distancePercentTotal >= 1) {
-            move = false;
+        if (CalculatePercentage() >= 2) {
+            distanceTravelled = 0.0f;
         }
+    }
+
+    private void WaitReverse()
+    {
+        float distancePercentTotal = CalculatePercentage();
+        float distancePerStep = Time.deltaTime / speed;
+        float tolerance = 1 - distancePerStep; //Half the movement distance per step on each side of 1
+
+
+        if (distancePercentTotal < 1 && (1 - distancePerStep) < distancePercentTotal && move) { // 1 means 100% of the path length
+            distanceTravelled = pathCreator.path.length;
+            StartCoroutine(Wait(waitTime));
+        }
+        else if (distancePercentTotal > (2 - distancePerStep) && move) { // 2 means 200% of the path length, (the whole path length forward and back)
+            distanceTravelled = pathCreator.path.length * 2;
+            StartCoroutine(Wait(waitTime));
+        }
+
+        
+    }
+
+    private IEnumerator Wait(float waitTime)
+    {
+        move = false;
+        yield return new WaitForSeconds(waitTime);
+        move = true;
+        distanceTravelled += speed * Time.deltaTime;
     }
 
     private Vector2 GetKinematicVelocity()
     {
-        float velocityScale = 50;
         Vector2 currentPosition = transform.position;
-        Vector2 velocityReturn = (currentPosition - lastPosition) * velocityScale;
+        Vector2 velocityReturn = (currentPosition - lastPosition) / Time.fixedDeltaTime; // Divided by fixedDeltaTime to scale with velocity
         lastPosition = currentPosition;
 
         return velocityReturn;
     }
+
+    private float CalculatePercentage()
+    {
+        return distanceTravelled / pathCreator.path.length;
+    }
+
 }

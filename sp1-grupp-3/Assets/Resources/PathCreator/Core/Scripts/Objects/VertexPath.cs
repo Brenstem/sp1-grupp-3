@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using PathCreation.Utility;
 
@@ -238,7 +239,7 @@ namespace PathCreation
 
         /// For a given value 't' between 0 and 1, calculate the indices of the two vertices before and after t. 
         /// Also calculate how far t is between those two vertices as a percentage between 0 and 1.
-        TimeOnPathData CalculatePercentOnPathData(float t, EndOfPathInstruction endOfPathInstruction, float waitTime = 0.0f)
+        TimeOnPathData CalculatePercentOnPathData(float t, EndOfPathInstruction endOfPathInstruction)
         {
             // Constrain t based on the end of path instruction
             switch (endOfPathInstruction)
@@ -256,7 +257,7 @@ namespace PathCreation
                     break;
                 case EndOfPathInstruction.Stop:
                     t = Mathf.Clamp01(t);
-                    break;
+                    break;                
             }
 
 
@@ -304,10 +305,6 @@ namespace PathCreation
             }
         }
 
-        //IEnumerator Wait()
-        //{
-        //    yield return new WaitForSeconds(1);
-        //}
 
         #endregion
 

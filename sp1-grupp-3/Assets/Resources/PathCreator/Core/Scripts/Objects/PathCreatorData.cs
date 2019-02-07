@@ -41,6 +41,7 @@ namespace PathCreation
         public bool showPathOptions = true;
         public bool showVertexPathDisplayOptions;
         public bool showVertexPathOptions = true;
+        public bool showEndOfPathInstruction;
         public bool showAnchorPointData;
         public bool showNormals;
         public bool showNormalsHelpInfo;

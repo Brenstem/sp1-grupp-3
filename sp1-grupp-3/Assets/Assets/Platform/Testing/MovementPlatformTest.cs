@@ -12,7 +12,6 @@ public class MovementPlatformTest : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.drag = 0.0f;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -20,6 +19,7 @@ public class MovementPlatformTest : MonoBehaviour
         //if (collision.gameObject.CompareTag("Platfrom")) {
         platform = collision.gameObject.GetComponent<Platform>();
         transform.parent = platform.transform;
+        rb.velocity = Vector2.zero;
         //}
     }
 
