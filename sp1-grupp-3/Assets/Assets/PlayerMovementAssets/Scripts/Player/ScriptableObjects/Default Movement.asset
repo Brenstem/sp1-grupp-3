@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   acceleration: 12
-  deAcceleration: 6
-  jumpStrength: 3
-  maxJumpHeight: 2
-  jumpGravity: 3
-  fallGravity: 3
+  deAcceleration: 4
+  jumpStrength: 4
+  maxJumpHeight: 6
+  maxJumpSustain: 0.1
+  jumpGravity: 1
+  fallGravity: 1

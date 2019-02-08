@@ -58,10 +58,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 direction = -1;
             }
-
             velX = Mathf.MoveTowards(velX, movementSettings.speed * direction, movementSettings.acceleration * Time.deltaTime);
         }
-        else
+        else if(ctrlHorizontal == 0)
         {
             velX = Mathf.MoveTowards(velX, 0f, movementSettings.deAcceleration * Time.deltaTime);
         }
@@ -79,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
             }
             velX = Mathf.MoveTowards(velX, movementSettings.speed * direction, movementSettings.acceleration * Time.deltaTime);
         }
-        else
+        else if(horizontal == 0)
         {
             velX = Mathf.MoveTowards(velX, 0f, movementSettings.deAcceleration * Time.deltaTime);
         }

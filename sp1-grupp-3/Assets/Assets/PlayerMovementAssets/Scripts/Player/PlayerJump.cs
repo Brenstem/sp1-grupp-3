@@ -18,6 +18,8 @@ public class PlayerJump : MonoBehaviour
     float fallGravity;
 
     bool jumpRequest;
+    float jumpSustainTimer = 0;
+    public float maxJumpSustain;
 
     GroundCheck gCheck;
     Rigidbody2D rb;
@@ -35,6 +37,7 @@ public class PlayerJump : MonoBehaviour
     {
         jumpStrength = move.jumpStrength;
         maxJumpHeight = move.maxJumpHeight;
+        maxJumpSustain = move.maxJumpSustain;
         jumpGravity = move.jumpGravity;
         fallGravity = move.fallGravity;
     }
@@ -58,6 +61,7 @@ public class PlayerJump : MonoBehaviour
         {
             jumpRequest = true;
             hasBeenGrounded = false;
+            jumpSustainTimer = 0;
         }
     }
 
@@ -66,6 +70,8 @@ public class PlayerJump : MonoBehaviour
         if (jumpRequest == true)
         {
             // var yVel = Mathf.Sqrt(jumpForce * -Physics2D.gravity.y);
+            
+
             var yVel = jumpStrength;
 
             if (rb.velocity.y < 0)
@@ -77,7 +83,8 @@ public class PlayerJump : MonoBehaviour
             else
             {
                 yVel = Mathf.Clamp(yVel, 0f, maxJumpHeight);
-                rb.velocity += new Vector2(0, yVel);
+                rb.AddForce(new Vector2(0f, yVel), ForceMode2D.Impulse);
+                //rb.velocity += new Vector2(0, yVel);
 
                 jumpRequest = false;
             }
@@ -89,13 +96,32 @@ public class PlayerJump : MonoBehaviour
     {
         bool jumpBtn = Input.GetAxisRaw("Jump") == 1;
 
-        if (rb.velocity.y < 0)
+        if(jumpBtn == true)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallGravity - 1) * Time.deltaTime;
+            jumpSustainTimer += Time.deltaTime;
+        }
+
+        //if (rb.velocity.y < 0 && jumpBtn == true && jumpSustainTimer > maxJumpSustain)
+        //{
+        //    rb.velocity += Vector2.up * Physics2D.gravity.y * (fallGravity - 1) * Time.deltaTime;  
+        //}
+        //else if (rb.velocity.y > 0 && jumpBtn == false)
+        //{
+        //    rb.velocity += Vector2.up * Physics2D.gravity.y * (jumpGravity - 1) * Time.deltaTime;
+        //}
+
+        if (rb.velocity.y < 0 || jumpBtn == true && jumpSustainTimer > maxJumpSustain)
+        {
+            rb.gravityScale = fallGravity;
         }
         else if (rb.velocity.y > 0 && jumpBtn == false)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (jumpGravity - 1) * Time.deltaTime;
+            rb.gravityScale = jumpGravity;
         }
+        else
+        {
+            rb.gravityScale = 1f;
+        }
+
     }
 }

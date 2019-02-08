@@ -17,6 +17,7 @@ public class MovementState : ScriptableObject
     [Header("Jump")]
     public float jumpStrength;
     public float maxJumpHeight;
+    public float maxJumpSustain;
     public float jumpGravity; 
     public float fallGravity;
 }
