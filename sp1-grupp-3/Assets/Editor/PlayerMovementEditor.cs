@@ -21,9 +21,9 @@ public class PlayerMovementEditor : Editor
         DrawDefaultInspector();
 
         PlayerMovement playerM = (PlayerMovement)target;
-        PlayerJump playerJ = playerM.GetComponent<PlayerJump>();
         MovementSettings = playerM.GetComponent<PlayerMovement>().movementSettings;
 
+<<<<<<< HEAD:sp1-grupp-3/Assets/Editor/PlayerMovementEditor.cs
         if(EditorApplication.isPlaying == false)
         {
             if (playerM.newMovementState == null)
@@ -49,6 +49,12 @@ public class PlayerMovementEditor : Editor
         //{
         //    //GetAxis(MovementSettings);
         //}
+=======
+        if (AxisDefined(MovementSettings.name) == true)
+        {
+            //GetAxis(MovementSettings);
+        }
+>>>>>>> parent of a268741... Player Movement Updated:sp1-grupp-3/Assets/Assets/Editor/PlayerMovementEditor.cs
 
         serializedObject.ApplyModifiedProperties();
     }
@@ -126,7 +132,7 @@ public class PlayerMovementEditor : Editor
     }
     private static void GetAxis(MovementSettings move)
     {
-        //if (AxisDefined(move.name) == false) return;
+        if (AxisDefined(move.name) == false) return;
 
         SerializedObject serializedObject = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/InputManager.asset")[0]);
         SerializedProperty axesProperty = serializedObject.FindProperty("m_Axes");
@@ -136,7 +142,7 @@ public class PlayerMovementEditor : Editor
 
         SerializedProperty axisProperty = axesProperty.GetArrayElementAtIndex(0);
 
-        //GetChildProperty(axisProperty, "m_Name").stringValue = move.name;
+        GetChildProperty(axisProperty, "m_Name").stringValue = move.name;
         GetChildProperty(axisProperty, "gravity").floatValue = move.deAcceleration;
         GetChildProperty(axisProperty, "sensitivity").floatValue = move.acceleration;
 

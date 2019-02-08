@@ -3,19 +3,20 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b618bfacef114c74fbef0fed8f48815d, type: 3}
   m_Name: Default Movement
   m_EditorClassIdentifier: 
-  speed: 10
-  acceleration: 12
   deAcceleration: 6
+  acceleration: 12
+  speed: 5
+  maxSpeed: 10
+  grabMoveAcceleration: 0
   jumpStrength: 3
-  maxJumpHeight: 2
+  maxJumpHeight: 6
   jumpGravity: 3
   fallGravity: 3
