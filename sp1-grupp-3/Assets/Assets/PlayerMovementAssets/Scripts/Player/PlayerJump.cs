@@ -35,11 +35,10 @@ public class PlayerJump : MonoBehaviour
 
     public void UpdateMovementState(MovementState move)
     {
-        jumpStrength = move.jumpStrength;
-        maxJumpHeight = move.maxJumpHeight;
-        maxJumpSustain = move.maxJumpSustain;
-        jumpGravity = move.jumpGravity;
-        fallGravity = move.fallGravity;
+        jumpStrength = move.jumpForce;
+        //maxJumpHeight = move.maxJumpHeight;
+        jumpGravity = move.gravityModifier;
+        //fallGravity = move.fallGravity;
     }
 
     void Update()
@@ -70,7 +69,7 @@ public class PlayerJump : MonoBehaviour
         if (jumpRequest == true)
         {
             // var yVel = Mathf.Sqrt(jumpForce * -Physics2D.gravity.y);
-            
+
 
             var yVel = jumpStrength;
 
@@ -103,7 +102,7 @@ public class PlayerJump : MonoBehaviour
 
         //if (rb.velocity.y < 0 && jumpBtn == true && jumpSustainTimer > maxJumpSustain)
         //{
-        //    rb.velocity += Vector2.up * Physics2D.gravity.y * (fallGravity - 1) * Time.deltaTime;  
+        //    rb.velocity += Vector2.up * Physics2D.gravity.y * (fallGravity - 1) * Time.deltaTime;
         //}
         //else if (rb.velocity.y > 0 && jumpBtn == false)
         //{

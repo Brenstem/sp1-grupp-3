@@ -2,23 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : PhysicsObject
+public class PlayerController : PhysicsObject
 {
-    [Space]
-    public MovementState newMovementState;
-    public MovementState defaultMovementState;
-    //public MovementSettings movementSettings;
-    [Space]
     public float maxSpeed = 7;
     public float jumpForce = 7;
     public float acceleration;
     public float deAcceleration;
-    float velX = 0;
-
+    [Space]
+    public MovementState newMovementState;
+    public MovementState defaultMovementState;
     public bool enableNewMovement = false;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    //private float currentSpeed;
+    float velX = 0;
 
     void Awake()
     {
@@ -27,6 +23,7 @@ public class PlayerMovement : PhysicsObject
     }
     public void UpdateMovementState(MovementState move)
     {
+        maxSpeed = move.maxSpeed;
         acceleration = move.acceleration;
         deAcceleration = move.deAcceleration;
     }
@@ -44,13 +41,13 @@ public class PlayerMovement : PhysicsObject
 
         Vector2 move = Vector2.zero;
         move = InputHorizontal();
-
         Jump();
 
         FlipSprite(move);
+
         AnimationParameters();
 
-        targetVelocity = move * maxSpeed;
+        targetVelocity = move;
     }
 
     private void Jump()
@@ -66,12 +63,6 @@ public class PlayerMovement : PhysicsObject
         }
     }
 
-    private void AnimationParameters()
-    {
-        animator.SetBool("grounded", grounded);
-        animator.SetFloat("velocityX", Mathf.Abs(velocity.x / maxSpeed));
-    }
-
     private void FlipSprite(Vector2 move)
     {
         bool flipSprite = spriteRenderer.flipX ? (move.x < -0.01f) : (move.x > 0.01f);
@@ -80,6 +71,12 @@ public class PlayerMovement : PhysicsObject
         {
             spriteRenderer.flipX = !spriteRenderer.flipX;
         }
+    }
+
+    private void AnimationParameters()
+    {
+        animator.SetBool("grounded", grounded);
+        animator.SetFloat("velocityX", Mathf.Abs(velocity.x / maxSpeed));
     }
 
     Vector2 InputHorizontal()
@@ -101,7 +98,7 @@ public class PlayerMovement : PhysicsObject
 
             velX = Mathf.MoveTowards(velX, maxSpeed * direction, acceleration * Time.deltaTime);
         }
-        else if (ctrlHorizontal == 0)
+        else if(ctrlHorizontal == 0)
         {
             velX = Mathf.MoveTowards(velX, 0f, deAcceleration * Time.deltaTime);
         }
@@ -119,12 +116,12 @@ public class PlayerMovement : PhysicsObject
             }
             velX = Mathf.MoveTowards(velX, maxSpeed * direction, acceleration * Time.deltaTime);
         }
-        else if (horizontal == 0)
+        else if(horizontal == 0)
         {
             velX = Mathf.MoveTowards(velX, 0f, deAcceleration * Time.deltaTime);
         }
 
-        //velX = Mathf.Clamp(velX, -movementSettings.maxSpeed, movementSettings.maxSpeed);
+        velX = Mathf.Clamp(velX, -maxSpeed, maxSpeed);
         Vector2 velocity = new Vector2(velX, rb.velocity.y);
 
         return velocity;
