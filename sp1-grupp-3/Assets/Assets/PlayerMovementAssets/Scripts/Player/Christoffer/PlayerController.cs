@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControllerChristoffer : PlayerMovementChristoffer
+public class PlayerController : PhysicsObject
 {
     public float maxSpeed = 7;
     public float jumpForce = 7;
-    public float acceleration = 1;
+    //public float acceleration = 1;
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    private float currentSpeed;
+    //private float currentSpeed;
 
     void Awake()
     {
@@ -45,19 +45,19 @@ public class PlayerControllerChristoffer : PlayerMovementChristoffer
     }
 
     // Behöver implementeras som gravity/sensitivity
-    public void UpdateSpeed()
-    {
-        if (Input.GetAxisRaw("Horizontal") == 1) {
-            currentSpeed += acceleration;
-        }
-        else if (Input.GetAxisRaw("Horizontal") == -1) {
-            currentSpeed -= acceleration;
-        }
-        else if (currentSpeed > 0){
-            currentSpeed -= acceleration;
-        }
-        else if (currentSpeed < 0) {
-            currentSpeed += acceleration;
-        }
-    }
+    //public void UpdateSpeed()
+    //{
+    //    if (Input.GetAxisRaw("Horizontal") == 1) {
+    //        currentSpeed += acceleration;
+    //    }
+    //    else if (Input.GetAxisRaw("Horizontal") == -1) {
+    //        currentSpeed -= acceleration;
+    //    }
+    //    else if (currentSpeed > 0){
+    //        currentSpeed -= acceleration;
+    //    }
+    //    else if (currentSpeed < 0) {
+    //        currentSpeed += acceleration;
+    //    }
+    //}
 }

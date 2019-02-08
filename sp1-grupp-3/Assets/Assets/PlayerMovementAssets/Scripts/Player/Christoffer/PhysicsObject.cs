@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementChristoffer : MonoBehaviour
+public class PhysicsObject : MonoBehaviour
 {
     public float minGroundNormalY = 0.65f;
     public float gravityModifier = 1f;
@@ -13,7 +13,7 @@ public class PlayerMovementChristoffer : MonoBehaviour
     protected Rigidbody2D rb;
     protected Vector2 velocity;
     protected ContactFilter2D contactFiler;
-    protected RaycastHit2D[] hitBuffer = new RaycastHit2D[1];
+    protected RaycastHit2D[] hitBuffer = new RaycastHit2D[9];
     protected List<RaycastHit2D> hitBufferList = new List<RaycastHit2D>(1);
 
     protected const float minMoveDistance = 0.001f;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AutoMoveCreate : PlayerMovementChristoffer
+public class AutoMoveObject : PhysicsObject
 {
     void Start()
     {
