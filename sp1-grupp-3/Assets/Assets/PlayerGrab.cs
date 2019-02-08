@@ -37,6 +37,7 @@ public class PlayerGrab : MonoBehaviour
     void Update()
     {
         float x = Input.GetAxisRaw("Horizontal");
+
         if (x != 0) {
             xValue = x;
         }
