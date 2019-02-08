@@ -33,10 +33,10 @@ public class PlayerJump : MonoBehaviour
 
     public void UpdateMovementState(MovementState move)
     {
-        jumpStrength = move.jumpStrength;
-        maxJumpHeight = move.maxJumpHeight;
-        jumpGravity = move.jumpGravity;
-        fallGravity = move.fallGravity;
+        jumpStrength = move.jumpForce;
+        //maxJumpHeight = move.maxJumpHeight;
+        jumpGravity = move.gravityModifier;
+        //fallGravity = move.fallGravity;
     }
 
     void Update()
