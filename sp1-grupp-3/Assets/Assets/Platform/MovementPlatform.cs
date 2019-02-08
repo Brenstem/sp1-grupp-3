@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementPlatformTest : MonoBehaviour
+public class MovementPlatform : MonoBehaviour
 {
     Rigidbody2D rb;
     Collision2D collisionPlatform;
     Platform platform;
-    Vector2 platformVelocity;
 
     private void Start()
     {
@@ -16,33 +15,33 @@ public class MovementPlatformTest : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //if (collision.gameObject.CompareTag("Platfrom")) {
+        if (collision.gameObject.CompareTag("PlatformMoving")) {
         platform = collision.gameObject.GetComponent<Platform>();
         transform.parent = platform.transform;
-        rb.velocity = Vector2.zero;
-        //}
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        //if (collision.gameObject.CompareTag("Platfrom")) {
+        if (collision.gameObject.CompareTag("PlatformMoving")) {
         platform = null;
         transform.parent = null;
-        //}
-    }
-
-    private void LateUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            if (platform != null) {
-                platformVelocity = platform.velocity;
-            }
-            else {
-                platformVelocity = Vector2.zero;
-
-            }
-            rb.velocity = Vector2.up * 5 + platformVelocity;
-            platformVelocity = Vector2.zero;
         }
     }
+
+    public Vector2 GetPlatformVelocity()
+    {
+        Vector2 platformVelocity;
+
+        if (platform != null) {
+            platformVelocity = platform.velocity;
+        }
+        else {
+            platformVelocity = Vector2.zero;
+
+        }
+
+        return platformVelocity;
+    }
+
 }

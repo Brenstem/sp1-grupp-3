@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 428799329}
   m_Layer: 9
   m_Name: PlatformSpritePlaceholder
-  m_TagString: Untagged
+  m_TagString: PlatformMoving
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -348,8 +348,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 1200640294}
-  speed: 5
-  platformBehaviour: 0
+  speed: 1
+  platformBehaviour: 1
   waitTime: 1
   velocity: {x: 0, y: 0}
 --- !u!61 &428799330
@@ -542,11 +542,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Box
       objectReference: {fileID: 0}
-    - target: {fileID: 8378501504431496696, guid: 375e5497ddf4bc44c923c5370ab91131,
-        type: 3}
-      propertyPath: multiplier
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9025726178536039436, guid: 375e5497ddf4bc44c923c5370ab91131,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -601,11 +596,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025726178536039439, guid: 375e5497ddf4bc44c923c5370ab91131,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 375e5497ddf4bc44c923c5370ab91131, type: 3}
