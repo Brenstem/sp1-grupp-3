@@ -23,9 +23,13 @@ public class PlayerController : PhysicsObject
     }
     public void UpdateMovementState(MovementState move)
     {
-        maxSpeed = move.maxSpeed;
-        acceleration = move.acceleration;
-        deAcceleration = move.deAcceleration;
+        if(move != null)
+        {
+            maxSpeed = move.maxSpeed;
+            acceleration = move.acceleration;
+            deAcceleration = move.deAcceleration;
+            jumpForce = move.jumpForce;
+        }
     }
 
     protected override void ComputeVelocity()
@@ -98,7 +102,7 @@ public class PlayerController : PhysicsObject
 
             velX = Mathf.MoveTowards(velX, maxSpeed * direction, acceleration * Time.deltaTime);
         }
-        else if(ctrlHorizontal == 0)
+        else if (ctrlHorizontal == 0)
         {
             velX = Mathf.MoveTowards(velX, 0f, deAcceleration * Time.deltaTime);
         }
@@ -116,7 +120,7 @@ public class PlayerController : PhysicsObject
             }
             velX = Mathf.MoveTowards(velX, maxSpeed * direction, acceleration * Time.deltaTime);
         }
-        else if(horizontal == 0)
+        else if (horizontal == 0)
         {
             velX = Mathf.MoveTowards(velX, 0f, deAcceleration * Time.deltaTime);
         }
