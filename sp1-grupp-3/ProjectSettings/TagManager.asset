@@ -6,6 +6,9 @@ TagManager:
   tags:
   - DeathZone
   - Environment
+  - StartButton
+  - CanvasEventSystem
+  - Credits
   layers:
   - Default
   - TransparentFX
