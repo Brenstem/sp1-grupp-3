@@ -4,16 +4,17 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class MenuActions : MonoBehaviour, IPointerEnterHandler, ISelectHandler
+public class MenuActions : MonoBehaviour
 {
     // Serialized variables
-    [SerializeField] GameObject selectOnStart;
+    [SerializeField] GameObject creditsHolder;
+    [SerializeField] GameObject Title;
+    [SerializeField] GameObject buttonHolder;
 
     // Private variables
-    private EventSystem canvasEventSystem;
-    private bool buttonSelected = false;
-    private bool keyDown = false;
-    
+    private Animator creditsAnim;
+    private Timer creditsTimer;
+
     // Sound references
     [FMODUnity.EventRef]
     public string onSelectSound;
@@ -27,42 +28,29 @@ public class MenuActions : MonoBehaviour, IPointerEnterHandler, ISelectHandler
     public string onExitSound;
     FMOD.Studio.EventInstance onExit;
 
+    [FMODUnity.EventRef]
+    public string menuMusicSound;
+    FMOD.Studio.EventInstance menuMusic;
+
     // Reference fetching
     private void Start()
     {
-        canvasEventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        creditsAnim = creditsHolder.GetComponent<Animator>();
+        creditsTimer = new Timer();
     }
 
-    // Checks for keyboard/gamepad input and switches to keyboard/gamepad control
+
     private void Update()
     {
-        if (Input.GetAxis("Vertical") != 0 && !buttonSelected)
-        {
-            canvasEventSystem.SetSelectedGameObject(selectOnStart);
-            buttonSelected = true;
-        }
+        creditsTimer.UpdateTimer();
 
-        // Switches back to mouse control if the player clicks
-        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse1))
+        if (creditsTimer.TimerFinished || Input.anyKeyDown)
         {
-            buttonSelected = false;
+            creditsHolder.SetActive(false);
+            buttonHolder.SetActive(true);
+            Title.SetActive(true);
         }
     }
-
-    // Checks for mouse hovering over buttons
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        PlaySound(sounds.Select);
-        buttonSelected = false;
-        canvasEventSystem.SetSelectedGameObject(null);
-    }
-
-    // Checks for when new objects are selected with keyboard/gamepad input to play sound
-    public void OnSelect(BaseEventData eventData)
-    {
-        PlaySound(sounds.Select);
-    }
-
 
     // Quits game/stops playmode depending on build
     public void Quit()
@@ -86,21 +74,25 @@ public class MenuActions : MonoBehaviour, IPointerEnterHandler, ISelectHandler
         SceneManager.LoadScene(sceneIndex);
     }
 
+
     // Sound playing
     public void PlaySound(GetEnum sound)
     {
         switch (sound.state)
         {
             case sounds.Play:
-                onSelect = FMODUnity.RuntimeManager.CreateInstance(onStartSound);
+                onStart = FMODUnity.RuntimeManager.CreateInstance(onStartSound);
                 break;
             case sounds.Exit:
+                onExit = FMODUnity.RuntimeManager.CreateInstance(onExitSound);
                 break;
             case sounds.Select:
                 onSelect = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
                 break;
+            case sounds.menuMusic:
+                menuMusic = FMODUnity.RuntimeManager.CreateInstance(menuMusicSound);
+                break;
             default:
-                onExit = FMODUnity.RuntimeManager.CreateInstance(onExitSound);
                 break;
         }
 
@@ -116,16 +108,28 @@ public class MenuActions : MonoBehaviour, IPointerEnterHandler, ISelectHandler
                 onSelect = FMODUnity.RuntimeManager.CreateInstance(onStartSound);
                 break;
             case sounds.Exit:
+                onExit = FMODUnity.RuntimeManager.CreateInstance(onExitSound);
                 break;
             case sounds.Select:
                 onSelect = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
                 break;
+            case sounds.menuMusic:
+                menuMusic = FMODUnity.RuntimeManager.CreateInstance(menuMusicSound);
+                break;
             default:
-                onExit = FMODUnity.RuntimeManager.CreateInstance(onExitSound);
                 break;
         }
-
         onSelect.start();
         onSelect.release();
+    }
+
+
+    // Credits playing
+    public void PlayCredits()
+    {
+        creditsHolder.SetActive(true);
+        buttonHolder.SetActive(false);
+        Title.SetActive(false);
+        creditsTimer.StartTimer(creditsAnim.GetCurrentAnimatorStateInfo(0).length);
     }
 }

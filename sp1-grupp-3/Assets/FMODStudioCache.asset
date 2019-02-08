@@ -13,22 +13,16 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier:
   EditorBanks:
-  - {fileID: 114162856428978080}
-  - {fileID: 114237278583649164}
-  - {fileID: 114743183453148906}
-  - {fileID: 114147982873818632}
-  - {fileID: 114140443189278090}
+  - {fileID: 114252025792170184}
+  - {fileID: 114466862774828818}
   EditorEvents:
-  - {fileID: 114548629767287492}
+  - {fileID: 114667696781566372}
   MasterBanks:
-  - {fileID: 114566390083756052}
-  - {fileID: 114767205696045450}
-  - {fileID: 114104179332306602}
-  - {fileID: 114446497828834210}
-  - {fileID: 114452456081144252}
+  - {fileID: 114315418407968196}
+  - {fileID: 114466862774828818}
   StringsBanks:
-  - {fileID: 114162856428978080}
-  stringsBankWriteTime: 636852221655840463
+  - {fileID: 114252025792170184}
+  stringsBankWriteTime: 636850457407489668
   cacheVersion: 3
 --- !u!114 &114038284163379798
 MonoBehaviour:
@@ -146,7 +140,26 @@ MonoBehaviour:
   - Name:
     Value: 450
   Exists: 1
---- !u!114 &114162856428978080
+--- !u!114 &114252025792170184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  Path: Sense\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636850457407489668
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 714
+  Exists: 1
+--- !u!114 &114257381626313000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,6 +236,25 @@ MonoBehaviour:
   - Name: Desktop
     Value: 714
   Exists: 1
+--- !u!114 &114315418407968196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  Path: F:\GitHub\sp1-grupp-3\sp1-grupp-3\Sense\Build\Desktop\Master Bank.bank
+  lastModified: 636850613826416252
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 419328
+  Exists: 0
 --- !u!114 &114323236735882752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,9 +391,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes:
   - Name:
-    Value: 1340
-  Exists: 0
---- !u!114 &114452456081144252
+    Value: 2156
+  Exists: 1
+--- !u!114 &114466862774828818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  Path: C:\Users\Brenstem\Documents\sp1-grupp-3\sp1-grupp-3\Sense\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636850457407303925
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 419328
+  Exists: 1
+--- !u!114 &114546094740831936
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -458,6 +510,29 @@ MonoBehaviour:
   - Name:
     Value: 1340
   Exists: 0
+--- !u!114 &114667696781566372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  Path: event:/Test
+  guid: e2926d9546f8e44fa18bcce4bad7064a
+  Banks:
+  - {fileID: 114466862774828818}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 36127
 --- !u!114 &114729861571831890
 MonoBehaviour:
   m_ObjectHideFlags: 0
