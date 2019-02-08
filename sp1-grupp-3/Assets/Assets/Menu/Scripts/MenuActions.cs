@@ -25,9 +25,12 @@ public class MenuActions : MonoBehaviour
     FMOD.Studio.EventInstance onStart;
 
     [FMODUnity.EventRef]
-
     public string onExitSound;
     FMOD.Studio.EventInstance onExit;
+
+    [FMODUnity.EventRef]
+    public string menuMusicSound;
+    FMOD.Studio.EventInstance menuMusic;
 
     // Reference fetching
     private void Start()
@@ -78,15 +81,18 @@ public class MenuActions : MonoBehaviour
         switch (sound.state)
         {
             case sounds.Play:
-                onSelect = FMODUnity.RuntimeManager.CreateInstance(onStartSound);
+                onStart = FMODUnity.RuntimeManager.CreateInstance(onStartSound);
                 break;
             case sounds.Exit:
+                onExit = FMODUnity.RuntimeManager.CreateInstance(onExitSound);
                 break;
             case sounds.Select:
                 onSelect = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
                 break;
+            case sounds.menuMusic:
+                menuMusic = FMODUnity.RuntimeManager.CreateInstance(menuMusicSound);
+                break;
             default:
-                onExit = FMODUnity.RuntimeManager.CreateInstance(onExitSound);
                 break;
         }
 
@@ -102,15 +108,17 @@ public class MenuActions : MonoBehaviour
                 onSelect = FMODUnity.RuntimeManager.CreateInstance(onStartSound);
                 break;
             case sounds.Exit:
+                onExit = FMODUnity.RuntimeManager.CreateInstance(onExitSound);
                 break;
             case sounds.Select:
                 onSelect = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
                 break;
+            case sounds.menuMusic:
+                menuMusic = FMODUnity.RuntimeManager.CreateInstance(menuMusicSound);
+                break;
             default:
-                onExit = FMODUnity.RuntimeManager.CreateInstance(onExitSound);
                 break;
         }
-
         onSelect.start();
         onSelect.release();
     }
