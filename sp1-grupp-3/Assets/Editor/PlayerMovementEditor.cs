@@ -6,7 +6,7 @@ using UnityEditorInternal;
 
 [CanEditMultipleObjects]
 [ExecuteInEditMode]
-[CustomEditor(typeof(PlayerController))]
+[CustomEditor(typeof(PlayerMovement))]
 public class PlayerMovementEditor : Editor
 {
     public static InputAxis inputSettings;
@@ -20,29 +20,29 @@ public class PlayerMovementEditor : Editor
 
         DrawDefaultInspector();
 
-        PlayerController playerM = (PlayerController)target;
-        //PlayerJump playerJ = playerM.GetComponent<PlayerJump>();
-        //MovementSettings = playerM.GetComponent<PlayerMovement>().movementSettings;
+        PlayerMovement playerM = (PlayerMovement)target;
+        PlayerJump playerJ = playerM.GetComponent<PlayerJump>();
+        MovementSettings = playerM.GetComponent<PlayerMovement>().movementSettings;
 
         if(EditorApplication.isPlaying == false)
         {
-            if (playerM.newMovementState != null && playerM.enableNewMovement == true)
-            {
-                playerM.UpdateMovementState(playerM.newMovementState);
-            }
-            else if (playerM.newMovementState == null || playerM.newMovementState != null && playerM.enableNewMovement == false)
+            if (playerM.newMovementState == null)
             {
                 playerM.UpdateMovementState(playerM.defaultMovementState);
             }
+            else if (playerM.newMovementState != null)
+            {
+                playerM.UpdateMovementState(playerM.newMovementState);
+            }
 
-            //if (playerJ.newMovementState == null)
-            //{
-            //    playerJ.UpdateMovementState(playerJ.defaultMovementState);
-            //}
-            //else if (playerJ.newMovementState != null)
-            //{
-            //    playerJ.UpdateMovementState(playerJ.newMovementState);
-            //}
+            if (playerJ.newMovementState == null)
+            {
+                playerJ.UpdateMovementState(playerJ.defaultMovementState);
+            }
+            else if (playerJ.newMovementState != null)
+            {
+                playerJ.UpdateMovementState(playerJ.newMovementState);
+            }
         }
         
         //if (AxisDefined(MovementSettings.name) == true)
