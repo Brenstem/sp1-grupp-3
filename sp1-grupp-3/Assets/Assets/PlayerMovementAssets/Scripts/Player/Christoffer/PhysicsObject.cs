@@ -33,7 +33,7 @@ public class PhysicsObject : MonoBehaviour
     
     void Update()
     {
-        targetVelocity = new Vector2(0, 0);
+        //targetVelocity = new Vector2(0, 0);
         ComputeVelocity();
     }
 
@@ -52,9 +52,8 @@ public class PhysicsObject : MonoBehaviour
         Vector2 moveAlongGround = new Vector2(groundNormal.y, groundNormal.x);
         Vector2 deltaPos = velocity * Time.deltaTime;
         Vector2 move = moveAlongGround * deltaPos.x;
-
+        
         Movement(move, false);
-
         move = Vector2.up * deltaPos.y;
 
         Movement(move, true);
@@ -64,7 +63,8 @@ public class PhysicsObject : MonoBehaviour
     {
         float distance = move.magnitude;
 
-        if(distance > minMoveDistance) {
+        if(distance > minMoveDistance) 
+        {
             int count = rb.Cast(move, contactFiler, hitBuffer, distance + shellRadius);
             hitBufferList.Clear();
 
@@ -74,7 +74,7 @@ public class PhysicsObject : MonoBehaviour
 
             for (int i = 0; i < hitBufferList.Count; i++) {
                 Vector2 currentNormal = hitBufferList[i].normal;
-
+                
                 if(currentNormal.y > minGroundNormalY) {
                     grounded = true;
                     if (yMovement) {
@@ -92,7 +92,6 @@ public class PhysicsObject : MonoBehaviour
                 distance = modifiedDistance < distance ? modifiedDistance : distance;
             }
         }
-
         rb.position = rb.position + move.normalized * distance;
     }
 }
