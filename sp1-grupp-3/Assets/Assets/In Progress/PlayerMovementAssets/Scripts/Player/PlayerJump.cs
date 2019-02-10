@@ -95,10 +95,10 @@ public class PlayerJump : MonoBehaviour
     {
         bool jumpBtn = Input.GetAxisRaw("Jump") == 1;
 
-        if(jumpBtn == true)
-        {
-            jumpSustainTimer += Time.deltaTime;
-        }
+        //if(jumpBtn == true)
+        //{
+        //    jumpSustainTimer += Time.deltaTime;
+        //}
 
         //if (rb.velocity.y < 0 && jumpBtn == true && jumpSustainTimer > maxJumpSustain)
         //{
@@ -109,18 +109,18 @@ public class PlayerJump : MonoBehaviour
         //    rb.velocity += Vector2.up * Physics2D.gravity.y * (jumpGravity - 1) * Time.deltaTime;
         //}
 
-        if (rb.velocity.y < 0 || jumpBtn == true && jumpSustainTimer > maxJumpSustain)
-        {
-            rb.gravityScale = fallGravity;
-        }
-        else if (rb.velocity.y > 0 && jumpBtn == false)
-        {
-            rb.gravityScale = jumpGravity;
-        }
-        else
-        {
-            rb.gravityScale = 1f;
-        }
+        //if (rb.velocity.y < 0 || jumpBtn == true && jumpSustainTimer > maxJumpSustain)
+        //{
+        //    rb.gravityScale = fallGravity;
+        //}
+        //else if (rb.velocity.y > 0 && jumpBtn == false)
+        //{
+        //    rb.gravityScale = jumpGravity;
+        //}
+        //else
+        //{
+        //    rb.gravityScale = 1f;
+        //}
 
     }
 }

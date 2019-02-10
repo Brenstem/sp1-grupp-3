@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 656949426181693661}
   - component: {fileID: 656949426181693660}
-  - component: {fileID: 656949426181693663}
   - component: {fileID: 656949426181693662}
   - component: {fileID: 656949426181693657}
   - component: {fileID: 656949426181693656}
   - component: {fileID: 656949426181693659}
-  - component: {fileID: 656949426181693634}
+  - component: {fileID: 2043317793696911443}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -74,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: aea345628ea3cf24ba553f530b0f4409, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 001e103e6e862774d9200bc796f6905e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,32 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &656949426181693663
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656949426181693658}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
-    newSize: {x: 0.04, y: 0.04}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4, y: 4}
-  m_EdgeRadius: 0
 --- !u!50 &656949426181693662
 Rigidbody2D:
   serializedVersion: 4
@@ -146,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGrounded: 0
   groundCollPosition: {x: 0, y: -2.25, z: 0}
-  groundCollSize: {x: 4, y: 0.5, z: 0}
+  groundCollSize: {x: 1.44, y: 0.5, z: 0}
   collideWithLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -162,13 +135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3329b06210741144bfa8d8960f6614b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minGroundNormalY: 0.65
+  gravityModifier: 1
   newMovementState: {fileID: 0}
   defaultMovementState: {fileID: 11400000, guid: 3898e9126d61c0947add86ba0b25b3aa,
     type: 2}
-  movementSettings:
-    speed: 10
-    acceleration: 12
-    deAcceleration: 6
   enableNewMovement: 0
 --- !u!114 &656949426181693659
 MonoBehaviour:
@@ -189,18 +160,21 @@ MonoBehaviour:
   maxJumpHeight: 2
   jumpGravity: 3
   fallGravity: 3
+  maxJumpSustain: 0
   enableNewMovement: 0
---- !u!114 &656949426181693634
-MonoBehaviour:
+--- !u!70 &2043317793696911443
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656949426181693658}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4965ef34b503cc54eb91065549476f19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashDuration: 0.5
-  dashSpeedBoost: {x: 3, y: 0}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.16}
+  m_Size: {x: 1.49, y: 3.7}
+  m_Direction: 0

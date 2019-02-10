@@ -9,10 +9,10 @@ public class PlayerMovement : PhysicsObject
     public MovementState defaultMovementState;
     //public MovementSettings movementSettings;
     [Space]
-    public float maxSpeed = 7;
-    public float jumpForce = 7;
-    public float acceleration;
-    public float deAcceleration;
+    float maxSpeed = 7;
+    float jumpForce = 7;
+    float acceleration;
+    float deAcceleration;
     float velX = 0;
 
     public bool enableNewMovement = false;
@@ -23,7 +23,7 @@ public class PlayerMovement : PhysicsObject
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
     public void UpdateMovementState(MovementState move)
     {
@@ -68,8 +68,8 @@ public class PlayerMovement : PhysicsObject
 
     private void AnimationParameters()
     {
-        animator.SetBool("grounded", grounded);
-        animator.SetFloat("velocityX", Mathf.Abs(velocity.x / maxSpeed));
+        //animator.SetBool("grounded", grounded);
+        //animator.SetFloat("velocityX", Mathf.Abs(velocity.x / maxSpeed));
     }
 
     private void FlipSprite(Vector2 move)
