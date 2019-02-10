@@ -6,11 +6,9 @@ public class PlayerController : PhysicsObject
 {
     public float maxSpeed = 7;
     public float jumpForce = 7;
-    //public float acceleration = 1;
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    //private float currentSpeed;
 
     void Awake()
     {
@@ -23,13 +21,15 @@ public class PlayerController : PhysicsObject
         Vector2 move = Vector2.zero;
 
         move.x = Input.GetAxis("Horizontal");
-
+        
         if (Input.GetButtonDown("Jump") && grounded) {
             velocity.y = jumpForce;
+            groundNormal.y = 1;
+            groundNormal.x = 0;
         }
         else if (Input.GetButtonUp("Jump")) {
             if (velocity.y > 0)
-                velocity.y = velocity.y * 0.5f;
+                velocity.y = velocity.y * 0.5f; 
         }
 
         bool flipSprite = spriteRenderer.flipX ? (move.x < -0.01f) : (move.x > 0.01f);
@@ -40,24 +40,7 @@ public class PlayerController : PhysicsObject
 
         animator.SetBool("grounded", grounded);
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x / maxSpeed));
-
+        
         targetVelocity = move * maxSpeed;
     }
-
-    // Behöver implementeras som gravity/sensitivity
-    //public void UpdateSpeed()
-    //{
-    //    if (Input.GetAxisRaw("Horizontal") == 1) {
-    //        currentSpeed += acceleration;
-    //    }
-    //    else if (Input.GetAxisRaw("Horizontal") == -1) {
-    //        currentSpeed -= acceleration;
-    //    }
-    //    else if (currentSpeed > 0){
-    //        currentSpeed -= acceleration;
-    //    }
-    //    else if (currentSpeed < 0) {
-    //        currentSpeed += acceleration;
-    //    }
-    //}
 }
