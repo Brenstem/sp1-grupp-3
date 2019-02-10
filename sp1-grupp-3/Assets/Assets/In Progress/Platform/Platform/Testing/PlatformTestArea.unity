@@ -349,7 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 1200640294}
   speed: 1
-  platformBehaviour: 1
+  platformBehaviour: 0
   waitTime: 1
   velocity: {x: 0, y: 0}
 --- !u!61 &428799330
@@ -472,23 +472,35 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -4, y: -2.9717321, z: 0}
-      - {x: 2, y: -2.9717321, z: 0}
-      - {x: -4, y: -2.9717321, z: 0}
-      - {x: 2, y: -2.9717321, z: 0}
+      - {x: -3.1452518, y: 0.12816596, z: 0}
+      - {x: -2.1452518, y: 0.62816596, z: 0}
+      - {x: 0.110600114, y: -0.24194562, z: 0}
+      - {x: 1.1106002, y: 0.25805444, z: 0}
+      - {x: 1.5920238, y: 0.49876624, z: 0}
+      - {x: 1.7015991, y: 0.7870786, z: 0}
+      - {x: 1.8111744, y: 1.075391, z: 0}
+      - {x: 2.2042167, y: 2.1095567, z: 0}
+      - {x: 1.1384641, y: 2.2930486, z: 0}
+      - {x: 0.08568573, y: 2.4765399, z: 0}
+      - {x: -0.6276737, y: 2.600873, z: 0}
+      - {x: -0.9845414, y: 2.3895102, z: 0}
+      - {x: -1.3414092, y: 2.2040942, z: 0}
       isClosed: 0
-      localPosition: {x: 0, y: 2.4717321, z: 0}
+      localPosition: {x: 0, y: 0, z: 0}
       space: 1
       controlMode: 0
       autoControlLength: 0.3
       boundsUpToDate: 0
-      pivot: {x: -1, y: -0.5, z: 0}
+      pivot: {x: -0.6253151, y: 1.3053683, z: 0}
       bounds:
-        m_Center: {x: -1, y: -0.5, z: 0}
-        m_Extent: {x: 3, y: 0, z: 0}
+        m_Center: {x: -0.6253151, y: 1.3053683, z: 0}
+        m_Extent: {x: 2.5199366, y: 1.2084395, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       perAnchorNormalsAngle:
+      - 0
+      - 0
+      - 0
       - 0
       - 0
       globalNormalsAngle: 0
@@ -597,7 +609,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8378501504431496696, guid: 375e5497ddf4bc44c923c5370ab91131, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 375e5497ddf4bc44c923c5370ab91131, type: 3}
 --- !u!1001 &2027501611
 PrefabInstance:

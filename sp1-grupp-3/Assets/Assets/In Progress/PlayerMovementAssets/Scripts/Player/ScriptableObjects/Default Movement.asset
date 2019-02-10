@@ -11,9 +11,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b618bfacef114c74fbef0fed8f48815d, type: 3}
   m_Name: Default Movement
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   maxSpeed: 8
   acceleration: 6
   deAcceleration: 4
   jumpForce: 0
-  gravityModifier: 0
+  gravityModifier: 25.1

@@ -16,19 +16,19 @@ public class MovementPlatformTest : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //if (collision.gameObject.CompareTag("Platfrom")) {
+        if (collision.gameObject.CompareTag("Platfrom")) {
         platform = collision.gameObject.GetComponent<Platform>();
         transform.parent = platform.transform;
         rb.velocity = Vector2.zero;
-        //}
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        //if (collision.gameObject.CompareTag("Platfrom")) {
+        if (collision.gameObject.CompareTag("Platfrom")) {
         platform = null;
         transform.parent = null;
-        //}
+        }
     }
 
     private void LateUpdate()
