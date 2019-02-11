@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114162856428978080}
-  - {fileID: 114427444137996682}
-  - {fileID: 114111905847120468}
-  - {fileID: 114133497670943376}
-  - {fileID: 114971691696711310}
+  - {fileID: 114250418756372878}
+  - {fileID: 114243324478082496}
+  - {fileID: 114558136626813428}
+  - {fileID: 114053252821023032}
   EditorEvents:
   - {fileID: 114999501054668234}
   MasterBanks:
@@ -26,9 +26,10 @@ MonoBehaviour:
   - {fileID: 114104179332306602}
   - {fileID: 114446497828834210}
   - {fileID: 114452456081144252}
+  - {fileID: 114250418756372878}
   StringsBanks:
   - {fileID: 114162856428978080}
-  stringsBankWriteTime: 636852349414783815
+  stringsBankWriteTime: 636854461168254509
   cacheVersion: 3
 --- !u!114 &114038284163379798
 MonoBehaviour:
@@ -49,6 +50,25 @@ MonoBehaviour:
   - Name: 
     Value: 70464
   Exists: 0
+--- !u!114 &114053252821023032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Christos\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.assets.bank
+  lastModified: 636854461168264510
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 70464
+  Exists: 1
 --- !u!114 &114104179332306602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,11 +159,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODAssets\Desktop\Master Bank.strings.bank
-  lastModified: 636852349414783815
+  lastModified: 636854461168254509
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 860
+  Exists: 1
+--- !u!114 &114243324478082496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Christos\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\test.bank
+  lastModified: 636854461168274511
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1340
+  Exists: 1
+--- !u!114 &114250418756372878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Christos\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master
+    Bank.bank
+  lastModified: 636854461168244509
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 12474
   Exists: 1
 --- !u!114 &114287963459013812
 MonoBehaviour:
@@ -357,6 +416,26 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 70464
+  Exists: 1
+--- !u!114 &114558136626813428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Christos\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODAssets\Desktop\Master
+    Bank.assets.bank
+  lastModified: 636854461168244509
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 450
   Exists: 1
 --- !u!114 &114566390083756052
 MonoBehaviour:
@@ -648,7 +727,7 @@ MonoBehaviour:
   Path: event:/test
   guid: 9170b3734a5d494490658731038b6cfd
   Banks:
-  - {fileID: 114111905847120468}
+  - {fileID: 114243324478082496}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

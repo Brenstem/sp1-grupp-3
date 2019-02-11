@@ -91,11 +91,11 @@ public class PlayerJump : MonoBehaviour
             jumpLengthTimer += Time.deltaTime;
         }
 
-        if (rb.velocity.y < 0 || jumpLengthTimer > jumpSustain)
+        if (rb.velocity.y < -0.1f || jumpLengthTimer > jumpSustain)
         {
             rb.gravityScale = fallGravity;
         }
-        else if (rb.velocity.y > 0 && !jumpBtn)
+        else if (rb.velocity.y > 0.1f && !jumpBtn)
         {
             rb.gravityScale = tapJumpGravity;
         }
