@@ -5,14 +5,14 @@ using UnityEngine;
 public class SetCheckpoint : MonoBehaviour {
 
     [SerializeField]
-    string objTag;
+    string playerTag;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.transform.CompareTag(objTag))
+        if (!collision.transform.CompareTag(playerTag))
             return;
 
-        var respawn = collision.GetComponent<MoveToCheckpoint>();
+        var respawn = collision.GetComponent<RespawnObject>();
 
         if (respawn == null)
             return;

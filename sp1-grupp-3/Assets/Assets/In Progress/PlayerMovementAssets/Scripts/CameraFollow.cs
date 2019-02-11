@@ -10,8 +10,6 @@ public class CameraFollow : MonoBehaviour
     public Vector3 offset = new Vector3(0f, 0f, -10f);
     [Header("Players Prefab Object")]
     public GameObject PrefabPlayer;
-    [Header("Where To Spawn The Player When It Dies")]
-    public Transform playerOriginPoint;
     [Header("How Long Will The Camera Wait To Find The New Spawned Player")]
     public float findDelayLength;
     Vector3 velocity;
@@ -34,16 +32,6 @@ public class CameraFollow : MonoBehaviour
                 CameraFollower(player.transform.position);
             }
             findDelayTimer = findDelayLength + 1;
-        }
-    }
-
-    void Update()
-    {
-        if (player == null)
-        {
-            player = Instantiate(PrefabPlayer, playerOriginPoint.position, playerOriginPoint.rotation);
-            player.name = "Player";
-            findDelayTimer = 0;
         }
     }
 

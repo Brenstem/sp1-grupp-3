@@ -4,21 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class MoveToTrigger : MonoBehaviour
+public class RespawnTrigger : MonoBehaviour
 {
     public event Action<GameObject> OnMove;
     protected void TriggerMove(GameObject obj) { OnMove(obj); }
 }
 
-public class MoveToCheckpoint : MonoBehaviour {
+public class RespawnObject : MonoBehaviour {
 
     [SerializeField]
-    MoveToTrigger MoveTrigger;
+    RespawnTrigger RespawnTrigger;
 
     public Transform checkpoint;
     
 	void Start () {
-        MoveTrigger.OnMove += Move;
+        RespawnTrigger.OnMove += Move;
 	}
 
     private void Move(GameObject obj)

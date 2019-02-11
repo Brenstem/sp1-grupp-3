@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnPlayerDeath : MoveToTrigger {
+public class OnPlayerDeath : RespawnTrigger {
 
     [SerializeField]
     Death playerDeath;
