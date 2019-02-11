@@ -6,12 +6,13 @@ using UnityEngine;
 public class MovementState : ScriptableObject
 {
     [Header("Movement")]
-    public float maxSpeed;
+    public float speed;
     public float acceleration;
     public float deAcceleration;
 
     [Space]
     [Header("Jump")]
-    public float jumpForce;
-    public float gravityModifier;
+    public float jumpHeight;
+    public float fallGravity;
+
 }
