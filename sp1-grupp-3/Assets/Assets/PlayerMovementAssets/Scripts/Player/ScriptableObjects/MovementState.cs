@@ -6,17 +6,21 @@ using UnityEngine;
 public class MovementState : ScriptableObject
 {
     [Header("Movement")]
-    public float deAcceleration;
-    public float acceleration;
+    [Header("Speed Of Which The Player Will Move With")]
     public float speed;
-    public float maxSpeed;
-    [Space]
-    public float grabMoveAcceleration;
+    [Header("Acceleration Towards Speed")]
+    public float acceleration;
+    [Header("DeAcceleration Towards Zero")]
+    public float deAcceleration;
 
     [Space]
     [Header("Jump")]
-    public float jumpStrength;
-    public float maxJumpHeight;
-    public float jumpGravity; 
+    [Header("The Jump Height / Jump Strength")]
+    public float jumpHeight;
+    [Header("Jump Sustain, Higher Value = More Time In The Air, Low Value = Less Time In Air")]
+    public float jumpSustain;
+    [Header("Gravity When Falling, Activates When The Player Starts Falling downward, Default Value = 3")]
     public float fallGravity;
+    [Header("Gravity For When Tapping The Jump Button, Changes The Gravity When Just Tapping The Jump Button, Default Value = 2")]
+    public float tapJumpGravity; 
 }

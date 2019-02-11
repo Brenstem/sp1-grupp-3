@@ -8,16 +8,14 @@ public class PlayerJump : MonoBehaviour
     public MovementState defaultMovementState;
 
     [Space]
-    [SerializeField]
-    float jumpStrength;
-    [SerializeField]
-    float maxJumpHeight;
-    [SerializeField]
-    float jumpGravity;
-    [SerializeField]
-    float fallGravity;
+    float jumpHeight = 0;
+    float jumpSustain;
+    
+    float fallGravity = 3;
+    float tapJumpGravity = 2;
 
-    bool jumpRequest;
+    float jumpLengthTimer = 0;
+    bool jumpRequest = false;
 
     GroundCheck gCheck;
     Rigidbody2D rb;
@@ -31,12 +29,12 @@ public class PlayerJump : MonoBehaviour
         gCheck = GetComponent<GroundCheck>();
     }
 
-    void UpdateMovementState(MovementState move)
+    public void UpdateMovementState(MovementState move)
     {
-        jumpStrength = move.jumpStrength;
-        maxJumpHeight = move.maxJumpHeight;
-        jumpGravity = move.jumpGravity;
+        jumpHeight = move.jumpHeight;
+        jumpSustain = move.jumpSustain;
         fallGravity = move.fallGravity;
+        tapJumpGravity = move.tapJumpGravity;
     }
 
     void Update()
@@ -45,7 +43,7 @@ public class PlayerJump : MonoBehaviour
         {
             UpdateMovementState(newMovementState);
         }
-        else if(newMovementState == null || newMovementState != null && enableNewMovement == false)
+        else if (newMovementState == null || newMovementState != null && enableNewMovement == false)
         {
             UpdateMovementState(defaultMovementState);
         }
@@ -53,11 +51,13 @@ public class PlayerJump : MonoBehaviour
         if (hasBeenGrounded == false)
         { hasBeenGrounded = gCheck.isGrounded; }
 
-        bool jumpBtn = Input.GetAxisRaw("Jump") == 1;
+        bool jumpBtn = Input.GetAxisRaw("Jump") == 1 || Input.GetButton("ABtn");
         if (jumpBtn == true && hasBeenGrounded == true)
         {
             jumpRequest = true;
             hasBeenGrounded = false;
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
+            jumpLengthTimer = 0;
         }
     }
 
@@ -65,8 +65,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (jumpRequest == true)
         {
-            // var yVel = Mathf.Sqrt(jumpForce * -Physics2D.gravity.y);
-            var yVel = jumpStrength;
+            var yVel = jumpHeight;
 
             if (rb.velocity.y < 0)
             {
@@ -76,26 +75,33 @@ public class PlayerJump : MonoBehaviour
             }
             else
             {
-                yVel = Mathf.Clamp(yVel, 0f, maxJumpHeight);
                 rb.velocity += new Vector2(0, yVel);
-
-                jumpRequest = false;
             }
+            jumpRequest = false;
         }
         ApplyJumpModifier();
     }
 
     void ApplyJumpModifier()
     {
-        bool jumpBtn = Input.GetAxisRaw("Jump") == 1;
+        bool jumpBtn = Input.GetAxisRaw("Jump") == 1 || Input.GetButton("ABtn");
 
-        if (rb.velocity.y < 0)
+        if (jumpBtn == true)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallGravity - 1) * Time.deltaTime;
+            jumpLengthTimer += Time.deltaTime;
         }
-        else if (rb.velocity.y > 0 && jumpBtn == false)
+
+        if (rb.velocity.y < 0 || jumpLengthTimer > jumpSustain)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (jumpGravity - 1) * Time.deltaTime;
+            rb.gravityScale = fallGravity;
+        }
+        else if (rb.velocity.y > 0 && !jumpBtn)
+        {
+            rb.gravityScale = tapJumpGravity;
+        }
+        else
+        {
+            rb.gravityScale = 1f;
         }
     }
 }

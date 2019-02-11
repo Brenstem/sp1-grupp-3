@@ -133,7 +133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &293591652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293591651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.01, y: -5.11, z: 0}
+  m_LocalPosition: {x: -0.94, y: -5.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &821976233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,12 +507,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33662384461b3c5489a9956f5aeb877b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newMovementState: {fileID: 0}
-  defaultMovementState: {fileID: 0}
-  jumpStrength: 3
-  maxJumpHeight: 4
-  jumpGravity: 3
-  fallGravity: 3
+  newMovementState: {fileID: 11400000, guid: 78b189404270fdc4fa41df7fd1cca9e9, type: 2}
+  defaultMovementState: {fileID: 11400000, guid: 3898e9126d61c0947add86ba0b25b3aa,
+    type: 2}
   enableNewMovement: 0
 --- !u!114 &821976234
 MonoBehaviour:
@@ -526,12 +523,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3329b06210741144bfa8d8960f6614b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newMovementState: {fileID: 0}
-  defaultMovementState: {fileID: 0}
-  movementSettings:
-    speed: 0
-    acceleration: 0
-    deAcceleration: 0
+  newMovementState: {fileID: 11400000, guid: 78b189404270fdc4fa41df7fd1cca9e9, type: 2}
+  defaultMovementState: {fileID: 11400000, guid: 3898e9126d61c0947add86ba0b25b3aa,
+    type: 2}
   enableNewMovement: 0
 --- !u!114 &821976235
 MonoBehaviour:
@@ -546,8 +540,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 0
-  groundCollPosition: {x: 0, y: -2.25, z: 0}
-  groundCollSize: {x: 4, y: 0.5, z: 0}
+  groundCollPosition: {x: 0, y: -2, z: 0}
+  groundCollSize: {x: 1.5, y: 0.25, z: 0}
   collideWithLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -585,7 +579,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.13924599}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -596,7 +590,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 1.5, y: 3.721508}
   m_EdgeRadius: 0
 --- !u!212 &821976238
 SpriteRenderer:
@@ -635,7 +629,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: aea345628ea3cf24ba553f530b0f4409, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 421dc4ce9d9cddd4c8794fef918ebb28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

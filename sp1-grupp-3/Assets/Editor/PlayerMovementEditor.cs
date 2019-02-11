@@ -20,41 +20,35 @@ public class PlayerMovementEditor : Editor
 
         DrawDefaultInspector();
 
-        PlayerMovement playerM = (PlayerMovement)target;
-        MovementSettings = playerM.GetComponent<PlayerMovement>().movementSettings;
+        //PlayerMovement playerM = (PlayerMovement)target;
+        //PlayerJump playerJ = (PlayerJump)target;
+        //MovementSettings = playerM.GetComponent<PlayerMovement>().movementSettings;
 
-<<<<<<< HEAD:sp1-grupp-3/Assets/Editor/PlayerMovementEditor.cs
         if(EditorApplication.isPlaying == false)
         {
-            if (playerM.newMovementState == null)
-            {
-                playerM.UpdateMovementState(playerM.defaultMovementState);
-            }
-            else if (playerM.newMovementState != null)
-            {
-                playerM.UpdateMovementState(playerM.newMovementState);
-            }
+            //if (playerM.newMovementState == null)
+            //{
+            //    playerM.UpdateMovementState(playerM.defaultMovementState);
+            //}
+            //else if (playerM.newMovementState != null)
+            //{
+            //    playerM.UpdateMovementState(playerM.newMovementState);
+            //}
 
-            if (playerJ.newMovementState == null)
-            {
-                playerJ.UpdateMovementState(playerJ.defaultMovementState);
-            }
-            else if (playerJ.newMovementState != null)
-            {
-                playerJ.UpdateMovementState(playerJ.newMovementState);
-            }
+            //if (playerJ.newMovementState == null)
+            //{
+            //    playerJ.UpdateMovementState(playerJ.defaultMovementState);
+            //}
+            //else if (playerJ.newMovementState != null)
+            //{
+            //    playerJ.UpdateMovementState(playerJ.newMovementState);
+            //}
         }
         
         //if (AxisDefined(MovementSettings.name) == true)
         //{
         //    //GetAxis(MovementSettings);
         //}
-=======
-        if (AxisDefined(MovementSettings.name) == true)
-        {
-            //GetAxis(MovementSettings);
-        }
->>>>>>> parent of a268741... Player Movement Updated:sp1-grupp-3/Assets/Assets/Editor/PlayerMovementEditor.cs
 
         serializedObject.ApplyModifiedProperties();
     }
