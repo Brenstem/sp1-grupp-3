@@ -50,14 +50,16 @@ public class PlayerJump : MonoBehaviour
 
         if (hasBeenGrounded == false)
         { hasBeenGrounded = gCheck.isGrounded; }
+        if(hasBeenGrounded == true)
+        {
+            jumpLengthTimer = 0;
+        }
 
         bool jumpBtn = Input.GetAxisRaw("Jump") == 1 || Input.GetButton("ABtn");
         if (jumpBtn == true && hasBeenGrounded == true)
         {
             jumpRequest = true;
             hasBeenGrounded = false;
-            rb.velocity = new Vector2(rb.velocity.x, 0f);
-            jumpLengthTimer = 0;
         }
     }
 
@@ -65,6 +67,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (jumpRequest == true)
         {
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
             var yVel = jumpHeight;
 
             if (rb.velocity.y < 0)
@@ -91,11 +94,11 @@ public class PlayerJump : MonoBehaviour
             jumpLengthTimer += Time.deltaTime;
         }
 
-        if (rb.velocity.y < -0.1f || jumpLengthTimer > jumpSustain)
+        if (rb.velocity.y < -0.1f && hasBeenGrounded == false || jumpLengthTimer > jumpSustain)
         {
             rb.gravityScale = fallGravity;
         }
-        else if (rb.velocity.y > 0.1f && !jumpBtn)
+        else if (rb.velocity.y > 0.1f && hasBeenGrounded == false && !jumpBtn)
         {
             rb.gravityScale = tapJumpGravity;
         }
