@@ -21,7 +21,6 @@ public class ButtonController : MonoBehaviour, IPointerEnterHandler, ISelectHand
     // Checks for keyboard/gamepad input and switches to keyboard/gamepad control
     private void Update()
     {
-
         if (Input.GetAxis("Vertical") != 0 && !buttonSelected)
         {
             canvasEventSystem.SetSelectedGameObject(selectOnStart);
@@ -32,6 +31,7 @@ public class ButtonController : MonoBehaviour, IPointerEnterHandler, ISelectHand
         if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse1))
         {
             buttonSelected = false;
+            canvasEventSystem.SetSelectedGameObject(null);
         }
     }
 
