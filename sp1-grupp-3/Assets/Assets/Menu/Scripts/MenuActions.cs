@@ -37,6 +37,7 @@ public class MenuActions : MonoBehaviour
     {
         creditsAnim = creditsHolder.GetComponent<Animator>();
         creditsTimer = new Timer();
+        PlaySound(sounds.menuMusic);
     }
 
 
