@@ -1518,6 +1518,7 @@ MonoBehaviour:
   creditsHolder: {fileID: 1904437635}
   Title: {fileID: 1763957972}
   buttonHolder: {fileID: 605515351}
-  onSelectSound: 
+  onSelectSound: event:/Menu/Menu SFX/sfx_onSelect
   onStartSound: 
   onExitSound: 
+  menuMusicSound: event:/Menu/Menu_music/menu_music_v0.9
