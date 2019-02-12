@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - DeathZone
+  - Environment
+  - StartButton
+  - CanvasEventSystem
+  - Credits
+  - PlatformMoving
   layers:
   - Default
   - TransparentFX
@@ -13,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Platform
   - 
   - 
   - 
