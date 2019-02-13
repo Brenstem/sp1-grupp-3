@@ -174,7 +174,7 @@ public class PlayerGrab : MonoBehaviour
     }
     void RotateBox()
     {
-        if (Mathf.Abs(parent.transform.rotation.z) < 0.7f)
+        if (Mathf.Abs(parent.transform.rotation.z) < 0.7f) // || objCurrGrabbed.transform.rotation.z != 0
         {
             isRotating = true;
 
@@ -183,8 +183,13 @@ public class PlayerGrab : MonoBehaviour
 
             pointPosition.position = objCurrGrabbed.transform.position;
             pointPosition.localPosition = new Vector2(0f, pointPosition.localPosition.y);
+
+            //float point = objCurrGrabbed.transform.rotation.eulerAngles.z;
+            //Debug.Log(point);
+            //point = Mathf.MoveTowards(point, 0f, 6f);
+            //objCurrGrabbed.transform.rotation = Quaternion.Euler(0f, 0f, point);
         }
-        else
+        else // if(objCurrGrabbed.transform.rotation.z == 0)
         {
             objCurrGrabbed.GetComponent<BoxCollider2D>().isTrigger = false;
             objCurrGrabbed.transform.parent = null;
