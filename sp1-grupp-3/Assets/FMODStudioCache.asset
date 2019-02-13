@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114252025792170184}
-  - {fileID: 114793308435578764}
+  - {fileID: 114350944198560652}
   EditorEvents:
-  - {fileID: 114667696781566372}
+  - {fileID: 114261533055298154}
   MasterBanks:
   - {fileID: 114315418407968196}
   - {fileID: 114466862774828818}
+  - {fileID: 114350944198560652}
   StringsBanks:
   - {fileID: 114252025792170184}
-  stringsBankWriteTime: 636850457407489668
+  stringsBankWriteTime: 636856570342663088
   cacheVersion: 3
 --- !u!114 &114038284163379798
 MonoBehaviour:
@@ -173,11 +174,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Sense\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636850457407489668
+  lastModified: 636856570342663088
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 714
+    Value: 730
   Exists: 1
 --- !u!114 &114257381626313000
 MonoBehaviour:
@@ -198,6 +199,29 @@ MonoBehaviour:
   - Name: 
     Value: 914
   Exists: 1
+--- !u!114 &114261533055298154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Menu/Main menu music
+  guid: 85342cd84624594ead4086822e80bd8e
+  Banks:
+  - {fileID: 114350944198560652}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 123109
 --- !u!114 &114287963459013812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +317,25 @@ MonoBehaviour:
   - Name: 
     Value: 70464
   Exists: 0
+--- !u!114 &114350944198560652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\dev\Unity\sp1-grupp-3\sp1-grupp-3\Sense\Build\Desktop\Master Bank.bank
+  lastModified: 636856570342623499
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1169568
+  Exists: 1
 --- !u!114 &114369217583940128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,8 +567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Test
   guid: e2926d9546f8e44fa18bcce4bad7064a
-  Banks:
-  - {fileID: 114793308435578764}
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -630,7 +672,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 419328
-  Exists: 1
+  Exists: 0
 --- !u!114 &114856866805694306
 MonoBehaviour:
   m_ObjectHideFlags: 0
