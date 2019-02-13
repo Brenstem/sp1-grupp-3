@@ -261,12 +261,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 291714d3f5c5e1447819a4358ca0a4c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8515e98e8edf29644a98a1b6dd2900ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 11.52, y: 6.48}
+  m_Size: {x: 27.40625, y: 15.4140625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -280,8 +280,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288552939}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.879, y: 2.155, z: 0}
+  m_LocalScale: {x: 1.283, y: 1.28, z: 1}
   m_Children:
   - {fileID: 1709715833}
   m_Father: {fileID: 0}
@@ -588,6 +588,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BTN_start
       objectReference: {fileID: 0}
+    - target: {fileID: 114904065088523288, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
+        type: 3}
+      propertyPath: state
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114318783317883562, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -788,16 +793,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114904065088523288, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
-        type: 3}
-      propertyPath: state
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114050997134372084, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1b3168797b1557f4385cc5faa551afe3,
+      objectReference: {fileID: 21300000, guid: 52b838cfcaa0b4041a24431b0d21ac5b,
         type: 3}
     - target: {fileID: 7138765780158793924, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
@@ -869,6 +869,11 @@ PrefabInstance:
     - target: {fileID: 1283430220271678, guid: c0a3445cb0a9f30408f2752bdcc1b0e0, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114904065088523288, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
+        type: 3}
+      propertyPath: state
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114318783317883562, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
@@ -1035,16 +1040,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114904065088523288, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
-        type: 3}
-      propertyPath: state
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114050997134372084, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 10b192e47fd861242854fd6e0c545230,
+      objectReference: {fileID: 21300000, guid: 01f2578be9a9b5544bd7495fdae64170,
         type: 3}
     - target: {fileID: 114050997134372084, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
@@ -1462,7 +1462,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6f2f561d76a61c544a3e98782e6a6ded,
+      objectReference: {fileID: 21300000, guid: 2cd6dd9862b643c45a44a88f2e748d98,
         type: 3}
     - target: {fileID: 6480898794120817010, guid: c0a3445cb0a9f30408f2752bdcc1b0e0,
         type: 3}
@@ -1539,7 +1539,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 89981054b870d694fa0d70115700c235, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcc7706b817c0084aadaf90abe08ebb7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1654,7 +1654,7 @@ MonoBehaviour:
   creditsHolder: {fileID: 1904437635}
   Title: {fileID: 1763957972}
   buttonHolder: {fileID: 605515351}
-  onSelectSound: 
+  onSelectSound: event:/Menu/Menu SFX/sfx_onSelect
   onStartSound: 
   onExitSound: 
-  menuMusicSound: 
+  menuMusicSound: event:/Menu/Menu_music/menu_music_v0.9
