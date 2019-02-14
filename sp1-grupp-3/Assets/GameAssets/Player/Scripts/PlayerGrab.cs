@@ -15,8 +15,6 @@ public class PlayerGrab : MonoBehaviour
 
     GroundCheck groundCheck;
     GameObject objCurrGrabbed;
-    //DistanceJoint2D joint;
-    //private Rigidbody2D connectedBody;
     bool colliding = false;
     public GameObject parent;
     public float xValue = 0;
@@ -91,7 +89,7 @@ public class PlayerGrab : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Rigidbody2D>())
+        if (collision.gameObject.GetComponent<Rigidbody2D>() && collision.transform.tag == "Box")
         {
             objCurrGrabbed = collision.gameObject;
             colliding = true;
@@ -100,7 +98,7 @@ public class PlayerGrab : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<Rigidbody2D>())
+        if (collision.gameObject.GetComponent<Rigidbody2D>() && collision.transform.tag == "Box")
         {
             colliding = false;
         }
@@ -108,7 +106,7 @@ public class PlayerGrab : MonoBehaviour
 
     void GrabCheck()
     {
-        if (colliding == true && groundCheck.isGrounded)
+        if (colliding == true && groundCheck.isGrounded && objCurrGrabbed != null)
         {
             if (!grabbed && Input.GetButtonDown("Grab"))
             {
