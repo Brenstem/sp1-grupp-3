@@ -67,9 +67,9 @@ namespace PathCreationEditor
         const int bezierPathTab = 0;
         const int vertexPathTab = 1;
 
-        #endregion
-
         public List<Vector3> points;
+
+        #endregion
 
         #region Inspectors
 
