@@ -7,12 +7,13 @@ using PathCreation;
 public class Platform : MonoBehaviour
 {
     public PathCreator pathCreator;
+    public bool move;
     public float speed = 5;
     public EndOfPathInstruction platformBehaviour;
     public float waitTime;
     [HideInInspector] public Vector2 velocity;
 
-    private bool move = true;
+    
     private float distanceTravelled;
     private Vector2 lastPosition;
 
