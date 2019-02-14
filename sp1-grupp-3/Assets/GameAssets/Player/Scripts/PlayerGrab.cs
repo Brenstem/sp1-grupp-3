@@ -54,7 +54,7 @@ public class PlayerGrab : MonoBehaviour
                 objCurrGrabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
 
                 objCurrGrabbed.transform.SetParent(parent.transform);
-                parent.transform.localPosition = new Vector2(0.3f * -xValue, 1f);
+                //parent.transform.localPosition = new Vector2(0.3f * -xValue, 1f);
 
                 grabbed = true;
                 colliding = false;
@@ -170,6 +170,7 @@ public class PlayerGrab : MonoBehaviour
         Vector2 position = Vector2.MoveTowards(objCurrGrabbed.transform.position, pointPosition.position, distance);
         objCurrGrabbed.GetComponent<Rigidbody2D>().MovePosition(position);
     }
+
     void RotateBox()
     {
         if (Mathf.Abs(parent.transform.rotation.z) < 0.7f) // || objCurrGrabbed.transform.rotation.z != 0
@@ -182,10 +183,11 @@ public class PlayerGrab : MonoBehaviour
             pointPosition.position = objCurrGrabbed.transform.position;
             pointPosition.localPosition = new Vector2(0f, pointPosition.localPosition.y);
 
-            float point = objCurrGrabbed.transform.rotation.eulerAngles.z;
+            //float point = objCurrGrabbed.transform.rotation.eulerAngles.z;
             //Debug.Log(point);
-            point = Mathf.MoveTowardsAngle(point, 0f, 6f);
-            objCurrGrabbed.transform.rotation = Quaternion.Euler(0f, 0f, point);
+            //point = Mathf.MoveTowardsAngle(point, 0f, 6f);
+            //objCurrGrabbed.transform.rotation = Quaternion.Euler(0f, 0f, point);
+            
         }
         else // if(objCurrGrabbed.transform.rotation.z == 0)
         {
