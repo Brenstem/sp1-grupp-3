@@ -19,7 +19,7 @@ public class GroundCheck : MonoBehaviour
 
         if(transform.tag != "Player")
         {
-            //Debug.Log(GetComponent<Rigidbody2D>().velocity);
+            Debug.Log(GetComponent<Rigidbody2D>().velocity);
         }
         //if (previousGrounded == false && isGrounded == true)
         //{
