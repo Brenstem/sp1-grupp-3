@@ -1618,6 +1618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008518570}
   - component: {fileID: 2008518571}
+  - component: {fileID: 2008518572}
   m_Layer: 0
   m_Name: MenuActionsController
   m_TagString: Untagged
@@ -1655,6 +1656,18 @@ MonoBehaviour:
   Title: {fileID: 1763957972}
   buttonHolder: {fileID: 605515351}
   onSelectSound: event:/Menu/Menu SFX/sfx_onSelect
-  onStartSound: 
-  onExitSound: 
-  menuMusicSound: event:/Menu/Menu_music/menu_music_v0.9
+  onStartSound: event:/Menu/Menu SFX/sfx_onStart
+  onExitSound: event:/Menu/Menu SFX/sfx_onExit
+--- !u!114 &2008518572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008518569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fec147879ced30478d1c92e69b4378c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuMusicSound: event:/Menu/Menu_music/menu_music
