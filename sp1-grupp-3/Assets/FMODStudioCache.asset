@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114175172764416926}
-  - {fileID: 114654868153771844}
+  - {fileID: 114019043295395358}
   EditorEvents:
   - {fileID: 114666065831573718}
   - {fileID: 114707473561635556}
@@ -25,8 +25,28 @@ MonoBehaviour:
   - {fileID: 114654868153771844}
   StringsBanks:
   - {fileID: 114175172764416926}
-  stringsBankWriteTime: 636856038307492297
+  stringsBankWriteTime: 636860851253288883
   cacheVersion: 3
+--- !u!114 &114019043295395358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\WolfC\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODBank\Desktop\Master
+    Bank.bank
+  lastModified: 636860851253268951
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2841568
+  Exists: 1
 --- !u!114 &114038284163379798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODBank\Desktop\Master Bank.strings.bank
-  lastModified: 636856038307492297
+  lastModified: 636860851253288883
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -633,7 +653,7 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 2841568
-  Exists: 1
+  Exists: 0
 --- !u!114 &114666065831573718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,7 +669,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu_music/menu_music_v0.9
   guid: 185d51e8ce8c4a459caf62edaace2079
   Banks:
-  - {fileID: 114654868153771844}
+  - {fileID: 114019043295395358}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -714,7 +734,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu SFX/sfx_onSelect
   guid: de9ddfa41ba97c4a991c39ff125526f8
   Banks:
-  - {fileID: 114654868153771844}
+  - {fileID: 114019043295395358}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

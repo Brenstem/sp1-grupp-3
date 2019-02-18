@@ -9,6 +9,8 @@ public class PlayerGrab : MonoBehaviour
 
     [SerializeField]
     float distance;
+    float distanceFromTo;
+    float boxWidth, boxHeight;
 
     public Vector2 boxcastOffset;
     public bool grabbed;
@@ -55,6 +57,8 @@ public class PlayerGrab : MonoBehaviour
 
                 objCurrGrabbed.transform.SetParent(parent.transform);
                 //parent.transform.localPosition = new Vector2(0.3f * -xValue, 1f);
+
+                parent.transform.localPosition = new Vector2(-GetBoxSize().x / 2f, -objCurrGrabbed.transform.localPosition.y + GetBoxSize().y / 2);
 
                 grabbed = true;
                 colliding = false;
@@ -180,8 +184,8 @@ public class PlayerGrab : MonoBehaviour
             angleZ = Mathf.MoveTowards(angleZ, 90f * xValue, 2f);
             parent.transform.rotation = Quaternion.Euler(0f, 0f, angleZ);
 
-            pointPosition.position = objCurrGrabbed.transform.position;
-            pointPosition.localPosition = new Vector2(0f, pointPosition.localPosition.y);
+            //pointPosition.position = objCurrGrabbed.transform.position;
+            //pointPosition.localPosition = new Vector2(0f, pointPosition.localPosition.y);
 
             //float point = objCurrGrabbed.transform.rotation.eulerAngles.z;
             //Debug.Log(point);
@@ -201,7 +205,6 @@ public class PlayerGrab : MonoBehaviour
 
     void Drop()
     {
-
         var force = new Vector2(xForce * xValue, yForce);
 
         objCurrGrabbed.GetComponent<Rigidbody2D>().freezeRotation = false;
@@ -212,11 +215,21 @@ public class PlayerGrab : MonoBehaviour
         angleZ = 0;
         isRotating = true;
     }
+
     private void OnDrawGizmos()
     {
         if(objCurrGrabbed != null)
         {
             Gizmos.DrawLine(objCurrGrabbed.transform.position, (Vector2)objCurrGrabbed.transform.position + new Vector2(xForce * xValue, yForce));
         }
+    }
+
+    Vector2 GetBoxSize()
+    {
+        return objCurrGrabbed.GetComponent<BoxCollider2D>().size;
+    }
+    Vector2 Distance()
+    {
+        return new Vector2(objCurrGrabbed.transform.position.x - transform.position.x, objCurrGrabbed.transform.position.y - transform.position.y);
     }
 }
