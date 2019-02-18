@@ -649,8 +649,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 4, y: -2, z: 0}
     second:
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 10
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -741,7 +741,7 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 37e8af9c8a3050c4d818b8eedb0a751a, type: 2}
-  - m_RefCount: 19
+  - m_RefCount: 18
     m_Data: {fileID: 11400000, guid: d35beb515e7af584d988cc6b4d2d1159, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 2d91185122d40254aaf33283c77d9752, type: 2}
@@ -759,12 +759,12 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 1ea174990153bd84eb28f09db982c71c, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 4c446dd5b38fa5f4795c6fc38578d3af, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 874a58ebb23f40e44a08aad92be2681b, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 21300016, guid: 8dbe4e18e8fe78c4fa22c439d491dfe9, type: 3}
-  - m_RefCount: 19
+  - m_RefCount: 18
     m_Data: {fileID: 21300000, guid: 8dbe4e18e8fe78c4fa22c439d491dfe9, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 21300026, guid: 8dbe4e18e8fe78c4fa22c439d491dfe9, type: 3}
@@ -782,7 +782,7 @@ Tilemap:
     m_Data: {fileID: 21300018, guid: 8dbe4e18e8fe78c4fa22c439d491dfe9, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 21300012, guid: 8dbe4e18e8fe78c4fa22c439d491dfe9, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 21300010, guid: 8dbe4e18e8fe78c4fa22c439d491dfe9, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 51
@@ -809,7 +809,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -9, y: -10, z: 0}
-  m_Size: {x: 46, y: 14, z: 1}
+  m_Size: {x: 46, y: 17, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -1117,6 +1117,16 @@ PrefabInstance:
       propertyPath: wallCollPosition.y
       value: 0.11
       objectReference: {fileID: 0}
+    - target: {fileID: 8760632943739834865, guid: bf499fee01869e14d94251f9ca242511,
+        type: 3}
+      propertyPath: enableNewMovement
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760632943739834864, guid: bf499fee01869e14d94251f9ca242511,
+        type: 3}
+      propertyPath: enableNewMovement
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf499fee01869e14d94251f9ca242511, type: 3}
 --- !u!1 &1118078774
@@ -1214,7 +1224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e75c2febd763984cadbf57877259607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothSpeed: 0.125
+  smoothSpeed: 0.4
   offset: {x: 0, y: 0, z: -10}
   PrefabPlayer: {fileID: 0}
   findDelayLength: 0
@@ -2264,11 +2274,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1734210156, guid: 66de1ab04ad3e1c4ea68f7a3f3cf6109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.34
+      value: 19.18
       objectReference: {fileID: 0}
     - target: {fileID: 1734210156, guid: 66de1ab04ad3e1c4ea68f7a3f3cf6109, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.17
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1734210156, guid: 66de1ab04ad3e1c4ea68f7a3f3cf6109, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2323,12 +2333,12 @@ PrefabInstance:
     - target: {fileID: 5794949981798358552, guid: c0db0ef300df06b43a283d1b49d5be12,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.55
+      value: 18.01
       objectReference: {fileID: 0}
     - target: {fileID: 5794949981798358552, guid: c0db0ef300df06b43a283d1b49d5be12,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.97
+      value: 4.85
       objectReference: {fileID: 0}
     - target: {fileID: 5794949981798358552, guid: c0db0ef300df06b43a283d1b49d5be12,
         type: 3}

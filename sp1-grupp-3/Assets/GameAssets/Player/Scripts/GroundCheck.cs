@@ -34,7 +34,7 @@ public class GroundCheck : MonoBehaviour
             Vector2 position = transform.position;
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
-            rb.velocity = new Vector2(rb.velocity.x - (hit.normal.x * slopeFriction), rb.velocity.y);
+            //rb.velocity = new Vector2(rb.velocity.x - (hit.normal.x * slopeFriction), rb.velocity.y);
 
             //Move Player up or down to compensate for the slope below them
             //Vector3 pos = transform.position;

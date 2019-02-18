@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Default Movement
   m_EditorClassIdentifier: 
   speed: 5
-  acceleration: 24
-  deAcceleration: 12
+  acceleration: 20
+  deAcceleration: 10
   jumpHeight: 10
-  jumpSustain: 0.3
-  fallGravity: 3
-  tapJumpGravity: 2
+  jumpSustain: 0.2
+  fallGravity: 4
+  tapJumpGravity: 5

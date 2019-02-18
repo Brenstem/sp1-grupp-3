@@ -96,7 +96,7 @@ public class PlayerJump : MonoBehaviour
 
         if (rb.velocity.y < -0.1f && hasBeenGrounded == false || jumpLengthTimer > jumpSustain)
         {
-            rb.gravityScale = fallGravity;
+            rb.gravityScale = fallGravity;  
         }
         else if (rb.velocity.y > 0.1f && hasBeenGrounded == false && !jumpBtn)
         {
