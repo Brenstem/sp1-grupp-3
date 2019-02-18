@@ -6,18 +6,24 @@ public class PlayerMovement : MonoBehaviour
 {
     public MovementState newMovementState;
     public MovementState defaultMovementState;
-
+    [Space]
+    //[Header("MovementSettings Only For Show")]
+    //MovementSettings movementSettings;
     float speed;
     float acceleration;
     float deAcceleration;
 
     Rigidbody2D rb;
     float velX = 0;
+    SpriteRenderer sprite;
+    bool stopMoving = false;
+    bool facingRight = false;
     public bool enableNewMovement = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -51,12 +57,38 @@ public class PlayerMovement : MonoBehaviour
             int direction = 0; //Make A Variable That Will Store The Direction Of The Player, Depending On Where They Press
             if (horizontal > 0) //If The Player Pressed "Right"
             {
-                direction = 1; //Direction Is 1 = Right
+                if(transform.localScale.x > 0 && stopMoving == true)
+                {
+                    direction = 0;
+                    velX = 0;
+                }
+                else
+                {
+                    direction = 1; //Direction Is 1 = Right
+
+                    Vector3 scale = transform.localScale;
+                    scale.x = direction;
+                    transform.localScale = scale;
+                }
+              
             }
             else if (horizontal < 0) //If The Player Pressed "Left"
             {
-                direction = -1; //Direction Is -1 = Left
+                if(transform.localScale.x < 0 && stopMoving == true)
+                {
+                    direction = 0;
+                    velX = 0;
+                }
+                else
+                {
+                    direction = -1; //Direction Is -1 = Left
+
+                    Vector3 scale = transform.localScale;
+                    scale.x = direction;
+                    transform.localScale = scale;
+                }
             }
+
             velX = Mathf.MoveTowards(velX, speed * direction, acceleration * Time.deltaTime); //Here I Set So That velX Accelerates Towards Speed. (speed * direction) To Get The Correct Velocity
         }
         else if (ctrlHorizontal == 0) //If The Controller Isn't Moving & Player Is Not Pressing The Keyboard, Deaccelerate.
@@ -81,9 +113,18 @@ public class PlayerMovement : MonoBehaviour
         {
             velX = Mathf.MoveTowards(velX, 0f, deAcceleration * Time.deltaTime);
         }
-        
+
         Vector2 velocity = new Vector2(velX, rb.velocity.y);
 
         rb.velocity = velocity;
+    }
+
+    public void StopMovement()
+    {
+        stopMoving = true;
+    }
+    public void ContinueMovement()
+    {
+        stopMoving = false;
     }
 }

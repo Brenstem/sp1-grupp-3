@@ -35,9 +35,9 @@ public class MenuActions : MonoBehaviour
     // Reference fetching
     private void Start()
     {
+        PlaySound(sounds.menuMusic);
         creditsAnim = creditsHolder.GetComponent<Animator>();
         creditsTimer = new Timer();
-        PlaySound(sounds.menuMusic);
     }
 
 
@@ -103,28 +103,27 @@ public class MenuActions : MonoBehaviour
 
     public void PlaySound(sounds sound)
     {
-        FMOD.Studio.EventInstance soundToPlay;
-        soundToPlay = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
-
+        FMOD.Studio.EventInstance soundtoPlay;
+        soundtoPlay = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
         switch (sound)
         {
             case sounds.Play:
-                soundToPlay = FMODUnity.RuntimeManager.CreateInstance(onStartSound);
+                soundtoPlay = FMODUnity.RuntimeManager.CreateInstance(onStartSound);
                 break;
             case sounds.Exit:
-                soundToPlay = FMODUnity.RuntimeManager.CreateInstance(onExitSound);
+                soundtoPlay = FMODUnity.RuntimeManager.CreateInstance(onExitSound);
                 break;
             case sounds.Select:
-                soundToPlay = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
+                soundtoPlay = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
                 break;
             case sounds.menuMusic:
-                soundToPlay = FMODUnity.RuntimeManager.CreateInstance(menuMusicSound);
+                soundtoPlay = FMODUnity.RuntimeManager.CreateInstance(menuMusicSound);
                 break;
             default:
                 break;
         }
-        soundToPlay.start();
-        soundToPlay.release();
+        soundtoPlay.start();
+        soundtoPlay.release();
     }
 
 

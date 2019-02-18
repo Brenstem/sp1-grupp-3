@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b618bfacef114c74fbef0fed8f48815d, type: 3}
   m_Name: Default Movement
   m_EditorClassIdentifier: 
-  speed: 10
-  acceleration: 12
-  deAcceleration: 20
-  jumpHeight: 9
-  jumpSustain: 0.2
+  speed: 5
+  acceleration: 24
+  deAcceleration: 12
+  jumpHeight: 6
+  jumpSustain: 0.3
   fallGravity: 3
   tapJumpGravity: 2

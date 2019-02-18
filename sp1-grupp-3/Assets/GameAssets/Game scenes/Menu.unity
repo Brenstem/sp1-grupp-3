@@ -280,8 +280,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288552939}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.879, y: 2.155, z: 0}
+  m_LocalScale: {x: 1.283, y: 1.28, z: 1}
   m_Children:
   - {fileID: 1709715833}
   m_Father: {fileID: 0}
@@ -1654,7 +1654,7 @@ MonoBehaviour:
   creditsHolder: {fileID: 1904437635}
   Title: {fileID: 1763957972}
   buttonHolder: {fileID: 605515351}
-  onSelectSound: 
+  onSelectSound: event:/Menu/Menu SFX/sfx_onSelect
   onStartSound: 
   onExitSound: 
-  menuMusicSound: 
+  menuMusicSound: event:/Menu/Menu_music/menu_music_v0.9
