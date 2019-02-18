@@ -119,11 +119,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3957680390798873050, guid: 4ce600db41bae8b45ac084d06203e56e,
-        type: 3}
-      propertyPath: m_Name
-      value: PathCreator
-      objectReference: {fileID: 0}
     - target: {fileID: 3957680390798873044, guid: 4ce600db41bae8b45ac084d06203e56e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -184,6 +179,11 @@ PrefabInstance:
       propertyPath: editorData._bezierPath.boundsUpToDate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3957680390798873050, guid: 4ce600db41bae8b45ac084d06203e56e,
+        type: 3}
+      propertyPath: m_Name
+      value: PathCreator
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ce600db41bae8b45ac084d06203e56e, type: 3}
 --- !u!114 &597289076 stripped
@@ -230,12 +230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a16d3095d2280f64a8683756292b7950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectAction: 3
+  objectAction: 1
   moveTo: {x: 5, y: 10}
   platfrom: {fileID: 1313857808}
-  currentPosition: {x: 0, y: 0}
-  moveIncrement: 0
-  actionPerformed: 0
 --- !u!212 &708069139
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -426,7 +423,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 25ff31c0de410414cbd6e6de40f9d45b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -480,11 +477,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1861364355910422100, guid: 6b1a1c9c25e154a4ebc1503f9a7c64c9,
-        type: 3}
-      propertyPath: m_Name
-      value: Platform
-      objectReference: {fileID: 0}
     - target: {fileID: 1861364355910422089, guid: 6b1a1c9c25e154a4ebc1503f9a7c64c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -539,6 +531,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1861364355910422100, guid: 6b1a1c9c25e154a4ebc1503f9a7c64c9,
+        type: 3}
+      propertyPath: m_Name
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 1861364355910422103, guid: 6b1a1c9c25e154a4ebc1503f9a7c64c9,
         type: 3}
