@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114175172764416926}
-  - {fileID: 114654868153771844}
+  - {fileID: 114950396319964128}
   EditorEvents:
   - {fileID: 114666065831573718}
   - {fileID: 114707473561635556}
@@ -23,9 +23,10 @@ MonoBehaviour:
   - {fileID: 114700973142900460}
   - {fileID: 114122863715280502}
   - {fileID: 114654868153771844}
+  - {fileID: 114950396319964128}
   StringsBanks:
   - {fileID: 114175172764416926}
-  stringsBankWriteTime: 636856038307492297
+  stringsBankWriteTime: 636860841065624661
   cacheVersion: 3
 --- !u!114 &114038284163379798
 MonoBehaviour:
@@ -196,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODBank\Desktop\Master Bank.strings.bank
-  lastModified: 636856038307492297
+  lastModified: 636860841065624661
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -633,7 +634,7 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 2841568
-  Exists: 1
+  Exists: 0
 --- !u!114 &114666065831573718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,7 +650,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu_music/menu_music_v0.9
   guid: 185d51e8ce8c4a459caf62edaace2079
   Banks:
-  - {fileID: 114654868153771844}
+  - {fileID: 114950396319964128}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -714,7 +715,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu SFX/sfx_onSelect
   guid: de9ddfa41ba97c4a991c39ff125526f8
   Banks:
-  - {fileID: 114654868153771844}
+  - {fileID: 114950396319964128}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1019,6 +1020,25 @@ MonoBehaviour:
   - Name: 
     Value: 12474
   Exists: 0
+--- !u!114 &114950396319964128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\dev\Unity\sp1-grupp-3\sp1-grupp-3\FMODBank\Desktop\Master Bank.bank
+  lastModified: 636860841065596406
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2841568
+  Exists: 1
 --- !u!114 &114982716911596296
 MonoBehaviour:
   m_ObjectHideFlags: 0
