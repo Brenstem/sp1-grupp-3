@@ -36,7 +36,7 @@ public class MenuMusic : MonoBehaviour
 
         if (menuTimer > 298.0f)
         {
-            onTransition = 1.0f;
+            onTransition = 1f;
             menuMusic.setParameterValue("Menu Timer", onTransition);
         }
     }
