@@ -144,23 +144,31 @@ MonoBehaviour:
   editorData:
     _bezierPath:
       points:
-      - {x: -8.176813, y: -1.1641446, z: 0}
-      - {x: -7.1768136, y: -0.6641444, z: 0}
-      - {x: -5.1768136, y: -1.6641446, z: 0}
-      - {x: -4.1768136, y: -1.1641446, z: 0}
+      - {x: -14.47639, y: -0.9301045, z: 0}
+      - {x: -13.476391, y: -0.43010426, z: 0}
+      - {x: -10.504511, y: -1.6170454, z: 0}
+      - {x: -9.50451, y: -1.1170454, z: 0}
+      - {x: -8.178604, y: -0.45409316, z: 0}
+      - {x: -7.969514, y: 0.41321087, z: 0}
+      - {x: -7.7604237, y: 1.2805147, z: 0}
+      - {x: -7.322265, y: 3.097992, z: 0}
+      - {x: -9.369392, y: 2.5809782, z: 0}
+      - {x: -11.416519, y: 2.0639644, z: 0}
       isClosed: 0
       localPosition: {x: 0, y: 0, z: 0}
       space: 1
       controlMode: 0
       autoControlLength: 0.3
-      boundsUpToDate: 0
-      pivot: {x: -6.176813, y: -1.1641445, z: 0}
+      boundsUpToDate: 1
+      pivot: {x: -11.088526, y: 0.6539135, z: 0}
       bounds:
-        m_Center: {x: -6.176813, y: -1.1641445, z: 0}
-        m_Extent: {x: 1.9999998, y: 0.1443376, z: 0}
+        m_Center: {x: -11.088526, y: 0.6539135, z: 0}
+        m_Extent: {x: 3.3878639, y: 1.8966675, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       perAnchorNormalsAngle:
+      - 0
+      - 0
       - 0
       - 0
       globalNormalsAngle: 0
@@ -411,6 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathCreator: {fileID: 388272968}
+  move: 1
   speed: 5
   platformBehaviour: 1
   waitTime: 0
@@ -655,12 +664,12 @@ PrefabInstance:
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.52
+      value: -2.58
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.98
+      value: 1.95
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
