@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 public class TriggerCutscene : MonoBehaviour
 {
+    // Serialized variables
     [SerializeField] GameObject[] images;
 
+    // Private variables
     private Animator[] imageAnimators = new Animator[2];
     private Timer animationTimer;
     private bool animationPlaying;
     private bool cutSceneActivated;
-    private int x = 0;
+    private int imageIndex = 0;
 
+    // Gets animator components from images
     private void Start()
     {
         imageAnimators = new Animator[images.Length];
@@ -24,6 +27,7 @@ public class TriggerCutscene : MonoBehaviour
         }
     }
 
+    // Updates timer and cutscene playing
     private void Update()
     {
         animationTimer.UpdateTimer();
@@ -34,6 +38,7 @@ public class TriggerCutscene : MonoBehaviour
         }
     }
     
+    // Activates cutscene playing on trigger enter
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         if (hitInfo.gameObject.CompareTag("Player"))
@@ -43,26 +48,27 @@ public class TriggerCutscene : MonoBehaviour
         }
     }
 
+    // Sets cutscene images to active one after another
     private void PlayCutscene()
     {
-        for (; x < images.Length;)
+        for (; imageIndex < images.Length;)
         {
             if (!animationPlaying)
             {
-                Debug.Log("play " + x + " animation");
-                images[x].SetActive(true);
-                animationTimer.StartTimer(imageAnimators[x].GetCurrentAnimatorStateInfo(0).length);
+                Debug.Log("play " + imageIndex + " animation");
+                images[imageIndex].SetActive(true);
+                animationTimer.StartTimer(imageAnimators[imageIndex].GetCurrentAnimatorStateInfo(0).length);
                 animationPlaying = true;
             }
             break;
         }
 
-        if (animationTimer.TimerFinished)
+        if (animationTimer.TimerFinished || Input.anyKeyDown)
         {
-            Debug.Log(x + " animation finished");
-            images[x].SetActive(false);
+            Debug.Log(imageIndex + " animation finished");
+            images[imageIndex].SetActive(false);
             animationPlaying = false;
-            x++;
+            imageIndex++;
         }
     }
 }
