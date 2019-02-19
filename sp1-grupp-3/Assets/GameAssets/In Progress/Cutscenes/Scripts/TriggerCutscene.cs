@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 public class TriggerCutscene : MonoBehaviour
 {
-    public GameObject[] images;
+    [SerializeField] GameObject[] images;
 
-    private Animator[] imageAnimators;
+    private Animator[] imageAnimators = new Animator[2];
     private Timer animationTimer;
     private bool animationPlaying;
+    private bool cutSceneActivated;
+    private int x = 0;
 
     private void Start()
     {
+        imageAnimators = new Animator[images.Length];
         animationTimer = new Timer();
         
         for (int i = 0; i < images.Length; i++)
@@ -25,27 +28,41 @@ public class TriggerCutscene : MonoBehaviour
     {
         animationTimer.UpdateTimer();
 
-        if (animationTimer.TimerFinished)
-        {
-            animationPlaying = false;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D hitInfo)
-    {
-        if (hitInfo.CompareTag("Player"))
+        if (cutSceneActivated)
         {
             PlayCutscene();
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        if (hitInfo.gameObject.CompareTag("Player"))
+        {
+            cutSceneActivated = true;
+            this.GetComponent<Collider2D>().enabled = false;
         }
     }
 
     private void PlayCutscene()
     {
-        for (int i = 0; i < images.Length; i++)
+        for (; x < images.Length;)
         {
-            animationPlaying = true;
-            images[i].SetActive(true);
-            animationTimer.StartTimer(imageAnimators[i].GetCurrentAnimatorStateInfo(0).length);
+            if (!animationPlaying)
+            {
+                Debug.Log("play " + x + " animation");
+                images[x].SetActive(true);
+                animationTimer.StartTimer(imageAnimators[x].GetCurrentAnimatorStateInfo(0).length);
+                animationPlaying = true;
+            }
+            break;
+        }
+
+        if (animationTimer.TimerFinished)
+        {
+            Debug.Log(x + " animation finished");
+            images[x].SetActive(false);
+            animationPlaying = false;
+            x++;
         }
     }
 }
