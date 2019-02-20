@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LadderClimb : MonoBehaviour
 {
+    [Header("Add tiles as children to this gameobject. Do not give the tiles colliders.")]
+
     [SerializeField] float climbSpeed;
     [SerializeField] string playerTag;
 
