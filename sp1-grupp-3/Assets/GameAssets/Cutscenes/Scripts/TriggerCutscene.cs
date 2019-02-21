@@ -55,7 +55,6 @@ public class TriggerCutscene : MonoBehaviour
         {
             if (!animationPlaying)
             {
-                Debug.Log("play " + imageIndex + " animation");
                 images[imageIndex].SetActive(true);
                 animationTimer.StartTimer(imageAnimators[imageIndex].GetCurrentAnimatorStateInfo(0).length);
                 animationPlaying = true;
@@ -65,7 +64,6 @@ public class TriggerCutscene : MonoBehaviour
 
         if (animationTimer.TimerFinished || Input.anyKeyDown)
         {
-            Debug.Log(imageIndex + " animation finished");
             images[imageIndex].SetActive(false);
             animationPlaying = false;
             imageIndex++;

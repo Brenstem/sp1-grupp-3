@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9045081413382431074}
   - component: {fileID: 9045081413382431072}
   - component: {fileID: 9045081413382431087}
+  - component: {fileID: 5836338480264715870}
   m_Layer: 0
   m_Name: CutsceneTrigger
   m_TagString: Untagged
@@ -71,3 +72,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   images: []
+--- !u!114 &5836338480264715870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9045081413382431086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83215e0012530fa4e99bbc06554dedac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  movementEnabled: 1
