@@ -9,6 +9,7 @@ TagManager:
   - StartButton
   - CanvasEventSystem
   - Credits
+  - PlatformMoving
   layers:
   - Default
   - TransparentFX
