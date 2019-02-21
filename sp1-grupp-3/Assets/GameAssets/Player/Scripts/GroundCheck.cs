@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
@@ -13,13 +11,16 @@ public class GroundCheck : MonoBehaviour
     public LayerMask collideWithLayer;
     PlayerMovement movement;
     public float slopeFriction;
+    Rigidbody2D rb;
+    RaycastHit2D hit2;
 
     void Start()
     {
-        if(GetComponent<PlayerMovement>() != null)
+        if (GetComponent<PlayerMovement>() != null)
         {
             movement = GetComponent<PlayerMovement>();
         }
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -27,9 +28,36 @@ public class GroundCheck : MonoBehaviour
         var groundHits = new RaycastHit2D[10];
         int hitcount = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithLayer }, groundHits);
         RaycastHit2D hit = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, 0f, collideWithLayer);
-        isGrounded = hitcount > 0;
-        
-        if(isGrounded == true)
+
+        if (hit == true)
+        {
+            if (hit.transform.tag == "Platform")
+            {
+                isGrounded = true;
+            }
+            else if (hit.transform.tag == "JumpThroughtPlatforms")
+            {
+                if (rb.velocity.y < 0 && (transform.position.y + groundCollPosition.y - (groundCollSize.y / 2)) >= (hit.transform.position.y))
+                {
+                    isGrounded = true;
+                    hit.transform.GetComponent<BoxCollider2D>().isTrigger = false;
+                    hit2 = hit;
+                }
+            }
+        }
+        else
+        {
+            isGrounded = false;
+            if (hit2 != null)
+            {
+                hit2.transform.GetComponent<BoxCollider2D>().isTrigger = true;
+                //hit2 = hit;
+            }
+            // hit.transform.GetComponent<BoxCollider2D>().isTrigger = true;
+        }
+        //isGrounded = hitcount > 0;
+
+        if (isGrounded == true)
         {
             Vector2 position = transform.position;
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -41,8 +69,8 @@ public class GroundCheck : MonoBehaviour
             //pos.y += -hit.normal.x * Mathf.Abs(rb.velocity.x) * Time.deltaTime * (rb.velocity.x - hit.normal.x > 0 ? 1 : -1);
             //transform.position = pos;
         }
-        
-        if(movement != null)
+
+        if (movement != null)
         {
             var wallHits = new RaycastHit2D[10];
             int wallHitCount = (Physics2D.BoxCast(transform.position + (wallCollPosition * transform.localScale.x), wallCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithLayer }, wallHits));
