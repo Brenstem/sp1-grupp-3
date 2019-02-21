@@ -11,39 +11,41 @@ TagManager:
   - Credits
   - PlatformMoving
   - Box
+  - JumpThroughtPlatforms
+  - Platform
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  -
   - Water
   - UI
-  - 
-  - 
+  -
+  -
   - Player
   - Platform
-  - Box
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - JumpThroughtPlatforms
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
   m_SortingLayers:
   - name: Default
     uniqueID: 0
