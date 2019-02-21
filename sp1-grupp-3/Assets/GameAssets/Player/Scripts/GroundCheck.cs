@@ -32,15 +32,13 @@ public class GroundCheck : MonoBehaviour
 
         if (hit == true)
         {
-            if (hit.transform.tag == "Platform")
-            {
-                isGrounded = true;
-            }
-            else if (hit.transform.tag == "JumpThroughtPlatforms")
+            isGrounded = true;
+
+            if (hit.transform.tag == "JumpThroughtPlatforms")
             {
                 if (rb.velocity.y < 0 && (transform.position.y + groundCollPosition.y - (groundCollSize.y / 2)) >= (hit.transform.position.y))
                 {
-                    isGrounded = true;
+                    //isGrounded = true;
                     hit.transform.GetComponent<BoxCollider2D>().isTrigger = false;
                     hit2 = hit;
                 }
@@ -49,7 +47,7 @@ public class GroundCheck : MonoBehaviour
         else
         {
             isGrounded = false;
-            if (hit2 != null)
+            if (hit2 == true)
             {
                 hit2.transform.GetComponent<BoxCollider2D>().isTrigger = true;
                 //hit2 = hit;

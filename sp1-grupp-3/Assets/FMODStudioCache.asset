@@ -24,7 +24,7 @@ MonoBehaviour:
   - {fileID: 114264335376362862}
   StringsBanks:
   - {fileID: 114974834925949908}
-  stringsBankWriteTime: 636862578407958605
+  stringsBankWriteTime: 636863601099831105
   cacheVersion: 3
 --- !u!114 &114032584945266316
 MonoBehaviour:
@@ -189,12 +189,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Brenstem\Documents\sp1-grupp-3\sp1-grupp-3\FMODBank\Desktop\Master
     Bank.bank
-  lastModified: 636862578407918703
+  lastModified: 636863601099801247
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 3728928
   Exists: 1
+--- !u!114 &114568954867444328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Menu Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114582128434912166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,8 +277,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114142369182679382}
-  - {fileID: 114032584945266316}
+  - {fileID: 114992402771318260}
+  - {fileID: 114568954867444328}
   MinDistance: 0
   MaxDistance: 0
   Length: 270000
@@ -343,9 +359,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODBank\Desktop\Master Bank.strings.bank
-  lastModified: 636862578407958605
+  lastModified: 636863601099831105
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 890
   Exists: 1
+--- !u!114 &114992402771318260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Game Start
+  Min: 0
+  Max: 10
+  Default: 0

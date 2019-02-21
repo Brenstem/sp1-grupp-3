@@ -32,7 +32,6 @@ public class PlayerAnimation : MonoBehaviour
 
         anim.SetBool("Grabbed", grab.grabbed);
 
-
         anim.SetBool("IsGrounded", groundCheck.isGrounded);
     }
 }
