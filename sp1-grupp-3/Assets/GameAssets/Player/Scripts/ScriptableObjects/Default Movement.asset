@@ -15,7 +15,8 @@ MonoBehaviour:
   speed: 5
   acceleration: 24
   deAcceleration: 12
-  jumpHeight: 6
+  jumpHeight: 10
   jumpSustain: 0.3
+  maxFall: -10
   fallGravity: 3
   tapJumpGravity: 2

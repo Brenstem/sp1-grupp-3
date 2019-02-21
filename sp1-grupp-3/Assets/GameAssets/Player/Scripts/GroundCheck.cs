@@ -6,6 +6,7 @@ public class GroundCheck : MonoBehaviour
 {
     public bool isGrounded = false;
     public bool isWalled = false;
+    public bool isCollidingBoxes = false;
     public Vector3 groundCollPosition;
     public Vector3 groundCollSize;
     public Vector3 wallCollPosition;

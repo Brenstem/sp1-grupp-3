@@ -49,7 +49,6 @@ GameObject:
   - component: {fileID: 8760632943739834871}
   - component: {fileID: 8760632943739834870}
   - component: {fileID: 8760632943739834874}
-  - component: {fileID: 1786293467448028750}
   - component: {fileID: 1476510791}
   m_Layer: 8
   m_Name: Player
@@ -192,6 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGrounded: 0
   isWalled: 0
+  isCollidingBoxes: 0
   groundCollPosition: {x: 0, y: -0.99, z: 0}
   groundCollSize: {x: 0.51, y: 0.12, z: 0}
   wallCollPosition: {x: 0.5, y: 0.23, z: 0}
@@ -271,26 +271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9334500cd0ba24bab2b6e4b2b08842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1786293467448028750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8760632943739834866}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 828b8ea3d1129a54cae027002c246db1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointPosition: {fileID: 953435916738503535}
-  distance: 0.2
-  boxcastOffset: {x: 1.2, y: 0}
-  grabbed: 0
-  parent: {fileID: 8835912504338705622}
-  xValue: 0
-  yForce: 10
-  xForce: 5
 --- !u!114 &1476510791
 MonoBehaviour:
   m_ObjectHideFlags: 0
