@@ -6,6 +6,8 @@ public class MenuMusic : MonoBehaviour
 {
     private float menuTimer;
     private float onTransition;
+    private float eq;
+    private bool gameStart;
 
     [FMODUnity.EventRef]
     public string menuMusicSound;
@@ -16,13 +18,14 @@ public class MenuMusic : MonoBehaviour
         PlaySound(sounds.menuMusic);
         menuTimer = 0f;
         onTransition = 0f;
+        eq = 0f;
+        gameStart = false;
     }
 
     public void PlaySound(sounds sound)
     {
         menuMusic = FMODUnity.RuntimeManager.CreateInstance(menuMusicSound);
         menuMusic.start();
-        menuMusic.release();
     }
 
     public void Update()
@@ -39,5 +42,19 @@ public class MenuMusic : MonoBehaviour
             onTransition = 1f;
             menuMusic.setParameterValue("Menu Timer", onTransition);
         }
+    }
+
+    public void StartEQ()
+    {
+        eq = 10f;
+        menuMusic.setParameterValue("StartEQ", eq);
+        StopMusic();
+    }
+
+    IEnumerator StopMusic()
+    {
+        yield return new WaitForSeconds(5f);
+        menuMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        menuMusic.release();
     }
 }

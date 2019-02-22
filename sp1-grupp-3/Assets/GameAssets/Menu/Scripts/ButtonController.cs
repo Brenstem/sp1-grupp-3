@@ -38,7 +38,7 @@ public class ButtonController : MonoBehaviour, IPointerEnterHandler, ISelectHand
     // Checks for mouse hovering over buttons
     public void OnPointerEnter(PointerEventData eventData)
     {
-        menuActions.PlaySound(sounds.Select);
+        menuActions.PlaySelectSound();
         buttonSelected = false;
         canvasEventSystem.SetSelectedGameObject(null);
     }
@@ -46,6 +46,6 @@ public class ButtonController : MonoBehaviour, IPointerEnterHandler, ISelectHand
     // Checks for when new objects are selected with keyboard/gamepad input to play sound
     public void OnSelect(BaseEventData eventData)
     {
-        menuActions.PlaySound(sounds.Select);
+        menuActions.PlaySelectSound();
     }
 }
