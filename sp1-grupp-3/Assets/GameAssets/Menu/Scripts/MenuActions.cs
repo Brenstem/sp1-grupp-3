@@ -14,7 +14,6 @@ public class MenuActions : MonoBehaviour
     // Private variables
     private Animator creditsAnim;
     private Timer creditsTimer;
-    private MenuMusic menuMusic;
 
     // Sound references
     [FMODUnity.EventRef]
@@ -29,13 +28,16 @@ public class MenuActions : MonoBehaviour
     public string onExitSound;
     FMOD.Studio.EventInstance onExit;
 
+    [FMODUnity.EventRef]
+    public string menuMusicSound;
+    FMOD.Studio.EventInstance menuMusic;
 
     // Reference fetching
     private void Start()
     {
+        PlaySound(sounds.menuMusic);
         creditsAnim = creditsHolder.GetComponent<Animator>();
         creditsTimer = new Timer();
-        menuMusic = GetComponent<MenuMusic>();
     }
 
 
@@ -73,29 +75,57 @@ public class MenuActions : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
-    //Sound playing
-    public void PlayStartSound()
-    {
-        menuMusic.StartEQ();
 
-        onStart = FMODUnity.RuntimeManager.CreateInstance(onStartSound);
-        onStart.start();
-        onStart.release();
-    }
-
-    public void PlaySelectSound()
+    // Sound playing
+    public void PlaySound(GetEnum sound)
     {
-        onSelect = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
+        switch (sound.state)
+        {
+            case sounds.Play:
+                onStart = FMODUnity.RuntimeManager.CreateInstance(onStartSound);
+                break;
+            case sounds.Exit:
+                onExit = FMODUnity.RuntimeManager.CreateInstance(onExitSound);
+                break;
+            case sounds.Select:
+                onSelect = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
+                break;
+            case sounds.menuMusic:
+                menuMusic = FMODUnity.RuntimeManager.CreateInstance(menuMusicSound);
+                break;
+            default:
+                break;
+        }
+
         onSelect.start();
         onSelect.release();
     }
 
-    public void PlayExitSound()
+    public void PlaySound(sounds sound)
     {
-        onExit = FMODUnity.RuntimeManager.CreateInstance(onExitSound);
-        onExit.start();
-        onExit.release();
+        FMOD.Studio.EventInstance soundtoPlay;
+        soundtoPlay = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
+        switch (sound)
+        {
+            case sounds.Play:
+                soundtoPlay = FMODUnity.RuntimeManager.CreateInstance(onStartSound);
+                break;
+            case sounds.Exit:
+                soundtoPlay = FMODUnity.RuntimeManager.CreateInstance(onExitSound);
+                break;
+            case sounds.Select:
+                soundtoPlay = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
+                break;
+            case sounds.menuMusic:
+                soundtoPlay = FMODUnity.RuntimeManager.CreateInstance(menuMusicSound);
+                break;
+            default:
+                break;
+        }
+        soundtoPlay.start();
+        soundtoPlay.release();
     }
+
 
     // Credits playing
     public void PlayCredits()
