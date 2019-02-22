@@ -21,36 +21,26 @@ public class LeverObjectEditor : Editor
     {
         serializedObject.Update();
 
-        EditorGUILayout.Space();
+        actionProperty.enumValueIndex = EditorGUILayout.Popup(actionProperty.enumValueIndex, actionProperty.enumDisplayNames);
 
-        if (leverObject.GetComponent<Platform>() == null) {
-            actionProperty.enumValueIndex = EditorGUILayout.Popup(actionProperty.enumValueIndex, actionProperty.enumDisplayNames);
+        LeverObject.ObjectAction objectAction = (LeverObject.ObjectAction)actionProperty.enumValueIndex;
 
-            LeverObject.ObjectAction objectAction = (LeverObject.ObjectAction)actionProperty.enumValueIndex;
-
-
-            switch (objectAction) {
-                case LeverObject.ObjectAction.DoNothing:
-                    break;
-                case LeverObject.ObjectAction.MoveToPosition:
-                    leverObject.moveTo = EditorGUILayout.Vector2Field("Move To", leverObject.moveTo);
-                    leverObject.moveSpeed = EditorGUILayout.FloatField("Move Speed", leverObject.moveSpeed);
-                    break;
-                case LeverObject.ObjectAction.MoveByDistance:
-                    leverObject.moveBy = EditorGUILayout.Vector2Field("Move By", leverObject.moveBy);
-                    leverObject.moveSpeed = EditorGUILayout.FloatField("Move Speed", leverObject.moveSpeed);
-                    break;
-                case LeverObject.ObjectAction.ActivatePhysics:
-                    break;
-                default:
-                    break;
-            }
-
-            serializedObject.ApplyModifiedProperties();
+        switch (objectAction) {
+            case LeverObject.ObjectAction.DoNothing:
+                break;
+            case LeverObject.ObjectAction.Move:
+                leverObject.moveTo = EditorGUILayout.Vector2Field("Move To", leverObject.moveTo);
+                break;
+            case LeverObject.ObjectAction.ActivatePhysics:
+                break;
+            case LeverObject.ObjectAction.ActivatePlatform:
+                leverObject.platfrom = (Platform)EditorGUILayout.ObjectField("Platform", leverObject.platfrom, typeof(Platform), false);
+                break;
+            default:
+                break;
         }
-        else {
-            EditorGUILayout.LabelField("Platform script attached!");
-        }
+
+        serializedObject.ApplyModifiedProperties();
     }
 
 }

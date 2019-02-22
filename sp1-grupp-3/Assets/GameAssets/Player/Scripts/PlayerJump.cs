@@ -14,7 +14,6 @@ public class PlayerJump : MonoBehaviour
     float fallGravity = 3;
     float tapJumpGravity = 2;
 
-    float maxFall;
     float jumpLengthTimer = 0;
     bool jumpRequest = false;
 
@@ -34,7 +33,6 @@ public class PlayerJump : MonoBehaviour
     {
         jumpHeight = move.jumpHeight;
         jumpSustain = move.jumpSustain;
-        maxFall = move.maxFall;
         fallGravity = move.fallGravity;
         tapJumpGravity = move.tapJumpGravity;
     }
@@ -58,11 +56,10 @@ public class PlayerJump : MonoBehaviour
         }
 
         bool jumpBtn = Input.GetAxisRaw("Jump") == 1 || Input.GetButton("ABtn");
-        if (jumpBtn == true && gCheck.isGrounded == true)
+        if (jumpBtn == true && hasBeenGrounded == true)
         {
             jumpRequest = true;
             hasBeenGrounded = false;
-            gCheck.isGrounded = false;
         }
     }
 
@@ -85,18 +82,6 @@ public class PlayerJump : MonoBehaviour
             }
             jumpRequest = false;
         }
-
-        if(rb.velocity.y < 0)
-        {
-            Vector2 y = rb.velocity;
-
-            if(y.y < maxFall)
-            {
-                y.y = maxFall;
-            }
-            rb.velocity = y;
-        }
-       
         ApplyJumpModifier();
     }
 
@@ -109,11 +94,11 @@ public class PlayerJump : MonoBehaviour
             jumpLengthTimer += Time.deltaTime;
         }
 
-        if (rb.velocity.y < -0.1f && gCheck.isGrounded == false || jumpLengthTimer > jumpSustain)
+        if (rb.velocity.y < -0.1f && hasBeenGrounded == false || jumpLengthTimer > jumpSustain)
         {
             rb.gravityScale = fallGravity;  
         }
-        else if (rb.velocity.y > 0.1f && gCheck.isGrounded == false && !jumpBtn)
+        else if (rb.velocity.y > 0.1f && hasBeenGrounded == false && !jumpBtn)
         {
             rb.gravityScale = tapJumpGravity;
         }

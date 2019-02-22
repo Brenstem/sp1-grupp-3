@@ -19,8 +19,6 @@ public class MovementState : ScriptableObject
     public float jumpHeight;
     [Header("Jump Sustain, Higher Value = More Time In The Air, Low Value = Less Time In Air")]
     public float jumpSustain;
-    [Space]
-    public float maxFall;
     [Header("Gravity When Falling, Activates When The Player Starts Falling downward, Default Value = 3")]
     public float fallGravity;
     [Header("Gravity For When Tapping The Jump Button, Changes The Gravity When Just Tapping The Jump Button, Default Value = 2")]
