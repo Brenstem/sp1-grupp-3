@@ -15,17 +15,21 @@ public class MovementPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Vector2 collisionNormal = collision.GetContacts.
+
         if (collision.gameObject.CompareTag("PlatformMoving")) {
-        platform = collision.gameObject.GetComponent<Platform>();
-        transform.parent = platform.transform;
+
+
+            platform = collision.gameObject.GetComponent<Platform>();
+            transform.parent = platform.transform;
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("PlatformMoving")) {
-        platform = null;
-        transform.parent = null;
+            platform = null;
+            transform.parent = null;
         }
     }
 
