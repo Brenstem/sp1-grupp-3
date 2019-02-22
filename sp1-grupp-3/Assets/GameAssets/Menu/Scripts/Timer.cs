@@ -26,7 +26,6 @@ public class Timer
 
     public void StartTimer(float time)
     {
-        Debug.Log("timer started");
         mTimerFinished = false;
         timeLeft = time;
         timerRunning = true;

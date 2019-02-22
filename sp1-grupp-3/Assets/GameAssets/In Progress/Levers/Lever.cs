@@ -5,11 +5,12 @@ using UnityEngine;
 public class Lever : MonoBehaviour
 {
     public LeverObject[] affectedObjectArray;
+    public float animationSpeed = 1; 
 
     private bool contact = false;
+    private bool leverActivated = false;
 
     private void OnTriggerEnter2D(Collider2D collision) { if (TestCollision(collision)) contact = true; }
-
     private void OnTriggerExit2D(Collider2D collision) { if (TestCollision(collision)) contact = false; }
 
     private void Update()
@@ -21,11 +22,18 @@ public class Lever : MonoBehaviour
 
     private void OnPullLever()
     {
-        foreach (LeverObject affectedObject in affectedObjectArray) {
-            if (!affectedObject.ActionPerformed) {
-                affectedObject.OnActivatedByLever();
+        if (!leverActivated) {
+            Animator animator = GetComponent<Animator>();
+            animator.SetFloat("AnimationSpeedParameter", animationSpeed);
+
+            foreach (LeverObject affectedObject in affectedObjectArray) {
+                if (!affectedObject.ActionPerformed) {
+                    
+                    affectedObject.OnActivatedByLever();
+                }
             }
-            
+
+            leverActivated = true;
         }
     }
 

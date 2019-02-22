@@ -2276,8 +2276,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e75c2febd763984cadbf57877259607, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   smoothSpeed: 0.4
   offset: {x: 0, y: 0, z: -10}
   PrefabPlayer: {fileID: 0}

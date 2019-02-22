@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b618bfacef114c74fbef0fed8f48815d, type: 3}
   m_Name: Default Movement
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   speed: 5
   acceleration: 20
   deAcceleration: 10

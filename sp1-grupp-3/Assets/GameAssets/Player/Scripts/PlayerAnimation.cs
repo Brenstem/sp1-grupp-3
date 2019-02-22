@@ -7,6 +7,7 @@ public class PlayerAnimation : MonoBehaviour
     private PlayerMovement movement;
     private PlayerJump jump;
     private GroundCheck groundCheck;
+    private PlayerGrab grab;
     private Animator anim;
     
     void Start()
@@ -14,6 +15,7 @@ public class PlayerAnimation : MonoBehaviour
         movement = GetComponent<PlayerMovement>();
         jump = GetComponent<PlayerJump>();
         groundCheck = GetComponent<GroundCheck>();
+        grab = GetComponent<PlayerGrab>();
         anim = GetComponent<Animator>();
     }
 
@@ -28,6 +30,7 @@ public class PlayerAnimation : MonoBehaviour
 
         anim.SetFloat("Moving", moving);
 
+        anim.SetBool("Grabbed", grab.grabbed);
 
         anim.SetBool("IsGrounded", groundCheck.isGrounded);
     }
