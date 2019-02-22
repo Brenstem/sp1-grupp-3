@@ -15,13 +15,20 @@ public class MovementPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Vector2 collisionNormal = collision.GetContacts.
-
         if (collision.gameObject.CompareTag("PlatformMoving")) {
+            float angleThreshhold = 45.0f;
+            ContactPoint2D[] contactPoints = collision.contacts;
 
+            foreach (ContactPoint2D cp in contactPoints) {
+                float platformAngle = Mathf.Abs(Vector2.Angle(cp.normal, Vector2.up));
 
-            platform = collision.gameObject.GetComponent<Platform>();
-            transform.parent = platform.transform;
+                if (platformAngle < angleThreshhold) {
+                    platform = collision.gameObject.GetComponent<Platform>();
+                    transform.parent = platform.transform;
+                }
+            }
+
+            
         }
     }
 
