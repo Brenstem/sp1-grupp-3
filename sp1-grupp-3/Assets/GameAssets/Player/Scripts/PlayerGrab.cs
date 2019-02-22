@@ -6,34 +6,33 @@ public class PlayerGrab : MonoBehaviour
 {
     [SerializeField]
     Transform pointPosition;
+    public GameObject parent;
 
     [SerializeField]
     float distance;
-    float distanceFromTo;
-    float boxWidth, boxHeight;
+    public float xValue = 0;
+    public float yForce;
+    public float xForce;
+    public float speed;
 
-    public Vector2 boxcastOffset;
-    public bool grabbed;
-
-    public LayerMask collideWithLayer;
-    public float myDestination = 0;
+    //public Vector2 boxcastOffset;
+    float myDestination = 0;
 
     GroundCheck groundCheck;
     GameObject objCurrGrabbed;
     [SerializeField]
     bool colliding = false;
+    public bool grabbed;
+
     public Vector3 boxCollPosition;
     public Vector3 boxCollSize;
-    public GameObject parent;
-    public float xValue = 0;
-    public float yForce;
-    public float xForce;
+    public LayerMask collideWithLayer;
+    
     bool isRotating = true;
     bool boxRotated = false;
     float angleZ = 0;
     float inputX = 0;
     Vector2 position = Vector2.zero;
-    public float speed;
     bool grabMeNow = false;
     bool dropMeNow = false;
 
@@ -148,7 +147,8 @@ public class PlayerGrab : MonoBehaviour
                 grabbed = false;
                 Drop();
             }
-            else if (!objCurrGrabbed) {
+            else if (!objCurrGrabbed)
+            {
                 grabbed = false;
                 return;
             }
@@ -304,7 +304,7 @@ public class PlayerGrab : MonoBehaviour
         dropMeNow = false;
     }
 
-    private void OnDrawGizmos()
+    void OnDrawGizmos()
     {
         if(objCurrGrabbed != null)
         {
@@ -323,6 +323,7 @@ public class PlayerGrab : MonoBehaviour
     {
         return new Vector2(objCurrGrabbed.transform.position.x - transform.position.x, objCurrGrabbed.transform.position.y - transform.position.y);
     }
+
     public void GrabMePlease()
     {
         grabMeNow = true;

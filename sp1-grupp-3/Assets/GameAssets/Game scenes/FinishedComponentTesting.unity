@@ -1083,7 +1083,7 @@ PrefabInstance:
     - target: {fileID: 654588076795873878, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 654588076795873872, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
@@ -1144,6 +1144,16 @@ PrefabInstance:
         type: 3}
       propertyPath: groundCollSize.y
       value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 654588076795873874, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
+        type: 3}
+      propertyPath: collideWithFloorLayer.m_Bits
+      value: 2560
+      objectReference: {fileID: 0}
+    - target: {fileID: 654588076795873874, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
+        type: 3}
+      propertyPath: collideWithWallLayer.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 654588076795873875, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
@@ -1425,6 +1435,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpThrough
       objectReference: {fileID: 0}
+    - target: {fileID: 8854963664073552594, guid: 6cea12afdc5b48e4e8630bcb64f88d21,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8854963664073552557, guid: 6cea12afdc5b48e4e8630bcb64f88d21,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1494,6 +1509,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 953435916738503535, guid: bf499fee01869e14d94251f9ca242511,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953435916738503535, guid: bf499fee01869e14d94251f9ca242511,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953435916738503535, guid: bf499fee01869e14d94251f9ca242511,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953435916738503535, guid: bf499fee01869e14d94251f9ca242511,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 953435916738503535, guid: bf499fee01869e14d94251f9ca242511,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953435916738503535, guid: bf499fee01869e14d94251f9ca242511,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1554,35 +1599,15 @@ PrefabInstance:
       propertyPath: collideWithLayer.m_Bits
       value: 512
       objectReference: {fileID: 0}
-    - target: {fileID: 953435916738503535, guid: bf499fee01869e14d94251f9ca242511,
+    - target: {fileID: 3213097346512006660, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
+      propertyPath: collideWithFloorLayer.m_Bits
+      value: 2560
       objectReference: {fileID: 0}
-    - target: {fileID: 953435916738503535, guid: bf499fee01869e14d94251f9ca242511,
+    - target: {fileID: 3213097346512006660, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 953435916738503535, guid: bf499fee01869e14d94251f9ca242511,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 953435916738503535, guid: bf499fee01869e14d94251f9ca242511,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 953435916738503535, guid: bf499fee01869e14d94251f9ca242511,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 953435916738503535, guid: bf499fee01869e14d94251f9ca242511,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
+      propertyPath: collideWithWallLayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 8766417661138658795, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}

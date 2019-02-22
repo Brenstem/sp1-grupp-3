@@ -9,7 +9,8 @@ public class GroundCheck : MonoBehaviour
     public Vector3 groundCollSize;
     public Vector3 wallCollPosition;
     public Vector3 wallCollSize;
-    public LayerMask collideWithLayer;
+    public LayerMask collideWithFloorLayer;
+    public LayerMask collideWithWallLayer;
     PlayerMovement movement;
     public float slopeFriction;
     Rigidbody2D rb;
@@ -27,8 +28,8 @@ public class GroundCheck : MonoBehaviour
     void Update()
     {
         var groundHits = new RaycastHit2D[10];
-        int hitcount = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithLayer }, groundHits);
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, 0f, collideWithLayer);
+        int hitcount = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithFloorLayer }, groundHits);
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, 0f, collideWithFloorLayer);
 
         if (hit == true)
         {
@@ -72,7 +73,7 @@ public class GroundCheck : MonoBehaviour
         if (movement != null)
         {
             var wallHits = new RaycastHit2D[10];
-            int wallHitCount = (Physics2D.BoxCast(transform.position + (wallCollPosition * transform.localScale.x), wallCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithLayer }, wallHits));
+            int wallHitCount = (Physics2D.BoxCast(transform.position + (wallCollPosition * transform.localScale.x), wallCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithWallLayer }, wallHits));
             isWalled = wallHitCount > 0;
 
             if (isWalled == true)
