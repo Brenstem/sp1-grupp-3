@@ -74,6 +74,8 @@ public class MenuActions : MonoBehaviour
     //Sound playing
    public void PlaySound(GetEnum sound)
     {
+        FMOD.Studio.EventInstance soundtoPlay;
+        soundtoPlay = FMODUnity.RuntimeManager.CreateInstance(onSelectSound);
         switch (sound.state)
         {
             case sounds.Play:
@@ -88,9 +90,8 @@ public class MenuActions : MonoBehaviour
             default:
                 break;
         }
-
-        onSelect.start();
-        onSelect.release();
+        soundtoPlay.start();
+        soundtoPlay.release();
     }
 
     public void PlaySound(sounds sound)
