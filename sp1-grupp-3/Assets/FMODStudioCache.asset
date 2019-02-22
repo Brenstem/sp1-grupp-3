@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114175172764416926}
-  - {fileID: 114474901270787860}
+  - {fileID: 114432684514236070}
   EditorEvents:
   - {fileID: 114666065831573718}
   - {fileID: 114707473561635556}
@@ -25,7 +25,7 @@ MonoBehaviour:
   - {fileID: 114474901270787860}
   StringsBanks:
   - {fileID: 114175172764416926}
-  stringsBankWriteTime: 636858390398056197
+  stringsBankWriteTime: 636864354023711430
   cacheVersion: 3
 --- !u!114 &114038284163379798
 MonoBehaviour:
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODBank\Desktop\Master Bank.strings.bank
-  lastModified: 636858390398056197
+  lastModified: 636864354023711430
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -459,6 +459,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 900
+--- !u!114 &114432684514236070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Brenstem\Documents\sp1-grupp-3\sp1-grupp-3\FMODBank\Desktop\Master
+    Bank.bank
+  lastModified: 636864354023628206
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2841568
+  Exists: 1
 --- !u!114 &114450128599992318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,7 +536,7 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 2841568
-  Exists: 1
+  Exists: 0
 --- !u!114 &114509318074842592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,7 +668,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu_music/menu_music_v0.9
   guid: 185d51e8ce8c4a459caf62edaace2079
   Banks:
-  - {fileID: 114474901270787860}
+  - {fileID: 114432684514236070}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -713,7 +733,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu SFX/sfx_onSelect
   guid: de9ddfa41ba97c4a991c39ff125526f8
   Banks:
-  - {fileID: 114474901270787860}
+  - {fileID: 114432684514236070}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
