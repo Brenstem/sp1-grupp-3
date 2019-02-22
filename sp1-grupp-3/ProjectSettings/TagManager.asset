@@ -10,6 +10,9 @@ TagManager:
   - CanvasEventSystem
   - Credits
   - PlatformMoving
+  - Box
+  - JumpThroughtPlatforms
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - 
   - Player
   - Platform
-  - 
+  - Box
   - 
   - 
   - 
