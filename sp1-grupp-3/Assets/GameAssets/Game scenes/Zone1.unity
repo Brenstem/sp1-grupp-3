@@ -2091,31 +2091,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2275952136831378065, guid: bf499fee01869e14d94251f9ca242511,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3213097346512006660, guid: bf499fee01869e14d94251f9ca242511,
-        type: 3}
-      propertyPath: wallCollSize.y
-      value: 0.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 3213097346512006660, guid: bf499fee01869e14d94251f9ca242511,
-        type: 3}
-      propertyPath: wallCollPosition.y
-      value: 0.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8760632943739834865, guid: bf499fee01869e14d94251f9ca242511,
-        type: 3}
-      propertyPath: enableNewMovement
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8760632943739834864, guid: bf499fee01869e14d94251f9ca242511,
-        type: 3}
-      propertyPath: enableNewMovement
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf499fee01869e14d94251f9ca242511, type: 3}
 --- !u!1001 &1107183433
