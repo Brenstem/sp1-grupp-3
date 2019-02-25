@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 953435916738503535}
   m_Layer: 8
-  m_Name: Position Point
+  m_Name: Point Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7517122248108306564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6237103528962263340}
@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 8760632943739834874}
   - component: {fileID: 1786293467448028750}
   - component: {fileID: 1476510791}
+  - component: {fileID: 1872623941}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -137,7 +138,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -188,15 +189,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a91120296de71e146ab46e54a69b3a2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   isGrounded: 0
   isWalled: 0
   groundCollPosition: {x: 0, y: -0.99, z: 0}
   groundCollSize: {x: 0.51, y: 0.12, z: 0}
   wallCollPosition: {x: 0.5, y: 0.23, z: 0}
   wallCollSize: {x: 0.2, y: 1.43, z: 0}
-  collideWithLayer:
+  collideWithFloorLayer:
+    serializedVersion: 2
+    m_Bits: 2560
+  collideWithWallLayer:
     serializedVersion: 2
     m_Bits: 512
   slopeFriction: 0.3
@@ -210,8 +214,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51dd7d4c3d3b9b0498369d62be7f84e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   newMovementState: {fileID: 11400000, guid: 78b189404270fdc4fa41df7fd1cca9e9, type: 2}
   defaultMovementState: {fileID: 11400000, guid: 3898e9126d61c0947add86ba0b25b3aa,
     type: 2}
@@ -226,8 +230,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f15fe586071317c43b869898a07581a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   newMovementState: {fileID: 11400000, guid: 78b189404270fdc4fa41df7fd1cca9e9, type: 2}
   defaultMovementState: {fileID: 11400000, guid: 3898e9126d61c0947add86ba0b25b3aa,
     type: 2}
@@ -242,8 +246,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 599cc25872c9eae4e99e9b590201600a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   playerTag: Player
 --- !u!114 &8760632943739834870
 MonoBehaviour:
@@ -255,8 +259,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17034da720b729c44bab21833282a687, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   RespawnTrigger: {fileID: 0}
   checkpoint: {fileID: 0}
 --- !u!114 &8760632943739834874
@@ -269,8 +273,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c9334500cd0ba24bab2b6e4b2b08842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &1786293467448028750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,8 +285,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 828b8ea3d1129a54cae027002c246db1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   pointPosition: {fileID: 953435916738503535}
   distance: 0.2
   boxcastOffset: {x: 1.2, y: 0}
@@ -301,8 +305,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a88c421dd6a6ae47adbd6550427bcd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
+--- !u!114 &1872623941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8760632943739834866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828b8ea3d1129a54cae027002c246db1, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  pointPosition: {fileID: 953435916738503535}
+  parent: {fileID: 8835912504338705622}
+  distance: 2
+  xValue: 1
+  yForce: 5
+  xForce: 5
+  speed: 3.5
+  colliding: 0
+  grabbed: 0
+  boxCollPosition: {x: 0.5, y: 0, z: 0}
+  boxCollSize: {x: 0.5, y: 1, z: 0}
+  collideWithLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &8835912504338705622
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8835912504338705622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 1.5, z: 0}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6237103528962263340}
