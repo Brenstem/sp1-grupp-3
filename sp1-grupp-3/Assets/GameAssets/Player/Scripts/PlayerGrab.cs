@@ -83,7 +83,7 @@ public class PlayerGrab : MonoBehaviour
 
                 objCurrGrabbed.transform.SetParent(parent.transform);
 
-                float xX = Mathf.Abs((objCurrGrabbed.transform.position.x - transform.position.x) / 2);
+                float xX = Mathf.Abs((transform.position.x - objCurrGrabbed.transform.position.x) / 2);
                 parent.transform.localPosition = new Vector2(-xX, 0f);
 
                 grabbed = true;
@@ -250,13 +250,14 @@ public class PlayerGrab : MonoBehaviour
                 angleZ = Mathf.MoveTowards(angleZ, 90f * xValue, speed);
                 parent.transform.rotation = Quaternion.Euler(0f, 0f, angleZ);
 
-                parent.transform.localPosition = Vector2.MoveTowards(parent.transform.localPosition, new Vector2(parent.transform.localPosition.x, -0.3f), 0.1f);
+               // parent.transform.localPosition = Vector2.MoveTowards(parent.transform.localPosition, new Vector2(parent.transform.localPosition.x, -0.3f), 0.1f);
 
             }
         }
         else
         {
-            pointPosition.position = new Vector2(objCurrGrabbed.transform.position.x, objCurrGrabbed.transform.position.y);
+            //pointPosition.position = new Vector2(objCurrGrabbed.transform.position.x, objCurrGrabbed.transform.position.y);
+            pointPosition.transform.position = objCurrGrabbed.transform.position;
             
             objCurrGrabbed.GetComponent<BoxCollider2D>().isTrigger = false;
             objCurrGrabbed.transform.parent = null;

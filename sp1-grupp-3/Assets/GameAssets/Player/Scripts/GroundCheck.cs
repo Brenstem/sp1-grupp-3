@@ -59,15 +59,18 @@ public class GroundCheck : MonoBehaviour
 
         if (isGrounded == true)
         {
-            Vector2 position = transform.position;
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (hit.collider != null && Mathf.Abs(hit.normal.x) > 0.1f)
+            {
+                Rigidbody2D body = GetComponent<Rigidbody2D>();
+                // Apply the opposite force against the slope force 
+                // You will need to provide your own slopeFriction to stabalize movement
+                body.velocity = new Vector2(body.velocity.x - (hit.normal.x * slopeFriction), body.velocity.y);
 
-            rb.velocity = new Vector2(rb.velocity.x - (hit.normal.x * slopeFriction), rb.velocity.y);
-
-            //Move Player up or down to compensate for the slope below them
-            //Vector3 pos = transform.position;
-            //pos.y += -hit.normal.x * Mathf.Abs(rb.velocity.x) * Time.deltaTime * (rb.velocity.x - hit.normal.x > 0 ? 1 : -1);
-            //transform.position = pos;
+                //Move Player up or down to compensate for the slope below them
+                Vector2 position = transform.position;
+                position.y += -hit.normal.x * Mathf.Abs(body.velocity.x) * Time.deltaTime * (body.velocity.x - hit.normal.x > 0 ? 1 : -1);
+                transform.position = position;
+            }
         }
 
         if (movement != null)
