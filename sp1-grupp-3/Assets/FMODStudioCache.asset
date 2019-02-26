@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114974834925949908}
-  - {fileID: 114035623552037370}
+  - {fileID: 114781123515770750}
   EditorEvents:
   - {fileID: 114782627162479342}
   - {fileID: 114106399090271336}
@@ -24,9 +24,10 @@ MonoBehaviour:
   MasterBanks:
   - {fileID: 114264335376362862}
   - {fileID: 114035623552037370}
+  - {fileID: 114781123515770750}
   StringsBanks:
   - {fileID: 114974834925949908}
-  stringsBankWriteTime: 636864320790299274
+  stringsBankWriteTime: 636867709048358095
   cacheVersion: 3
 --- !u!114 &114032584945266316
 MonoBehaviour:
@@ -63,7 +64,7 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 4382880
-  Exists: 1
+  Exists: 0
 --- !u!114 &114106399090271336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +80,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu_SFX/sfx_onExit
   guid: c5f7f579882e174b80cb551bc2438810
   Banks:
-  - {fileID: 114035623552037370}
+  - {fileID: 114781123515770750}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -233,6 +234,22 @@ MonoBehaviour:
   Min: 0
   Max: 10
   Default: 0
+--- !u!114 &114477147283864046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: StartEQ
+  Min: 0
+  Max: 10
+  Default: 0
 --- !u!114 &114568954867444328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,7 +304,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu_SFX/sfx_onSelect
   guid: de9ddfa41ba97c4a991c39ff125526f8
   Banks:
-  - {fileID: 114035623552037370}
+  - {fileID: 114781123515770750}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -295,6 +312,41 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 300
+--- !u!114 &114775181710886384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Menu Timer
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114781123515770750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\dev\Unity\sp1-grupp-3\sp1-grupp-3\FMODBank\Desktop\Master Bank.bank
+  lastModified: 636867709048337896
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 4382880
+  Exists: 1
 --- !u!114 &114782627162479342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,13 +362,13 @@ MonoBehaviour:
   Path: event:/Menu/Menu_Music/menu_music
   guid: 185d51e8ce8c4a459caf62edaace2079
   Banks:
-  - {fileID: 114035623552037370}
+  - {fileID: 114781123515770750}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114397984807360768}
-  - {fileID: 114994919392947874}
+  - {fileID: 114477147283864046}
+  - {fileID: 114775181710886384}
   MinDistance: 0
   MaxDistance: 0
   Length: 270000
@@ -335,7 +387,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu_SFX/sfx_onStart
   guid: 7d38ff344d7d004c8cf67e5ec3495484
   Banks:
-  - {fileID: 114035623552037370}
+  - {fileID: 114781123515770750}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -374,7 +426,7 @@ MonoBehaviour:
   Path: event:/Zone1/1_1 Junkyard/Ambience_Wind
   guid: 513d11afa6935e4297da8ee7898c8481
   Banks:
-  - {fileID: 114035623552037370}
+  - {fileID: 114781123515770750}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -420,7 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODBank\Desktop\Master Bank.strings.bank
-  lastModified: 636864320790299274
+  lastModified: 636867709048358095
   LoadResult: 0
   FileSizes:
   - Name: 
