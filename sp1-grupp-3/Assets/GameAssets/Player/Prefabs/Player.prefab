@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 6237103528962263340}
   - component: {fileID: 2275952136831378065}
   - component: {fileID: 1476510780}
+  - component: {fileID: 5778904071790167063}
   - component: {fileID: 5956532175835910628}
   - component: {fileID: 4662693729460629779}
   - component: {fileID: 3213097346512006660}
@@ -141,6 +142,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5778904071790167063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8760632943739834866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73221a65c29efa540930becd19433443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: 
 --- !u!50 &5956532175835910628
 Rigidbody2D:
   serializedVersion: 4
