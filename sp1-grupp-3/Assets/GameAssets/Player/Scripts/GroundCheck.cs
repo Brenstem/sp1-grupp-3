@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
+    public event Action<GameObject> OnJump;
+
     public bool isGrounded = false;
     public bool checkGrounded = false;
     public Vector3 groundCollPosition;
@@ -17,6 +20,7 @@ public class GroundCheck : MonoBehaviour
     {
         var groundHits = new RaycastHit2D[10];
         int hitcount = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithLayer }, groundHits);
+
         checkGrounded = isGrounded;
         isGrounded = hitcount > 0;
         if (checkGrounded == false && isGrounded == true) {
