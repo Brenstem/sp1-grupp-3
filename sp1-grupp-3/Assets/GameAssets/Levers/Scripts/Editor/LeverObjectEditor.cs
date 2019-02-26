@@ -6,9 +6,12 @@ using UnityEditor;
 [CustomEditor(typeof(LeverObject)), CanEditMultipleObjects]
 public class LeverObjectEditor : Editor
 {
+
+
     public SerializedProperty actionProperty;
 
     private LeverObject leverObject;
+
 
     private void OnEnable()
     {
@@ -52,5 +55,7 @@ public class LeverObjectEditor : Editor
             EditorGUILayout.LabelField("Platform script attached!");
         }
     }
+
+
 
 }
