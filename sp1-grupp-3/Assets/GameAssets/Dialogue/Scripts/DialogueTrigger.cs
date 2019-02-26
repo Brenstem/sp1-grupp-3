@@ -16,6 +16,7 @@ public class DialogueTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         image.enabled = true;
+        Debug.Log(enabled);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
