@@ -101,6 +101,14 @@ public class PlayerGrab : MonoBehaviour
             else
             {
                 //Grab();
+                if(objCurrGrabbed.GetComponent<BoxCollision>().colliding == true)
+                {
+                    GetComponent<PlayerMovement>().StopMovement();
+                }
+                else
+                {
+                    GetComponent<PlayerMovement>().ContinueMovement();
+                }
 
                 if(Input.GetButtonDown("Grab"))
                 {
