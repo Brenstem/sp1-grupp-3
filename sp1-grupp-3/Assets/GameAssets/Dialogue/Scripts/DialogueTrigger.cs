@@ -22,8 +22,4 @@ public class DialogueTrigger : MonoBehaviour
     {
         image.enabled = false;
     }
-
-    private void EnableImage(bool state)
-    {
-    }
 }
