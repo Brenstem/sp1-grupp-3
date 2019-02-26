@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 654588076795873873}
   - component: {fileID: 654588076795873874}
   - component: {fileID: 654588076795873875}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Box
   m_TagString: Box
   m_Icon: {fileID: 0}
@@ -122,13 +122,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGrounded: 0
   isWalled: 0
+  isCollidingBoxes: 0
   groundCollPosition: {x: 0, y: -0.45, z: 0}
   groundCollSize: {x: 1, y: 0.1, z: 0}
   wallCollPosition: {x: 0, y: 0, z: 0}
   wallCollSize: {x: 0, y: 0, z: 0}
-  collideWithLayer:
+  collideWithFloorLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
+  collideWithWallLayer:
+    serializedVersion: 2
+    m_Bits: 0
   slopeFriction: 0
 --- !u!50 &654588076795873875
 Rigidbody2D:
