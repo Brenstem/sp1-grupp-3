@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class OnPlayerDeath : RespawnTrigger {
 
+    //public event Action OnDeath;
+
     [SerializeField]
     Death playerDeath;
     
@@ -15,5 +17,6 @@ public class OnPlayerDeath : RespawnTrigger {
     private void PlayerDied(GameObject obj)
     {
         TriggerMove(obj);
+        //OnDeath();
     }
 }
