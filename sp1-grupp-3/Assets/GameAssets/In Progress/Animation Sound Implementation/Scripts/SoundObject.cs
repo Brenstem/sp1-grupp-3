@@ -13,16 +13,16 @@ public class SoundObject : MonoBehaviour
         PlaySound();
     }
 
-    void PlaySound()
+    public void PlaySound()
     {
         soundObject = FMODUnity.RuntimeManager.CreateInstance(path);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundObject, this.transform, this.GetComponent<Rigidbody>());
         soundObject.start();
+        soundObject.release();
     }
 
-    private void OnDestroy()
+    public void OnDestroy()
     {
         FMODUnity.RuntimeManager.DetachInstanceFromGameObject(soundObject);
-        soundObject.release();
     }
 }

@@ -15,6 +15,8 @@ public class GroundCheck : MonoBehaviour
     public float slopeFriction;
     Rigidbody2D rb;
     RaycastHit2D hit2;
+    bool previousGrounded = false;
+    private SoundObject soundObject;
 
     void Start()
     {
@@ -23,6 +25,11 @@ public class GroundCheck : MonoBehaviour
             movement = GetComponent<PlayerMovement>();
         }
         rb = GetComponent<Rigidbody2D>();
+
+        if(transform.tag == "Box")
+        {
+            soundObject = GetComponent<SoundObject>();
+        }
     }
 
     void Update()
@@ -64,10 +71,15 @@ public class GroundCheck : MonoBehaviour
 
             rb.velocity = new Vector2(rb.velocity.x - (hit.normal.x * slopeFriction), rb.velocity.y);
 
-            //Move Player up or down to compensate for the slope below them
-            //Vector3 pos = transform.position;
-            //pos.y += -hit.normal.x * Mathf.Abs(rb.velocity.x) * Time.deltaTime * (rb.velocity.x - hit.normal.x > 0 ? 1 : -1);
-            //transform.position = pos;
+            if (transform.tag == "Box")
+            {
+                if (previousGrounded == false)
+                {
+                    soundObject.PlaySound();
+
+                    previousGrounded = isGrounded;
+                }
+            }
         }
 
         if (movement != null)
@@ -85,6 +97,8 @@ public class GroundCheck : MonoBehaviour
                 movement.ContinueMovement();
             }
         }
+
+        previousGrounded = isGrounded;
     }
 
     void OnDrawGizmos()
