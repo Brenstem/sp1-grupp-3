@@ -27,7 +27,7 @@ MonoBehaviour:
   - {fileID: 114781123515770750}
   StringsBanks:
   - {fileID: 114974834925949908}
-  stringsBankWriteTime: 636867709048358095
+  stringsBankWriteTime: 636867785133782928
   cacheVersion: 3
 --- !u!114 &114032584945266316
 MonoBehaviour:
@@ -218,6 +218,22 @@ MonoBehaviour:
   - Name: 
     Value: 3728928
   Exists: 0
+--- !u!114 &114347739807942804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: StartEQ
+  Min: 0
+  Max: 10
+  Default: 0
 --- !u!114 &114397984807360768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,7 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: D:\dev\Unity\sp1-grupp-3\sp1-grupp-3\FMODBank\Desktop\Master Bank.bank
-  lastModified: 636867709048337896
+  lastModified: 636867785134401594
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -367,8 +383,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114477147283864046}
-  - {fileID: 114775181710886384}
+  - {fileID: 114347739807942804}
+  - {fileID: 114983752236464686}
   MinDistance: 0
   MaxDistance: 0
   Length: 270000
@@ -472,12 +488,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODBank\Desktop\Master Bank.strings.bank
-  lastModified: 636867709048358095
+  lastModified: 636867785133782928
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 964
   Exists: 1
+--- !u!114 &114983752236464686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Menu Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114992402771318260
 MonoBehaviour:
   m_ObjectHideFlags: 0
