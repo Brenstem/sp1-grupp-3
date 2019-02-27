@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114974834925949908}
-  - {fileID: 114781123515770750}
+  - {fileID: 114521313824077354}
   EditorEvents:
   - {fileID: 114782627162479342}
   - {fileID: 114106399090271336}
@@ -27,7 +27,7 @@ MonoBehaviour:
   - {fileID: 114781123515770750}
   StringsBanks:
   - {fileID: 114974834925949908}
-  stringsBankWriteTime: 636867709048358095
+  stringsBankWriteTime: 636868625433196797
   cacheVersion: 3
 --- !u!114 &114032584945266316
 MonoBehaviour:
@@ -80,7 +80,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu_SFX/sfx_onExit
   guid: c5f7f579882e174b80cb551bc2438810
   Banks:
-  - {fileID: 114781123515770750}
+  - {fileID: 114521313824077354}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -198,6 +198,22 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 188
+--- !u!114 &114245739434799766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: StartEQ
+  Min: 0
+  Max: 10
+  Default: 0
 --- !u!114 &114264335376362862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +266,26 @@ MonoBehaviour:
   Min: 0
   Max: 10
   Default: 0
+--- !u!114 &114521313824077354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Brenstem\Documents\sp1-grupp-3\sp1-grupp-3\FMODBank\Desktop\Master
+    Bank.bank
+  lastModified: 636868625433132210
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 4382880
+  Exists: 1
 --- !u!114 &114568954867444328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,7 +340,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu_SFX/sfx_onSelect
   guid: de9ddfa41ba97c4a991c39ff125526f8
   Banks:
-  - {fileID: 114781123515770750}
+  - {fileID: 114521313824077354}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -312,6 +348,22 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 300
+--- !u!114 &114689518807248918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Menu Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114775181710886384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,7 +398,7 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 4382880
-  Exists: 1
+  Exists: 0
 --- !u!114 &114782627162479342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,13 +414,13 @@ MonoBehaviour:
   Path: event:/Menu/Menu_Music/menu_music
   guid: 185d51e8ce8c4a459caf62edaace2079
   Banks:
-  - {fileID: 114781123515770750}
+  - {fileID: 114521313824077354}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114477147283864046}
-  - {fileID: 114775181710886384}
+  - {fileID: 114245739434799766}
+  - {fileID: 114689518807248918}
   MinDistance: 0
   MaxDistance: 0
   Length: 270000
@@ -387,7 +439,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu_SFX/sfx_onStart
   guid: 7d38ff344d7d004c8cf67e5ec3495484
   Banks:
-  - {fileID: 114781123515770750}
+  - {fileID: 114521313824077354}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -426,7 +478,7 @@ MonoBehaviour:
   Path: event:/Zone1/1_1 Junkyard/Ambience_Wind
   guid: 513d11afa6935e4297da8ee7898c8481
   Banks:
-  - {fileID: 114781123515770750}
+  - {fileID: 114521313824077354}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -472,7 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODBank\Desktop\Master Bank.strings.bank
-  lastModified: 636867709048358095
+  lastModified: 636868625433196797
   LoadResult: 0
   FileSizes:
   - Name: 
