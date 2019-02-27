@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Junkyard_Tiles_8
+  m_Name: Factory_Tiles_4
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300016, guid: 1768ae325fce0194ab46e8b82ce23db8, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 4aab6abb306ee2649a87fb96a4c64d8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
