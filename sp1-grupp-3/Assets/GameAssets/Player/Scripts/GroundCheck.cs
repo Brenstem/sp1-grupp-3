@@ -2,6 +2,8 @@
 
 public class GroundCheck : MonoBehaviour
 {
+    public event Action<GameObject> OnJump;
+
     public bool isGrounded = false;
     public bool isWalled = false;
     public bool isCollidingBoxes = false;

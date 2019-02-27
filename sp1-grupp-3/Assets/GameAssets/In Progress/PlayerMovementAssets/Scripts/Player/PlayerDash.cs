@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDash : MonoBehaviour
 {
-    public static event System.Action OnDash;
+    public event Action OnDash;
 
     private bool isDashing = false;
     private Vector2 currentBoostMax;
@@ -50,10 +51,10 @@ public class PlayerDash : MonoBehaviour
         if (currentBoostMax.sqrMagnitude <= 0)
             currentBoostMax += Vector2.right * rb.velocity.x;
         currentBoostMax += dashSpeedBoost;
-
+        
 
         hasDashed = true;
-        //OnDash();
+        OnDash();
     }
 
     private void Update()
