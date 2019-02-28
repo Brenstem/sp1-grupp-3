@@ -36,6 +36,7 @@ public class GroundCheck : MonoBehaviour
     {
         //var groundHits = new RaycastHit2D[10];
         //int hitcount = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithFloorLayer }, groundHits);
+
         RaycastHit2D hit = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, 0f, collideWithFloorLayer);
 
         if (hit == true)
@@ -88,7 +89,9 @@ public class GroundCheck : MonoBehaviour
         if (movement != null)
         {
             var wallHits = new RaycastHit2D[10];
-            int wallHitCount = (Physics2D.BoxCast(transform.position + (wallCollPosition * transform.localScale.x), wallCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithWallLayer }, wallHits));
+            float positionX = transform.position.x + (wallCollPosition.x * transform.localScale.x);
+            float positionY = transform.position.y + wallCollPosition.y;
+            int wallHitCount = (Physics2D.BoxCast(new Vector2(positionX, positionY), wallCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithWallLayer }, wallHits));
             isWalled = wallHitCount > 0;
 
             if (isWalled == true)
@@ -108,6 +111,9 @@ public class GroundCheck : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position + groundCollPosition, groundCollSize);
-        Gizmos.DrawWireCube(transform.position + (wallCollPosition * transform.localScale.x), wallCollSize);
+
+        float positionX = transform.position.x + (wallCollPosition.x * transform.localScale.x);
+        float positionY = transform.position.y + wallCollPosition.y;
+        Gizmos.DrawWireCube(new Vector2(positionX, positionY), wallCollSize);
     }
 }
