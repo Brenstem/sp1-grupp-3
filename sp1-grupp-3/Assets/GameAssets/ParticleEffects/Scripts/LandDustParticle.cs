@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class LandDustParticle : MonoBehaviour
 {
-    // Start is called before the first frame update
+    ParticleSystem particle;
+    GroundCheck gc;
+    bool previousGrounded = false;
+
     void Start()
     {
-        
+        particle = GetComponent<ParticleSystem>();
+        gc = GetComponentInParent<GroundCheck>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (gc.isGrounded) 
+        {
+            if(previousGrounded == false) {
+                particle.Play();
+                previousGrounded = gc.isGrounded;
+            }
+        }
+        previousGrounded = gc.isGrounded;
     }
 }
