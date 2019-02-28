@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 654588076795873879}
   - component: {fileID: 654588076795873873}
   - component: {fileID: 654588076795873874}
+  - component: {fileID: 3192911013998417652}
   - component: {fileID: 654588076795873875}
-  - component: {fileID: 571475158}
   m_Layer: 10
   m_Name: Box
   m_TagString: Box
@@ -135,6 +135,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   slopeFriction: 0
+--- !u!114 &3192911013998417652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654588076795873878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea514a831eabf6419d8886e339bd876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: event:/Object/Box/box_1stland
 --- !u!50 &654588076795873875
 Rigidbody2D:
   serializedVersion: 4
@@ -156,16 +169,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &571475158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654588076795873878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2f7bddae37abef4192cf2466b1bceaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colliding: 0
