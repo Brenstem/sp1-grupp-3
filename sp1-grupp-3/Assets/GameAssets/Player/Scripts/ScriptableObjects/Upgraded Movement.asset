@@ -17,5 +17,6 @@ MonoBehaviour:
   deAcceleration: 10
   jumpHeight: 0
   jumpSustain: 0
+  maxFall: 0
   fallGravity: 3
   tapJumpGravity: 0
