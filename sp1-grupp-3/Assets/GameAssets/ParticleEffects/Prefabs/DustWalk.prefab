@@ -112,5 +112,6 @@ PrefabInstance:
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 765887990643377716, guid: 5405738a96aebbe4cb8534f55653e034, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5405738a96aebbe4cb8534f55653e034, type: 3}

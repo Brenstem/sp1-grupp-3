@@ -34,8 +34,8 @@ public class GroundCheck : MonoBehaviour
 
     void Update()
     {
-        var groundHits = new RaycastHit2D[10];
-        int hitcount = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithFloorLayer }, groundHits);
+        //var groundHits = new RaycastHit2D[10];
+        //int hitcount = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithFloorLayer }, groundHits);
         RaycastHit2D hit = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, 0f, collideWithFloorLayer);
 
         if (hit == true)
