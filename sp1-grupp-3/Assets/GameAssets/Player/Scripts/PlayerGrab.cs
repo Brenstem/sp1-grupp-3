@@ -61,10 +61,7 @@ public class PlayerGrab : MonoBehaviour
         RaycastHit2D hit = Physics2D.BoxCast((Vector2)transform.position + new Vector2(pX,pY), boxCollSize, 0f, Vector2.zero, 0f, collideWithLayer);
         if(hit == true)
         {
-            if(grabbed == false)
-            {
-                objCurrGrabbed = hit.transform.gameObject;
-            }
+            objCurrGrabbed = hit.transform.gameObject;
             colliding = true;
         }
         else
@@ -104,14 +101,6 @@ public class PlayerGrab : MonoBehaviour
             else
             {
                 //Grab();
-                if(objCurrGrabbed.GetComponent<BoxCollision>().colliding == true)
-                {
-                    GetComponent<PlayerMovement>().StopMovement();
-                }
-                else
-                {
-                    GetComponent<PlayerMovement>().ContinueMovement();
-                }
 
                 if(Input.GetButtonDown("Grab"))
                 {
