@@ -2794,7 +2794,7 @@ PrefabInstance:
     - target: {fileID: 8854963664073552557, guid: 6cea12afdc5b48e4e8630bcb64f88d21,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8854963664073552557, guid: 6cea12afdc5b48e4e8630bcb64f88d21,
         type: 3}
@@ -3008,7 +3008,7 @@ Transform:
   - {fileID: 38765220}
   - {fileID: 2037134051}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &189390380 stripped
 Transform:
@@ -3126,7 +3126,7 @@ Transform:
   - {fileID: 1129053468}
   - {fileID: 672580801}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &434839511
 GameObject:
@@ -3205,7 +3205,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &467178626 stripped
 Transform:
@@ -3877,7 +3877,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectAction: 3
   moveTo: {x: 0, y: 0}
-  platfrom: {fileID: 0}
+  moveBy: {x: 0, y: 0}
+  moveSpeed: 1
+  invokedMethod:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1081389764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3893,12 +3899,12 @@ PrefabInstance:
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.2
+      value: 7.28
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.92
+      value: 1.29
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
@@ -4935,37 +4941,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectAction: 3
   moveTo: {x: 0, y: 0}
-  platfrom: {fileID: 0}
---- !u!1 &1393385391
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1393385392}
-  m_Layer: 0
-  m_Name: Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1393385392
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393385391}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.9767404, y: 10.737782, z: -0.28609848}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  moveBy: {x: 0, y: 0}
+  moveSpeed: 1
+  invokedMethod:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1442438864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5317,7 +5299,7 @@ Transform:
   - {fileID: 118372382}
   - {fileID: 2010513253}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!66 &1779042199
 CompositeCollider2D:
@@ -6137,13 +6119,13 @@ Transform:
   - {fileID: 809321659}
   - {fileID: 189390380}
   - {fileID: 2060224528}
-  - {fileID: 1633692780}
   - {fileID: 147260701}
+  - {fileID: 1633692780}
   - {fileID: 17747812}
   - {fileID: 999875731}
   - {fileID: 1385920208}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1897040377
 PrefabInstance:
@@ -6248,7 +6230,7 @@ Transform:
   - {fileID: 1026457524}
   - {fileID: 1391381324}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1954899403
 PrefabInstance:
