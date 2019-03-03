@@ -9,28 +9,32 @@ public class AmbientPlayer : MonoBehaviour
     FMOD.Studio.EventInstance sound;
 
     private bool hasPlayed;
-    private FMOD.Studio.EventInstance lastSound;
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        sound = FMODUnity.RuntimeManager.CreateInstance(path);
-
-        if (!hasPlayed)
+        if (hitInfo.CompareTag("Player"))
         {
-            sound.start();
-            hasPlayed = true;
+            sound = FMODUnity.RuntimeManager.CreateInstance(path);
+            if (!hasPlayed)
+            {
+                sound.start();
+                hasPlayed = true;
+            }
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D hitInfo)
     {
-        Stop(sound);
+        if (hitInfo.CompareTag("Player"))
+        {
+            Stop(sound);
+        }
     }
 
-    private void Stop(FMOD.Studio.EventInstance soundToStop)
+    private void Stop(FMOD.Studio.EventInstance sound)
     {
-        soundToStop.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        soundToStop.release();
+        sound.release();
+        sound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         hasPlayed = false;
     }
 }

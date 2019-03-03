@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerMovementChange : MonoBehaviour
 {
     [SerializeField] string playerTag;
-    [SerializeField] bool movementEnabled; 
+    [SerializeField] bool movementEnabled;
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {

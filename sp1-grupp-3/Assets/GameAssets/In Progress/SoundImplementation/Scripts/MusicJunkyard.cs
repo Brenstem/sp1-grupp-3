@@ -4,24 +4,43 @@ using UnityEngine;
 
 public class MusicJunkyard : MonoBehaviour
 {
+    private float onTransition;
+
     [FMODUnity.EventRef]
     public string path;
     FMOD.Studio.EventInstance sound;
 
-    private void OnTriggerEnter2D()
+    private void Start()
     {
-        sound = FMODUnity.RuntimeManager.CreateInstance(path);
-        sound.start();
+        onTransition = 0f;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            sound = FMODUnity.RuntimeManager.CreateInstance(path);
+            sound.start();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Stop(sound);   
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Stop(sound);
+        }
     }
 
-    private void Stop(FMOD.Studio.EventInstance soundToStop)
+    private void Stop(FMOD.Studio.EventInstance sound)
     {
-        soundToStop.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        soundToStop.release();
+        sound.release();
+        sound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void Transition()
+    {
+        onTransition = 1f;
+        sound.setParameterValue("Loop1 End", onTransition);
     }
 }
