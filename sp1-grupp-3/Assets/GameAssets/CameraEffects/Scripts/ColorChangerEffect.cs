@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering.PostProcessing;
 
 public class ColorChangerEffect : MonoBehaviour
 {
-    /*PostProcessVolume postVolume;
+    PostProcessVolume postVolume;
 
     public PostProcessProfile profile;
 
@@ -40,5 +40,5 @@ public class ColorChangerEffect : MonoBehaviour
     public void ActivateEffect()
     {
         activateEffect = true;
-    }*/
+    }
 }
