@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 1476510791}
   - component: {fileID: 1872623941}
   - component: {fileID: 503646143716361107}
+  - component: {fileID: 2109064843}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -216,8 +217,8 @@ MonoBehaviour:
     m_Bits: 1536
   collideWithWallLayer:
     serializedVersion: 2
-    m_Bits: 512
-  slopeFriction: 0.3
+    m_Bits: 0
+  slopeFriction: 0.05
 --- !u!114 &8760632943739834865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ MonoBehaviour:
   newMovementState: {fileID: 11400000, guid: 78b189404270fdc4fa41df7fd1cca9e9, type: 2}
   defaultMovementState: {fileID: 11400000, guid: 3898e9126d61c0947add86ba0b25b3aa,
     type: 2}
-  enableNewMovement: 0
+  enableNewMovement: 1
 --- !u!114 &8760632943739834864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +250,7 @@ MonoBehaviour:
   newMovementState: {fileID: 11400000, guid: 78b189404270fdc4fa41df7fd1cca9e9, type: 2}
   defaultMovementState: {fileID: 11400000, guid: 3898e9126d61c0947add86ba0b25b3aa,
     type: 2}
-  enableNewMovement: 0
+  enableNewMovement: 1
 --- !u!114 &8760632943739834871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 599cc25872c9eae4e99e9b590201600a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
+  deathZoneTag: DeathZone
 --- !u!114 &8760632943739834874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,13 +300,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828b8ea3d1129a54cae027002c246db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointPosition: {fileID: 953435916738503535}
-  parent: {fileID: 8835912504338705622}
-  distance: 2
-  xValue: 1
-  yForce: 5
-  xForce: 5
-  speed: 3.5
+  followSpeed: 1
+  throwForceX: 5
+  throwForceY: 5
+  rotationSpeed: 10
   colliding: 0
   grabbed: 0
   boxCollPosition: {x: 0.5, y: 0, z: 0}
@@ -326,6 +324,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: 0
+--- !u!114 &2109064843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8760632943739834866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17034da720b729c44bab21833282a687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RespawnTrigger: {fileID: 8760632943739834871}
+  checkpoint: {fileID: 0}
 --- !u!1 &8835912504338705622
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8766417661138658795}
   m_Layer: 8
-  m_Name: Parent Point
+  m_Name: Parent Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,6 +433,11 @@ PrefabInstance:
     - target: {fileID: 3970956394769704826, guid: 8c39f0882ad05c44f9b16f90d3051dad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3970956394769704827, guid: 8c39f0882ad05c44f9b16f90d3051dad,
+        type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3970956394769704827, guid: 8c39f0882ad05c44f9b16f90d3051dad,
