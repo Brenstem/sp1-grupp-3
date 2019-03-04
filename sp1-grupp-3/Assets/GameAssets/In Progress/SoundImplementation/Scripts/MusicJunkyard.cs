@@ -4,30 +4,63 @@ using UnityEngine;
 
 public class MusicJunkyard : MonoBehaviour
 {
+    private float onTransition;
+    private float toPause;
+    private bool hasPlayed;
+
     [FMODUnity.EventRef]
     public string path;
     FMOD.Studio.EventInstance sound;
 
-    private bool hasPlayed = true;
-
-    private void OnTriggerEnter2D()
+    private void Start()
     {
-        if (hasPlayed)
+        onTransition = 0f;
+        toPause = 0f;
+        hasPlayed = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && hasPlayed == false)
         {
             sound = FMODUnity.RuntimeManager.CreateInstance(path);
             sound.start();
+        }
+        if (collision.gameObject.CompareTag("Player") && hasPlayed == true)
+        {
+            sound.setPaused(false);
+            toPause = 0f;
+            sound.setParameterValue("To Pause", toPause);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Stop(sound);   
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(Pause());
+        }
     }
 
-    private void Stop(FMOD.Studio.EventInstance soundToStop)
+    IEnumerator Pause()
     {
-        soundToStop.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        soundToStop.release();
-        hasPlayed = false;
+        toPause = 10f;
+        sound.setParameterValue("To Pause", toPause);
+        yield return new WaitForSeconds(5.5f);
+        sound.setPaused(true);
+        hasPlayed = true;
+    }
+
+    private void Stop(FMOD.Studio.EventInstance sound)
+    {
+        sound.release();
+        sound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void Transition()
+    {
+        onTransition = 1f;
+        sound.setParameterValue("Loop1 End", onTransition);
+
     }
 }

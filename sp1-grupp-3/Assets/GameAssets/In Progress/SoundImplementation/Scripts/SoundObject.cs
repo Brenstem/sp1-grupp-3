@@ -24,5 +24,6 @@ public class SoundObject : MonoBehaviour
     public void OnDestroy()
     {
         FMODUnity.RuntimeManager.DetachInstanceFromGameObject(soundObject);
+        soundObject.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
