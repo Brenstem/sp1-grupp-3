@@ -5,6 +5,8 @@ using UnityEngine;
 public class MusicJunkyard : MonoBehaviour
 {
     private float onTransition;
+    private float toPause;
+    private bool hasPlayed;
 
     [FMODUnity.EventRef]
     public string path;
@@ -13,14 +15,23 @@ public class MusicJunkyard : MonoBehaviour
     private void Start()
     {
         onTransition = 0f;
+        toPause = 0f;
+        hasPlayed = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && hasPlayed == false)
         {
             sound = FMODUnity.RuntimeManager.CreateInstance(path);
             sound.start();
+        }
+        if (collision.gameObject.CompareTag("Player") && hasPlayed == true)
+        {
+            Debug.Log("TIllbaka");
+            sound.setPaused(false);
+            toPause = 0f;
+            sound.setParameterValue("To Pause", toPause);
         }
     }
 
@@ -28,8 +39,17 @@ public class MusicJunkyard : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Stop(sound);
+            StartCoroutine(Pause());
         }
+    }
+
+    IEnumerator Pause()
+    {
+        toPause = 10f;
+        sound.setParameterValue("To Pause", toPause);
+        yield return new WaitForSeconds(5.5f);
+        sound.setPaused(true);
+        hasPlayed = true;
     }
 
     private void Stop(FMOD.Studio.EventInstance sound)
@@ -42,5 +62,6 @@ public class MusicJunkyard : MonoBehaviour
     {
         onTransition = 1f;
         sound.setParameterValue("Loop1 End", onTransition);
+
     }
 }

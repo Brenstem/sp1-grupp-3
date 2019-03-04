@@ -2,14 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class transitionTo : MonoBehaviour
+public class MusicJunkyard_transition : MonoBehaviour
 {
     public MusicJunkyard music;
-
-    void Start()
-    {
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
