@@ -28,7 +28,6 @@ public class MusicJunkyard : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Player") && hasPlayed == true)
         {
-            Debug.Log("TIllbaka");
             sound.setPaused(false);
             toPause = 0f;
             sound.setParameterValue("To Pause", toPause);
