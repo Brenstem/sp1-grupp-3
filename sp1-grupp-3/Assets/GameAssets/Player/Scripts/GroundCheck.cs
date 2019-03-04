@@ -27,8 +27,8 @@ public class GroundCheck : MonoBehaviour
 
     void Update()
     {
-        var groundHits = new RaycastHit2D[10];
-        int hitcount = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithFloorLayer }, groundHits);
+        //var groundHits = new RaycastHit2D[10];
+        //int hitcount = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithFloorLayer }, groundHits);
         RaycastHit2D hit = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, 0f, collideWithFloorLayer);
 
         if (hit == true)
@@ -40,7 +40,8 @@ public class GroundCheck : MonoBehaviour
                 if (rb.velocity.y < 0 && (transform.position.y + groundCollPosition.y - (groundCollSize.y / 2)) >= (hit.transform.position.y))
                 {
                     //isGrounded = true;
-                    hit.transform.GetComponent<BoxCollider2D>().isTrigger = false;
+                    //hit.transform.GetComponent<BoxCollider2D>().isTrigger = false;
+                    rb.constraints = RigidbodyConstraints2D.FreezePositionY;
                     hit2 = hit;
                 }
             }
@@ -51,8 +52,11 @@ public class GroundCheck : MonoBehaviour
             if (hit2 == true)
             {
                 hit2.transform.GetComponent<BoxCollider2D>().isTrigger = true;
+                
                 //hit2 = hit;
             }
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             // hit.transform.GetComponent<BoxCollider2D>().isTrigger = true;
         }
         //isGrounded = hitcount > 0;

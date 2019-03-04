@@ -63,6 +63,8 @@ public class PlayerJump : MonoBehaviour
             jumpRequest = true;
             hasBeenGrounded = false;
             gCheck.isGrounded = false;
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 
