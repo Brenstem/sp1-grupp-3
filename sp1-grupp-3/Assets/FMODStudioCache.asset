@@ -29,8 +29,24 @@ MonoBehaviour:
   - {fileID: 114450071685190550}
   StringsBanks:
   - {fileID: 114974834925949908}
-  stringsBankWriteTime: 636869537102417594
+  stringsBankWriteTime: 636869629026812777
   cacheVersion: 3
+--- !u!114 &114000810085832446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Menu Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114029890800169212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Christoffer\Documents\GitHub\sp1-grupp-3\sp1-grupp-3\FMODBank\Desktop\Master
     Bank.bank
-  lastModified: 636869537102387583
+  lastModified: 636869629026792795
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -524,8 +540,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114883063312002740}
-  - {fileID: 114980793700152724}
+  - {fileID: 114846892274291590}
+  - {fileID: 114000810085832446}
   MinDistance: 0
   MaxDistance: 0
   Length: 270000
@@ -591,6 +607,22 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 38005
+--- !u!114 &114846892274291590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: StartEQ
+  Min: 0
+  Max: 10
+  Default: 0
 --- !u!114 &114883063312002740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,7 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODBank\Desktop\Master Bank.strings.bank
-  lastModified: 636869537102417594
+  lastModified: 636869629026812777
   LoadResult: 0
   FileSizes:
   - Name: 
