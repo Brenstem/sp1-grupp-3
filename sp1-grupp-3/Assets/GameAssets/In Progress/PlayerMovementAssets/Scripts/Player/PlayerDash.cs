@@ -19,43 +19,16 @@ public class PlayerDash : MonoBehaviour
     private Vector2 lastBoost;
     private Rigidbody2D rb;
     private GroundCheck gCheck;
+    public float maxBoostSpeed;
 
     private bool hasDashed = false;
-
-
-
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         gCheck = GetComponent<GroundCheck>();
     }
-
-    public void ResetDash()
-    {
-        currentBoostTime = dashDuration;
-        Apply();
-
-        currentBoostMax = Vector2.zero;
-        lastBoost = Vector2.zero;
-
-        currentBoostTime = 0;
-
-        GetComponent<PlayerMovement>().enabled = true;
-        hasDashed = true;
-    }
-
-    private void DoDash()
-    {
-
-        if (currentBoostMax.sqrMagnitude <= 0)
-            currentBoostMax += Vector2.right * rb.velocity.x;
-        currentBoostMax += dashSpeedBoost;
-
-
-        hasDashed = true;
-        //OnDash();
-    }
-
+    
     private void Update()
     {
         if (hasDashed && gCheck.isGrounded)
@@ -64,6 +37,7 @@ public class PlayerDash : MonoBehaviour
         if (Input.GetButtonDown("Dash") && !gCheck.isGrounded && !hasDashed)
         {
             GetComponent<PlayerMovement>().enabled = false;
+            GetComponent<PlayerJump>().enabled = false;
             DoDash();
         }
         
@@ -77,6 +51,32 @@ public class PlayerDash : MonoBehaviour
             ResetDash();
     }
 
+    public void ResetDash()
+    {
+        currentBoostTime = dashDuration;
+        Apply();
+
+        currentBoostMax = Vector2.zero;
+        lastBoost = Vector2.zero;
+
+        currentBoostTime = 0;
+
+        GetComponent<PlayerMovement>().enabled = true;
+        GetComponent<PlayerJump>().enabled = true;
+        hasDashed = true;
+    }
+
+    private void DoDash()
+    {
+
+        if (currentBoostMax.sqrMagnitude <= 0)
+            currentBoostMax += Vector2.right * maxBoostSpeed;//currentBoostMax += Vector2.right * rb.velocity.x;
+        currentBoostMax += dashSpeedBoost;
+
+
+        hasDashed = true;
+        //OnDash();
+    }
     private void Apply()
     {
         currentBoostTime += Time.deltaTime;
@@ -85,7 +85,7 @@ public class PlayerDash : MonoBehaviour
         var dash = newBoost - lastBoost;
 
         var vel = rb.velocity;
-        vel.x += dash.x;
+        vel.x += dash.x * transform.localScale.x;
         vel.y = newBoost.y;
         rb.velocity = vel;
 

@@ -27,23 +27,24 @@ public class GroundCheck : MonoBehaviour
 
     void Update()
     {
-        //var groundHits = new RaycastHit2D[10];
-        //int hitcount = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithFloorLayer }, groundHits);
         RaycastHit2D hit = Physics2D.BoxCast(transform.position + groundCollPosition, groundCollSize, 0f, Vector2.zero, 0f, collideWithFloorLayer);
 
         if (hit == true)
         {
-            isGrounded = true;
-
             if (hit.transform.tag == "JumpThroughtPlatforms")
             {
                 if (rb.velocity.y < 0 && (transform.position.y + groundCollPosition.y - (groundCollSize.y / 2)) >= (hit.transform.position.y))
                 {
-                    //isGrounded = true;
                     //hit.transform.GetComponent<BoxCollider2D>().isTrigger = false;
-                    rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+                    isGrounded = true;
                     hit2 = hit;
+
+                    Physics2D.IgnoreCollision(GetComponent<Collider2D>(), hit.transform.GetComponent<Collider2D>(), false);
                 }
+            }
+            else
+            {
+                isGrounded = true;
             }
         }
         else
@@ -51,15 +52,10 @@ public class GroundCheck : MonoBehaviour
             isGrounded = false;
             if (hit2 == true)
             {
-                hit2.transform.GetComponent<BoxCollider2D>().isTrigger = true;
-                
-                //hit2 = hit;
+                //hit2.transform.GetComponent<BoxCollider2D>().isTrigger = true;
+                hit2 = hit;
             }
-            rb.constraints = RigidbodyConstraints2D.None;
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-            // hit.transform.GetComponent<BoxCollider2D>().isTrigger = true;
         }
-        //isGrounded = hitcount > 0;
 
         if (isGrounded == true)
         {
@@ -80,7 +76,9 @@ public class GroundCheck : MonoBehaviour
         if (movement != null)
         {
             var wallHits = new RaycastHit2D[10];
-            int wallHitCount = (Physics2D.BoxCast(transform.position + (wallCollPosition * transform.localScale.x), wallCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithWallLayer }, wallHits));
+            float positionX = transform.position.x + (wallCollPosition.x * transform.localScale.x);
+            float positionY = transform.position.y;
+            int wallHitCount = (Physics2D.BoxCast(new Vector2(positionX, positionY), wallCollSize, 0f, Vector2.zero, new ContactFilter2D { useLayerMask = true, layerMask = collideWithWallLayer }, wallHits));
             isWalled = wallHitCount > 0;
 
             if (isWalled == true)
@@ -98,6 +96,27 @@ public class GroundCheck : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position + groundCollPosition, groundCollSize);
-        Gizmos.DrawWireCube(transform.position + (wallCollPosition * transform.localScale.x), wallCollSize);
+
+        float positionX = transform.position.x + (wallCollPosition.x * transform.localScale.x);
+        float positionY = transform.position.y;
+        Gizmos.DrawWireCube(new Vector2(positionX, positionY), wallCollSize);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "JumpThroughtPlatforms")
+        {
+            if (hit2 == true)
+            {
+                if(hit2.transform.gameObject != collision.transform.gameObject)
+                {
+                    Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.transform.GetComponent<Collider2D>(), true);
+                }
+            }
+            else
+            {
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.transform.GetComponent<Collider2D>(), true);
+            }
+        }
     }
 }

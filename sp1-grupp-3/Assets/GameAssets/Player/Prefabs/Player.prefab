@@ -94,12 +94,12 @@ GameObject:
   - component: {fileID: 4662693729460629779}
   - component: {fileID: 3213097346512006660}
   - component: {fileID: 8760632943739834865}
+  - component: {fileID: 3359602336199624522}
   - component: {fileID: 8760632943739834864}
   - component: {fileID: 8760632943739834871}
   - component: {fileID: 8760632943739834870}
   - component: {fileID: 8760632943739834874}
   - component: {fileID: 1476510791}
-  - component: {fileID: 1081389768}
   - component: {fileID: 1872623941}
   m_Layer: 8
   m_Name: Player
@@ -270,6 +270,20 @@ MonoBehaviour:
   defaultMovementState: {fileID: 11400000, guid: 3898e9126d61c0947add86ba0b25b3aa,
     type: 2}
   enableNewMovement: 0
+--- !u!114 &3359602336199624522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8760632943739834866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4965ef34b503cc54eb91065549476f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashDuration: 0.5
+  dashSpeedBoost: {x: 2, y: 0}
 --- !u!114 &8760632943739834864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,32 +351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a88c421dd6a6ae47adbd6550427bcd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1081389768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8760632943739834866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 828b8ea3d1129a54cae027002c246db1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointPosition: {fileID: 953435916738503535}
-  parent: {fileID: 8835912504338705622}
-  distance: 1
-  xValue: 1
-  yForce: 10
-  xForce: 5
-  speed: 4
-  colliding: 0
-  grabbed: 0
-  boxCollPosition: {x: 0.5, y: 0, z: 0}
-  boxCollSize: {x: 0.5, y: 1, z: 0}
-  collideWithLayer:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!114 &1872623941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,13 +363,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 828b8ea3d1129a54cae027002c246db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointPosition: {fileID: 953435916738503535}
-  parent: {fileID: 8835912504338705622}
-  distance: 2
-  xValue: 1
-  yForce: 5
-  xForce: 5
-  speed: 3.5
+  followSpeed: 0
+  throwForceX: 0
+  throwForceY: 0
+  rotationSpeed: 0
   colliding: 0
   grabbed: 0
   boxCollPosition: {x: 0.5, y: 0, z: 0}
