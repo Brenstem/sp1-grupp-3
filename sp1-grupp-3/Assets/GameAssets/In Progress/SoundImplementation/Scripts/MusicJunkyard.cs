@@ -8,10 +8,15 @@ public class MusicJunkyard : MonoBehaviour
     public string path;
     FMOD.Studio.EventInstance sound;
 
+    private bool hasPlayed = true;
+
     private void OnTriggerEnter2D()
     {
-        sound = FMODUnity.RuntimeManager.CreateInstance(path);
-        sound.start();
+        if (hasPlayed)
+        {
+            sound = FMODUnity.RuntimeManager.CreateInstance(path);
+            sound.start();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -23,5 +28,6 @@ public class MusicJunkyard : MonoBehaviour
     {
         soundToStop.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         soundToStop.release();
+        hasPlayed = false;
     }
 }

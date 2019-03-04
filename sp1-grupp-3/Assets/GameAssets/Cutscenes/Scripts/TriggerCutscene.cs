@@ -64,7 +64,10 @@ public class TriggerCutscene : MonoBehaviour
 
         if (animationTimer.TimerFinished || Input.anyKeyDown)
         {
-            images[imageIndex].SetActive(false);
+            if (images[imageIndex] != null)
+            {
+                images[imageIndex].SetActive(false);
+            }
             animationPlaying = false;
             imageIndex++;
         }
