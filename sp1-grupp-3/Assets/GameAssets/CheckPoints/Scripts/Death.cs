@@ -6,11 +6,11 @@ using UnityEngine;
 public class Death : RespawnTrigger
 {
     [SerializeField]
-    string playerTag;
+    string deathZoneTag;
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.transform.CompareTag(playerTag))
+        if (!collision.transform.CompareTag(deathZoneTag))
             return;
 
         TriggerMove(gameObject);

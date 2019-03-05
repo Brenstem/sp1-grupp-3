@@ -23,11 +23,13 @@ public class PlayerJump : MonoBehaviour
 
     bool hasBeenGrounded = false;
     public bool enableNewMovement = false;
+    Animator anim;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         gCheck = GetComponent<GroundCheck>();
+        anim = GetComponent<Animator>();
     }
 
     public void UpdateMovementState(MovementState move)
@@ -60,9 +62,9 @@ public class PlayerJump : MonoBehaviour
         bool jumpBtn = Input.GetAxisRaw("Jump") == 1 || Input.GetButton("ABtn");
         if (jumpBtn == true && gCheck.isGrounded == true)
         {
-            jumpRequest = true;
+            anim.SetBool("Jumped", true);jumpRequest = true;
             hasBeenGrounded = false;
-            gCheck.isGrounded = false;
+            //gCheck.isGrounded = false;
         }
     }
 
@@ -70,6 +72,8 @@ public class PlayerJump : MonoBehaviour
     {
         if (jumpRequest == true)
         {
+            anim.SetBool("Jumped", true); jumpRequest = true;
+
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             var yVel = jumpHeight;
 
@@ -83,6 +87,8 @@ public class PlayerJump : MonoBehaviour
             {
                 rb.velocity += new Vector2(0, yVel);
             }
+
+            anim.SetBool("Jumped", false);
             jumpRequest = false;
         }
 
