@@ -62,7 +62,8 @@ public class PlayerJump : MonoBehaviour
         bool jumpBtn = Input.GetAxisRaw("Jump") == 1 || Input.GetButton("ABtn");
         if (jumpBtn == true && gCheck.isGrounded == true)
         {
-            anim.SetBool("Jumped", true);jumpRequest = true;
+            anim.SetBool("Jumped", true);
+            jumpRequest = true;
             hasBeenGrounded = false;
             //gCheck.isGrounded = false;
         }
