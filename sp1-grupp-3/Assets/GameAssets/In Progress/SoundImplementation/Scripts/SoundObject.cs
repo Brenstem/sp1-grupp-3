@@ -4,13 +4,27 @@ using UnityEngine;
 
 public class SoundObject : MonoBehaviour
 {
+    public bool onUpdate;
+    public bool onEnable;
+
     [FMODUnity.EventRef]
     public string path;
     FMOD.Studio.EventInstance soundObject;
-
-    void Start()
+    
+    private void Update()
     {
-        PlaySound();
+        if (onUpdate == true)
+        {
+            PlaySound();
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (onEnable == true)
+        {
+            PlaySound();
+        }
     }
 
     public void PlaySound()
@@ -21,9 +35,9 @@ public class SoundObject : MonoBehaviour
         soundObject.release();
     }
 
-    public void OnDestroy()
+    public void OnDisable()
     {
-        FMODUnity.RuntimeManager.DetachInstanceFromGameObject(soundObject);
         soundObject.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        FMODUnity.RuntimeManager.DetachInstanceFromGameObject(soundObject);
     }
 }
