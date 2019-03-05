@@ -495,7 +495,7 @@ AnimatorState:
   m_Motion: {fileID: 206122078208628874}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: 
+  m_MirrorParameter: Jumped
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 --- !u!1102 &1102691187182094616
