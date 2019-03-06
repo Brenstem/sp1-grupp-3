@@ -130,7 +130,7 @@ MonoBehaviour:
   wallCollSize: {x: 0, y: 0, z: 0}
   collideWithFloorLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4608
   collideWithWallLayer:
     serializedVersion: 2
     m_Bits: 0

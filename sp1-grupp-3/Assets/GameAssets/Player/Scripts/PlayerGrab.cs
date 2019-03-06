@@ -32,6 +32,13 @@ public class PlayerGrab : MonoBehaviour
     bool boxRotated = false;
     bool grabMeNow = false;
     bool dropMeNow = false;
+    public CapsuleCollider2D currentCollider;
+    public CapsuleCollider2D wholeCollider;
+
+    public Vector2 capsuleOffset;
+    public Vector2 capsuleSize;
+    public Vector2 capsuleOffsetBox;
+    public Vector2 capsuleSizeBox;
 
     GroundCheck groundCheck;
     Rigidbody2D rb;
@@ -81,6 +88,8 @@ public class PlayerGrab : MonoBehaviour
                 objRb.bodyType = RigidbodyType2D.Kinematic;
                 rb.velocity = new Vector2(0f, rb.velocity.y);
                 objGrabbed.GetComponent<BoxCollider2D>().isTrigger = true;
+                currentCollider.offset = capsuleOffsetBox;
+                currentCollider.size = capsuleSizeBox;
 
                 GetComponent<PlayerMovement>().enabled = false;
                 GetComponent<PlayerJump>().enabled = false;
@@ -226,11 +235,9 @@ public class PlayerGrab : MonoBehaviour
         {
             pointPosition.transform.position = objGrabbed.transform.position;
 
-            objGrabbed.GetComponent<BoxCollider2D>().isTrigger = false;
+            objGrabbed.GetComponent<BoxCollider2D>().isTrigger = true;
             objGrabbed.transform.parent = null;
             objGrabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            objGrabbed.GetComponent<Rigidbody2D>().gravityScale = 0f;
-            objGrabbed.GetComponent<Rigidbody2D>().mass = 0.001f;
 
             GetComponent<PlayerMovement>().enabled = true;
             GetComponent<PlayerJump>().enabled = true;
@@ -243,6 +250,9 @@ public class PlayerGrab : MonoBehaviour
         var force = new Vector2(throwForceX * grabbedDirection, throwForceY);
 
         Rigidbody2D objRB = objGrabbed.GetComponent<Rigidbody2D>();
+        objGrabbed.GetComponent<BoxCollider2D>().isTrigger = false;
+        currentCollider.offset = capsuleOffset;
+        currentCollider.size = capsuleSize;
 
         objRB.gravityScale = 1f;
         objRB.mass = 1f;

@@ -27,6 +27,8 @@ TagManager:
   - Box
   - Camera
   - FriendRobot
+  - JumpThroughtPlatforms
+  - Wall
   - 
   - 
   - 
