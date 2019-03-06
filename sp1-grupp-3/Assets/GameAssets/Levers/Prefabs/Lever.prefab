@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6426536583406641795}
   - component: {fileID: 6426536583406641796}
   - component: {fileID: 6426536583406641807}
+  - component: {fileID: 9133066206405457455}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Untagged
@@ -164,3 +165,19 @@ MonoBehaviour:
   affectedObjectArray:
   - {fileID: 0}
   animationSpeed: 1
+--- !u!114 &9133066206405457455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6426536583406641806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea514a831eabf6419d8886e339bd876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnStart: 0
+  onUpdate: 0
+  onEnable: 0
+  path: event:/Object/Box/box_1stland
