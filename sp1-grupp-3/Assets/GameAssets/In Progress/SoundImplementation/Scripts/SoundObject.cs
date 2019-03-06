@@ -8,9 +8,14 @@ public class SoundObject : MonoBehaviour
     public string path;
     FMOD.Studio.EventInstance soundObject;
 
+    [SerializeField] bool playOnStart = true;
+
     void Start()
     {
-        PlaySound();
+        if (playOnStart)
+        {
+            PlaySound();
+        }
     }
 
     public void PlaySound()

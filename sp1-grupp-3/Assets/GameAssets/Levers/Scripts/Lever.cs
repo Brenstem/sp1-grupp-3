@@ -15,8 +15,10 @@ public class Lever : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.E) && contact) {
+
+        if (Input.GetKeyDown(KeyCode.E) && contact) {
             OnPullLever();
+            
         }
     }
 
@@ -25,15 +27,22 @@ public class Lever : MonoBehaviour
         if (!leverActivated) {
             Animator animator = GetComponent<Animator>();
             animator.SetFloat("AnimationSpeedParameter", animationSpeed);
+            GetComponent<SoundObject>().PlaySound();
 
             foreach (LeverObject affectedObject in affectedObjectArray) {
-                if (!affectedObject.ActionPerformed) {
-                    
-                    affectedObject.OnActivatedByLever();
+                if (affectedObject != null)
+                {
+                    if (!affectedObject.ActionPerformed)
+                    {
+                        
+                        affectedObject.OnActivatedByLever();
+                    }
                 }
             }
 
             leverActivated = true;
+            if (leverActivated == true){
+            }
         }
     }
 
