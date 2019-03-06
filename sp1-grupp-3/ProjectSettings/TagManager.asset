@@ -46,8 +46,6 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -87,6 +85,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 949128621
+    locked: 0
+  - name: Decoration foreground
+    uniqueID: 3631114463
     locked: 0
   - name: Dialogue
     uniqueID: 234699705

@@ -130,10 +130,10 @@ MonoBehaviour:
   wallCollSize: {x: 0, y: 0, z: 0}
   collideWithFloorLayer:
     serializedVersion: 2
-    m_Bits: 4608
+    m_Bits: 12800
   collideWithWallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16384
   slopeFriction: 0
 --- !u!114 &3192911013998417652
 MonoBehaviour:
@@ -147,6 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea514a831eabf6419d8886e339bd876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onUpdate: 0
+  onEnable: 0
   path: event:/Object/Box/box_1stland
 --- !u!50 &654588076795873875
 Rigidbody2D:
