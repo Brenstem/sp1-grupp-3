@@ -80,7 +80,7 @@ public class FriendRobot : MonoBehaviour
     private void FollowPoint()
     {
         if (playerMovement != null) {
-            maxSpeed = playerMovement.defaultMovementState.speed;
+            maxSpeed = playerMovement.newMovementState.speed;
         }
                 
         Accelerate();
@@ -125,8 +125,9 @@ public class FriendRobot : MonoBehaviour
 
     private void AnimatorUpdate()
     {
-        animator.SetBool("IsGrounded", isGrounded);
         animator.SetFloat("Moving", Mathf.Abs(rb.velocity.x));
+        animator.SetBool("IsGrounded", isGrounded);
+        animator.SetBool("IsHanging", rb.isKinematic);
         
         if (moveDirection < 0) {
             transform.localScale = Vector3.one;
@@ -148,4 +149,10 @@ public class FriendRobot : MonoBehaviour
         return false;
     }
 
+    private bool IsKinematic()
+    {
+        
+
+        return false;
+    } 
 }
