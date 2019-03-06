@@ -16,6 +16,7 @@ public class GroundCheck : MonoBehaviour
     Rigidbody2D rb;
     RaycastHit2D hit2;
     bool hitPlatform = false;
+    bool previousGrounded = false;
 
     void Start()
     {
@@ -95,6 +96,8 @@ public class GroundCheck : MonoBehaviour
                 movement.ContinueMovement();
             }
         }
+
+        previousGrounded = isGrounded;
     }
 
     void OnDrawGizmos()
@@ -105,6 +108,18 @@ public class GroundCheck : MonoBehaviour
         float positionX = transform.position.x + (wallCollPosition.x * transform.localScale.x);
         float positionY = transform.position.y;
         Gizmos.DrawWireCube(new Vector2(positionX, positionY), wallCollSize);
+    }
+
+    public bool HasLanded()
+    {
+        if(isGrounded == true)
+        {
+            if(previousGrounded == false)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
