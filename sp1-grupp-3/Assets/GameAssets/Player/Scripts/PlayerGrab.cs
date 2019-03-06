@@ -32,8 +32,7 @@ public class PlayerGrab : MonoBehaviour
     bool boxRotated = false;
     bool grabMeNow = false;
     bool dropMeNow = false;
-    public CapsuleCollider2D currentCollider;
-    public CapsuleCollider2D wholeCollider;
+    CapsuleCollider2D currentCollider;
 
     public Vector2 capsuleOffset;
     public Vector2 capsuleSize;
@@ -47,6 +46,7 @@ public class PlayerGrab : MonoBehaviour
     {
         groundCheck = GetComponent<GroundCheck>();
         rb = GetComponent<Rigidbody2D>();
+        currentCollider = GetComponent<CapsuleCollider2D>();
         pointPosition = transform.Find("Point Position");
         parentPosition = transform.Find("Parent Position");
         grabbed = false;
