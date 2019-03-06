@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 930552583
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5b73a1785b8fcb94fbefccdf491d28d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -96,7 +96,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.045582294}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,10 +130,10 @@ MonoBehaviour:
   wallCollSize: {x: 0, y: 0, z: 0}
   collideWithFloorLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 12800
   collideWithWallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16384
   slopeFriction: 0
 --- !u!114 &3192911013998417652
 MonoBehaviour:
@@ -147,6 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea514a831eabf6419d8886e339bd876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onUpdate: 0
+  onEnable: 0
   path: event:/Object/Box/box_1stland
 --- !u!50 &654588076795873875
 Rigidbody2D:

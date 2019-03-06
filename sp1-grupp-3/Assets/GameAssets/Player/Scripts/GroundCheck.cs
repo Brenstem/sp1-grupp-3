@@ -15,6 +15,7 @@ public class GroundCheck : MonoBehaviour
     public float slopeFriction;
     Rigidbody2D rb;
     RaycastHit2D hit2;
+    bool hitPlatform = false;
 
     void Start()
     {
@@ -31,7 +32,7 @@ public class GroundCheck : MonoBehaviour
 
         if (hit == true)
         {
-            if (hit.transform.tag == "JumpThroughtPlatforms")
+            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("JumpThroughtPlatforms"))
             {
                 if (rb.velocity.y < 0 && (transform.position.y + groundCollPosition.y - (groundCollSize.y / 2)) >= (hit.transform.position.y))
                 {
@@ -40,11 +41,13 @@ public class GroundCheck : MonoBehaviour
                     hit2 = hit;
 
                     Physics2D.IgnoreCollision(GetComponent<Collider2D>(), hit.transform.GetComponent<Collider2D>(), false);
+                    hitPlatform = true;
                 }
             }
             else
             {
                 isGrounded = true;
+                hitPlatform = false;
             }
         }
         else
@@ -52,7 +55,9 @@ public class GroundCheck : MonoBehaviour
             isGrounded = false;
             if (hit2 == true)
             {
+                //Physics2D.IgnoreCollision(GetComponent<Collider2D>(), hit2.transform.GetComponent<Collider2D>(), true);
                 //hit2.transform.GetComponent<BoxCollider2D>().isTrigger = true;
+                hitPlatform = false;
                 hit2 = hit;
             }
         }
@@ -104,16 +109,9 @@ public class GroundCheck : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "JumpThroughtPlatforms")
+        if (collision.transform.gameObject.layer == LayerMask.NameToLayer("JumpThroughtPlatforms"))
         {
-            if (hit2 == true)
-            {
-                if (hit2.transform.gameObject != collision.transform.gameObject)
-                {
-                    Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.transform.GetComponent<Collider2D>(), true);
-                }
-            }
-            else
+            if(isGrounded == true && hitPlatform == false || isGrounded == false)
             {
                 Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.transform.GetComponent<Collider2D>(), true);
             }

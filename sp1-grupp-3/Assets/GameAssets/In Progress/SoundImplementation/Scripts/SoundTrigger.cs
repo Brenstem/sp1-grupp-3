@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoundTrigger : MonoBehaviour
 {
     public bool playOnce;
+    public bool stopOnExit;
     public bool attachToObject;
     private bool hasPlayed;
 
@@ -35,7 +36,6 @@ public class SoundTrigger : MonoBehaviour
                 return;
             }
         }
-
     }
 
     public void PlaySound()
@@ -49,8 +49,17 @@ public class SoundTrigger : MonoBehaviour
         soundObject.release();
     }
 
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (stopOnExit == true)
+        {
+            soundObject.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+
     public void OnDestroy()
     {
         FMODUnity.RuntimeManager.DetachInstanceFromGameObject(soundObject);
+        soundObject.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
