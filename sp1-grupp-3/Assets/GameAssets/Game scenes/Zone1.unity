@@ -41229,6 +41229,7 @@ MonoBehaviour:
   playOnce: 1
   stopOnExit: 0
   attachToObject: 1
+  setTag: Player
   path: event:/Zone1/Ambience/1_2 Factory/startTrigger
 --- !u!61 &273970263
 BoxCollider2D:
@@ -46893,6 +46894,7 @@ MonoBehaviour:
   playOnce: 0
   stopOnExit: 1
   attachToObject: 0
+  setTag: Player
   path: event:/Zone1/Ambience/1_2 Factory/ambience_inside_wind
 --- !u!61 &941387448
 BoxCollider2D:
@@ -48430,12 +48432,12 @@ PrefabInstance:
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.87
+      value: 107.2
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.63
+      value: 2.9
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
@@ -55208,6 +55210,7 @@ MonoBehaviour:
   playOnce: 0
   stopOnExit: 1
   attachToObject: 1
+  setTag: Player
   path: event:/Zone1/Ambience/1_2 Factory/ambience_factory
 --- !u!61 &1831488196
 BoxCollider2D:
