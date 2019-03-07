@@ -9,13 +9,13 @@ public class DeathParticles : MonoBehaviour
 
     void Start()
     {
-        RespawnTrigger death = GetComponent<RespawnTrigger>();
+        Death death = GetComponentInParent<Death>();
         particles = GetComponent<ParticleSystem>();
 
-        death.OnMove += PlayerDeath;
+        death.OnPlayerDeath += PlayerDeath;
     }
 
-    private void PlayerDeath(GameObject obj)
+    private void PlayerDeath()
     {
         particles.Play();
     }

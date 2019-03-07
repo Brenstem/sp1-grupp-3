@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class Death : RespawnTrigger
 {
+    public event Action OnPlayerDeath;
+
     [SerializeField]
-    string deathZoneTag;
+    string playerTag;
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.transform.CompareTag(deathZoneTag))
+        if (!collision.transform.CompareTag(playerTag))
             return;
-
+        OnPlayerDeath();
         TriggerMove(gameObject);
     }
 }

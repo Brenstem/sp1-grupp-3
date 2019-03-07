@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 491993574080946255}
   - component: {fileID: 491993574080946254}
   - component: {fileID: 491993574080946253}
-  - component: {fileID: 1177700241117554249}
+  - component: {fileID: 7306261051915764990}
   m_Layer: 0
   m_Name: DustEffect
   m_TagString: Untagged
@@ -285,8 +285,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1.7
-      minScalar: 0.8
+      scalar: 0.6
+      minScalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4757,7 +4757,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &1177700241117554249
+--- !u!114 &7306261051915764990
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4766,6 +4766,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 491993574080946252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e4f9e13360c87348aa7f61cf2a2e4f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 74f3ff7d8642a064da3a40ce1bbd57d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

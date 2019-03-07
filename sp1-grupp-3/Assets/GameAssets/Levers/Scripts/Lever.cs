@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
+
+    [SerializeField] bool playSound;
     public LeverObject[] affectedObjectArray;
     public float animationSpeed = 1; 
 
@@ -27,7 +29,11 @@ public class Lever : MonoBehaviour
         if (!leverActivated) {
             Animator animator = GetComponent<Animator>();
             animator.SetFloat("AnimationSpeedParameter", animationSpeed);
-            GetComponent<SoundObject>().PlaySound();
+
+            if (playSound)
+            {
+                GetComponent<SoundObject>().PlaySound();
+            }
 
             foreach (LeverObject affectedObject in affectedObjectArray) {
                 if (affectedObject != null)
