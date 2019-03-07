@@ -45,7 +45,7 @@ MonoBehaviour:
   - {fileID: 114615649696790738}
   StringsBanks:
   - {fileID: 114393053037901006}
-  stringsBankWriteTime: 636875822686707840
+  stringsBankWriteTime: 636875832117393142
   cacheVersion: 3
 --- !u!114 &114001144208099540
 MonoBehaviour:
@@ -552,6 +552,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114064823735755106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Loop1 End
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114065261082951834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -818,6 +834,22 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114099154777753136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: StartEQ
+  Min: 0
+  Max: 10
+  Default: 0
+--- !u!114 &114102693652259122
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1381,6 +1413,22 @@ MonoBehaviour:
   Name: IdleSound
   Min: 0
   Max: 1
+  Default: 0
+--- !u!114 &114208710055085910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: To Pause
+  Min: 0
+  Max: 10
   Default: 0
 --- !u!114 &114209296390783748
 MonoBehaviour:
@@ -2681,6 +2729,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114365111585935180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: IdleSound
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114366306947646542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2843,7 +2907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODBank\Desktop\Master Bank.strings.bank
-  lastModified: 636875822686707840
+  lastModified: 636875832117393142
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -3278,6 +3342,22 @@ MonoBehaviour:
   - Name: 
     Value: 5558624
   Exists: 1
+--- !u!114 &114458278775329536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Menu Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114458684841738238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3707,8 +3787,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114878861356215702}
-  - {fileID: 114543972556634464}
+  - {fileID: 114102693652259122}
+  - {fileID: 114458278775329536}
   MinDistance: 0
   MaxDistance: 0
   Length: 268500
@@ -4098,8 +4178,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114583786218820076}
-  - {fileID: 114538834494255378}
+  - {fileID: 114208710055085910}
+  - {fileID: 114064823735755106}
   MinDistance: 0
   MaxDistance: 0
   Length: 460170
@@ -4776,7 +4856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\asus_02\Downloads\3 dsu\_spelprojekt I\github\sp1-grupp-3\sp1-grupp-3\FMODBank\Desktop\Master
     Bank.bank
-  lastModified: 636875822686578186
+  lastModified: 636875832117278358
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -5445,7 +5525,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114354248195089076}
+  - {fileID: 114365111585935180}
   MinDistance: 0
   MaxDistance: 0
   Length: 800
