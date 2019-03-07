@@ -4,44 +4,60 @@ using UnityEngine;
 
 public class SoundObject : MonoBehaviour
 {
-    [SerializeField] bool playOnStart = true;
     [SerializeField] bool onUpdate;
     [SerializeField] bool onEnable;
+    [SerializeField] bool loop;
+    [SerializeField] bool oneShot;
 
     [FMODUnity.EventRef]
     public string path;
     FMOD.Studio.EventInstance soundObject;
 
-    void Start()
-    {
-        if (playOnStart)
-        {
-            PlaySound();
-        }
-    }
-
     private void Update()
     {
-        if (onUpdate == true)
+        if (onUpdate == true && oneShot == true)
         {
-            PlaySound();
+            PlayOneShotObject();
         }
+
+        if (onUpdate == true && loop == true)
+        {
+            PlayLoopObject();
+        }
+
     }
 
     private void OnEnable()
     {
-        if (onEnable == true)
+        if (onEnable == true && oneShot == true)
         {
-            PlaySound();
+            PlayOneShotObject();
+        }
+
+        if (onEnable == true && loop == true)
+        {
+            PlayLoopObject();
         }
     }
 
-    public void PlaySound()
+    public void PlayLoopObject()
     {
         soundObject = FMODUnity.RuntimeManager.CreateInstance(path);
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundObject, this.transform, this.GetComponent<Rigidbody>());
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundObject, this.transform, this.GetComponent<Rigidbody>());
+        soundObject.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
         soundObject.start();
         soundObject.release();
+    }
+
+    public void PlayOneShotObject()
+    {
+        soundObject = FMODUnity.RuntimeManager.CreateInstance(path);
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundObject, this.transform, this.GetComponent<Rigidbody>());
+        soundObject.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        soundObject.start();
+        soundObject.release();
+        soundObject.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        FMODUnity.RuntimeManager.DetachInstanceFromGameObject(soundObject);
     }
 
     public void OnDisable()

@@ -6,6 +6,8 @@ public class Lever : MonoBehaviour
 {
 
     [SerializeField] bool playSound;
+    public string soundPath;
+
     public LeverObject[] affectedObjectArray;
     public float animationSpeed = 1; 
 
@@ -20,20 +22,20 @@ public class Lever : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && contact) {
             OnPullLever();
-            
         }
     }
 
     private void OnPullLever()
     {
+        if (playSound)
+        {
+            GetComponent<SoundEvent>().PlayOneShot(soundPath);
+            playSound = false;
+        }
+
         if (!leverActivated) {
             Animator animator = GetComponent<Animator>();
             animator.SetFloat("AnimationSpeedParameter", animationSpeed);
-
-            if (playSound)
-            {
-                GetComponent<SoundObject>().PlaySound();
-            }
 
             foreach (LeverObject affectedObject in affectedObjectArray) {
                 if (affectedObject != null)
