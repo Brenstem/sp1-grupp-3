@@ -8,6 +8,7 @@ public class AmbientPlayer : MonoBehaviour
     public string path;
     FMOD.Studio.EventInstance sound;
 
+    public bool playOnce;
     private bool hasPlayed;
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
@@ -18,7 +19,10 @@ public class AmbientPlayer : MonoBehaviour
             if (!hasPlayed)
             {
                 sound.start();
-                hasPlayed = true;
+                if (playOnce == true)
+                {
+                    hasPlayed = true;
+                }
             }
         }
     }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SoundObject : MonoBehaviour
 {
-    [SerializeField] bool onUpdate;
     [SerializeField] bool onEnable;
     [SerializeField] bool loop;
     [SerializeField] bool oneShot;
@@ -12,20 +11,6 @@ public class SoundObject : MonoBehaviour
     [FMODUnity.EventRef]
     public string path;
     FMOD.Studio.EventInstance soundObject;
-
-    private void Update()
-    {
-        if (onUpdate == true && oneShot == true)
-        {
-            PlayOneShotObject();
-        }
-
-        if (onUpdate == true && loop == true)
-        {
-            PlayLoopObject();
-        }
-
-    }
 
     private void OnEnable()
     {
@@ -43,8 +28,9 @@ public class SoundObject : MonoBehaviour
     public void PlayLoopObject()
     {
         soundObject = FMODUnity.RuntimeManager.CreateInstance(path);
-        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundObject, this.transform, this.GetComponent<Rigidbody>());
-        soundObject.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject)); 
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundObject, this.transform, this.GetComponent<Rigidbody>());
+        //soundObject.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+
         soundObject.start();
         soundObject.release();
     }
@@ -52,8 +38,8 @@ public class SoundObject : MonoBehaviour
     public void PlayOneShotObject()
     {
         soundObject = FMODUnity.RuntimeManager.CreateInstance(path);
-        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundObject, this.transform, this.GetComponent<Rigidbody>());
-        soundObject.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundObject, this.transform, this.GetComponent<Rigidbody>());
+        //soundObject.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         soundObject.start();
         soundObject.release();
         soundObject.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
