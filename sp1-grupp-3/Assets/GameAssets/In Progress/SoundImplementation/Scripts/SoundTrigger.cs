@@ -8,6 +8,7 @@ public class SoundTrigger : MonoBehaviour
     public bool stopOnExit;
     public bool attachToObject;
     private bool hasPlayed;
+    public string setTag;
 
     [FMODUnity.EventRef]
     public string path;
@@ -51,9 +52,12 @@ public class SoundTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        if (stopOnExit == true)
+        if (collider.CompareTag(setTag))
         {
-            soundObject.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            if (stopOnExit == true)
+            {
+                soundObject.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
         }
     }
 
