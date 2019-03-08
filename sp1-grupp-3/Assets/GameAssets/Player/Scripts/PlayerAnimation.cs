@@ -76,14 +76,11 @@ public class PlayerAnimation : MonoBehaviour
                     GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
                     previousDirection = transform.localScale.x;
-                    if(collision.transform.GetComponent<Lever>().GetDoor() == false)
+                    if (transform.localScale.x == 1)
                     {
-                        if (transform.localScale.x == 1)
-                        {
-                            Vector3 scale = transform.localScale;
-                            scale.x *= -1;
-                            transform.localScale = scale;
-                        }
+                        Vector3 scale = transform.localScale;
+                        scale.x *= -1;
+                        transform.localScale = scale;
                     }
                 }
             }
