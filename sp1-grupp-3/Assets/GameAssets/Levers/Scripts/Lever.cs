@@ -15,8 +15,13 @@ public class Lever : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.E) && contact) {
+        //if (Input.GetKey(KeyCode.E) && contact) {
+        //    OnPullLever();
+        //}
+        if(Input.GetButton("Use") && contact)
+        {
             OnPullLever();
+            GetComponent<Lever>().enabled = false;
         }
     }
 

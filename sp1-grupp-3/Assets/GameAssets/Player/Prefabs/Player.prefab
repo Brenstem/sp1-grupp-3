@@ -191,8 +191,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.08247256}
-  m_Size: {x: 0.71, y: 1.804945}
+  m_Offset: {x: 0, y: -0.08}
+  m_Size: {x: 0.71, y: 1.8}
   m_Direction: 0
 --- !u!114 &3213097346512006660
 MonoBehaviour:
@@ -212,13 +212,13 @@ MonoBehaviour:
   groundCollPosition: {x: 0, y: -0.99, z: 0}
   groundCollSize: {x: 0.51, y: 0.12, z: 0}
   wallCollPosition: {x: 0.5, y: 0.23, z: 0}
-  wallCollSize: {x: 0.2, y: 1.09, z: 0}
+  wallCollSize: {x: 0.2, y: 1.39, z: 0}
   collideWithFloorLayer:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 13824
   collideWithWallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16896
   slopeFriction: 0.05
 --- !u!114 &8760632943739834865
 MonoBehaviour:
@@ -304,7 +304,7 @@ MonoBehaviour:
   followSpeed: 1
   throwForceX: 5
   throwForceY: 5
-  rotationSpeed: 10
+  rotationSpeed: 8
   colliding: 0
   grabbed: 0
   boxCollPosition: {x: 0.5, y: 0, z: 0}
@@ -312,6 +312,10 @@ MonoBehaviour:
   collideWithLayer:
     serializedVersion: 2
     m_Bits: 1024
+  capsuleOffset: {x: 0, y: -0.08}
+  capsuleSize: {x: 0.71, y: 1.8}
+  capsuleOffsetBox: {x: 0, y: 0.4412601}
+  capsuleSizeBox: {x: 0.7, y: 2.878944}
 --- !u!114 &503646143716361107
 MonoBehaviour:
   m_ObjectHideFlags: 0
