@@ -44788,6 +44788,11 @@ PrefabInstance:
       propertyPath: affectedObjectArray.Array.data[0]
       value: 
       objectReference: {fileID: 1644385480}
+    - target: {fileID: 6426536583406641807, guid: 9358a180d9a5de8419e1a545c7f2fe02,
+        type: 3}
+      propertyPath: soundPath
+      value: event:/Object/Lever/ifleverpull
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9358a180d9a5de8419e1a545c7f2fe02, type: 3}
 --- !u!4 &672580801 stripped
@@ -46367,6 +46372,11 @@ PrefabInstance:
       propertyPath: affectedObjectArray.Array.data[0]
       value: 
       objectReference: {fileID: 1391381326}
+    - target: {fileID: 6426536583406641807, guid: 9358a180d9a5de8419e1a545c7f2fe02,
+        type: 3}
+      propertyPath: soundPath
+      value: event:/Object/Lever/ifleverpull
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9358a180d9a5de8419e1a545c7f2fe02, type: 3}
 --- !u!1 &909791381
@@ -46694,6 +46704,11 @@ PrefabInstance:
       propertyPath: playSound
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6426536583406641807, guid: 9358a180d9a5de8419e1a545c7f2fe02,
+        type: 3}
+      propertyPath: soundPath
+      value: event:/Object/Lever/ifleverpull
+      objectReference: {fileID: 0}
     - target: {fileID: 9133066206405457455, guid: 9358a180d9a5de8419e1a545c7f2fe02,
         type: 3}
       propertyPath: onUpdate
@@ -46835,6 +46850,8 @@ GameObject:
   - component: {fileID: 942236675}
   - component: {fileID: 942236678}
   - component: {fileID: 942236677}
+  - component: {fileID: 942236680}
+  - component: {fileID: 942236679}
   m_Layer: 0
   m_Name: Junkyard_Factory_Door
   m_TagString: Untagged
@@ -46951,6 +46968,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9765625, y: 6.65625}
   m_EdgeRadius: 0
+--- !u!114 &942236679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942236674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4877315693746fa4787b97f491e95777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundPath: event:/Object/Door/doorcantopen
+--- !u!114 &942236680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942236674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73221a65c29efa540930becd19433443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &942243763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8854963664073552557, guid: 6cea12afdc5b48e4e8630bcb64f88d21,
@@ -48159,12 +48201,12 @@ PrefabInstance:
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 116.38
+      value: 85.2
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54
+      value: 10.4
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
@@ -48888,6 +48930,11 @@ PrefabInstance:
       propertyPath: affectedObjectArray.Array.data[0]
       value: 
       objectReference: {fileID: 1026457526}
+    - target: {fileID: 6426536583406641807, guid: 9358a180d9a5de8419e1a545c7f2fe02,
+        type: 3}
+      propertyPath: soundPath
+      value: event:/Object/Lever/ifleverpull
+      objectReference: {fileID: 0}
     - target: {fileID: 9133066206405457455, guid: 9358a180d9a5de8419e1a545c7f2fe02,
         type: 3}
       propertyPath: onUpdate
@@ -53256,6 +53303,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playSound
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426536583406641807, guid: 9358a180d9a5de8419e1a545c7f2fe02,
+        type: 3}
+      propertyPath: soundPath
+      value: event:/Object/Lever/ifleverpull
       objectReference: {fileID: 0}
     - target: {fileID: 9133066206405457455, guid: 9358a180d9a5de8419e1a545c7f2fe02,
         type: 3}
