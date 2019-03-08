@@ -127,7 +127,7 @@ public class FriendRobot : MonoBehaviour
     {
         animator.SetFloat("Moving", Mathf.Abs(rb.velocity.x));
         animator.SetBool("IsGrounded", isGrounded);
-        animator.SetBool("IsHanging", rb.isKinematic);
+        //animator.SetBool("IsHanging", rb.isKinematic);
         
         if (moveDirection < 0) {
             transform.localScale = Vector3.one;
