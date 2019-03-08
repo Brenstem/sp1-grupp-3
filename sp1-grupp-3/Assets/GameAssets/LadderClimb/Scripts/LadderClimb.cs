@@ -51,7 +51,7 @@ public class LadderClimb : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<PlayerJump>().enabled = true;
-        attachedPlatform.GetComponent<BoxCollider2D>().isTrigger = true;
+        attachedPlatform.GetComponent<BoxCollider2D>().enabled= true;
         player.GetComponent<Rigidbody2D>().gravityScale = 1;
 
     }
