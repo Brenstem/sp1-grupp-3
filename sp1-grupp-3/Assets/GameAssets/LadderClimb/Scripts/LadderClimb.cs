@@ -24,6 +24,7 @@ public class LadderClimb : MonoBehaviour
             {
                 player.GetComponent<PlayerMovement>().enabled = true;
                 player.GetComponent<PlayerJump>().enabled = true;
+                player.GetComponent<BoxCollider2D>().isTrigger = false;
                 player.GetComponent<Rigidbody2D>().gravityScale = 1;
             }
         } 
@@ -38,6 +39,7 @@ public class LadderClimb : MonoBehaviour
             {
                 player.GetComponent<PlayerMovement>().enabled = false;
                 player.GetComponent<PlayerJump>().enabled = false;
+                Physics2D.IgnoreCollision(player.GetComponent<CapsuleCollider2D>(), GetComponent<BoxCollider2D>());
                 player.GetComponent<Rigidbody2D>().gravityScale = 0;
             }
             player.GetComponent<Rigidbody2D>().velocity = moveDir * climbSpeed;
@@ -48,6 +50,7 @@ public class LadderClimb : MonoBehaviour
     {
         player.GetComponent<PlayerMovement>().enabled = true;
         player.GetComponent<PlayerJump>().enabled = true;
+        player.GetComponent<BoxCollider2D>().isTrigger = false;
         player.GetComponent<Rigidbody2D>().gravityScale = 1;
 
     }
