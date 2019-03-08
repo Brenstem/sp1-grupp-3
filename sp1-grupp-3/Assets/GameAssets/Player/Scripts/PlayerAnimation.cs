@@ -85,6 +85,22 @@ public class PlayerAnimation : MonoBehaviour
                 }
             }
         }
+
+        if (collision.transform.GetComponent<DoorObject>() != null && useLever == false)
+        {
+            if (collision.transform.GetComponent<DoorObject>().enabled == true)
+            {
+                if (Input.GetButton("Use"))
+                {
+                    useLever = true;
+                    movement.enabled = false;
+                    jump.enabled = false;
+                    GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+                    previousDirection = transform.localScale.x;
+                }
+            }
+        }
     }
 
     public void ResetUse()
