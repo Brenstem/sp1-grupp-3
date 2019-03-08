@@ -56,11 +56,28 @@ public class PlayerGrab : MonoBehaviour
 
     void Update()
     {
-        if (grabbed == false && Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || grabbed == true && isRotating == false && Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
+        if(Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
         {
-            grabbedDirection = (int)Input.GetAxisRaw("Horizontal");
+            if (grabbed == false && Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || grabbed == true && isRotating == false && Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
+            {
+                grabbedDirection = (int)Input.GetAxisRaw("Horizontal");
+            }
         }
-
+        else if(Mathf.Abs(Input.GetAxisRaw("CtrlHorizontal")) > 0)
+        {
+            if (grabbed == false && Mathf.Abs(Input.GetAxisRaw("CtrlHorizontal")) > 0 || grabbed == true && isRotating == false && Mathf.Abs(Input.GetAxisRaw("CtrlHorizontal")) > 0)
+            {
+                if(Input.GetAxisRaw("CtrlHorizontal") > 0.5f)
+                {
+                    grabbedDirection = 1;
+                }
+                else if(Input.GetAxisRaw("CtrlHorizontal") < -0.5f)
+                {
+                    grabbedDirection = -1;
+                }
+            }
+        }
+        
         float pX = transform.position.x + boxCollPosition.x * transform.localScale.x;
         float pY = transform.position.y + boxCollPosition.y;
         RaycastHit2D hit = Physics2D.BoxCast(new Vector2(pX, pY), boxCollSize, 0f, Vector2.zero, 0f, collideWithLayer);
@@ -143,8 +160,8 @@ public class PlayerGrab : MonoBehaviour
 
     void MoveBoxToPosition()
     {
-        position = Vector2.MoveTowards(objGrabbed.transform.position, pointPosition.position, followSpeed);
-        objGrabbed.GetComponent<Rigidbody2D>().MovePosition(position);
+        //position = Vector2.MoveTowards(objGrabbed.transform.position, pointPosition.position, followSpeed);
+        //objGrabbed.GetComponent<Rigidbody2D>().MovePosition(position);
     }
 
     float GetRotationDestination(float newPoint)
@@ -236,8 +253,10 @@ public class PlayerGrab : MonoBehaviour
             pointPosition.transform.position = objGrabbed.transform.position;
 
             objGrabbed.GetComponent<BoxCollider2D>().isTrigger = true;
-            objGrabbed.transform.parent = null;
-            objGrabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            //objGrabbed.transform.parent = null;
+            objGrabbed.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            //objGrabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            //objGrabbed.GetComponent<Rigidbody2D>().mass = 0.001f;
 
             GetComponent<PlayerMovement>().enabled = true;
             GetComponent<PlayerJump>().enabled = true;
@@ -250,6 +269,10 @@ public class PlayerGrab : MonoBehaviour
         var force = new Vector2(throwForceX * grabbedDirection, throwForceY);
 
         Rigidbody2D objRB = objGrabbed.GetComponent<Rigidbody2D>();
+        objRB.transform.parent = null;
+        objRB.constraints = RigidbodyConstraints2D.None;
+        objRB.constraints = RigidbodyConstraints2D.FreezeRotation;
+        objRB.bodyType = RigidbodyType2D.Dynamic;
         objGrabbed.GetComponent<BoxCollider2D>().isTrigger = false;
         currentCollider.offset = capsuleOffset;
         currentCollider.size = capsuleSize;

@@ -100,16 +100,6 @@ public class GroundCheck : MonoBehaviour
         previousGrounded = isGrounded;
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position + groundCollPosition, groundCollSize);
-
-        float positionX = transform.position.x + (wallCollPosition.x * transform.localScale.x);
-        float positionY = transform.position.y;
-        Gizmos.DrawWireCube(new Vector2(positionX, positionY), wallCollSize);
-    }
-
     public bool HasLanded()
     {
         if(isGrounded == true)
@@ -120,6 +110,16 @@ public class GroundCheck : MonoBehaviour
             }
         }
         return false;
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position + groundCollPosition, groundCollSize);
+
+        float positionX = transform.position.x + (wallCollPosition.x * transform.localScale.x);
+        float positionY = transform.position.y;
+        Gizmos.DrawWireCube(new Vector2(positionX, positionY), wallCollSize);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
