@@ -39,11 +39,14 @@ public class SoundObject : MonoBehaviour
     {
         soundObject = FMODUnity.RuntimeManager.CreateInstance(path);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundObject, this.transform, this.GetComponent<Rigidbody>());
-        //soundObject.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-        soundObject.start();
-        soundObject.release();
-        soundObject.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        FMODUnity.RuntimeManager.DetachInstanceFromGameObject(soundObject);
+
+        FMODUnity.RuntimeManager.PlayOneShot(path, GetComponent<Transform>().position);
+
+        ////soundObject.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        //soundObject.start();
+        //soundObject.release();
+        //soundObject.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        ////FMODUnity.RuntimeManager.DetachInstanceFromGameObject(soundObject);
     }
 
     public void OnDisable()

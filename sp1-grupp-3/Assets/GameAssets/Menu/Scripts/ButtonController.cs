@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonController : MonoBehaviour, IPointerEnterHandler, ISelectHandler
+public class ButtonController : MonoBehaviour, ISelectHandler
 {
     [SerializeField] EventSystem canvasEventSystem;
     [SerializeField] GameObject selectOnStart;
@@ -11,16 +11,21 @@ public class ButtonController : MonoBehaviour, IPointerEnterHandler, ISelectHand
 
     private bool buttonSelected = false;
     private MenuActions menuActions;
+    private GameObject currentlySelectedGameObject;
 
     // Reference fetching
     private void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         menuActions = menuActionController.GetComponent<MenuActions>();
     }
 
     // Checks for keyboard/gamepad input and switches to keyboard/gamepad control
     private void Update()
     {
+        currentlySelectedGameObject = canvasEventSystem.currentSelectedGameObject;
+
         if (Input.GetAxis("Vertical") != 0 && !buttonSelected)
         {
             canvasEventSystem.SetSelectedGameObject(selectOnStart);
@@ -31,16 +36,7 @@ public class ButtonController : MonoBehaviour, IPointerEnterHandler, ISelectHand
         if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Mouse1))
         {
             buttonSelected = false;
-            canvasEventSystem.SetSelectedGameObject(null);
         }
-    }
-
-    // Checks for mouse hovering over buttons
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        menuActions.PlaySelectSound();
-        buttonSelected = false;
-        canvasEventSystem.SetSelectedGameObject(null);
     }
 
     // Checks for when new objects are selected with keyboard/gamepad input to play sound

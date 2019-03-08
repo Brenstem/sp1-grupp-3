@@ -46752,12 +46752,12 @@ PrefabInstance:
     - target: {fileID: 3024169959321939975, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 103
+      value: 3089.8562
       objectReference: {fileID: 0}
     - target: {fileID: 3024169959321939975, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 104
+      value: 97.622
       objectReference: {fileID: 0}
     - target: {fileID: 3024169960453508650, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
@@ -46767,12 +46767,12 @@ PrefabInstance:
     - target: {fileID: 3024169960453508650, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0000076293945
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3024169960453508650, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.0000076293945
       objectReference: {fileID: 0}
     - target: {fileID: 3024169959321939968, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
@@ -46787,22 +46787,27 @@ PrefabInstance:
     - target: {fileID: 3024169959321939968, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: triggerOffset.x
-      value: 0
+      value: 4.18
       objectReference: {fileID: 0}
     - target: {fileID: 3024169959321939968, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: triggerOffset.y
-      value: -0.69
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 3024169959321939968, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: speaker
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1729223831}
     - target: {fileID: 3024169959321939968, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: boxOffset.y
       value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024169959321939968, guid: 2215897f84acf6c4aa6032f39cdf85c5,
+        type: 3}
+      propertyPath: boxOffset.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3024169960453508651, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
@@ -46817,12 +46822,12 @@ PrefabInstance:
     - target: {fileID: 3024169960453508651, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0
+      value: 4.18
       objectReference: {fileID: 0}
     - target: {fileID: 3024169960453508651, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_Offset.y
-      value: -3.0900002
+      value: -1.7900001
       objectReference: {fileID: 0}
     - target: {fileID: 3024169959321939974, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
@@ -46858,6 +46863,7 @@ GameObject:
   - component: {fileID: 942236680}
   - component: {fileID: 942236679}
   - component: {fileID: 942236681}
+  - component: {fileID: 942236682}
   m_Layer: 0
   m_Name: Junkyard_Factory_Door
   m_TagString: Untagged
@@ -47025,6 +47031,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.13395, y: 6.65625}
   m_EdgeRadius: 0
+--- !u!114 &942236682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942236674}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea514a831eabf6419d8886e339bd876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnable: 1
+  loop: 0
+  oneShot: 1
+  path: event:/Player/Movement/Player_Grab/player_grab
 --- !u!4 &942243763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8854963664073552557, guid: 6cea12afdc5b48e4e8630bcb64f88d21,
@@ -48233,12 +48255,12 @@ PrefabInstance:
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.2
+      value: 116.16
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1
+      value: 1.27
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
@@ -53340,6 +53362,11 @@ PrefabInstance:
         type: 3}
       propertyPath: soundPath
       value: event:/Object/Lever/ifleverpull
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426536583406641807, guid: 9358a180d9a5de8419e1a545c7f2fe02,
+        type: 3}
+      propertyPath: playSoundInObject
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9133066206405457455, guid: 9358a180d9a5de8419e1a545c7f2fe02,
         type: 3}
