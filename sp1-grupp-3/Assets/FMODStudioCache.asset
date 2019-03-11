@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114393053037901006}
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   EditorEvents:
   - {fileID: 114072842261639720}
   - {fileID: 114908021142778498}
@@ -44,9 +44,10 @@ MonoBehaviour:
   MasterBanks:
   - {fileID: 114615649696790738}
   - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   StringsBanks:
   - {fileID: 114393053037901006}
-  stringsBankWriteTime: 636876395616508016
+  stringsBankWriteTime: 636879007788539424
   cacheVersion: 3
 --- !u!114 &114001144208099540
 MonoBehaviour:
@@ -294,7 +295,7 @@ MonoBehaviour:
   Path: event:/Object/Door/doorcantopen
   guid: dcb0a540f9a4bb4eb098f605ad9ce5ec
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -593,7 +594,7 @@ MonoBehaviour:
   Path: snapshot:/Industry_Reverb
   guid: 742f6d37a1811145b993f09fbd035661
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -716,7 +717,7 @@ MonoBehaviour:
   Path: event:/Zone1/Ambience/1_1 Junkyard/ambience_crickets
   guid: 0db0a6c7b49ebf4786d75855b117b9f2
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -1804,7 +1805,7 @@ MonoBehaviour:
   Path: event:/Object/Box/box_woodland
   guid: b8de33fb20d378429a00c8264b06570c
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2135,7 +2136,7 @@ MonoBehaviour:
   Path: event:/Player/Movement/Player_Jump/player_jump
   guid: dfac3d4746337442ad2abff0a342b3d1
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2690,7 +2691,7 @@ MonoBehaviour:
   Path: event:/Player/Movement/Player_Walk/player_walk
   guid: b4f9721d9f47f847ba8f8f7b81b49475
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3024,7 +3025,7 @@ MonoBehaviour:
   Path: event:/Player/Movement/Player_Land/player_land
   guid: 5de0e005fb478d44b87dec8c980fc34c
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3079,7 +3080,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu_SFX/sfx_onExit
   guid: c5f7f579882e174b80cb551bc2438810
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3116,7 +3117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODBank\Desktop\Master Bank.strings.bank
-  lastModified: 636876395616508016
+  lastModified: 636879007788539424
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -3567,6 +3568,25 @@ MonoBehaviour:
   - Name: 
     Value: 5558624
   Exists: 1
+--- !u!114 &114454557822128840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\dev\Unity\sp1-grupp-3\sp1-grupp-3\FMODBank\Desktop\Master Bank.bank
+  lastModified: 636879007789986653
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 12978752
+  Exists: 1
 --- !u!114 &114458278775329536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3797,7 +3817,7 @@ MonoBehaviour:
   Path: snapshot:/General_Reverb
   guid: ee8ac641f8f1394ba59942b1b7e64785
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -3868,7 +3888,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu_SFX/sfx_onStart
   guid: 7d38ff344d7d004c8cf67e5ec3495484
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -4007,13 +4027,13 @@ MonoBehaviour:
   Path: event:/Menu/Menu_Music/menu_music
   guid: 185d51e8ce8c4a459caf62edaace2079
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114774329588033716}
-  - {fileID: 114682034548450006}
+  - {fileID: 114617527184403332}
+  - {fileID: 114874014021303714}
   MinDistance: 0
   MaxDistance: 0
   Length: 268500
@@ -4096,7 +4116,7 @@ MonoBehaviour:
   Path: event:/Zone1/Ambience/1_1 Junkyard/ambience_crickets2d
   guid: a2abc303a5f9a24093de21d8a8f070e8
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -4279,7 +4299,7 @@ MonoBehaviour:
   Path: event:/Player/Movement/Player_Toss/player_toss
   guid: 558f1162686c5d439b0301090dc87734
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4398,13 +4418,13 @@ MonoBehaviour:
   Path: event:/Zone1/Music/junkyard_loop0
   guid: bb24bef69ca5884385f90ab73da4e837
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114932983253632432}
-  - {fileID: 114603706162336948}
+  - {fileID: 114925800063515406}
+  - {fileID: 114624286110367960}
   MinDistance: 0
   MaxDistance: 0
   Length: 460170
@@ -5059,7 +5079,7 @@ MonoBehaviour:
   Path: event:/Player/Particle/Electricity
   guid: f9f74cd4e8795e4d8e36c244c6b65e20
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -5103,6 +5123,22 @@ MonoBehaviour:
   - Name: 
     Value: 12978752
   Exists: 0
+--- !u!114 &114617527184403332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: StartEQ
+  Min: 0
+  Max: 10
+  Default: 0
 --- !u!114 &114618217030322358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5118,6 +5154,22 @@ MonoBehaviour:
   Name: To Pause
   Min: 0
   Max: 10
+  Default: 0
+--- !u!114 &114624286110367960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Loop1 End
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114625239853918286
 MonoBehaviour:
@@ -5278,7 +5330,7 @@ MonoBehaviour:
   Path: event:/Object/Lever/ifleverpull
   guid: dfd7062dff6bd04fa675f5d3168d5e13
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -5793,12 +5845,12 @@ MonoBehaviour:
   Path: event:/Player/Movement/Player_Idle/player_idle
   guid: aa3804ee28588543925841d1ad8f6dd5
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114108231231677356}
+  - {fileID: 114986838110513634}
   MinDistance: 0
   MaxDistance: 0
   Length: 800
@@ -6055,7 +6107,7 @@ MonoBehaviour:
   Path: event:/Player/Movement/Player_GrabWalk/player_grabwalk
   guid: 3c57f75520f5b547b7963d352c3922f7
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6078,7 +6130,7 @@ MonoBehaviour:
   Path: event:/Zone1/Ambience/1_2 Factory/startTrigger
   guid: 5437c9d3be7d6242b6e179a7742a6a9b
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6589,7 +6641,7 @@ MonoBehaviour:
   Path: event:/Menu/Menu_SFX/sfx_onSelect
   guid: de9ddfa41ba97c4a991c39ff125526f8
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -6748,7 +6800,7 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 12978752
-  Exists: 1
+  Exists: 0
 --- !u!114 &114848289722224188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6764,7 +6816,7 @@ MonoBehaviour:
   Path: event:/Zone1/Ambience/1_1 Junkyard/junkyard_wind
   guid: 513d11afa6935e4297da8ee7898c8481
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -6975,6 +7027,22 @@ MonoBehaviour:
   Min: 0
   Max: 10
   Default: 0
+--- !u!114 &114874014021303714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Menu Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114878861356215702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7118,7 +7186,7 @@ MonoBehaviour:
   Path: event:/Zone1/Ambience/1_2 Factory/ambience_factory
   guid: f4cdeeddcff7944ea395f1f993fecc36
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -7317,7 +7385,7 @@ MonoBehaviour:
   Path: event:/Zone1/Music/factory_loop0
   guid: 17effde9fc2d5b468ca5022f71bb6565
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -7389,6 +7457,22 @@ MonoBehaviour:
   Min: 0
   Max: 10
   Default: 0
+--- !u!114 &114925800063515406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: To Pause
+  Min: 0
+  Max: 10
+  Default: 0
 --- !u!114 &114927861150029470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7436,7 +7520,7 @@ MonoBehaviour:
   Path: event:/Zone1/Ambience/1_2 Factory/ambience_inside_wind
   guid: 9af8e0e12bd3484bb5b394876d14d6a2
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -7562,7 +7646,7 @@ MonoBehaviour:
   Path: event:/Player/Movement/Player_Grab/player_grab
   guid: d73028870a2f2646940c4c3baa21734b
   Banks:
-  - {fileID: 114847986533550740}
+  - {fileID: 114454557822128840}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -7821,6 +7905,22 @@ MonoBehaviour:
   Name: StartEQ
   Min: 0
   Max: 10
+  Default: 0
+--- !u!114 &114986838110513634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: IdleSound
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114987857387595560
 MonoBehaviour:
