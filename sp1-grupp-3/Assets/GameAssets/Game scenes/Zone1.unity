@@ -48324,12 +48324,12 @@ PrefabInstance:
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.44
+      value: -6.2
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.75
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
@@ -48379,7 +48379,7 @@ PrefabInstance:
     - target: {fileID: 3213097346512006660, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: collideWithWallLayer.m_Bits
-      value: 0
+      value: 16896
       objectReference: {fileID: 0}
     - target: {fileID: 3213097346512006660, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
