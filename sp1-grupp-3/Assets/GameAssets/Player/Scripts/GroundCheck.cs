@@ -25,6 +25,7 @@ public class GroundCheck : MonoBehaviour
             movement = GetComponent<PlayerMovement>();
         }
         rb = GetComponent<Rigidbody2D>();
+        previousGrounded = isGrounded;
     }
 
     void Update()
@@ -96,8 +97,6 @@ public class GroundCheck : MonoBehaviour
                 movement.ContinueMovement();
             }
         }
-
-        previousGrounded = isGrounded;
     }
 
     public bool HasLanded()
@@ -106,9 +105,11 @@ public class GroundCheck : MonoBehaviour
         {
             if(previousGrounded == false)
             {
+                previousGrounded = isGrounded;
                 return true;
             }
         }
+        previousGrounded = isGrounded;
         return false;
     }
 
