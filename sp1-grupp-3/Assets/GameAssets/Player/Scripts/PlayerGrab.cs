@@ -84,11 +84,11 @@ public class PlayerGrab : MonoBehaviour
 
         if (hit == true)
         {
-            if (grabbed == false)
+            if (grabbed == false && hit.transform.GetComponent<GroundCheck>().isGrounded == true)
             {
                 objGrabbed = hit.transform.gameObject;
+                colliding = true;
             }
-            colliding = true;
         }
         else
         {
@@ -97,7 +97,7 @@ public class PlayerGrab : MonoBehaviour
 
         if (colliding == true && groundCheck.isGrounded)
         {
-            if (Input.GetButtonDown("Grab") && grabbed == false && objGrabbed.GetComponent<GroundCheck>().isGrounded == true)
+            if (Input.GetButtonDown("Grab") && grabbed == false) //&& objGrabbed.GetComponent<GroundCheck>().isGrounded == true
             {
                 Rigidbody2D objRb = objGrabbed.GetComponent<Rigidbody2D>();
 
