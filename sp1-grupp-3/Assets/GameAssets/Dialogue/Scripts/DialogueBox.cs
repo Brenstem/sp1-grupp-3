@@ -7,11 +7,15 @@ public class DialogueBox : MonoBehaviour
     public Vector2 boxOffset;
     public Vector2 triggerOffset;
     public Vector2 triggerSize;
+    public bool lockToWorldPosition;
+    public Vector2 triggerWorldPosition;
+
+    private Vector2 boxOffsetMemory;
 
 
     private void Update()
     {
-        PositionUpdate();
+         PositionUpdate();
     }
 
 
@@ -19,15 +23,23 @@ public class DialogueBox : MonoBehaviour
     {
         BoxCollider2D childCollider = GetComponentInChildren<BoxCollider2D>();
 
-        if (speaker != null)
-        {
+        if (speaker != null) {
             transform.position = speaker.transform.position + (Vector3)boxOffset;
         }
 
+        LockToWorld(childCollider);
 
-        childCollider.transform.position = transform.position;
         childCollider.offset = -boxOffset + triggerOffset;
         childCollider.size = triggerSize;
     }
 
+    private void LockToWorld(BoxCollider2D childCollider)
+    {
+        if (lockToWorldPosition) {
+            childCollider.transform.position = triggerWorldPosition;
+        }
+        else {
+            childCollider.transform.position = transform.position;
+        }
+    }
 }
