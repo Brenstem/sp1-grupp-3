@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 1872623941}
   - component: {fileID: 503646143716361107}
   - component: {fileID: 8760632943739834870}
+  - component: {fileID: 1729223832}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -116,7 +117,7 @@ SpriteRenderer:
   m_SortingLayerID: 949128621
   m_SortingLayer: 12
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 307cdd9727816df4f9bb9152a70678b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5349bf4591bd50a4f9033aee0c922db9, type: 3}
   m_Color: {r: 0.84313726, g: 0.78431374, b: 0.78431374, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -216,7 +217,7 @@ MonoBehaviour:
   wallCollSize: {x: 0.2, y: 1.39, z: 0}
   collideWithFloorLayer:
     serializedVersion: 2
-    m_Bits: 13824
+    m_Bits: 9728
   collideWithWallLayer:
     serializedVersion: 2
     m_Bits: 16896
@@ -315,8 +316,8 @@ MonoBehaviour:
     m_Bits: 1024
   capsuleOffset: {x: 0, y: -0.08}
   capsuleSize: {x: 0.71, y: 1.8}
-  capsuleOffsetBox: {x: 0, y: 0.4412601}
-  capsuleSizeBox: {x: 0.7, y: 2.878944}
+  capsuleOffsetBox: {x: 0, y: 0.5149553}
+  capsuleSizeBox: {x: 0.7, y: 2.989911}
 --- !u!114 &503646143716361107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,6 +347,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RespawnTrigger: {fileID: 8760632943739834871}
   checkpoint: {fileID: 0}
+--- !u!114 &1729223832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8760632943739834866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1 &8835912504338705622
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,11 +401,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Electricity
-      objectReference: {fileID: 0}
-    - target: {fileID: 454671589748231616, guid: 1dbccc64814030a4e8277a901f593967,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 454671589748231645, guid: 1dbccc64814030a4e8277a901f593967,
         type: 3}
@@ -450,18 +459,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 454671589748231646, guid: 1dbccc64814030a4e8277a901f593967,
         type: 3}
-      propertyPath: looping
-      value: 0
+      propertyPath: LightsModule.intensityCurve.scalar
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 454671589748231646, guid: 1dbccc64814030a4e8277a901f593967,
         type: 3}
       propertyPath: LightsModule.maxLights
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 454671589748231646, guid: 1dbccc64814030a4e8277a901f593967,
-        type: 3}
-      propertyPath: LightsModule.intensityCurve.scalar
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dbccc64814030a4e8277a901f593967, type: 3}
