@@ -24,7 +24,6 @@ public class DialogueBox : MonoBehaviour
             transform.position = speaker.transform.position + (Vector3)boxOffset;
         }
 
-
         childCollider.transform.position = transform.position;
         childCollider.offset = -boxOffset + triggerOffset;
         childCollider.size = triggerSize;
