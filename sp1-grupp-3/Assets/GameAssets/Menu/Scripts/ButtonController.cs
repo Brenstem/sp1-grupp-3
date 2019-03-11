@@ -16,8 +16,6 @@ public class ButtonController : MonoBehaviour, ISelectHandler
     // Reference fetching
     private void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
         menuActions = menuActionController.GetComponent<MenuActions>();
     }
 
