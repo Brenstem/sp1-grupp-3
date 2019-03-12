@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
+    [SerializeField] bool playSound;
+    [SerializeField] bool playSoundInObject;
+    public string soundPath;
+
     public LeverObject[] affectedObjectArray;
     public float animationSpeed = 1; 
 
@@ -15,25 +19,44 @@ public class Lever : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.E) && contact) {
+        if(Input.GetButton("Use") && contact)
+        {
             OnPullLever();
+            GetComponent<Lever>().enabled = false;
         }
     }
 
     private void OnPullLever()
     {
+        if (playSound)
+        {
+            GetComponent<SoundEvent>().PlayOneShot(soundPath);
+            playSound = false;
+        }
+
         if (!leverActivated) {
             Animator animator = GetComponent<Animator>();
             animator.SetFloat("AnimationSpeedParameter", animationSpeed);
 
             foreach (LeverObject affectedObject in affectedObjectArray) {
-                if (!affectedObject.ActionPerformed) {
-                    
-                    affectedObject.OnActivatedByLever();
+                if (affectedObject != null)
+                {
+                    if (playSoundInObject)
+                    {
+                        affectedObject.GetComponent<SoundObject>().enabled = true;
+                    }
+
+                    if (!affectedObject.ActionPerformed)
+                    {
+                        
+                        affectedObject.OnActivatedByLever();
+                    }
                 }
             }
 
             leverActivated = true;
+            if (leverActivated == true){
+            }
         }
     }
 

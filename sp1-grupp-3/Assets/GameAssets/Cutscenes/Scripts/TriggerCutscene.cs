@@ -13,7 +13,7 @@ public class TriggerCutscene : MonoBehaviour
     private Timer animationTimer;
     private bool animationPlaying;
     private bool cutSceneActivated;
-    private int imageIndex = 0;
+    public int imageIndex = 0;
 
     // Gets animator components from images
     private void Start()
@@ -64,7 +64,15 @@ public class TriggerCutscene : MonoBehaviour
 
         if (animationTimer.TimerFinished || Input.anyKeyDown)
         {
-            images[imageIndex].SetActive(false);
+            if (images[imageIndex] != null) {
+                images[imageIndex].SetActive(false);
+               
+            }
+            if(imageIndex == images.Length - 1) {
+                cutSceneActivated = false;
+                imageIndex = 0;
+                return;
+            }
             animationPlaying = false;
             imageIndex++;
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LeverObject : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class LeverObject : MonoBehaviour
     public Vector2 moveTo;
     public Vector2 moveBy;
     public float moveSpeed = 1;
-
+    public UnityEvent invokedMethod;
+    
     private Vector2 currentPosition;
     private float moveIncrement;
 
@@ -27,6 +29,11 @@ public class LeverObject : MonoBehaviour
     #endregion
 
     #region Internal Methods
+
+    private void Awake()
+    {
+        
+    }
 
     private void Update()
     {
@@ -83,7 +90,6 @@ public class LeverObject : MonoBehaviour
                 case ObjectAction.ActivatePhysics:
                     ActivatePhysics();
                     break;
-
                 default:
                     break;
             }

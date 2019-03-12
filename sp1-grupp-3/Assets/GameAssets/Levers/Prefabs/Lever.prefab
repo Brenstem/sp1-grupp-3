@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6426536583406641795}
   - component: {fileID: 6426536583406641796}
   - component: {fileID: 6426536583406641807}
+  - component: {fileID: 3035954000342065467}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Untagged
@@ -69,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 930552583
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2a914ea581f406d44af601f99e5fd6c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -161,7 +162,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c55062276a2fe498aca391ca366077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playSound: 1
+  soundPath: event:/Object/Lever/ifleverpull
   affectedObjectArray:
   - {fileID: 0}
-  - {fileID: 0}
   animationSpeed: 1
+--- !u!114 &3035954000342065467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6426536583406641806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73221a65c29efa540930becd19433443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

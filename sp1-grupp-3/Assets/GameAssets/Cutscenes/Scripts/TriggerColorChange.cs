@@ -11,7 +11,7 @@ public class TriggerColorChange : MonoBehaviour
     {
         if (hitInfo.CompareTag(playerTag))
         {
-            
+            Camera.main.GetComponent<ColorChangerEffect>().ActivateEffect();
         }
     }
 }

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8854963664073552557}
   - component: {fileID: 8854963664073552556}
   - component: {fileID: 8854963664073552595}
-  m_Layer: 10
-  m_Name: Junkyard_Pipe3
-  m_TagString: JumpThroughtPlatforms
+  m_Layer: 12
+  m_Name: JumpThrough
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8854963664073552594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.64, y: -0.93, z: 0}
-  m_LocalScale: {x: 1.7626, y: 1.7626, z: 1.7626}
+  m_LocalScale: {x: 0.9877022, y: 0.9877022, z: 1.0752779}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -66,10 +66,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 930552583
+  m_SortingLayer: 10
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9b8e84ac89e9b0b4cb32d83bc7ac9cda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d2803f80a51a6b5409826636f07ef085, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -90,14 +90,14 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.021621466, y: 0.028920472}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.875, y: 0.828125}
+    oldSize: {x: 2.6015625, y: 0.3515625}
     newSize: {x: 2.875, y: 0.828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

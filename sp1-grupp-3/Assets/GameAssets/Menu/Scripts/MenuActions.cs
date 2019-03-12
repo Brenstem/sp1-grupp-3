@@ -10,6 +10,7 @@ public class MenuActions : MonoBehaviour
     [SerializeField] GameObject creditsHolder;
     [SerializeField] GameObject Title;
     [SerializeField] GameObject buttonHolder;
+    [SerializeField] GameObject levelChanger;
 
     // Private variables
     private Animator creditsAnim;
@@ -36,6 +37,12 @@ public class MenuActions : MonoBehaviour
         creditsAnim = creditsHolder.GetComponent<Animator>();
         creditsTimer = new Timer();
         menuMusic = GetComponent<MenuMusic>();
+
+#if UNITY_EDITOR
+#else
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+#endif
     }
 
 
@@ -61,16 +68,11 @@ public class MenuActions : MonoBehaviour
 #endif
     }
 
-
     // Scene loading
-    public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
 
     public void LoadScene(int sceneIndex)
     {
-        SceneManager.LoadScene(sceneIndex);
+        levelChanger.GetComponent<LevelChanger>().FadeToLevel(sceneIndex);
     }
 
     //Sound playing

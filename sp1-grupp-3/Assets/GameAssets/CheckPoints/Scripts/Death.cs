@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Death : RespawnTrigger
 {
+    public event Action OnPlayerDeath;
+
     [SerializeField]
     string playerTag;
     
@@ -12,7 +14,7 @@ public class Death : RespawnTrigger
     {
         if (!collision.transform.CompareTag(playerTag))
             return;
-
+        OnPlayerDeath();
         TriggerMove(gameObject);
     }
 }
