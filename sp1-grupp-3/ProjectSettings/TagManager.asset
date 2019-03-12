@@ -71,6 +71,9 @@ TagManager:
   - name: Factory walls
     uniqueID: 2688492431
     locked: 0
+  - name: Jumpthrough
+    uniqueID: 2111481557
+    locked: 0
   - name: Tiles
     uniqueID: 1371964605
     locked: 0
