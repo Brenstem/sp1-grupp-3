@@ -41,6 +41,10 @@ public class PlayerGrab : MonoBehaviour
 
     GroundCheck groundCheck;
     Rigidbody2D rb;
+    float xPosition;
+    float yPosition = 0.4f;
+    float y;
+    public float distanceFromPlayer;
 
     void Start()
     {
@@ -87,6 +91,7 @@ public class PlayerGrab : MonoBehaviour
             if (grabbed == false && hit.transform.GetComponent<GroundCheck>().isGrounded == true)
             {
                 objGrabbed = hit.transform.gameObject;
+                
                 colliding = true;
             }
         }
@@ -113,8 +118,8 @@ public class PlayerGrab : MonoBehaviour
 
                 objGrabbed.transform.SetParent(parentPosition.transform);
 
-                float xX = Mathf.Abs((transform.position.x - objGrabbed.transform.position.x) / 2);
-                parentPosition.transform.localPosition = new Vector2(-xX, 0f);
+                xPosition = transform.position.x + (distanceFromPlayer * grabbedDirection);
+                parentPosition.transform.localPosition = new Vector2(-0.5f, 0f);  
 
                 grabbed = true;
                 colliding = false;
@@ -234,12 +239,15 @@ public class PlayerGrab : MonoBehaviour
 
             if (boxRotated == false)
             {
+                objGrabbed.transform.position = Vector2.MoveTowards(objGrabbed.transform.position, new Vector2(xPosition, objGrabbed.transform.position.y), 100f);
+
                 point = Mathf.MoveTowardsAngle(point, myDestination, 10f);
                 objGrabbed.transform.rotation = Quaternion.Euler(0f, 0f, point);
-
+                
                 if (point == myDestination)
                 {
                     boxRotated = true;
+                    objGrabbed.transform.localPosition = new Vector2(objGrabbed.transform.localPosition.x, -0.5f);
                 }
             }
             else
