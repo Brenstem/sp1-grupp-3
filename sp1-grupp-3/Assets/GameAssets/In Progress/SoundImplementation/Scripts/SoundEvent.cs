@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundEvent : MonoBehaviour
 {
     //Loop instance
-    FMOD.Studio.EventInstance loopSound;
+    [HideInInspector] public FMOD.Studio.EventInstance loopSound;
 
     public void PlayOneShot(string path)
     {

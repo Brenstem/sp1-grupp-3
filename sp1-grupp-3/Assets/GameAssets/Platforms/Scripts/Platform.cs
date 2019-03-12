@@ -13,7 +13,10 @@ public class Platform : MonoBehaviour
     public float waitTime;
     [HideInInspector] public Vector2 velocity;
 
-    
+    //[SerializeField] string path;
+    //private SoundEvent soundEvent;
+
+
     private float distanceTravelled;
     private Vector2 lastPosition;
 
@@ -21,8 +24,22 @@ public class Platform : MonoBehaviour
     private void Start()
     {
         transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
+        soundEvent = GetComponent<SoundEvent>();
     }
-    
+
+    //private void Update()
+    //{
+    //    Debug.Log(soundEvent);
+
+    //    if (velocity.x != 0 || velocity.y != 0)
+    //    {
+    //        if (!isPlaying())
+    //        {
+    //            soundEvent.PlayLoopable(path);
+    //        }
+    //    }
+    //}
+
     void FixedUpdate()
     {
         velocity = GetKinematicVelocity();
@@ -93,5 +110,14 @@ public class Platform : MonoBehaviour
     {
         return distanceTravelled / pathCreator.path.length;
     }
+
+    //private bool isPlaying()
+    //{
+    //    FMOD.Studio.PLAYBACK_STATE playbackState;
+    //    soundEvent.loopSound.getPlaybackState(out playbackState);
+    //    bool isPlaying = playbackState != FMOD.Studio.PLAYBACK_STATE.STOPPED;
+
+    //    return isPlaying;
+    //}
 
 }
