@@ -57,8 +57,7 @@ public class GroundCheck : MonoBehaviour
             isGrounded = false;
             if (hit2 == true)
             {
-                //Physics2D.IgnoreCollision(GetComponent<Collider2D>(), hit2.transform.GetComponent<Collider2D>(), true);
-                //hit2.transform.GetComponent<BoxCollider2D>().isTrigger = true;
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), hit2.transform.GetComponent<Collider2D>(), true);
                 hitPlatform = false;
                 hit2 = hit;
             }
@@ -110,6 +109,18 @@ public class GroundCheck : MonoBehaviour
             }
         }
         previousGrounded = isGrounded;
+        return false;
+    }
+
+    public bool IsDragging()
+    {
+        if(isGrounded == true)
+        {
+            if(Mathf.Abs(rb.velocity.x) > 0)
+            {
+                return true;
+            }
+        }
         return false;
     }
 

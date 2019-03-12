@@ -61,7 +61,7 @@ public class PlayerJump : MonoBehaviour
         }
 
         bool jumpBtn = Input.GetAxisRaw("Jump") == 1 || Input.GetButton("ABtn") || Input.GetAxisRaw("CtrlJump") == 1;
-        if (jumpBtn == true && gCheck.isGrounded == true || jumpBtn == true && gCheck.isGrounded == false && hasBeenGrounded == true)
+        if (Input.GetButtonDown("Jump") && gCheck.isGrounded == true || jumpBtn == true && gCheck.isGrounded == false && hasBeenGrounded == true)
         {
             anim.SetBool("Jumped", true);
             jumpRequest = true;
@@ -75,7 +75,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (jumpRequest == true)
         {
-            anim.SetBool("Jumped", true); jumpRequest = true;
+            //anim.SetBool("Jumped", true); /*jumpRequest = true;*/
 
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             var yVel = jumpHeight;
