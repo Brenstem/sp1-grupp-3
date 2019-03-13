@@ -12,9 +12,6 @@ public class GroundCheckAdvanced : MonoBehaviour
     Rigidbody2D rb;
     RaycastHit2D previousHitDown;
 
-    public List<string> objectTags = new List<string>();
-    public List<string> objectLayers = new List<string>();
-
     public Vector3 groundCollPosition;
     public Vector3 groundCollSizeUD;
     public Vector3 groundCollSizeLR;
@@ -45,25 +42,25 @@ public class GroundCheckAdvanced : MonoBehaviour
         CheckAllOtherSides(hitUp);
 
 
-        if (HasHitWall() == true)
-        {
-            Debug.Log("Has Hit Wall");
-        }
+        //if (HasHitWall() == true)
+        //{
+        //    Debug.Log("Has Hit Wall");
+        //}
 
-        if(HasLanded() == true)
-        {
-            Debug.Log("Has Landed");
-        }
+        //if(HasLanded() == true)
+        //{
+        //    Debug.Log("Has Landed");
+        //}
 
-        if(IsMovingOnAir() == true)
-        {
-            Debug.Log("Is Moving In Air");
-        }
+        //if(IsMovingOnAir() == true)
+        //{
+        //    Debug.Log("Is Moving In Air");
+        //}
 
-        if(IsDraggedOnGround() == true)
-        {
-            Debug.Log("Is Being Dragged On Ground");
-        }
+        //if(IsDraggedOnGround() == true)
+        //{
+        //    Debug.Log("Is Being Dragged On Ground");
+        //}
     }
 
     void CheckAllOtherSides(RaycastHit2D hit)

@@ -88,7 +88,7 @@ public class PlayerGrab : MonoBehaviour
 
         if (hit == true)
         {
-            if (grabbed == false && hit.transform.GetComponent<GroundCheck>().isGrounded == true)
+            if (grabbed == false && hit.transform.GetComponent<GroundCheckAdvanced>().isGrounded == true)
             {
                 objGrabbed = hit.transform.gameObject;
                 
