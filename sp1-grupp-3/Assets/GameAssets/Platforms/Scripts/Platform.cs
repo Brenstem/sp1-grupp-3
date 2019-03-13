@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using PathCreation;
+using System.Collections;
 using UnityEngine;
-using UnityEditor;
-using PathCreation;
 
 public class Platform : MonoBehaviour
 {
@@ -13,8 +11,8 @@ public class Platform : MonoBehaviour
     public float waitTime;
     [HideInInspector] public Vector2 velocity;
 
-    //[SerializeField] string path;
-    //private SoundEvent soundEvent;
+    [SerializeField] string path;
+    private SoundEvent soundEvent;
 
 
     private float distanceTravelled;
@@ -27,18 +25,16 @@ public class Platform : MonoBehaviour
         soundEvent = GetComponent<SoundEvent>();
     }
 
-    //private void Update()
-    //{
-    //    Debug.Log(soundEvent);
-
-    //    if (velocity.x != 0 || velocity.y != 0)
-    //    {
-    //        if (!isPlaying())
-    //        {
-    //            soundEvent.PlayLoopable(path);
-    //        }
-    //    }
-    //}
+    private void Update()
+    {
+        if (velocity.x != 0 || velocity.y != 0)
+        {
+            if (!IsPlaying())
+            {
+                //soundEvent.PlayOneShot(path);
+            }
+        }
+    }
 
     void FixedUpdate()
     {
@@ -111,13 +107,13 @@ public class Platform : MonoBehaviour
         return distanceTravelled / pathCreator.path.length;
     }
 
-    //private bool isPlaying()
-    //{
-    //    FMOD.Studio.PLAYBACK_STATE playbackState;
-    //    soundEvent.loopSound.getPlaybackState(out playbackState);
-    //    bool isPlaying = playbackState != FMOD.Studio.PLAYBACK_STATE.STOPPED;
+    private bool IsPlaying()
+    {
+        FMOD.Studio.PLAYBACK_STATE playbackState;
+        soundEvent.loopSound.getPlaybackState(out playbackState); // not set to instance of an object
+        bool isPlaying = playbackState != FMOD.Studio.PLAYBACK_STATE.STOPPED;
 
-    //    return isPlaying;
-    //}
+        return isPlaying;
+    }
 
 }
