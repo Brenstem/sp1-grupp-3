@@ -47310,34 +47310,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9045081413382431087, guid: 7337b45307ba7664fa3c1ea428d03b6a,
-        type: 3}
-      propertyPath: images.Array.data[0]
-      value: 
-      objectReference: {fileID: 135098103}
-    - target: {fileID: 9045081413382431087, guid: 7337b45307ba7664fa3c1ea428d03b6a,
-        type: 3}
-      propertyPath: images.Array.data[1]
-      value: 
-      objectReference: {fileID: 443060985}
-    - target: {fileID: 9045081413382431087, guid: 7337b45307ba7664fa3c1ea428d03b6a,
-        type: 3}
-      propertyPath: images.Array.data[2]
-      value: 
-      objectReference: {fileID: 665122191}
-    - target: {fileID: 9045081413382431087, guid: 7337b45307ba7664fa3c1ea428d03b6a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 334678152, guid: 7337b45307ba7664fa3c1ea428d03b6a, type: 3}
-      propertyPath: colorEnabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 334678152, guid: 7337b45307ba7664fa3c1ea428d03b6a, type: 3}
       propertyPath: cutsceneLength
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 211825512, guid: 7337b45307ba7664fa3c1ea428d03b6a, type: 3}
+      propertyPath: m_TargetCamera
+      value: 
+      objectReference: {fileID: 1118078776}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7337b45307ba7664fa3c1ea428d03b6a, type: 3}
 --- !u!4 &920290377 stripped
