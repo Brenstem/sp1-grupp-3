@@ -30,4 +30,11 @@ public class Timer
         timeLeft = time;
         timerRunning = true;
     }
+
+
+    public void ResetTimer()
+    {
+        mTimerFinished = false;
+        timerRunning = false;
+    }
 }

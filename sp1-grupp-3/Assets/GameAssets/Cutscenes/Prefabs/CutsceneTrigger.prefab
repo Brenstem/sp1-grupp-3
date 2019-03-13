@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9045081413382431074}
   - component: {fileID: 9045081413382431072}
-  - component: {fileID: 9045081413382431087}
   - component: {fileID: 5836338480264715870}
   - component: {fileID: 334678152}
+  - component: {fileID: 211825512}
+  - component: {fileID: 211825511}
   m_Layer: 0
   m_Name: CutsceneTrigger
   m_TagString: Untagged
@@ -60,23 +61,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3732934, y: 0.3732934}
   m_EdgeRadius: 0
---- !u!114 &9045081413382431087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9045081413382431086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5638c0e1d86b524483db745660a4ac0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  images:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  imageIndex: 0
 --- !u!114 &5836338480264715870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,4 +88,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  colorEnabled: 0
+  cutsceneLength: 15
+--- !u!328 &211825512
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9045081413382431086}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: 8bb9208f328b04f43a82f2ad8f5f50a9, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: _MainTex
+  m_RenderMode: 1
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+--- !u!114 &211825511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9045081413382431086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a999d8677a883b549beb4ec372160348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlaying: 0
+  hasPlayed: 0
+  player: {fileID: 0}

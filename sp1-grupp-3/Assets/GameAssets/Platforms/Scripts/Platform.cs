@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using PathCreation;
+using System.Collections;
 using UnityEngine;
-using UnityEditor;
-using PathCreation;
 
 public class Platform : MonoBehaviour
 {
@@ -13,7 +11,10 @@ public class Platform : MonoBehaviour
     public float waitTime;
     [HideInInspector] public Vector2 velocity;
 
-    
+    [SerializeField] string path;
+    private SoundEvent soundEvent;
+
+
     private float distanceTravelled;
     private Vector2 lastPosition;
 
@@ -21,8 +22,20 @@ public class Platform : MonoBehaviour
     private void Start()
     {
         transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
+        soundEvent = GetComponent<SoundEvent>();
     }
-    
+
+    private void Update()
+    {
+        if (velocity.x != 0 || velocity.y != 0)
+        {
+            if (!IsPlaying())
+            {
+                //soundEvent.PlayOneShot(path);
+            }
+        }
+    }
+
     void FixedUpdate()
     {
         velocity = GetKinematicVelocity();
@@ -92,6 +105,15 @@ public class Platform : MonoBehaviour
     private float CalculatePercentage()
     {
         return distanceTravelled / pathCreator.path.length;
+    }
+
+    private bool IsPlaying()
+    {
+        FMOD.Studio.PLAYBACK_STATE playbackState;
+        soundEvent.loopSound.getPlaybackState(out playbackState); // not set to instance of an object
+        bool isPlaying = playbackState != FMOD.Studio.PLAYBACK_STATE.STOPPED;
+
+        return isPlaying;
     }
 
 }

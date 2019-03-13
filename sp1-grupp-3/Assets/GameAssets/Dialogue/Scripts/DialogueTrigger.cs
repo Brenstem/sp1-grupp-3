@@ -10,13 +10,12 @@ public class DialogueTrigger : MonoBehaviour
     private void Start()
     {
         image = transform.parent.GetComponent<Image>();
-        image.enabled = false; image.enabled = false; //Has to be called twice for reasons unknown...
+        image.enabled = false; image.enabled = false; image.enabled = false; image.enabled = false; //Has to be called twice for reasons unknown...
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         image.enabled = true;
-        Debug.Log(enabled);
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -25,6 +25,7 @@ public class GroundCheck : MonoBehaviour
             movement = GetComponent<PlayerMovement>();
         }
         rb = GetComponent<Rigidbody2D>();
+        previousGrounded = isGrounded;
     }
 
     void Update()
@@ -56,8 +57,7 @@ public class GroundCheck : MonoBehaviour
             isGrounded = false;
             if (hit2 == true)
             {
-                //Physics2D.IgnoreCollision(GetComponent<Collider2D>(), hit2.transform.GetComponent<Collider2D>(), true);
-                //hit2.transform.GetComponent<BoxCollider2D>().isTrigger = true;
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), hit2.transform.GetComponent<Collider2D>(), true);
                 hitPlatform = false;
                 hit2 = hit;
             }
@@ -96,8 +96,32 @@ public class GroundCheck : MonoBehaviour
                 movement.ContinueMovement();
             }
         }
+    }
 
+    public bool HasLanded()
+    {
+        if(isGrounded == true)
+        {
+            if(previousGrounded == false)
+            {
+                previousGrounded = isGrounded;
+                return true;
+            }
+        }
         previousGrounded = isGrounded;
+        return false;
+    }
+
+    public bool IsDragging()
+    {
+        if(isGrounded == true)
+        {
+            if(Mathf.Abs(rb.velocity.x) > 0)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     void OnDrawGizmos()
@@ -108,18 +132,6 @@ public class GroundCheck : MonoBehaviour
         float positionX = transform.position.x + (wallCollPosition.x * transform.localScale.x);
         float positionY = transform.position.y;
         Gizmos.DrawWireCube(new Vector2(positionX, positionY), wallCollSize);
-    }
-
-    public bool HasLanded()
-    {
-        if(isGrounded == true)
-        {
-            if(previousGrounded == false)
-            {
-                return true;
-            }
-        }
-        return false;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
