@@ -13,7 +13,6 @@ public class VideoCutscene : MonoBehaviour
     private PlayerMovement playerMovement;
     private Animator playerAnimator;
 
-
     void Start()
     {
         videoPlayer = GetComponent<VideoPlayer>();
@@ -23,11 +22,16 @@ public class VideoCutscene : MonoBehaviour
 
     void Update()
     {
+        if (videoPlayer.isPlaying)
+        {
+            FMODUnity.RuntimeManager.MuteAllEvents(true); 
+        }
+
         if (isPlaying && !videoPlayer.isPlaying) {
             videoPlayer.Play();
             playerMovement.enabled = false;
-            //playerAnimator.enabled = false;
         }
+
         else if (!isPlaying) {
             videoPlayer.Stop();            
         }
