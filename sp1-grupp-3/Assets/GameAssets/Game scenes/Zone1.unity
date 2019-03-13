@@ -50606,7 +50606,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 197244432673826339}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &1206500439
+--- !u!61 &1206500441
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52535,7 +52535,7 @@ PrefabInstance:
         type: 3}
       propertyPath: affectedObjectArray.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1507372135}
     - target: {fileID: 6426536583406641807, guid: 9358a180d9a5de8419e1a545c7f2fe02,
         type: 3}
       propertyPath: playSound
