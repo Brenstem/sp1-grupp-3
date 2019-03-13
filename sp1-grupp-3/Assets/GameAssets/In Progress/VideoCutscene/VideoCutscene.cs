@@ -5,34 +5,50 @@ using UnityEngine.Video;
 
 public class VideoCutscene : MonoBehaviour
 {
-    public bool videoPlaying = false;
+    public bool isPlaying = false;
+    public bool hasPlayed = false;
+    public GameObject player;
 
     private VideoPlayer videoPlayer;
+    private PlayerMovement playerMovement;
+    private Animator playerAnimator;
+
 
     void Start()
     {
         videoPlayer = GetComponent<VideoPlayer>();
+        playerMovement = player.GetComponent<PlayerMovement>();
+        playerAnimator = player.GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && !videoPlayer.isPlaying) {
+        if (isPlaying && !videoPlayer.isPlaying) {
             videoPlayer.Play();
+            playerMovement.enabled = false;
+            //playerAnimator.enabled = false;
         }
-        else if (Input.GetKeyDown(KeyCode.P) && videoPlayer.isPlaying) {
-            videoPlayer.Stop();
-        }
-
-
-        if (true) {
-
+        else if (!isPlaying) {
+            videoPlayer.Stop();            
         }
 
         videoPlayer.loopPointReached += StopVideo;        
     }
 
-    private void StopVideo(UnityEngine.Video.VideoPlayer vp)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!hasPlayed) {
+            isPlaying = true;
+            hasPlayed = true;
+        }
+        
+    }
+
+    private void StopVideo(VideoPlayer vp)
     {
         vp.Stop();
+        isPlaying = false;
+        playerMovement.enabled = true;
+        playerAnimator.enabled = true;
     }
 }
