@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 930552583
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5b73a1785b8fcb94fbefccdf491d28d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -131,7 +131,7 @@ MonoBehaviour:
   wallCollSize: {x: 0, y: 0, z: 0}
   collideWithFloorLayer:
     serializedVersion: 2
-    m_Bits: 12800
+    m_Bits: 8704
   collideWithWallLayer:
     serializedVersion: 2
     m_Bits: 16384
