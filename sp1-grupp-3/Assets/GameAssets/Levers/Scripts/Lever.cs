@@ -5,7 +5,6 @@ using UnityEngine;
 public class Lever : MonoBehaviour
 {
     [SerializeField] bool playSound;
-    [SerializeField] bool playSoundInObject;
     public string soundPath;
 
     public LeverObject[] affectedObjectArray;
@@ -41,11 +40,6 @@ public class Lever : MonoBehaviour
             foreach (LeverObject affectedObject in affectedObjectArray) {
                 if (affectedObject != null)
                 {
-                    if (playSoundInObject)
-                    {
-                        affectedObject.GetComponent<SoundObject>().enabled = true;
-                    }
-
                     if (!affectedObject.ActionPerformed)
                     {
                         

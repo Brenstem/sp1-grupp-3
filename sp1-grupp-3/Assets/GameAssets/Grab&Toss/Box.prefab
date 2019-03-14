@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 654588076795873875}
   - component: {fileID: 3765187607462281943}
   - component: {fileID: 5659978532601639241}
+  - component: {fileID: 119211331426615415}
+  - component: {fileID: 5421712751599761692}
+  - component: {fileID: 5708747951281866777}
   m_Layer: 10
   m_Name: Box
   m_TagString: Box
@@ -167,6 +170,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c9334500cd0ba24bab2b6e4b2b08842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &119211331426615415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654588076795873878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Object/Box/box_woodland
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 30
+--- !u!114 &5421712751599761692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654588076795873878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Object/Box/box_wooddrag
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &5708747951281866777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654588076795873878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f4f730dd96c3f4fa2802829f943fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landSound: {fileID: 119211331426615415}
+  dragSound: {fileID: 5421712751599761692}
 --- !u!1001 &1953427204
 PrefabInstance:
   m_ObjectHideFlags: 0

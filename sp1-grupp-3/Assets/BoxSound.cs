@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class BoxSound : MonoBehaviour
 {
     GroundCheckAdvanced gAdvanced;
-    public SoundObject landSound, dragSound;
+    public StudioEventEmitter landSound, dragSound;
     bool hasPlayedDraggedSound = false;
     bool previousRight = false, previousLeft = false, previousUp = false, previousDown = false;
 
@@ -18,36 +19,32 @@ public class BoxSound : MonoBehaviour
     {
         if(gAdvanced.HasLanded(Vector2.down, ref previousDown))
         {
-            landSound.PlayOneShotObject();
+            landSound.Play();
         }
         if(gAdvanced.HasLanded(Vector2.right, ref previousRight))
         {
-            landSound.PlayOneShotObject();
+            landSound.Play();
         }
         if(gAdvanced.HasLanded(Vector2.left, ref previousLeft))
         {
-            landSound.PlayOneShotObject();
+            landSound.Play();
         }
         if(gAdvanced.HasLanded(Vector2.up, ref previousUp))
         {
-            landSound.PlayOneShotObject();
+            landSound.Play();
         }
-
-        //if (gAdvanced.HasHitWall() == true)
-        //{
-        //    landSound.PlayOneShotObject();
-        //}
 
         if (gAdvanced.IsDraggedOnGround() == true)
         {
             if (hasPlayedDraggedSound == false)
             {
-                dragSound.PlayLoopObject();
+                dragSound.Play();
                 hasPlayedDraggedSound = true;
             }
         }
         else
         {
+            dragSound.Stop();
             hasPlayedDraggedSound = false;
         }
     }

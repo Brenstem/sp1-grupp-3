@@ -46,6 +46,10 @@ MonoBehaviour:
   - {fileID: 114011468283904200}
   - {fileID: 114195222607365982}
   - {fileID: 114757165183629646}
+  - {fileID: 114227739951932836}
+  - {fileID: 114273818929310888}
+  - {fileID: 114567060144764982}
+  - {fileID: 114070205152849264}
   MasterBanks:
   - {fileID: 114615649696790738}
   - {fileID: 114847986533550740}
@@ -54,7 +58,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 114393053037901006}
   - {fileID: 114091407744464224}
-  stringsBankWriteTime: 636881562423545772
+  stringsBankWriteTime: 636881745500000000
   cacheVersion: 3
 --- !u!114 &114001144208099540
 MonoBehaviour:
@@ -545,6 +549,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114045937755020022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: StartEQ
+  Min: 0
+  Max: 10
+  Default: 0
 --- !u!114 &114047653368189892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,11 +737,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Brenstem\Documents\sp1-grupp-3\sp1-grupp-3\FMODBank\Desktop\Master
     Bank.bank
-  lastModified: 636881562425256992
+  lastModified: 636881745500000000
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 12884960
+    Value: 13512320
   Exists: 1
 --- !u!114 &114064823735755106
 MonoBehaviour:
@@ -771,6 +791,29 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114070205152849264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Object/Platform/platform_movebette
+  guid: 34daa7fe35c6d84cbfac601041fa26c2
+  Banks:
+  - {fileID: 114064778013911308}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 10349
 --- !u!114 &114071467469635932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -885,6 +928,22 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 30
   Length: 241
+--- !u!114 &114079512966572704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Menu Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114081087005898400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1960,6 +2019,29 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114227739951932836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Popup/popup
+  guid: 0df87df08cd8784a94bbbf04b9973f57
+  Banks:
+  - {fileID: 114064778013911308}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 294
 --- !u!114 &114231212173666120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2387,6 +2469,29 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114273818929310888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Object/Magnet/magnet_shutofffam
+  guid: 1ca2af5347df0845bd16c408a3ef7125
+  Banks:
+  - {fileID: 114064778013911308}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5500
 --- !u!114 &114274052098594656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2898,6 +3003,22 @@ MonoBehaviour:
   - Name: 
     Value: 12593024
   Exists: 0
+--- !u!114 &114322541799054452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: StartEQ
+  Min: 0
+  Max: 10
+  Default: 0
 --- !u!114 &114322708804929668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3142,6 +3263,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: StartEQ
+  Min: 0
+  Max: 10
+  Default: 0
+--- !u!114 &114352060961196074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: To Pause
   Min: 0
   Max: 10
   Default: 0
@@ -3431,6 +3568,22 @@ MonoBehaviour:
   Min: 0
   Max: 10
   Default: 0
+--- !u!114 &114381432001958140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: IdleSound
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114381645402538186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3515,11 +3668,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODBank\Desktop\Master Bank.strings.bank
-  lastModified: 636881562423545772
+  lastModified: 636881745500000000
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 2538
+    Value: 2738
   Exists: 1
 --- !u!114 &114397984807360768
 MonoBehaviour:
@@ -4020,7 +4173,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 567
+  Length: 4000
 --- !u!114 &114458278775329536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4221,6 +4374,22 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114482484843312506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Loop1 End
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114483945462731712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4498,8 +4667,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114972606278492510}
-  - {fileID: 114542223127687762}
+  - {fileID: 114045937755020022}
+  - {fileID: 114703840452832940}
   MinDistance: 0
   MaxDistance: 0
   Length: 268500
@@ -4953,8 +5122,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114672425824018454}
-  - {fileID: 114952363451520920}
+  - {fileID: 114352060961196074}
+  - {fileID: 114778472093147310}
   MinDistance: 0
   MaxDistance: 0
   Length: 460170
@@ -5054,6 +5223,29 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114567060144764982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Object/Magnet/magnet_shutoffbro
+  guid: 1ddcbc0d6a26d9489f5f39741462b369
+  Banks:
+  - {fileID: 114064778013911308}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5500
 --- !u!114 &114567177107007940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5781,6 +5973,22 @@ MonoBehaviour:
   Min: 0
   Max: 10
   Default: 0
+--- !u!114 &114619120610660834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: IdleSound
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114624286110367960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6458,6 +6666,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114703840452832940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Menu Timer
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114703909875696098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6540,7 +6764,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114217470382679294}
+  - {fileID: 114381432001958140}
   MinDistance: 0
   MaxDistance: 0
   Length: 800
@@ -6979,6 +7203,22 @@ MonoBehaviour:
   Min: 0
   Max: 10
   Default: 0
+--- !u!114 &114778472093147310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Loop1 End
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114780462771407410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7356,6 +7596,22 @@ MonoBehaviour:
   Max: 10
   Default: 0
 --- !u!114 &114813336681455028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: To Pause
+  Min: 0
+  Max: 10
+  Default: 0
+--- !u!114 &114813411596682340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -40486,7 +40486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/Zone1/Music/factory_loop0
+  Event: event:/Object/Magnet/magnet_shutoffbro
   PlayEvent: 0
   StopEvent: 0
   CollisionTag: 
@@ -40497,24 +40497,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
---- !u!1 &146509857 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 654588076795873878, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
-    type: 3}
-  m_PrefabInstance: {fileID: 1997903336}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &146509858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146509857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c9334500cd0ba24bab2b6e4b2b08842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &147260700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41282,7 +41264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/Zone1/Music/factory_loop0
+  Event: event:/Object/Magnet/magnet_shutoffbro
   PlayEvent: 0
   StopEvent: 0
   CollisionTag: 
@@ -42808,12 +42790,12 @@ PrefabInstance:
     - target: {fileID: 9051781542598168700, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1218.28
+      value: 2288.664
       objectReference: {fileID: 0}
     - target: {fileID: 9051781542598168700, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 29.259998
+      value: 323.19003
       objectReference: {fileID: 0}
     - target: {fileID: 9051781542598168700, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
@@ -42833,12 +42815,12 @@ PrefabInstance:
     - target: {fileID: 9051781541607763537, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.364002
+      value: -279.56604
       objectReference: {fileID: 0}
     - target: {fileID: 9051781541607763537, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1289.036
+      value: -2359.4202
       objectReference: {fileID: 0}
     - target: {fileID: 9051781541607763537, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
@@ -42930,6 +42912,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351426439906380368, guid: 43fc807687cd43c419683ff1fd780015,
+        type: 3}
+      propertyPath: Event
+      value: event:/Player/Popup/popup
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351426439906380368, guid: 43fc807687cd43c419683ff1fd780015,
+        type: 3}
+      propertyPath: OverrideMinDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351426439906380368, guid: 43fc807687cd43c419683ff1fd780015,
+        type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351426439906380368, guid: 43fc807687cd43c419683ff1fd780015,
+        type: 3}
+      propertyPath: PlayEvent
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351426439906380368, guid: 43fc807687cd43c419683ff1fd780015,
+        type: 3}
+      propertyPath: StopEvent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351426439906380368, guid: 43fc807687cd43c419683ff1fd780015,
+        type: 3}
+      propertyPath: CollisionTag
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43fc807687cd43c419683ff1fd780015, type: 3}
@@ -45796,6 +45808,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1926558308}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: path
+      value: event:/Object/Box/box_woodland
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isGrounded
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 654588076795873878, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
       propertyPath: m_Name
@@ -45866,11 +45886,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 654588076795873874, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
-        type: 3}
-      propertyPath: isGrounded
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 654588076795873879, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
       propertyPath: m_Enabled
@@ -45886,13 +45901,8 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 3192911013998417652, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
-        type: 3}
-      propertyPath: path
-      value: event:/Object/Box/box_woodland
-      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 654588076795873874, guid: 5b4a99f02daa93444bc8ba4dc68a1744, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 5b4a99f02daa93444bc8ba4dc68a1744, type: 3}
 --- !u!4 &712210510 stripped
 Transform:
@@ -46567,6 +46577,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 6b18a95d36a8fa446ad7c44d7de66390,
         type: 3}
+    - target: {fileID: 796146637593347297, guid: 6b1a1c9c25e154a4ebc1503f9a7c64c9,
+        type: 3}
+      propertyPath: OverrideMinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 796146637593347297, guid: 6b1a1c9c25e154a4ebc1503f9a7c64c9,
+        type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 796146637593347297, guid: 6b1a1c9c25e154a4ebc1503f9a7c64c9,
+        type: 3}
+      propertyPath: Event
+      value: event:/Object/Platform/platform_movebette
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1861364355910422102, guid: 6b1a1c9c25e154a4ebc1503f9a7c64c9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6b1a1c9c25e154a4ebc1503f9a7c64c9, type: 3}
@@ -47704,12 +47729,12 @@ PrefabInstance:
     - target: {fileID: 3024169959321939975, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1218.28
+      value: 2288.664
       objectReference: {fileID: 0}
     - target: {fileID: 3024169959321939975, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 29.259998
+      value: 323.19003
       objectReference: {fileID: 0}
     - target: {fileID: 3024169959321939975, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
@@ -47729,12 +47754,12 @@ PrefabInstance:
     - target: {fileID: 3024169960453508650, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1065.5961
+      value: -2135.98
       objectReference: {fileID: 0}
     - target: {fileID: 3024169960453508650, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.502003
+      value: -281.42804
       objectReference: {fileID: 0}
     - target: {fileID: 3024169959321939974, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
@@ -47822,6 +47847,36 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -2.3
       objectReference: {fileID: 0}
+    - target: {fileID: 8414852996287834667, guid: 2215897f84acf6c4aa6032f39cdf85c5,
+        type: 3}
+      propertyPath: Event
+      value: event:/Player/Popup/popup
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414852996287834667, guid: 2215897f84acf6c4aa6032f39cdf85c5,
+        type: 3}
+      propertyPath: OverrideMinDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414852996287834667, guid: 2215897f84acf6c4aa6032f39cdf85c5,
+        type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414852996287834667, guid: 2215897f84acf6c4aa6032f39cdf85c5,
+        type: 3}
+      propertyPath: PlayEvent
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414852996287834667, guid: 2215897f84acf6c4aa6032f39cdf85c5,
+        type: 3}
+      propertyPath: StopEvent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414852996287834667, guid: 2215897f84acf6c4aa6032f39cdf85c5,
+        type: 3}
+      propertyPath: CollisionTag
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2215897f84acf6c4aa6032f39cdf85c5, type: 3}
 --- !u!4 &938361671 stripped
@@ -47845,7 +47900,6 @@ GameObject:
   - component: {fileID: 942236680}
   - component: {fileID: 942236679}
   - component: {fileID: 942236681}
-  - component: {fileID: 942236682}
   m_Layer: 0
   m_Name: Junkyard_Factory_Door
   m_TagString: Untagged
@@ -47911,7 +47965,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 96.87, y: 0.55, z: 0}
   m_LocalScale: {x: 0.33672795, y: 0.47983736, z: 0.33672795}
-  m_Children: []
+  m_Children:
+  - {fileID: 1682945784}
   m_Father: {fileID: 663818220}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48013,22 +48068,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.13395, y: 6.65625}
   m_EdgeRadius: 0
---- !u!114 &942236682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942236674}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ea514a831eabf6419d8886e339bd876, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onEnable: 1
-  loop: 0
-  oneShot: 1
-  path: event:/Object/Door/dooropen
 --- !u!4 &942243763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8854963664073552557, guid: 6cea12afdc5b48e4e8630bcb64f88d21,
@@ -48799,6 +48838,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1926558308}
     m_Modifications:
+    - target: {fileID: 5421712751599761692, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
+        type: 3}
+      propertyPath: Event
+      value: event:/Object/Box/box_metaldrag
+      objectReference: {fileID: 0}
+    - target: {fileID: 119211331426615415, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
+        type: 3}
+      propertyPath: Event
+      value: event:/Object/Box/box_metalland
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: path
+      value: event:/Object/Box/box_metalland
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: collideWithFloorLayer.m_Bits
+      value: 8704
+      objectReference: {fileID: 0}
     - target: {fileID: 654588076795873878, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
       propertyPath: m_Name
@@ -48869,11 +48926,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 654588076795873874, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
-        type: 3}
-      propertyPath: collideWithFloorLayer.m_Bits
-      value: 8704
-      objectReference: {fileID: 0}
     - target: {fileID: 654588076795873879, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
       propertyPath: m_Sprite
@@ -48904,11 +48956,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3192911013998417652, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
-        type: 3}
-      propertyPath: path
-      value: event:/Object/Box/box_metalland
       objectReference: {fileID: 0}
     - target: {fileID: 654588076795873873, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
@@ -48959,18 +49006,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1026457523}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1026457526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1026457525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c9334500cd0ba24bab2b6e4b2b08842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1026457527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49209,6 +49244,36 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -2.3
       objectReference: {fileID: 0}
+    - target: {fileID: 8414852996287834667, guid: 2215897f84acf6c4aa6032f39cdf85c5,
+        type: 3}
+      propertyPath: Event
+      value: event:/Player/Popup/popup
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414852996287834667, guid: 2215897f84acf6c4aa6032f39cdf85c5,
+        type: 3}
+      propertyPath: OverrideMinDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414852996287834667, guid: 2215897f84acf6c4aa6032f39cdf85c5,
+        type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414852996287834667, guid: 2215897f84acf6c4aa6032f39cdf85c5,
+        type: 3}
+      propertyPath: PlayEvent
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414852996287834667, guid: 2215897f84acf6c4aa6032f39cdf85c5,
+        type: 3}
+      propertyPath: StopEvent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414852996287834667, guid: 2215897f84acf6c4aa6032f39cdf85c5,
+        type: 3}
+      propertyPath: CollisionTag
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2215897f84acf6c4aa6032f39cdf85c5, type: 3}
 --- !u!1 &1051531140
@@ -49384,12 +49449,12 @@ PrefabInstance:
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.8
+      value: 84.04
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: 9.85
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
@@ -49559,6 +49624,14 @@ PrefabInstance:
     - target: {fileID: 1872623941, guid: bf499fee01869e14d94251f9ca242511, type: 3}
       propertyPath: collideWithBoxLayer.m_Bits
       value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872623941, guid: bf499fee01869e14d94251f9ca242511, type: 3}
+      propertyPath: capsuleOffsetBox.y
+      value: 0.2558827
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872623941, guid: bf499fee01869e14d94251f9ca242511, type: 3}
+      propertyPath: capsuleSizeBox.y
+      value: 2.471766
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf499fee01869e14d94251f9ca242511, type: 3}
@@ -51883,7 +51956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/Zone1/Music/factory_loop0
+  Event: event:/Object/Magnet/magnet_shutoffbro
   PlayEvent: 0
   StopEvent: 0
   CollisionTag: 
@@ -52054,6 +52127,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1926558308}
     m_Modifications:
+    - target: {fileID: 5421712751599761692, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
+        type: 3}
+      propertyPath: Event
+      value: event:/Object/Box/box_metaldrag
+      objectReference: {fileID: 0}
+    - target: {fileID: 119211331426615415, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
+        type: 3}
+      propertyPath: Event
+      value: event:/Object/Box/box_metalland
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: path
+      value: event:/Object/Box/box_metalland
+      objectReference: {fileID: 0}
     - target: {fileID: 654588076795873878, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
       propertyPath: m_Name
@@ -52155,11 +52242,6 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 3192911013998417652, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
-        type: 3}
-      propertyPath: path
-      value: event:/Object/Box/box_metalland
-      objectReference: {fileID: 0}
     - target: {fileID: 654588076795873873, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -52195,10 +52277,7 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 571475158, guid: 5b4a99f02daa93444bc8ba4dc68a1744, type: 3}
-    - {fileID: 3192911013998417652, guid: 5b4a99f02daa93444bc8ba4dc68a1744, type: 3}
-    - {fileID: 5578823307160078502, guid: 5b4a99f02daa93444bc8ba4dc68a1744, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b4a99f02daa93444bc8ba4dc68a1744, type: 3}
 --- !u!4 &1391381324 stripped
 Transform:
@@ -52212,18 +52291,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1391381323}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1391381326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391381325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c9334500cd0ba24bab2b6e4b2b08842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1391381327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52538,6 +52605,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cea12afdc5b48e4e8630bcb64f88d21, type: 3}
+--- !u!1 &1456970427 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 454671589968024610, guid: bf499fee01869e14d94251f9ca242511,
+    type: 3}
+  m_PrefabInstance: {fileID: 1081389764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1456970429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456970427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Player/Particle/Electricity
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 1
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1461486226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54465,13 +54561,13 @@ PrefabInstance:
     - target: {fileID: 6426536583406641807, guid: 9358a180d9a5de8419e1a545c7f2fe02,
         type: 3}
       propertyPath: affectedObjectArray.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6426536583406641807, guid: 9358a180d9a5de8419e1a545c7f2fe02,
         type: 3}
       propertyPath: affectedObjectArray.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1682945785}
     - target: {fileID: 6426536583406641807, guid: 9358a180d9a5de8419e1a545c7f2fe02,
         type: 3}
       propertyPath: affectedObjectArray.Array.data[0]
@@ -54631,6 +54727,82 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1682945783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1682945784}
+  - component: {fileID: 1682945786}
+  - component: {fileID: 1682945785}
+  m_Layer: 0
+  m_Name: Sound emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1682945784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682945783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 942236676}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1682945785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682945783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16d3095d2280f64a8683756292b7950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectAction: 4
+  moveTo: {x: 0, y: 0}
+  moveBy: {x: 0, y: 0}
+  moveSpeed: 1
+  invokedMethod:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1682945786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682945783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/Object/Door/dooropen
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1721739935
 GameObject:
   m_ObjectHideFlags: 0
@@ -56702,18 +56874,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 712210509}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1858651653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1858651652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c9334500cd0ba24bab2b6e4b2b08842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1858651656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57005,24 +57165,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1914580190 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 654588076795873878, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
-    type: 3}
-  m_PrefabInstance: {fileID: 1956595309}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1914580191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914580190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c9334500cd0ba24bab2b6e4b2b08842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1920083856
 GameObject:
   m_ObjectHideFlags: 0
@@ -57224,6 +57366,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1926558308}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: path
+      value: event:/Object/Box/box_woodland
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isGrounded
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 654588076795873878, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
       propertyPath: m_Name
@@ -57289,11 +57439,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 654588076795873874, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
-        type: 3}
-      propertyPath: isGrounded
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 654588076795873879, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
       propertyPath: m_Enabled
@@ -57308,11 +57453,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3192911013998417652, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
-        type: 3}
-      propertyPath: path
-      value: event:/Object/Box/box_woodland
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b4a99f02daa93444bc8ba4dc68a1744, type: 3}
@@ -57572,6 +57712,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1926558308}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: path
+      value: event:/Object/Box/box_woodland
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: oneShot
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: isGrounded
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 654588076795873878, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
       propertyPath: m_Name
@@ -57642,11 +57794,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 654588076795873874, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
-        type: 3}
-      propertyPath: isGrounded
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 654588076795873879, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
       propertyPath: m_Enabled
@@ -57661,16 +57808,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3192911013998417652, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
-        type: 3}
-      propertyPath: path
-      value: event:/Object/Box/box_woodland
-      objectReference: {fileID: 0}
-    - target: {fileID: 3192911013998417652, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
-        type: 3}
-      propertyPath: oneShot
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 654588076795873873, guid: 5b4a99f02daa93444bc8ba4dc68a1744,
         type: 3}
@@ -58737,7 +58874,7 @@ PrefabInstance:
     - target: {fileID: 8854963664073552557, guid: 6cea12afdc5b48e4e8630bcb64f88d21,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 113.01
+      value: 112.7
       objectReference: {fileID: 0}
     - target: {fileID: 8854963664073552557, guid: 6cea12afdc5b48e4e8630bcb64f88d21,
         type: 3}
@@ -59826,6 +59963,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 6b18a95d36a8fa446ad7c44d7de66390,
         type: 3}
+    - target: {fileID: 796146637593347297, guid: 6b1a1c9c25e154a4ebc1503f9a7c64c9,
+        type: 3}
+      propertyPath: OverrideMinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 796146637593347297, guid: 6b1a1c9c25e154a4ebc1503f9a7c64c9,
+        type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 796146637593347297, guid: 6b1a1c9c25e154a4ebc1503f9a7c64c9,
+        type: 3}
+      propertyPath: Event
+      value: event:/Object/Platform/platform_movebette
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1861364355910422102, guid: 6b1a1c9c25e154a4ebc1503f9a7c64c9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6b1a1c9c25e154a4ebc1503f9a7c64c9, type: 3}
