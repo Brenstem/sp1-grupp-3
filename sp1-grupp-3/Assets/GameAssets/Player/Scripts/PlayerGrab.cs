@@ -5,31 +5,25 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class PlayerGrab : MonoBehaviour
 {
-    private Transform pointPosition;
     private Transform parentPosition;
 
-    [SerializeField]
-    float followSpeed;
+    [SerializeField] float followSpeed;
+    [SerializeField] float throwForceX;
+    [SerializeField] float throwForceY;
+    [SerializeField] float rotationSpeed;
 
-    public float throwForceX;
-    public float throwForceY;
-    public float rotationSpeed;
-
-    [SerializeField]
-    bool colliding = false;
-    public bool grabbed;
+    [SerializeField] bool collidingWithBox = false;
+    [SerializeField] bool grabbedBox;
 
     public Vector3 boxCollPosition;
     public Vector3 boxCollSize;
-    public LayerMask collideWithLayer;
+    public LayerMask collideWithBoxLayer;
 
-    GameObject objGrabbed;
-    Vector2 position = Vector2.zero;
-    int grabbedDirection = 0;
-    float angleZ = 0;
-    float myDestination = 0;
-    bool isRotating = true;
-    bool boxRotated = false;
+    GameObject boxGrabbed;
+    float parentAngleZ = 0;
+    float rotationDestination = 0;
+    bool boxIsRotating = true;
+    bool boxIsRotated = false;
     bool grabMeNow = false;
     bool dropMeNow = false;
     CapsuleCollider2D currentCollider;
@@ -40,95 +34,78 @@ public class PlayerGrab : MonoBehaviour
     public Vector2 capsuleSizeBox;
 
     GroundCheck groundCheck;
+    PlayerMovement movement;
+    PlayerJump jump;
     Rigidbody2D rb;
-    float xPosition;
-    float yPosition = 0.4f;
-    float y;
-    public float distanceFromPlayer;
+    float boxPositionX;
+    [SerializeField]
+    float distanceFromPlayer;
+    int currentDirection;
 
     void Start()
     {
         groundCheck = GetComponent<GroundCheck>();
+        movement = GetComponent<PlayerMovement>();
+        jump = GetComponent<PlayerJump>();
         rb = GetComponent<Rigidbody2D>();
         currentCollider = GetComponent<CapsuleCollider2D>();
-        pointPosition = transform.Find("Point Position");
         parentPosition = transform.Find("Parent Position");
-        grabbed = false;
-        objGrabbed = null;
-        grabbedDirection = 1;
+        grabbedBox = false;
+        boxGrabbed = null;
     }
 
     void Update()
     {
-        if(Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
-        {
-            if (grabbed == false || grabbed == true && isRotating == false)
-            {
-                grabbedDirection = (int)Input.GetAxisRaw("Horizontal");
-            }
-        }
-        else if(Mathf.Abs(Input.GetAxisRaw("CtrlHorizontal")) > 0)
-        {
-            if (grabbed == false && Mathf.Abs(Input.GetAxisRaw("CtrlHorizontal")) > 0 || grabbed == true && isRotating == false && Mathf.Abs(Input.GetAxisRaw("CtrlHorizontal")) > 0)
-            {
-                if(Input.GetAxisRaw("CtrlHorizontal") > 0.5f)
-                {
-                    grabbedDirection = 1;
-                }
-                else if(Input.GetAxisRaw("CtrlHorizontal") < -0.5f)
-                {
-                    grabbedDirection = -1;
-                }
-            }
-        }
-        
         float pX = transform.position.x + boxCollPosition.x * transform.localScale.x;
         float pY = transform.position.y + boxCollPosition.y;
-        RaycastHit2D hit = Physics2D.BoxCast(new Vector2(pX, pY), boxCollSize, 0f, Vector2.zero, 0f, collideWithLayer);
+        RaycastHit2D hitBox = Physics2D.BoxCast(new Vector2(pX, pY), boxCollSize, 0f, Vector2.zero, 0f, collideWithBoxLayer);
 
-        if (hit == true)
+        if (hitBox)
         {
-            if (grabbed == false && hit.transform.GetComponent<GroundCheckAdvanced>().isGrounded == true)
+            if (grabbedBox == false && hitBox.transform.GetComponent<GroundCheckAdvanced>().isGrounded == true)
             {
-                objGrabbed = hit.transform.gameObject;
+                boxGrabbed = hitBox.transform.gameObject;
                 
-                colliding = true;
+                collidingWithBox = true;
             }
         }
         else
         {
-            colliding = false;
+            collidingWithBox = false;
         }
 
-        if (colliding == true && groundCheck.isGrounded)
+        if (collidingWithBox == true && groundCheck.isGrounded)
         {
-            if (Input.GetButtonDown("Grab") && grabbed == false) //&& objGrabbed.GetComponent<GroundCheck>().isGrounded == true
+            if (Input.GetButtonDown("Grab") && grabbedBox == false) //&& objGrabbed.GetComponent<GroundCheck>().isGrounded == true
             {
-                Rigidbody2D objRb = objGrabbed.GetComponent<Rigidbody2D>();
+                Rigidbody2D boxRB = boxGrabbed.GetComponent<Rigidbody2D>();
 
-                objRb.freezeRotation = true;
-                objRb.bodyType = RigidbodyType2D.Kinematic;
                 rb.velocity = new Vector2(0f, rb.velocity.y);
-                objGrabbed.GetComponent<BoxCollider2D>().isTrigger = true;
+
+                boxRB.freezeRotation = true;
+                boxRB.bodyType = RigidbodyType2D.Kinematic;
+                boxGrabbed.GetComponent<BoxCollider2D>().isTrigger = true;
                 currentCollider.offset = capsuleOffsetBox;
                 currentCollider.size = capsuleSizeBox;
 
-                GetComponent<PlayerMovement>().enabled = false;
-                GetComponent<PlayerJump>().enabled = false;
+                movement.enabled = false;
+                jump.enabled = false;
 
-                objGrabbed.transform.SetParent(parentPosition.transform);
+                boxGrabbed.transform.SetParent(parentPosition.transform);
+                currentDirection = (int)transform.localScale.x;
 
-                xPosition = transform.position.x + (distanceFromPlayer * grabbedDirection);
-                parentPosition.transform.localPosition = new Vector2(-0.5f, 0f);  
-
-                grabbed = true;
-                colliding = false;
+                boxPositionX = transform.position.x + (distanceFromPlayer * currentDirection);
+                parentPosition.transform.localPosition = new Vector2(-0.5f, 0f);
+                
+                grabbedBox = true;
+                boxIsRotating = true;
+                collidingWithBox = false;
             }
         }
 
-        if (grabbed == true && grabMeNow == true)
+        if (grabbedBox == true && grabMeNow == true)
         {
-            if (isRotating == true)
+            if (boxIsRotating == true)
             {
                 RotateBox();
             }
@@ -136,38 +113,22 @@ public class PlayerGrab : MonoBehaviour
             {
                 if (Input.GetButtonDown("Grab"))
                 {
-                    grabbed = false;
+                    grabbedBox = false;
                 }
-                else if (!objGrabbed)
+                else if (!boxGrabbed)
                 {
-                    grabbed = false;
+                    grabbedBox = false;
                     return;
                 }
             }
         }
 
-        if (grabbed == false && dropMeNow == true)
+        if (grabbedBox == false && dropMeNow == true)
         {
             Drop();
         }
     }
 
-    void FixedUpdate()
-    {
-        if (grabbed == true && grabMeNow == true)
-        {
-            if (isRotating == false)
-            {
-                MoveBoxToPosition();
-            }
-        }
-    }
-
-    void MoveBoxToPosition()
-    {
-        //position = Vector2.MoveTowards(objGrabbed.transform.position, pointPosition.position, followSpeed);
-        //objGrabbed.GetComponent<Rigidbody2D>().MovePosition(position);
-    }
 
     float GetRotationDestination(float newPoint)
     {
@@ -230,82 +191,74 @@ public class PlayerGrab : MonoBehaviour
 
     void RotateBox()
     {
-        float point = Mathf.Abs(objGrabbed.transform.rotation.eulerAngles.z);
-        myDestination = GetRotationDestination(point);
+        float point = Mathf.Abs(boxGrabbed.transform.rotation.eulerAngles.z);
+        rotationDestination = GetRotationDestination(point);
 
-        if (Mathf.Abs(parentPosition.transform.rotation.z) < 0.7f) // || objCurrGrabbed.transform.rotation.z != 0
+        if (Mathf.Abs(parentPosition.transform.rotation.z) < 0.7f)
         {
-            isRotating = true;
+            boxIsRotating = true;
 
-            if (boxRotated == false)
+            if (boxIsRotated == false)
             {
-                objGrabbed.transform.position = Vector2.MoveTowards(objGrabbed.transform.position, new Vector2(xPosition, objGrabbed.transform.position.y), 100f);
+                boxGrabbed.transform.position = Vector2.MoveTowards(boxGrabbed.transform.position, new Vector2(boxPositionX, boxGrabbed.transform.position.y), 100f);
 
-                point = Mathf.MoveTowardsAngle(point, myDestination, 10f);
-                objGrabbed.transform.rotation = Quaternion.Euler(0f, 0f, point);
+                point = Mathf.MoveTowardsAngle(point, rotationDestination, 10f);
+                boxGrabbed.transform.rotation = Quaternion.Euler(0f, 0f, point);
                 
-                if (point == myDestination)
+                if (point == rotationDestination)
                 {
-                    boxRotated = true;
-                    objGrabbed.transform.localPosition = new Vector2(objGrabbed.transform.localPosition.x, -0.5f);
+                    boxIsRotated = true;
+                    boxGrabbed.transform.localPosition = new Vector2(boxGrabbed.transform.localPosition.x, -0.5f);
                 }
             }
             else
             {
-                angleZ = Mathf.MoveTowards(angleZ, 90f * grabbedDirection, rotationSpeed);
-                parentPosition.transform.rotation = Quaternion.Euler(0f, 0f, angleZ);
+                parentAngleZ = Mathf.MoveTowards(parentAngleZ, 90f * currentDirection, rotationSpeed);
+                parentPosition.transform.rotation = Quaternion.Euler(0f, 0f, parentAngleZ);
             }
         }
         else
         {
-            pointPosition.transform.position = objGrabbed.transform.position;
+            boxGrabbed.GetComponent<BoxCollider2D>().isTrigger = true;
+            boxGrabbed.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
-            objGrabbed.GetComponent<BoxCollider2D>().isTrigger = true;
-            //objGrabbed.transform.parent = null;
-            objGrabbed.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            //objGrabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            //objGrabbed.GetComponent<Rigidbody2D>().mass = 0.001f;
-
-            GetComponent<PlayerMovement>().enabled = true;
-            GetComponent<PlayerJump>().enabled = true;
-            isRotating = false;
+            movement.enabled = true;
+            jump.enabled = true;
+            boxIsRotating = false;
         }
     }
 
     void Drop()
     {
-        var force = new Vector2(throwForceX * grabbedDirection, throwForceY);
+        var force = new Vector2(throwForceX * (int)transform.localScale.x, throwForceY);
 
-        Rigidbody2D objRB = objGrabbed.GetComponent<Rigidbody2D>();
+        Rigidbody2D objRB = boxGrabbed.GetComponent<Rigidbody2D>();
         objRB.transform.parent = null;
         objRB.constraints = RigidbodyConstraints2D.None;
-        objRB.constraints = RigidbodyConstraints2D.FreezeRotation;
         objRB.bodyType = RigidbodyType2D.Dynamic;
-        objGrabbed.GetComponent<BoxCollider2D>().isTrigger = false;
+        boxGrabbed.GetComponent<BoxCollider2D>().isTrigger = false;
         currentCollider.offset = capsuleOffset;
         currentCollider.size = capsuleSize;
-
-        objRB.gravityScale = 1f;
-        objRB.mass = 1f;
+        
         objRB.freezeRotation = false;
         objRB.velocity = force;
-        objGrabbed = null;
+        boxGrabbed = null;
 
         parentPosition.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         parentPosition.transform.localPosition = Vector2.zero;
 
-        angleZ = 0;
-        isRotating = true;
+        parentAngleZ = 0;
+        boxIsRotating = true;
         grabMeNow = false;
-        boxRotated = false;
+        boxIsRotated = false;
         dropMeNow = false;
     }
 
     void OnDrawGizmos()
     {
-        if (objGrabbed != null)
+        if (boxGrabbed != null)
         {
-            Gizmos.DrawLine(objGrabbed.transform.position, (Vector2)objGrabbed.transform.position + new Vector2(throwForceX * grabbedDirection, throwForceY));
+            Gizmos.DrawLine(boxGrabbed.transform.position, (Vector2)boxGrabbed.transform.position + new Vector2(throwForceX * (int)transform.localScale.x, throwForceY));
         }
         float pX = transform.position.x + boxCollPosition.x * transform.localScale.x;
         float pY = transform.position.y + boxCollPosition.y;
