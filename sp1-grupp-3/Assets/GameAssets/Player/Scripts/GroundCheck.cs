@@ -34,11 +34,10 @@ public class GroundCheck : MonoBehaviour
 
         if (hit == true)
         {
-            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("JumpThroughtPlatforms"))
+            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("JumpThroughPlatforms"))
             {
                 if (rb.velocity.y < 0 && (transform.position.y + groundCollPosition.y - (groundCollSize.y / 2)) >= (hit.transform.position.y))
                 {
-                    //hit.transform.GetComponent<BoxCollider2D>().isTrigger = false;
                     isGrounded = true;
                     hit2 = hit;
 
@@ -68,11 +67,8 @@ public class GroundCheck : MonoBehaviour
             if (hit.collider != null && Mathf.Abs(hit.normal.x) > 0.1f)
             {
                 Rigidbody2D body = GetComponent<Rigidbody2D>();
-                // Apply the opposite force against the slope force 
-                // You will need to provide your own slopeFriction to stabalize movement
                 body.velocity = new Vector2(body.velocity.x - (hit.normal.x * slopeFriction), body.velocity.y);
-
-                //Move Player up or down to compensate for the slope below them
+                
                 Vector2 position = transform.position;
                 position.y += -hit.normal.x * Mathf.Abs(body.velocity.x) * Time.deltaTime * (body.velocity.x - hit.normal.x > 0 ? 1 : -1);
                 transform.position = position;
@@ -136,7 +132,7 @@ public class GroundCheck : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.gameObject.layer == LayerMask.NameToLayer("JumpThroughtPlatforms"))
+        if (collision.transform.gameObject.layer == LayerMask.NameToLayer("JumpThroughPlatforms"))
         {
             if(isGrounded == true && hitPlatform == false || isGrounded == false)
             {

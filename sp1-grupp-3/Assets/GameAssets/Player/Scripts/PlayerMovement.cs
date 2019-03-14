@@ -7,8 +7,6 @@ public class PlayerMovement : MonoBehaviour
     public MovementState newMovementState;
     public MovementState defaultMovementState;
     [Space]
-    //[Header("MovementSettings Only For Show")]
-    //MovementSettings movementSettings;
     float speed;
     float acceleration;
     float deAcceleration;

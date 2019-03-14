@@ -193,7 +193,7 @@ MonoBehaviour:
   groundCollSizeLR: {x: 0.25, y: 1, z: 0}
   collideWithFloorLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 8704
   collideWithWallLayer:
     serializedVersion: 2
     m_Bits: 16896

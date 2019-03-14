@@ -72,7 +72,6 @@ public class GroundCheckAdvanced : MonoBehaviour
         return false;
     }
 
-
     void CheckAllOtherSides(RaycastHit2D hit)
     {
         if (hit == true)
@@ -90,20 +89,6 @@ public class GroundCheckAdvanced : MonoBehaviour
     {
         return hitObjectInfo;
     }
-
-    //public bool HasLanded()
-    //{
-    //    if (isGrounded == true)
-    //    {
-    //        if (previousGrounded == false)
-    //        {
-    //            previousGrounded = isGrounded;
-    //            return true;
-    //        }
-    //    }
-    //    previousGrounded = isGrounded;
-    //    return false;
-    //}
 
     public bool IsMovingOnAir()
     {
@@ -147,7 +132,7 @@ public class GroundCheckAdvanced : MonoBehaviour
     {
         if (hitDown == true)
         {
-            if (hitDown.transform.gameObject.layer == LayerMask.NameToLayer("JumpThroughtPlatforms"))
+            if (hitDown.transform.gameObject.layer == LayerMask.NameToLayer("JumpThroughPlatforms"))
             {
                 if (rb.velocity.y < 0 && (transform.position.y + groundCollPosition.y - (groundCollSizeUD.y / 2)) >= (hitDown.transform.position.y))
                 {
@@ -178,19 +163,19 @@ public class GroundCheckAdvanced : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position + new Vector3(0f, groundCollPosition.y), groundCollSizeUD);
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawWireCube(transform.position + new Vector3(0f, groundCollPosition.y), groundCollSizeUD);
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(transform.position + new Vector3(0f, -groundCollPosition.y), groundCollSizeUD);
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(transform.position + new Vector3(groundCollPosition.x, 0f), groundCollSizeLR);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position + new Vector3(-groundCollPosition.x, 0f), groundCollSizeLR);
+        //Gizmos.color = Color.green;
+        //Gizmos.DrawWireCube(transform.position + new Vector3(groundCollPosition.x, 0f), groundCollSizeLR);
+        //Gizmos.color = Color.yellow;
+        //Gizmos.DrawWireCube(transform.position + new Vector3(-groundCollPosition.x, 0f), groundCollSizeLR);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.gameObject.layer == LayerMask.NameToLayer("JumpThroughtPlatforms"))
+        if (collision.transform.gameObject.layer == LayerMask.NameToLayer("JumpThroughPlatforms"))
         {
             if (isGrounded == true && hitPlatform == false || isGrounded == false)
             {

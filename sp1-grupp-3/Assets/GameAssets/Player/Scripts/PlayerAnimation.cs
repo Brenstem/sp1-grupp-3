@@ -34,7 +34,7 @@ public class PlayerAnimation : MonoBehaviour
 
         anim.SetFloat("Moving", moving);
 
-        anim.SetBool("Grabbed", grab.grabbed);
+        anim.SetBool("Grabbed", grab.grabbedBox);
 
         anim.SetBool("IsGrounded", groundCheck.isGrounded);
 
