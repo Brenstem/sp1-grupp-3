@@ -42790,12 +42790,12 @@ PrefabInstance:
     - target: {fileID: 9051781542598168700, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2288.664
+      value: -61.180004
       objectReference: {fileID: 0}
     - target: {fileID: 9051781542598168700, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 323.19003
+      value: 99.484
       objectReference: {fileID: 0}
     - target: {fileID: 9051781542598168700, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
@@ -42815,12 +42815,12 @@ PrefabInstance:
     - target: {fileID: 9051781541607763537, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -279.56604
+      value: -55.86
       objectReference: {fileID: 0}
     - target: {fileID: 9051781541607763537, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2359.4202
+      value: -9.576
       objectReference: {fileID: 0}
     - target: {fileID: 9051781541607763537, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
@@ -47729,12 +47729,12 @@ PrefabInstance:
     - target: {fileID: 3024169959321939975, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2288.664
+      value: -61.180004
       objectReference: {fileID: 0}
     - target: {fileID: 3024169959321939975, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 323.19003
+      value: 99.484
       objectReference: {fileID: 0}
     - target: {fileID: 3024169959321939975, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
@@ -47754,12 +47754,12 @@ PrefabInstance:
     - target: {fileID: 3024169960453508650, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2135.98
+      value: 213.864
       objectReference: {fileID: 0}
     - target: {fileID: 3024169960453508650, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -281.42804
+      value: -57.722
       objectReference: {fileID: 0}
     - target: {fileID: 3024169959321939974, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
@@ -49449,12 +49449,12 @@ PrefabInstance:
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 84.04
+      value: -4.3
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.85
+      value: 1.44
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
@@ -49506,6 +49506,11 @@ PrefabInstance:
       propertyPath: checkpoint
       value: 
       objectReference: {fileID: 651144775}
+    - target: {fileID: 8760632943739834870, guid: bf499fee01869e14d94251f9ca242511,
+        type: 3}
+      propertyPath: timer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 454671589968024636, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: LightsModule.maxLights
@@ -49632,6 +49637,21 @@ PrefabInstance:
     - target: {fileID: 1872623941, guid: bf499fee01869e14d94251f9ca242511, type: 3}
       propertyPath: capsuleSizeBox.y
       value: 2.471766
+      objectReference: {fileID: 0}
+    - target: {fileID: 454671589968024637, guid: bf499fee01869e14d94251f9ca242511,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 949128621
+      objectReference: {fileID: 0}
+    - target: {fileID: 454671589968024637, guid: bf499fee01869e14d94251f9ca242511,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 454671589968024637, guid: bf499fee01869e14d94251f9ca242511,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf499fee01869e14d94251f9ca242511, type: 3}
@@ -52628,7 +52648,7 @@ MonoBehaviour:
   StopEvent: 0
   CollisionTag: 
   AllowFadeout: 1
-  TriggerOnce: 1
+  TriggerOnce: 0
   Preload: 0
   Params: []
   OverrideAttenuation: 0
@@ -56887,6 +56907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RespawnTrigger: {fileID: 1729223837}
+  timer: 2
   checkpoint: {fileID: 107594100}
 --- !u!1 &1867219810
 GameObject:

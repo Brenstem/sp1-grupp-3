@@ -22,8 +22,6 @@ public class LevelChanger : MonoBehaviour
 
     private void OnFadeComplete()
     {
-        Debug.Log("meme");
-
         SceneManager.LoadScene(sceneToLoad);
     }
 }
