@@ -11,13 +11,14 @@ public class GroundCheckAdvanced : MonoBehaviour
     bool previousGrounded = false;
     Rigidbody2D rb;
     RaycastHit2D previousHitDown;
-
+ 
     public Vector3 groundCollPosition;
     public Vector3 groundCollSizeUD;
     public Vector3 groundCollSizeLR;
     public LayerMask collideWithFloorLayer;
     public LayerMask collideWithWallLayer;
     string hitObjectInfo;
+    public float wallDistance;
 
     void Start()
     {
@@ -40,28 +41,37 @@ public class GroundCheckAdvanced : MonoBehaviour
         CheckAllOtherSides(hitLeft);
         CheckAllOtherSides(hitRight);
         CheckAllOtherSides(hitUp);
-
-
-        //if (HasHitWall() == true)
-        //{
-        //    Debug.Log("Has Hit Wall");
-        //}
-
-        //if(HasLanded() == true)
-        //{
-        //    Debug.Log("Has Landed");
-        //}
-
-        //if(IsMovingOnAir() == true)
-        //{
-        //    Debug.Log("Is Moving In Air");
-        //}
-
-        //if(IsDraggedOnGround() == true)
-        //{
-        //    Debug.Log("Is Being Dragged On Ground");
-        //}
     }
+
+    public bool HasLanded(Vector2 direction , ref bool previous)
+    {
+        if(IsGrounded(direction))
+        {
+            if (!previous) //Check If Was Grounded Previous Frame
+            {
+                previous = true;
+                return true; //Has Landed
+            }
+        }
+        else
+        {
+            previous = false;
+        }
+        return false; //Isn't Grounded
+    }
+
+    bool IsGrounded(Vector2 direction)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, wallDistance, collideWithWallLayer);
+        Debug.DrawRay(transform.position, direction * wallDistance);
+
+        if (hit) //If Grounded
+        {
+            return true;
+        }
+        return false;
+    }
+
 
     void CheckAllOtherSides(RaycastHit2D hit)
     {
@@ -81,19 +91,19 @@ public class GroundCheckAdvanced : MonoBehaviour
         return hitObjectInfo;
     }
 
-    public bool HasLanded()
-    {
-        if (isGrounded == true)
-        {
-            if (previousGrounded == false)
-            {
-                previousGrounded = isGrounded;
-                return true;
-            }
-        }
-        previousGrounded = isGrounded;
-        return false;
-    }
+    //public bool HasLanded()
+    //{
+    //    if (isGrounded == true)
+    //    {
+    //        if (previousGrounded == false)
+    //        {
+    //            previousGrounded = isGrounded;
+    //            return true;
+    //        }
+    //    }
+    //    previousGrounded = isGrounded;
+    //    return false;
+    //}
 
     public bool IsMovingOnAir()
     {
