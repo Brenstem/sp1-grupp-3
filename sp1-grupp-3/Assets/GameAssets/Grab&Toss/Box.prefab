@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 654588076795873872}
   - component: {fileID: 654588076795873879}
   - component: {fileID: 654588076795873873}
-  - component: {fileID: 654588076795873874}
-  - component: {fileID: 3192911013998417652}
   - component: {fileID: 654588076795873875}
   - component: {fileID: 3765187607462281943}
   - component: {fileID: 5659978532601639241}
@@ -112,48 +110,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &654588076795873874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654588076795873878}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a91120296de71e146ab46e54a69b3a2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGrounded: 0
-  isWalled: 0
-  isCollidingBoxes: 0
-  groundCollPosition: {x: 0, y: -0.45, z: 0}
-  groundCollSize: {x: 1, y: 0.3, z: 0}
-  wallCollPosition: {x: 0, y: 0, z: 0}
-  wallCollSize: {x: 0, y: 0, z: 0}
-  collideWithFloorLayer:
-    serializedVersion: 2
-    m_Bits: 8704
-  collideWithWallLayer:
-    serializedVersion: 2
-    m_Bits: 16384
-  slopeFriction: 0
---- !u!114 &3192911013998417652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654588076795873878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ea514a831eabf6419d8886e339bd876, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onEnable: 0
-  loop: 0
-  oneShot: 0
-  path: event:/Object/Box/box_1stland
 --- !u!50 &654588076795873875
 Rigidbody2D:
   serializedVersion: 4

@@ -42808,12 +42808,12 @@ PrefabInstance:
     - target: {fileID: 9051781542598168700, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2734.4802
+      value: 1218.28
       objectReference: {fileID: 0}
     - target: {fileID: 9051781542598168700, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 202.16002
+      value: 29.259998
       objectReference: {fileID: 0}
     - target: {fileID: 9051781542598168700, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
@@ -42833,12 +42833,12 @@ PrefabInstance:
     - target: {fileID: 9051781541607763537, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -158.53601
+      value: 14.364002
       objectReference: {fileID: 0}
     - target: {fileID: 9051781541607763537, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2805.2363
+      value: -1289.036
       objectReference: {fileID: 0}
     - target: {fileID: 9051781541607763537, guid: 43fc807687cd43c419683ff1fd780015,
         type: 3}
@@ -47704,12 +47704,12 @@ PrefabInstance:
     - target: {fileID: 3024169959321939975, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2734.4802
+      value: 1218.28
       objectReference: {fileID: 0}
     - target: {fileID: 3024169959321939975, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 202.16002
+      value: 29.259998
       objectReference: {fileID: 0}
     - target: {fileID: 3024169959321939975, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
@@ -47729,12 +47729,12 @@ PrefabInstance:
     - target: {fileID: 3024169960453508650, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2581.7961
+      value: -1065.5961
       objectReference: {fileID: 0}
     - target: {fileID: 3024169960453508650, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -160.39801
+      value: 12.502003
       objectReference: {fileID: 0}
     - target: {fileID: 3024169959321939974, guid: 2215897f84acf6c4aa6032f39cdf85c5,
         type: 3}
@@ -49384,12 +49384,12 @@ PrefabInstance:
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 100.8
+      value: 43.8
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.3
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6237103528962263340, guid: bf499fee01869e14d94251f9ca242511,
         type: 3}
@@ -49555,6 +49555,10 @@ PrefabInstance:
         type: 3}
       propertyPath: enableNewMovement
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872623941, guid: bf499fee01869e14d94251f9ca242511, type: 3}
+      propertyPath: collideWithBoxLayer.m_Bits
+      value: 1024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf499fee01869e14d94251f9ca242511, type: 3}
@@ -49935,6 +49939,7 @@ GameObject:
   - component: {fileID: 1118078779}
   - component: {fileID: 1118078780}
   - component: {fileID: 1118078775}
+  - component: {fileID: 1118078781}
   m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -50109,6 +50114,22 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!114 &1118078781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118078774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27acafb377fbdd644b93376fce02c71c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerNames:
+  - Player
+  - Box
+  secondLayerName: JumpThroughPlatforms
 --- !u!1001 &1129053467
 PrefabInstance:
   m_ObjectHideFlags: 0

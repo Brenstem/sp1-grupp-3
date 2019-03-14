@@ -36,7 +36,7 @@ public class LadderClimb : MonoBehaviour
         {
             player = hitInfo.gameObject;
 
-            if (player.GetComponent<PlayerGrab>().grabbed == false)
+            if (player.GetComponent<PlayerGrab>().grabbedBox == false)
             {
                 if (!player.GetComponent<GroundCheck>().isGrounded)
                 {
@@ -52,9 +52,12 @@ public class LadderClimb : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D hitInfo)
     {
-        player.GetComponent<PlayerMovement>().enabled = true;
-        player.GetComponent<PlayerJump>().enabled = true;
-        attachedPlatform.GetComponent<BoxCollider2D>().enabled= true;
-        player.GetComponent<Rigidbody2D>().gravityScale = 1;
+        if (player != null)
+        {
+            player.GetComponent<PlayerMovement>().enabled = true;
+            player.GetComponent<PlayerJump>().enabled = true;
+            attachedPlatform.GetComponent<BoxCollider2D>().enabled = true;
+            player.GetComponent<Rigidbody2D>().gravityScale = 1;
+        }
     }
 }

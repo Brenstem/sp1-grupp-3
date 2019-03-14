@@ -13,7 +13,7 @@ public class PlayerGrab : MonoBehaviour
     [SerializeField] float rotationSpeed;
 
     [SerializeField] bool collidingWithBox = false;
-    [SerializeField] bool grabbedBox;
+    public bool grabbedBox;
 
     public Vector3 boxCollPosition;
     public Vector3 boxCollSize;
@@ -78,6 +78,10 @@ public class PlayerGrab : MonoBehaviour
         {
             if (Input.GetButtonDown("Grab") && grabbedBox == false) //&& objGrabbed.GetComponent<GroundCheck>().isGrounded == true
             {
+                currentDirection = (int)transform.localScale.x;
+                movement.enabled = false;
+                jump.enabled = false;
+
                 Rigidbody2D boxRB = boxGrabbed.GetComponent<Rigidbody2D>();
 
                 rb.velocity = new Vector2(0f, rb.velocity.y);
@@ -88,11 +92,8 @@ public class PlayerGrab : MonoBehaviour
                 currentCollider.offset = capsuleOffsetBox;
                 currentCollider.size = capsuleSizeBox;
 
-                movement.enabled = false;
-                jump.enabled = false;
 
                 boxGrabbed.transform.SetParent(parentPosition.transform);
-                currentDirection = (int)transform.localScale.x;
 
                 boxPositionX = transform.position.x + (distanceFromPlayer * currentDirection);
                 parentPosition.transform.localPosition = new Vector2(-0.5f, 0f);
