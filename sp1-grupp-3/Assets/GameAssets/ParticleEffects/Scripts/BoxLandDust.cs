@@ -6,13 +6,13 @@ public class BoxLandDust : MonoBehaviour
 {
     ParticleSystem particle;
     SoundEvent sound;
-    GroundCheck gc;
+    GroundCheckAdvanced gc;
     bool previousGrounded = false;
 
     void Start()
     {
         particle = GetComponent<ParticleSystem>();
-        gc = GetComponentInParent<GroundCheck>();
+        gc = GetComponentInParent<GroundCheckAdvanced>();
         sound = GetComponent<SoundEvent>();
     }
 
