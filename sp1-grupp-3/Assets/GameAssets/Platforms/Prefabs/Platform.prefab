@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1861364355910422102}
   - component: {fileID: 1861364355910422088}
   - component: {fileID: 1861364355910422103}
-  - component: {fileID: 4215484537869680596}
+  - component: {fileID: 796146637593347297}
   m_Layer: 9
   m_Name: Platform
   m_TagString: PlatformMoving
@@ -126,7 +126,8 @@ MonoBehaviour:
   platformBehaviour: 1
   waitTime: 1
   velocity: {x: 0, y: 0}
---- !u!114 &4215484537869680596
+  path: 
+--- !u!114 &796146637593347297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,6 +136,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1861364355910422100}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73221a65c29efa540930becd19433443, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Event: event:/Object/Platform/platform_move
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0

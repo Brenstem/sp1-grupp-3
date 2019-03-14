@@ -54,7 +54,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 114393053037901006}
   - {fileID: 114091407744464224}
-  stringsBankWriteTime: 636880739107631478
+  stringsBankWriteTime: 636881562423545772
   cacheVersion: 3
 --- !u!114 &114001144208099540
 MonoBehaviour:
@@ -717,7 +717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Brenstem\Documents\sp1-grupp-3\sp1-grupp-3\FMODBank\Desktop\Master
     Bank.bank
-  lastModified: 636880739108940927
+  lastModified: 636881562425256992
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -1912,6 +1912,22 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &114217470382679294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: IdleSound
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114221607738029228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3499,7 +3515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODBank\Desktop\Master Bank.strings.bank
-  lastModified: 636880739107631478
+  lastModified: 636881562423545772
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -4482,8 +4498,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114309456696054158}
-  - {fileID: 114602694458096758}
+  - {fileID: 114972606278492510}
+  - {fileID: 114542223127687762}
   MinDistance: 0
   MaxDistance: 0
   Length: 268500
@@ -4685,6 +4701,22 @@ MonoBehaviour:
   Name: To Pause
   Min: 0
   Max: 10
+  Default: 0
+--- !u!114 &114542223127687762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Menu Timer
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114543656981867826
 MonoBehaviour:
@@ -4921,8 +4953,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114972685469279702}
-  - {fileID: 114456663263571404}
+  - {fileID: 114672425824018454}
+  - {fileID: 114952363451520920}
   MinDistance: 0
   MaxDistance: 0
   Length: 460170
@@ -6179,6 +6211,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114672425824018454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: To Pause
+  Min: 0
+  Max: 10
+  Default: 0
 --- !u!114 &114672443028180068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6492,7 +6540,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114805189175833952}
+  - {fileID: 114217470382679294}
   MinDistance: 0
   MaxDistance: 0
   Length: 800
@@ -8444,6 +8492,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114952363451520920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Loop1 End
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114956378608374464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8557,6 +8621,22 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114971192424810530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: StartEQ
+  Min: 0
+  Max: 10
+  Default: 0
+--- !u!114 &114972606278492510
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

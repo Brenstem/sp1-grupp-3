@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using FMODUnity;
 
 public class LeverObject : MonoBehaviour
 {
     #region Fields
 
-    public enum ObjectAction { DoNothing, MoveToPosition, MoveByDistance, ActivatePhysics }
+    public enum ObjectAction { DoNothing, MoveToPosition, MoveByDistance, ActivatePhysics, PlaySound }
 
     [SerializeField] public ObjectAction objectAction;
     public Vector2 moveTo;
@@ -15,6 +16,7 @@ public class LeverObject : MonoBehaviour
     public float moveSpeed = 1;
     public UnityEvent invokedMethod;
     
+    private StudioEventEmitter soundEvent;
     private Vector2 currentPosition;
     private float moveIncrement;
 
@@ -32,7 +34,7 @@ public class LeverObject : MonoBehaviour
 
     private void Awake()
     {
-        
+        soundEvent = GetComponent<StudioEventEmitter>();
     }
 
     private void Update()
@@ -66,6 +68,11 @@ public class LeverObject : MonoBehaviour
         }
     }
 
+    private void PlaySound()
+    {
+        soundEvent.Play();
+    }
+
     #endregion
 
     #region Public Methods
@@ -89,6 +96,9 @@ public class LeverObject : MonoBehaviour
 
                 case ObjectAction.ActivatePhysics:
                     ActivatePhysics();
+                    break;
+                case ObjectAction.PlaySound:
+                    PlaySound();
                     break;
                 default:
                     break;

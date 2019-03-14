@@ -1,6 +1,7 @@
 ﻿using PathCreation;
 using System.Collections;
 using UnityEngine;
+using FMODUnity;
 
 public class Platform : MonoBehaviour
 {
@@ -11,9 +12,7 @@ public class Platform : MonoBehaviour
     public float waitTime;
     [HideInInspector] public Vector2 velocity;
 
-    [SerializeField] string path;
-    private SoundEvent soundEvent;
-
+    private StudioEventEmitter soundEvent;
 
     private float distanceTravelled;
     private Vector2 lastPosition;
@@ -22,17 +21,21 @@ public class Platform : MonoBehaviour
     private void Start()
     {
         transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
-        soundEvent = GetComponent<SoundEvent>();
+        soundEvent = GetComponent<StudioEventEmitter>();
     }
 
     private void Update()
     {
         if (velocity.x != 0 || velocity.y != 0)
         {
-            if (!IsPlaying())
+            if (!soundEvent.IsPlaying())
             {
-                //soundEvent.PlayOneShot(path);
+                soundEvent.Play();
             }
+        }
+        else
+        {
+            soundEvent.Stop();
         }
     }
 
@@ -106,14 +109,4 @@ public class Platform : MonoBehaviour
     {
         return distanceTravelled / pathCreator.path.length;
     }
-
-    private bool IsPlaying()
-    {
-        FMOD.Studio.PLAYBACK_STATE playbackState;
-        soundEvent.loopSound.getPlaybackState(out playbackState); // not set to instance of an object
-        bool isPlaying = playbackState != FMOD.Studio.PLAYBACK_STATE.STOPPED;
-
-        return isPlaying;
-    }
-
 }
