@@ -62,7 +62,7 @@ public class PlayerGrab : MonoBehaviour
     {
         if(Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
         {
-            if (grabbed == false && Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || grabbed == true && isRotating == false && Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
+            if (grabbed == false || grabbed == true && isRotating == false)
             {
                 grabbedDirection = (int)Input.GetAxisRaw("Horizontal");
             }

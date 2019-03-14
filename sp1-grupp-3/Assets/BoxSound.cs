@@ -7,6 +7,7 @@ public class BoxSound : MonoBehaviour
     GroundCheckAdvanced gAdvanced;
     public SoundObject landSound, dragSound;
     bool hasPlayedDraggedSound = false;
+    bool previousRight = false, previousLeft = false, previousUp = false, previousDown = false;
 
     void Start()
     {
@@ -15,15 +16,27 @@ public class BoxSound : MonoBehaviour
 
     void Update()
     {
-        if(gAdvanced.HasLanded() == true)
+        if(gAdvanced.HasLanded(Vector2.down, ref previousDown))
+        {
+            landSound.PlayOneShotObject();
+        }
+        if(gAdvanced.HasLanded(Vector2.right, ref previousRight))
+        {
+            landSound.PlayOneShotObject();
+        }
+        if(gAdvanced.HasLanded(Vector2.left, ref previousLeft))
+        {
+            landSound.PlayOneShotObject();
+        }
+        if(gAdvanced.HasLanded(Vector2.up, ref previousUp))
         {
             landSound.PlayOneShotObject();
         }
 
-        if (gAdvanced.HasHitWall() == true)
-        {
-            landSound.PlayOneShotObject();
-        }
+        //if (gAdvanced.HasHitWall() == true)
+        //{
+        //    landSound.PlayOneShotObject();
+        //}
 
         if (gAdvanced.IsDraggedOnGround() == true)
         {
