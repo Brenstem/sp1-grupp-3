@@ -76,7 +76,7 @@ public class PlayerGrab : MonoBehaviour
 
         if (collidingWithBox == true && groundCheck.isGrounded)
         {
-            if (Input.GetButtonDown("Grab") && grabbedBox == false) //&& objGrabbed.GetComponent<GroundCheck>().isGrounded == true
+            if (Input.GetButtonDown("Grab") && grabbedBox == false)
             {
                 currentDirection = (int)transform.localScale.x;
                 movement.enabled = false;
@@ -100,6 +100,7 @@ public class PlayerGrab : MonoBehaviour
                 
                 grabbedBox = true;
                 boxIsRotating = true;
+                boxIsRotated = false;
                 collidingWithBox = false;
             }
         }
@@ -129,7 +130,6 @@ public class PlayerGrab : MonoBehaviour
             Drop();
         }
     }
-
 
     float GetRotationDestination(float newPoint)
     {
