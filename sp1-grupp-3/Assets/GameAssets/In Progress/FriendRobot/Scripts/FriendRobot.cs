@@ -65,7 +65,6 @@ public class FriendRobot : MonoBehaviour
 
     private void Update()
     {
-
         if (isGrounded) {
             FollowPoint();
         }
