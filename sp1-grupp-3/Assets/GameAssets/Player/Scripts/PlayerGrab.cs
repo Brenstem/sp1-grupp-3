@@ -59,7 +59,7 @@ public class PlayerGrab : MonoBehaviour
         float pX = transform.position.x + boxCollPosition.x * transform.localScale.x;
         float pY = transform.position.y + boxCollPosition.y;
         RaycastHit2D hitBox = Physics2D.BoxCast(new Vector2(pX, pY), boxCollSize, 0f, Vector2.zero, 0f, collideWithBoxLayer);
-
+        
         if (hitBox)
         {
             if (grabbedBox == false && hitBox.transform.GetComponent<GroundCheckAdvanced>().isGrounded == true)
@@ -92,9 +92,12 @@ public class PlayerGrab : MonoBehaviour
                 currentCollider.offset = capsuleOffsetBox;
                 currentCollider.size = capsuleSizeBox;
 
-
+                if(boxGrabbed.transform.parent != null)
+                {
+                    boxGrabbed.transform.parent = null;
+                }
                 boxGrabbed.transform.SetParent(parentPosition.transform);
-
+           
                 boxPositionX = transform.position.x + (distanceFromPlayer * currentDirection);
                 parentPosition.transform.localPosition = new Vector2(-0.5f, 0f);
                 
@@ -195,6 +198,12 @@ public class PlayerGrab : MonoBehaviour
         float point = Mathf.Abs(boxGrabbed.transform.rotation.eulerAngles.z);
         rotationDestination = GetRotationDestination(point);
 
+        if (boxGrabbed.transform.parent == null)
+        {
+            boxGrabbed.transform.SetParent(parentPosition.transform);
+            boxPositionX = transform.position.x + (distanceFromPlayer * currentDirection);
+        }
+        
         if (Mathf.Abs(parentPosition.transform.rotation.z) < 0.7f)
         {
             boxIsRotating = true;
@@ -220,9 +229,6 @@ public class PlayerGrab : MonoBehaviour
         }
         else
         {
-            boxGrabbed.GetComponent<BoxCollider2D>().isTrigger = true;
-            boxGrabbed.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-
             movement.enabled = true;
             jump.enabled = true;
             boxIsRotating = false;
