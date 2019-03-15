@@ -17,12 +17,16 @@ public class FriendRobot : MonoBehaviour
     private bool isGrounded; 
     private float currentSpeed = 0;
     private float moveDirection;
+    private Timer timer;
+    private bool isWiggling;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         playerMovement = followObject.GetComponent<PlayerMovement>();
+        timer = new Timer();
+        timer.StartTimer(Random.Range(5, 10));
 
         AnimatorUpdate();
     }
@@ -67,6 +71,20 @@ public class FriendRobot : MonoBehaviour
 
     private void Update()
     {
+        timer.UpdateTimer();
+
+
+        if (timer.TimerFinished)
+        {
+            isWiggling = true;
+            timer.ResetTimer();
+            timer.StartTimer(Random.Range(3, 7));
+        }
+        else if (!timer.TimerFinished)
+        {
+            isWiggling = false;
+        }
+
         if (isGrounded) {
             FollowPoint();
         }
@@ -129,6 +147,7 @@ public class FriendRobot : MonoBehaviour
         animator.SetFloat("Moving", Mathf.Abs(rb.velocity.x));
         animator.SetBool("IsGrounded", isGrounded);
         animator.SetBool("IsHanging", IsStatic());
+        animator.SetBool("Wiggle", isWiggling);
         
         if (moveDirection < 0) {
             transform.localScale = Vector3.one;
