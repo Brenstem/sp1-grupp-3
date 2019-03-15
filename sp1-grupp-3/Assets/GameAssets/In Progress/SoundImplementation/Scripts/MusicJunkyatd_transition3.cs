@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicJunkyard_transition : MonoBehaviour
+public class MusicJunkyatd_transition3 : MonoBehaviour
 {
     public MusicJunkyard music;
 
@@ -10,7 +10,7 @@ public class MusicJunkyard_transition : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            music.Transition1();
+            music.Transition3();
         }
     }
 }
