@@ -8,9 +8,8 @@ public class LadderClimb : MonoBehaviour
 
     [SerializeField] float climbSpeed;
     [SerializeField] string playerTag;
-    [SerializeField] GameObject attachedPlatform;
-    private GameObject player;
 
+    private GameObject player;
     private Vector2 moveDir;
 
     // Update is called once per frame
@@ -24,7 +23,6 @@ public class LadderClimb : MonoBehaviour
             {
                 player.GetComponent<PlayerMovement>().enabled = true;
                 player.GetComponent<PlayerJump>().enabled = true;
-                attachedPlatform.GetComponent<BoxCollider2D>().enabled = true;
                 player.GetComponent<Rigidbody2D>().gravityScale = 1;
             }
         } 
@@ -42,7 +40,6 @@ public class LadderClimb : MonoBehaviour
                 {
                     player.GetComponent<PlayerMovement>().enabled = false;
                     player.GetComponent<PlayerJump>().enabled = false;
-                    attachedPlatform.GetComponent<BoxCollider2D>().enabled = false;
                     player.GetComponent<Rigidbody2D>().gravityScale = 0;
                 }
                 player.GetComponent<Rigidbody2D>().velocity = moveDir * climbSpeed;
@@ -56,7 +53,6 @@ public class LadderClimb : MonoBehaviour
         {
             player.GetComponent<PlayerMovement>().enabled = true;
             player.GetComponent<PlayerJump>().enabled = true;
-            attachedPlatform.GetComponent<BoxCollider2D>().enabled = true;
             player.GetComponent<Rigidbody2D>().gravityScale = 1;
             player = null;
         }

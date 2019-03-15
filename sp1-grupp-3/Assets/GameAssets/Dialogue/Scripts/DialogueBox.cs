@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 [ExecuteInEditMode]
 public class DialogueBox : MonoBehaviour
@@ -12,6 +13,12 @@ public class DialogueBox : MonoBehaviour
 
     private Vector2 boxOffsetMemory;
 
+    private Image image;
+
+    private void Start()
+    {
+        image = GetComponent<Image>();
+    }
 
     private void Update()
     {

@@ -23,6 +23,8 @@ public class FriendRobot : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         playerMovement = followObject.GetComponent<PlayerMovement>();
+
+        AnimatorUpdate();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -126,7 +128,7 @@ public class FriendRobot : MonoBehaviour
     {
         animator.SetFloat("Moving", Mathf.Abs(rb.velocity.x));
         animator.SetBool("IsGrounded", isGrounded);
-        //animator.SetBool("IsHanging", rb.isKinematic);
+        animator.SetBool("IsHanging", IsStatic());
         
         if (moveDirection < 0) {
             transform.localScale = Vector3.one;
@@ -148,10 +150,15 @@ public class FriendRobot : MonoBehaviour
         return false;
     }
 
-    private bool IsKinematic()
+    private bool IsStatic()
     {
-        
-
-        return false;
+        if (rb.bodyType == RigidbodyType2D.Static)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     } 
 }

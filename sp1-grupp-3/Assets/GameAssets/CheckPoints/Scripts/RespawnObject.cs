@@ -31,7 +31,6 @@ public class RespawnObject : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(GetComponent<RespawnTrigger>());
         if (respawn)
             Move(gameObject);
     }
